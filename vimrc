@@ -16,8 +16,8 @@ filetype indent on
 syntax on
 
 " Filetype-specific Settings
-autocmd BufWritePost *.js !jsmin < % > `echo % | sed 's/\./.min./'`
-autocmd BufWritePost *.json !python -m json.tool && jsmin < % > `echo % | sed 's/\./.min./'`
+"autocmd BufWritePost *.js !jsmin < % > `echo % | sed 's/\./.min./'`
+"autocmd BufWritePost *.json !python -m json.tool && jsmin < % > `echo % | sed 's/\./.min./'`
 autocmd FileType make setlocal noexpandtab
 autocmd FileType otl setlocal spell
 
@@ -31,8 +31,7 @@ set hlsearch
 " """"""""""
 " Appearance
 " """"""""""
-set laststatus=2 " Statusline always on
-set statusline=%F%m%r%w\ \ [%l, %v][%p%%]
+set ruler " Displays the line, column, and document % in lower-right corner.
 
 
 " """"""""""""
