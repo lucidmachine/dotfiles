@@ -44,6 +44,7 @@ set pastetoggle=<F2>
 noremap <silent> <C-PageDown> :tabnext<CR>
 noremap <silent> <C-PageUp> :tabprevious<CR>
 noremap <silent> <C-t> :tabnew<CR>
+noremap <silent> <C-w> :tabclose<CR>
 
 " View Panes
 noremap <silent> <F8> :TlistToggle<CR>
