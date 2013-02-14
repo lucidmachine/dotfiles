@@ -5,9 +5,9 @@ snippet php
 snippet ec
 	echo "${1:string}"${2};
 snippet dump
-	echo "<pre>"; var_dump(${1:var}); "</pre>";${2}
+	echo "<pre>"; var_dump($${1:var}); "</pre>";${2}
 snippet print
-	echo "<pre>"; print_r(${1:var}); "</pre>";${2}
+	echo "<pre>"; print_r($${1:var}); "</pre>";${2}
 snippet req
 	require_once('${1:file}');${2}
 # $GLOBALS['...']
