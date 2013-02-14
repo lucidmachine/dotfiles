@@ -47,7 +47,11 @@ noremap <silent> <C-t> :tabnew<CR>
 noremap <silent> <C-w> :tabclose<CR>
 
 " View Panes
+noremap <silent> <F7> :NERDTreeToggle<CR>
 noremap <silent> <F8> :TlistToggle<CR>
+
+" Buffers
+noremap <silent> <C-c> ggVG"+y
 
 
 " """""""
