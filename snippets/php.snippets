@@ -1,3 +1,14 @@
+snippet ar
+	// Query
+	$${1:results} = $this->EE->db
+		-> select ('${2:}')
+		-> from ('exp_${3:}')
+		-> where ('${4:}', $${5:})${6}
+		-> get -> result_array();
+
+	// No results?
+	if ( empty($$1) )
+		throw new Exception ("${7:No results.}");
 snippet php
 	<?php
 	${1}
@@ -5,9 +16,9 @@ snippet php
 snippet ec
 	echo "${1:string}"${2};
 snippet dump
-	echo "<pre>"; var_dump($${1:var}); "</pre>";${2}
+	echo "<pre>"; var_dump($${1:var}); echo "</pre>";${2}
 snippet print
-	echo "<pre>"; print_r($${1:var}); "</pre>";${2}
+	echo "<pre>"; print_r($${1:var}); echo "</pre>";${2}
 snippet req
 	require_once('${1:file}');${2}
 # $GLOBALS['...']
