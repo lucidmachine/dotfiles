@@ -20,6 +20,10 @@ syntax on
 "autocmd BufWritePost *.json !python -m json.tool && jsmin < % > `echo % | sed 's/\./.min./'`
 autocmd FileType make setlocal noexpandtab
 autocmd FileType otl setlocal spell
+augroup filetype
+    autocmd BufNewFile,BufRead <Directory Path>/*.html set filetype=php
+augroup END
+
 
 " Mouse support
 set mouse=a
