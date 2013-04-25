@@ -1,9 +1,12 @@
 snippet ar
 	// Query
 	$${1:results} = $this->EE->db
-		-> select ('${2:}')
+		-> select (
+			'${2:}'
+		)
 		-> from ('exp_${3:}')
-		-> where ('${4:}', $${5:})${6}
+		-> where ('site_id', $this->EE->config->item('site_id')
+			-> where ('${4:}', $${5:})${6}
 		-> get() -> result_array();
 
 	// No results?
