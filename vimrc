@@ -21,7 +21,8 @@ syntax on
 autocmd FileType make setlocal noexpandtab
 autocmd FileType otl setlocal spell
 augroup filetype
-    autocmd BufNewFile,BufRead <Directory Path>/*.html set filetype=php
+    " FIXME
+    autocmd BufNewFile,BufRead *.html set filetype=php
 augroup END
 
 
@@ -38,6 +39,13 @@ set hlsearch
 set ruler " Displays the line, column, and document % in lower-right corner.
 
 
+" """"""""
+" Commands
+" """"""""
+" Find all TODOs and FIXMEs in the current project and list them in the 
+" TODO: command! todo :vimgrep /TODO/j **/*.$current_file's_extension | :cw
+
+
 " """"""""""""
 " Key Bindings
 " """"""""""""
@@ -45,7 +53,9 @@ set ruler " Displays the line, column, and document % in lower-right corner.
 set pastetoggle=<F2>
 
 " Tabs
+" FIXME
 noremap <silent> <C-PageDown> :tabnext<CR>
+" FIXME
 noremap <silent> <C-PageUp> :tabprevious<CR>
 noremap <silent> <C-t> :tabnew<CR>
 noremap <silent> <C-w> :tabclose<CR>
