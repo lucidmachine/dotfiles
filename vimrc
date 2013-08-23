@@ -21,7 +21,6 @@ syntax on
 autocmd FileType make setlocal noexpandtab
 autocmd FileType otl setlocal spell
 augroup filetype
-    " FIXME
     autocmd BufNewFile,BufRead *.html set filetype=php
 augroup END
 
@@ -52,11 +51,14 @@ set ruler " Displays the line, column, and document % in lower-right corner.
 " Function Key Bindings
 set pastetoggle=<F2>
 
+" File Commands
+noremap <silent> <C-o> :browse confirm e<CR>
+
 " Tabs
 " FIXME
-noremap <silent> <C-PageDown> :tabnext<CR>
+noremap <silent> <C-v><C-PageDown> :tabnext<CR>
 " FIXME
-noremap <silent> <C-PageUp> :tabprevious<CR>
+noremap <silent> <C-v><C-PageUp> :tabprevious<CR>
 noremap <silent> <C-t> :tabnew<CR>
 noremap <silent> <C-w> :tabclose<CR>
 
