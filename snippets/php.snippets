@@ -24,6 +24,15 @@ snippet print
 	echo "<pre>"; print_r($${1:var}); echo "</pre>";${2}
 snippet req
 	require_once(realpath(dirname(__FILE__)."/${1:file}"));${2}
+snippet table
+    <table>
+        <thead>
+            <tr> <th></th> </tr>
+        </thead>
+        <tbody>
+            <tr> <td></td> </tr>
+        </tbody>
+    </table>
 # $GLOBALS['...']
 snippet globals
 	$GLOBALS['${1:variable}']${2: = }${3:something}${4:;}${5}
