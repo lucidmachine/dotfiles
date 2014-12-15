@@ -5,8 +5,16 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # du
 alias du='du -c -h'
 
+# Git
+alias gita='git add'
+alias gitc='git commit -m '
+
 # grep
-alias grep='grep --color=auto'
+alias gita='git add'
+alias gitc='git commit -m '
+alias gitd='git diff'
+alias gitl='git log -n 5'
+alias gits='git status'
 
 # ls
 alias ls='ls -h --color'
