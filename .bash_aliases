@@ -12,5 +12,12 @@ alias grep='grep --color=auto'
 alias ls='ls -h --color'
 alias ll='ls --color -lha'
 
+# Mercurial
+alias hga='hg add'
+alias hgc='hg commit -m '
+alias hgd='hg diff'
+alias hgl='hg log -l 5'
+alias hgs='hg stat'
+
 # Vimming!
 alias vim='vim -p'
