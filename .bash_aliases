@@ -8,10 +8,10 @@ alias du='du -c -h'
 # Git
 alias gita='git add'
 alias gitc='git commit -m '
+alias gitca='git commit -a -m '
 alias gitd='git diff'
 alias gitl='git log -n 5'
 alias gits='git status'
-
 
 # grep
 alias grep='grep --color=auto'
@@ -30,6 +30,9 @@ alias hgs='hg stat'
 # Sublime Text
 alias sublime-text='/opt/sublime_text/sublime_text'
 alias sublime='/opt/sublime_text/sublime_text'
+
+# Updates
+alias update='sudo apt-get update && sudo apt-get upgrade -y'
 
 # Vimming!
 alias vim='vim -p'
