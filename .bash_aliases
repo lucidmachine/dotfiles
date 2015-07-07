@@ -7,6 +7,8 @@ alias du='du -c -h'
 
 # Git
 alias gita='git add'
+alias gitb='git branch'
+alias gitbn='git checkout -b '
 alias gitc='git commit -m '
 alias gitca='git commit -a -m '
 alias gitd='git diff'
@@ -22,6 +24,7 @@ alias ll='ls --color -lha'
 
 # Mercurial
 alias hga='hg add'
+alias hgb='hg branch'
 alias hgc='hg commit -m '
 alias hgd='hg diff'
 alias hgl='hg log -l 5'
