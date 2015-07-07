@@ -5,10 +5,10 @@
 # Select appropriate OS branch
 case "$OSTYPE" in
     msys|win32)
-        git checkout windows
+        git checkout windows &> /dev/null
         ;;
     *)
-        git checkout master
+        git checkout master &> /dev/null
         ;;
 esac
 
