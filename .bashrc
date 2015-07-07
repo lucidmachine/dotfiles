@@ -41,14 +41,19 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+# Mercurial branch
+hg_branch () {
+    hg branch 2> /dev/null | sed -e "s/\(.*\)/ (\1)/"
+}
+
 # Load color palette
 . "$HOME/.bash/.palette"
 
 # Set prompt
 if [ "$color_prompt" = yes ]; then
-    term_prompt="\n${debian_chroot:+($debian_chroot)}$BGreen\u@\h $BBlue\w$BWhite$(__git_ps1)$Color_Off\n\$ "
+    term_prompt="\n${debian_chroot:+($debian_chroot)}$BGreen\u@\h $BBlue\w$BWhite\$(__git_ps1)\$(hg_branch)$Color_Off\n\$ "
 else
-    term_prompt="\n${debian_chroot:+($debian_chroot)}\u@\h \w$(__git_ps1)\n\$ "
+    term_prompt="\n${debian_chroot:+($debian_chroot)}\u@\h \w\$(__git_ps1)\$(hg_branch)\n\$ "
 fi
 
 # Set terminal title
