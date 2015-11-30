@@ -8,6 +8,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'ervandew/supertab'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'garbas/vim-snipmate'
 Plugin 'kien/ctrlp.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -105,4 +106,5 @@ let Tlist_Auto_Update = 1
 let Tlist_Inc_Winwidth = 0
 let Tlist_Sort_Type = "name"
 let Tlist_Use_SingleClick = 1
+
 
