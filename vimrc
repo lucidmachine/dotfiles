@@ -1,6 +1,30 @@
+" """"""
+" Vundle
+" """"""
+set nocompatible
+filetype off
+set rtp+=~/vimfiles/bundle/Vundle.vim
+
+call vundle#begin()
+
+Plugin 'ervandew/supertab'
+Plugin 'garbas/vim-snipmate'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'VundleVim/Vundle.vim'
+
+call vundle#end()
+
+
 " """""""
 " General
 " """""""
+" Compatibility
+set nocompatible
+
 " Document Formatting
 set autoindent
 set expandtab
@@ -56,9 +80,9 @@ noremap <silent> <C-o> :browse confirm e<CR>
 
 " Tabs
 " FIXME
-noremap <silent> <C-v><C-PageDown> :tabnext<CR>
+noremap <silent> <C-PageDown> :tabnext<CR>
 " FIXME
-noremap <silent> <C-v><C-PageUp> :tabprevious<CR>
+noremap <silent> <C-PageUp> :tabprevious<CR>
 noremap <silent> <C-t> :tabnew<CR>
 noremap <silent> <C-w> :tabclose<CR>
 
@@ -79,3 +103,4 @@ let Tlist_Auto_Update = 1
 let Tlist_Inc_Winwidth = 0
 let Tlist_Sort_Type = "name"
 let Tlist_Use_SingleClick = 1
+
