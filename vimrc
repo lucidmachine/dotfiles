@@ -58,6 +58,8 @@ set mouse=a
 " Search
 set incsearch
 set hlsearch
+set ignorecase
+set smartcase
 
 " """"""""""
 " Appearance
