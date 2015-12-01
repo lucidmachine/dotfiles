@@ -8,6 +8,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'ervandew/supertab'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'garbas/vim-snipmate'
 Plugin 'kien/ctrlp.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
