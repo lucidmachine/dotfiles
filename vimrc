@@ -64,6 +64,8 @@ set smartcase
 " """"""""""
 " Appearance
 " """"""""""
+colorscheme vibrantink
+colorscheme harlequin
 set ruler " Displays the line, column, and document % in lower-right corner.
 
 
