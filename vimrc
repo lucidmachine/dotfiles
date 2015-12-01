@@ -58,10 +58,14 @@ set mouse=a
 " Search
 set incsearch
 set hlsearch
+set ignorecase
+set smartcase
 
 " """"""""""
 " Appearance
 " """"""""""
+colorscheme vibrantink
+colorscheme harlequin
 set ruler " Displays the line, column, and document % in lower-right corner.
 
 
@@ -82,9 +86,7 @@ set pastetoggle=<F2>
 noremap <silent> <C-o> :browse confirm e<CR>
 
 " Tabs
-" FIXME
 noremap <silent> <C-PageDown> :tabnext<CR>
-" FIXME
 noremap <silent> <C-PageUp> :tabprevious<CR>
 noremap <silent> <C-t> :tabnew<CR>
 noremap <silent> <C-w> :tabclose<CR>
@@ -106,5 +108,3 @@ let Tlist_Auto_Update = 1
 let Tlist_Inc_Winwidth = 0
 let Tlist_Sort_Type = "name"
 let Tlist_Use_SingleClick = 1
-
-
