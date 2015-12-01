@@ -64,9 +64,15 @@ set smartcase
 " """"""""""
 " Appearance
 " """"""""""
+" Theme
 colorscheme vibrantink
 colorscheme harlequin
+
+" Ruler / Status line
 set ruler " Displays the line, column, and document % in lower-right corner.
+
+" Gutter
+set number
 
 
 " """"""""
