@@ -81,9 +81,7 @@ set pastetoggle=<F2>
 noremap <silent> <C-o> :browse confirm e<CR>
 
 " Tabs
-" FIXME
 noremap <silent> <C-PageDown> :tabnext<CR>
-" FIXME
 noremap <silent> <C-PageUp> :tabprevious<CR>
 noremap <silent> <C-t> :tabnew<CR>
 noremap <silent> <C-w> :tabclose<CR>
