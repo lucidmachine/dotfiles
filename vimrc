@@ -65,9 +65,23 @@ set smartcase
 " """"""""""
 " Appearance
 " """"""""""
+" Cmder color palette fix
+if !empty($CONEMUBUILD)
+    set term=xterm
+    set t_Co=256
+    let &t_AB="\e[48;5;%dm"
+    let &t_AF="\e[38;5;%dm"
+endif
+
+" Theme
 colorscheme vibrantink
 colorscheme harlequin
+
+" Ruler / Status line
 set ruler " Displays the line, column, and document % in lower-right corner.
+
+" Gutter
+set number
 
 
 " """"""""
@@ -109,4 +123,3 @@ let Tlist_Auto_Update = 1
 let Tlist_Inc_Winwidth = 0
 let Tlist_Sort_Type = "name"
 let Tlist_Use_SingleClick = 1
-
