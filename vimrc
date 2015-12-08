@@ -18,6 +18,7 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'Yggdroot/indentLine'
 
 call vundle#end()
 
