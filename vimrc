@@ -27,8 +27,12 @@ call vundle#end()
 " """""""
 " General
 " """""""
+" Backspace
+set backspace=indent,eol,start
+
 " Compatibility
 set nocompatible
+
 
 " Document Formatting
 set autoindent
