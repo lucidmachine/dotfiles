@@ -67,6 +67,9 @@ set hlsearch
 set ignorecase
 set smartcase
 
+" Visual Bell
+set visualbell
+
 " """"""""""
 " Appearance
 " """"""""""
