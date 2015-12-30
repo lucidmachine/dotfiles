@@ -12,6 +12,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'garbas/vim-snipmate'
 Plugin 'kien/ctrlp.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tomtom/tlib_vim'
@@ -125,6 +126,10 @@ noremap <silent> <C-c> ggVG"+y
 " """""""
 " Plugins
 " """""""
+" Rust Racer
+set hidden
+let $RUST_SRC_PATH="~/src/rust/src/"
+
 " Taglist
 let Tlist_Auto_Highlight_Tag = 1
 let Tlist_Auto_Update = 1
