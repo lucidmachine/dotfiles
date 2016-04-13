@@ -10,7 +10,12 @@ snippet ar
 
 	// No results?
 	if ( empty($$1) )
+	{
 		throw new Exception ("${7:No results.}");
+	}
+snippet field
+	<label for="${1:}">${2:}</label>
+	<input type="${3:text}" id="$1" class="$4${5:}" name="$1" ${4:required} value="<?=set_value('$1')?>" />
 snippet php
 	<?php
 	${1}
