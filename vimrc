@@ -12,6 +12,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'garbas/vim-snipmate'
 Plugin 'kien/ctrlp.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'mhinz/vim-signify'
 Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -68,6 +69,9 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
+
+" UI
+set updatetime=1000
 
 " Visual Bell
 set visualbell
@@ -130,6 +134,10 @@ noremap <silent> <C-c> ggVG"+y
 " Rust Racer
 set hidden
 let $RUST_SRC_PATH="~/src/rust/src/"
+
+" Signify
+let g:signify_vcs_list = [ 'git', 'hg', 'bzr' ]
+let g:signify_update_on_focusgained = 1
 
 " Syntastic
 set statusline+=%#warningmsg#
