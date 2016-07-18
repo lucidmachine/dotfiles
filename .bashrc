@@ -20,7 +20,7 @@ shopt -s checkwinsize # Resize window if necessary after each command
 
 # Does this terminal support color?
 case "$TERM" in
-    xterm-color|cygwin)
+    xterm-color|xterm-256color|cygwin)
         color_prompt=yes
         ;;
 esac
