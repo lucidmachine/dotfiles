@@ -21,6 +21,14 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+# Languages
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+export GOPATH="$HOME/src/go"
+export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
+
+export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+export CATALINA_HOME="$HOME/src/dotcms/tomcat8"
