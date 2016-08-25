@@ -15,6 +15,7 @@ alias gitco='git checkout'
 alias gitd='git diff'
 alias gitl='git log -n 5'
 alias gits='git status'
+alias gitvd='git difftool'
 
 # grep
 alias grep='grep --color=auto'
