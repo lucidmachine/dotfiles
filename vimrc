@@ -110,6 +110,13 @@ set number
 " """"""""""""
 " Key Bindings
 " """"""""""""
+" Comments
+if has('win32')
+  noremap <C-/> :TComment<CR>
+else
+  noremap <C-_> :TComment<CR>
+endif
+
 " Function Key Bindings
 set pastetoggle=<F2>
 
