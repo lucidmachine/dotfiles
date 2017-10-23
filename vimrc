@@ -7,23 +7,23 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 
-Plugin 'ervandew/supertab'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'garbas/vim-snipmate'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ervandew/supertab'              " Tab completion
+Plugin 'flazz/vim-colorschemes'         " Color sheme pack
+Plugin 'garbas/vim-snipmate'            " Snippets
+Plugin 'kien/ctrlp.vim'                 " Fuzzy finder for files, buffers, tags, etc.
 Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'mhinz/vim-signify'
-Plugin 'rust-lang/rust.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'sealemar/vtl'
-Plugin 'tomtom/tcomment_vim'
+Plugin 'mhinz/vim-signify'              " VCS diff gutter
+Plugin 'rust-lang/rust.vim'             " Rust support including Syntastic integration
+Plugin 'scrooloose/nerdtree'            " File tree explorer
+Plugin 'scrooloose/syntastic'           " Syntax checking system
+Plugin 'sealemar/vtl'                   " Velocity syntax + filetype
+Plugin 'tomtom/tcomment_vim'            " Fileteype-sensible comment
 Plugin 'tomtom/tlib_vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vimoutliner/vimoutliner'
-Plugin 'vim-scripts/taglist.vim'
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Yggdroot/indentLine'
+Plugin 'tpope/vim-fugitive'             " Git commands from inside ViM
+Plugin 'vimoutliner/vimoutliner'        " Outline mode for .otl files
+Plugin 'vim-scripts/taglist.vim'        " Code tag viewer
+Plugin 'VundleVim/Vundle.vim'           " Plugin manager
+Plugin 'Yggdroot/indentLine'            " Display vertical indentation level lines
 
 call vundle#end()
 
