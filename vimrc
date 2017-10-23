@@ -56,6 +56,7 @@ syntax on
 "autocmd BufWritePost *.js !jsmin < % > `echo % | sed 's/\./.min./'`
 "autocmd BufWritePost *.json !python -m json.tool && jsmin < % > `echo % | sed 's/\./.min./'`
 autocmd FileType make setlocal noexpandtab
+autocmd FileType otl setlocal nowrap
 autocmd FileType otl setlocal spell
 augroup filetype
     autocmd BufNewFile,BufRead *.html set filetype=php
