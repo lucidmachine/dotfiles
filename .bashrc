@@ -20,21 +20,10 @@ shopt -s checkwinsize # Resize window if necessary after each command
 
 # Does this terminal support color?
 case "$TERM" in
-    xterm-color|cygwin)
+    xterm-color|xterm-256color|cygwin)
         color_prompt=yes
         ;;
 esac
-# force_color_prompt=yes
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-        # We have color support; assume it's compliant with Ecma-48
-        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-        # a case would tend to support setf rather than setaf.)
-        color_prompt=yes
-    else
-        color_prompt=
-    fi
-fi
 
 # chroot path
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
@@ -116,8 +105,3 @@ for script in ~/bin/site.sh ~/bin/migrate.sh ~/bin/dotcms.sh; do
     . $script
   fi
 done
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
