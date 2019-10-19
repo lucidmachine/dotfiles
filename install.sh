@@ -33,7 +33,8 @@ for dotfile in .bash_aliases .bash_logout .bashrc .profile; do
     fi
 
     # Create a symlink in home pointing to the dotfile in this directory
-    ln -s "`pwd`/$dotfile" "$HOME/$dotfile"
+    bash_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+    ln -s "$bash_dir/$dotfile" "$HOME/$dotfile"
 
     # Source the new file
     . "$HOME/$dotfile"

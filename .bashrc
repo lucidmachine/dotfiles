@@ -99,9 +99,3 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-
-for script in ~/bin/site.sh ~/bin/migrate.sh ~/bin/dotcms.sh; do
-  if [ -f $script ]; then
-    . $script
-  fi
-done
