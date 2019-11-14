@@ -1,36 +1,45 @@
-" """"""
-" Vundle
-" """"""
-set nocompatible
+"""""""""
+" Plugins
+"""""""""
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 
+" Language Support
+"Plugin 'dense-analysis/ale'             " Async LSP server support
+Plugin 'rust-lang/rust.vim'             " Rust support including Syntastic integration
+Plugin 'scrooloose/syntastic'           " Syntax checking system
+"Plugin 'valloric/youcompleteme'         " LSP-based tab completion
+Plugin 'vimoutliner/vimoutliner'        " Outline mode for .otl files
+
+" Appearance
+Plugin 'flazz/vim-colorschemes'         " Color scheme pack
+Plugin 'itchyny/lightline.vim'          " Lightweight status line
+Plugin 'mhinz/vim-signify'              " VCS diff gutter
+Plugin 'Yggdroot/indentLine'            " Display vertical indentation level lines
+
+" Other
 Plugin 'ervandew/supertab'              " Tab completion
-Plugin 'flazz/vim-colorschemes'         " Color sheme pack
+Plugin 'editorconfig/editorconfig-vim'  " Cross-editor configuration files
 Plugin 'garbas/vim-snipmate'            " Snippets
 Plugin 'kien/ctrlp.vim'                 " Fuzzy finder for files, buffers, tags, etc.
 Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'mhinz/vim-signify'              " VCS diff gutter
-Plugin 'rust-lang/rust.vim'             " Rust support including Syntastic integration
 Plugin 'scrooloose/nerdtree'            " File tree explorer
-Plugin 'scrooloose/syntastic'           " Syntax checking system
-Plugin 'sealemar/vtl'                   " Velocity syntax + filetype
-Plugin 'tomtom/tcomment_vim'            " Fileteype-sensible comment
+Plugin 'tomtom/tcomment_vim'            " Filetype-sensible comment
 Plugin 'tomtom/tlib_vim'
+Plugin 'terryma/vim-multiple-cursors'   " Multi-cursor
 Plugin 'tpope/vim-fugitive'             " Git commands from inside ViM
-Plugin 'vimoutliner/vimoutliner'        " Outline mode for .otl files
+Plugin 'tpope/vim-surround'             " Matching parens, braces, tags, etc.
 Plugin 'vim-scripts/taglist.vim'        " Code tag viewer
 Plugin 'VundleVim/Vundle.vim'           " Plugin manager
-Plugin 'Yggdroot/indentLine'            " Display vertical indentation level lines
 
 call vundle#end()
 
 
-" """""""
+"""""""""
 " General
-" """""""
+"""""""""
 " Backspace
 set backspace=indent,eol,start
 
@@ -53,11 +62,9 @@ filetype indent on
 syntax on
 
 " Filetype-specific Settings
-"autocmd BufWritePost *.js !jsmin < % > `echo % | sed 's/\./.min./'`
-"autocmd BufWritePost *.json !python -m json.tool && jsmin < % > `echo % | sed 's/\./.min./'`
 autocmd FileType make setlocal noexpandtab
-autocmd FileType otl setlocal nowrap
-autocmd FileType otl setlocal spell
+autocmd FileType votl setlocal nowrap
+autocmd FileType votl setlocal spell
 augroup filetype
     autocmd BufNewFile,BufRead *.html set filetype=php
 augroup END
@@ -71,6 +78,11 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
+if executable('rg')
+    set grepprg=rg\ --color=never
+    let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+    let g:ctrlp_use_caching = 0
+endif
 
 " UI
 set updatetime=1000
@@ -78,38 +90,40 @@ set updatetime=1000
 " Visual Bell
 set visualbell
 
-" """"""""""
+""""""""""""
 " Appearance
-" """"""""""
+""""""""""""
 " Cmder color palette fix
 if !empty($CONEMUBUILD)
     set term=xterm
     set t_Co=256
-    let &t_AB="\e[48;5;%dm"
-    let &t_AF="\e[38;5;%dm"
+    let &t_AB = "\e[48;5;%dm"
+    let &t_AF = "\e[38;5;%dm"
 endif
 
 " Theme
+set background=dark
 colorscheme vibrantink
 colorscheme harlequin
 
 " Ruler / Status line
-set ruler " Displays the line, column, and document % in lower-right corner.
+set laststatus=2
+let g:lightline = {'colorscheme': 'wombat'}
 
 " Gutter
 set number
 
 
-" """"""""
+""""""""""
 " Commands
-" """"""""
+""""""""""
 " Find all TODOs and FIXMEs in the current project and list them in the 
 " TODO: command! todo :vimgrep /TODO/j **/*.$current_file's_extension | :cw
 
 
-" """"""""""""
+""""""""""""""
 " Key Bindings
-" """"""""""""
+""""""""""""""
 " Comments
 if has('win32')
   noremap <C-/> :TComment<CR>
@@ -130,22 +144,32 @@ noremap <silent> <C-t> :tabnew<CR>
 noremap <silent> <C-w> :tabclose<CR>
 
 " View Panes
-noremap <silent> <F7> :NERDTreeToggle<CR>
-noremap <silent> <F8> :TlistToggle<CR>
+noremap <silent> <F8> :NERDTreeToggle<CR>
+noremap <silent> <F7> :TlistToggle<CR>
 
 " Buffers
 noremap <silent> <C-c> ggVG"+y
 
 
-" """""""
-" Plugins
-" """""""
+"""""""""""""""
+" Plugin Config
+"""""""""""""""
+" Ale
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+let g:ale_linters = {
+\    'javascript': ['standard']
+\}
+let g:ale_fixers = {
+\    'javascript': ['standard']
+\}
+
 " Rust Racer
 set hidden
-let $RUST_SRC_PATH="~/src/rust/src/"
+let $RUST_SRC_PATH = "~/src/rust/src/"
 
 " Signify
-let g:signify_vcs_list = [ 'git', 'hg', 'bzr' ]
+let g:signify_vcs_list = ['git', 'hg', 'bzr']
 let g:signify_update_on_focusgained = 1
 
 " Syntastic
