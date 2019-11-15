@@ -17,7 +17,7 @@ Plugin 'scrooloose/syntastic'           " Syntax checking system
 Plugin 'vimoutliner/vimoutliner'        " Outline mode for .otl files
 
 " Appearance
-Plugin 'flazz/vim-colorschemes'         " Color scheme pack
+Plugin 'dylanaraps/wal'                 " Integrate colorscheme with wal util
 Plugin 'itchyny/lightline.vim'          " Lightweight status line
 Plugin 'mhinz/vim-signify'              " VCS diff gutter
 Plugin 'Yggdroot/indentLine'            " Display vertical indentation level lines
@@ -107,12 +107,11 @@ endif
 
 " Theme
 set background=dark
-colorscheme vibrantink
-colorscheme harlequin
+colorscheme wal
 
 " Ruler / Status line
 set laststatus=2
-let g:lightline = {'colorscheme': 'wombat'}
+let g:lightline = {'colorscheme': 'seoul256'}
 
 " Gutter
 set number
