@@ -10,6 +10,7 @@ call vundle#begin()
 
 " Language Support
 "Plugin 'dense-analysis/ale'             " Async LSP server support
+Plugin 'masukomi/vim-markdown-folding'  " Fold markdown headers
 Plugin 'reedes/vim-pencil'              " Format and nav improvements for prose
 Plugin 'rust-lang/rust.vim'             " Rust support including Syntastic integration
 Plugin 'scrooloose/syntastic'           " Syntax checking system
