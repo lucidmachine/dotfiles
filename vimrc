@@ -1,3 +1,5 @@
+set nocompatible
+
 """""""""
 " Plugins
 """""""""
@@ -8,6 +10,7 @@ call vundle#begin()
 
 " Language Support
 "Plugin 'dense-analysis/ale'             " Async LSP server support
+Plugin 'reedes/vim-pencil'              " Format and nav improvements for prose
 Plugin 'rust-lang/rust.vim'             " Rust support including Syntastic integration
 Plugin 'scrooloose/syntastic'           " Syntax checking system
 "Plugin 'valloric/youcompleteme'         " LSP-based tab completion
@@ -43,10 +46,6 @@ call vundle#end()
 " Backspace
 set backspace=indent,eol,start
 
-" Compatibility
-set nocompatible
-
-
 " Document Formatting
 set autoindent
 set expandtab
@@ -67,6 +66,11 @@ autocmd FileType votl setlocal nowrap
 autocmd FileType votl setlocal spell
 augroup filetype
     autocmd BufNewFile,BufRead *.html set filetype=php
+augroup END
+augroup pencil
+    autocmd!
+    autocmd FileType markdown, mkd  call pencil#init()
+    autocmd FileType text           call pencil#init()
 augroup END
 
 
