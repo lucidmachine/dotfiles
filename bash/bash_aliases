@@ -24,10 +24,6 @@ alias grep='grep --color=auto'
 alias ls='ls -h --color'
 alias ll='ls --color -lha'
 
-# Sublime Text
-alias sublime-text='/opt/sublime_text/sublime_text'
-alias sublime='/opt/sublime_text/sublime_text'
-
 # Updates
 alias update='sudo apt-get update && sudo apt-get upgrade -y'
 
