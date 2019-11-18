@@ -20,7 +20,7 @@ shopt -s checkwinsize # Resize window if necessary after each command
 
 # Does this terminal support color?
 case "$TERM" in
-    *color|cygwin)
+    *color)
         color_prompt=yes
         ;;
 esac
@@ -47,7 +47,7 @@ fi
 
 # Set terminal title
 case "$TERM" in
-xterm*|rxvt*|cygwin)
+xterm*|rxvt*)
     term_title="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]"
     ;;
 *)
