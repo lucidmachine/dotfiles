@@ -2,109 +2,51 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# ############
+source_if_exists () {
+    local path=$1
+    if [ -s $1 ]; then
+        . $1
+    fi
+}
+
 # Sanity Check
-# ############
 [ -z "$PS1" ] && return
 
+# Source other files
+source_if_exists "${HOME}/.palette"
+source_if_exists "${HOME}/.bash_aliases"
+source_if_exists "${HOME}/.bash_completion"
 
-# #######
-# Display
-# #######
-shopt -s checkwinsize # Resize window if necessary after each command 
+# Shell options
+shopt -s checkwinsize   # Check window size after each command
+shopt -s globstar       # '**' expansion
+shopt -s histappend     # Append to the history file
+HISTCONTROL=ignoreboth  # Ignore duplicates and lines which start with whitespace
+HISTSIZE=1000
+HISTFILESIZE=2000
 
-
-# #########################
-# Terminal Prompt and Title
-# #########################
-
-# Does this terminal support color?
+# PS1 (Prompt and Title)
 case "$TERM" in
     *color)
         color_prompt=yes
         ;;
 esac
-
-# chroot path
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
-
-# Mercurial branch
-hg_branch () {
-    hg branch 2> /dev/null | sed -e "s/\(.*\)/ (\1)/"
-}
-
-# Load color palette
-. "$HOME/.bash/.palette"
-
-# Set prompt
 if [ "$color_prompt" = yes ]; then
-    term_prompt="\n${debian_chroot:+($debian_chroot)}$BGreen\u@\h $BBlue\w$BWhite\$(__git_ps1)\$(hg_branch)$Color_Off\n\$ "
+    term_prompt="\n${debian_chroot:+($debian_chroot)}$BGreen\u@\h $BBlue\w$BWhite\$(__git_ps1)$Color_Off\n\$ "
 else
-    term_prompt="\n${debian_chroot:+($debian_chroot)}\u@\h \w\$(__git_ps1)\$(hg_branch)\n\$ "
+    term_prompt="\n${debian_chroot:+($debian_chroot)}\u@\h \w\$(__git_ps1)\n\$ "
 fi
-
-# Set terminal title
 case "$TERM" in
-xterm*|rxvt*)
-    term_title="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]"
-    ;;
-*)
-    ;;
+    xterm*|rxvt*)
+        term_title="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]"
+        ;;
 esac
-
-# Set PS1
 PS1="$term_prompt$term_title"
 
-# Cleanup variables
-unset color_prompt force_color_prompt term_prompt term_title
-
-
-# ###########
-# Environment
-# ###########
-
-
-# #######
-# History
-# #######
-shopt -s histappend # Append to the history file, don't overwrite it
-HISTCONTROL=ignoreboth # Ignore duplicates and lines which start with whitespace
-HISTSIZE=1000
-HISTFILESIZE=2000
-
-
-# #####
-# Paths
-# #####
-shopt -s globstar # '**' in a path will expand to all files in a dir and/or subdirs
-
-
-# ################
-# Program Specific
-# ################
-
-# less
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-
-# #########
-# Dev Tools
-# #########
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-# ###################
-# Load External Files
-# ###################
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
-
+# Toolchains
+export NVM_DIR="${HOME}/.nvm"
+source_if_exists "${NVM_DIR}/nvm.sh"
+source_if_exists "${NVM_DIR}/bash_completion"
