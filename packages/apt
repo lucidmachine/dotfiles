@@ -3,8 +3,10 @@ bash-completion
 curl
 exuberant-ctags
 git
+htop
 make
 less
+ranger
 ripgrep
 screen
 tree
