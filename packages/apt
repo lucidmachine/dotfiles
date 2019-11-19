@@ -8,6 +8,6 @@ make
 less
 ranger
 ripgrep
-screen
+tmux
 tree
 vim
