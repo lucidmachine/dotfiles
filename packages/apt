@@ -3,6 +3,7 @@ bash-completion
 curl
 exuberant-ctags
 git
+make
 less
 ripgrep
 screen
