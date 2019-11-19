@@ -4,8 +4,8 @@ curl
 exuberant-ctags
 git
 htop
-make
 less
+make
 ranger
 ripgrep
 tmux
