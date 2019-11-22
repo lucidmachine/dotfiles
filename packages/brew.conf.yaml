@@ -1,4 +1,5 @@
-- brew
+
+- brew:
     - bash
     - bash-completion
     - ctags

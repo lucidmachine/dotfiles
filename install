@@ -9,14 +9,16 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG="${BASEDIR}/install.conf.yaml"
 
 # Compose config file
+if [ -f "${CONFIG}" ]; then rm "${CONFIG}"; fi
 cat "${BASEDIR}/base.conf.yaml" >> ${CONFIG}
 if [ $(which apt) ]; then cat "${BASEDIR}/packages/apt.conf.yaml" >> ${CONFIG}; fi
 if [ $(which brew) ]; then cat "${BASEDIR}/packages/brew.conf.yaml" >> ${CONFIG}; fi
 
-# Update dotbot deps
+# Update submodules
 cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
+git submodule update --init --recursive "${BASEDIR}"
 
 # Run
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" \
