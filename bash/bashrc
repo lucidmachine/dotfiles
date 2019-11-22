@@ -16,6 +16,7 @@ source_if_exists () {
 source_if_exists "${HOME}/.palette"
 source_if_exists "${HOME}/.bash_aliases"
 source_if_exists "${HOME}/.bash_completion"
+source_if_exists "${HOME}/.git-prompt.sh"
 
 # Shell options
 shopt -s checkwinsize   # Check window size after each command
