@@ -1,0 +1,14 @@
+- brew
+    - bash
+    - bash-completion
+    - ctags
+    - curl
+    - git
+    - htop
+    - less
+    - make
+    - ranger
+    - ripgrep
+    - tmux
+    - tree
+    - vim

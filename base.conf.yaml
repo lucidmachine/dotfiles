@@ -1,0 +1,16 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.bash_aliases: bash/bash_aliases
+    ~/.bashrc: bash/bashrc
+    ~/.palette: bash/palette
+    ~/.profile: bash/profile
+    ~/.vim: vim
+    ~/.vimrc: vim/vimrc
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

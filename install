@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Set vars
+DOTBOT_DIR="dotbot"
+DOTBOT_BIN="bin/dotbot"
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CONFIG="${BASEDIR}/install.conf.yaml"
+
+# Get plugins
+cd "${BASEDIR}"
+git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+git submodule update --init --recursive "${DOTBOT_DIR}"
+
+# Compose config file
+cat "${BASEDIR}/base.conf.yaml" >> ${CONFIG}
+if [ $(which apt) ]; then cat "${BASEDIR}/packages/apt.conf.yaml" >> ${CONFIG}; fi
+if [ $(which brew) ]; then cat "${BASEDIR}/packages/brew.conf.yaml" >> ${CONFIG}; fi
+
+# Run
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" \
+    -d "${BASEDIR}" \
+    -c "${CONFIG}" \
+    -p "${BASEDIR}/aptget" \
+    -p "${BASEDIR}/brew" \
+    "${@}"

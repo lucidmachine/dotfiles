@@ -1,0 +1,14 @@
+- aptget
+    - bash
+    - bash-completion
+    - curl
+    - exuberant-ctags
+    - git
+    - htop
+    - less
+    - make
+    - ranger
+    - ripgrep
+    - tmux
+    - tree
+    - vim
