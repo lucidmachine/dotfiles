@@ -1,7 +1,6 @@
 
 - aptget:
     - bash
-    - bash-completion
     - curl
     - exuberant-ctags
     - git

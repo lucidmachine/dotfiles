@@ -1,7 +1,6 @@
 
 - brew:
     - bash
-    - bash-completion
     - ctags
     - curl
     - git
