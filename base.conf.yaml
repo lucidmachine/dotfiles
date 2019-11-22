@@ -12,3 +12,6 @@
     ~/.profile: bash/profile
     ~/.vim: vim
     ~/.vimrc: vim/vimrc
+
+- shell:
+    - [vim +PluginInstall +qall, Installing Vim plugins]
