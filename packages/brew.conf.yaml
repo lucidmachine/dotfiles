@@ -12,3 +12,6 @@
     - tmux
     - tree
     - vim
+
+- cask:
+    - iterm2

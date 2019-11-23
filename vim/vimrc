@@ -106,8 +106,12 @@ if !empty($CONEMUBUILD)
 endif
 
 " Theme
+try
+    colorscheme wal
+catch /^Vim\%((\a\+)\)\=:E185
+    colorscheme murphy
+endtry
 set background=dark
-colorscheme wal
 
 " Ruler / Status line
 set laststatus=2
