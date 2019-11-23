@@ -21,8 +21,13 @@ alias gitvd='git difftool'
 alias grep='grep --color=auto'
 
 # ls
-alias ls='ls -h --color'
-alias ll='ls --color -lha'
+if [[ "$(uname)" -eq "Darwin" ]]; then
+    alias ls='ls -hG'
+    alias ll='ls -lhaG'
+else
+    alias ls='ls -h --color'
+    alias ll='ls --color -lha'
+fi
 
 # Updates
 alias update='sudo apt-get update && sudo apt-get upgrade -y'
