@@ -140,12 +140,6 @@ set pastetoggle=<F2>
 " File Commands
 noremap <silent> <C-o> :browse confirm e<CR>
 
-" Tabs
-noremap <silent> <C-PageDown> :tabnext<CR>
-noremap <silent> <C-PageUp> :tabprevious<CR>
-noremap <silent> <C-t> :tabnew<CR>
-noremap <silent> <C-w> :tabclose<CR>
-
 " View Panes
 noremap <silent> <F8> :NERDTreeToggle<CR>
 noremap <silent> <F7> :TlistToggle<CR>
