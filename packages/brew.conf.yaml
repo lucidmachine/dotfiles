@@ -7,11 +7,11 @@
     - htop
     - less
     - make
+    - neovim
     - ranger
     - ripgrep
     - tmux
     - tree
-    - vim
 
 - cask:
     - iterm2
