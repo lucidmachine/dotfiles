@@ -7,9 +7,7 @@
     - htop
     - less
     - make
-    - neovim:
-        ppa_source: ppa:neovim-ppa/stable
-        upgrade: true
+    - neovim
     - ranger
     - ripgrep
     - tmux
