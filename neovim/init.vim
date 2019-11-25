@@ -135,6 +135,9 @@ set number
 """"""""""""""
 " Key Bindings
 """"""""""""""
+let mapleader = " "
+let maplocalleader = ","
+
 " Comments
 noremap <C-_> :TComment<CR>
 
