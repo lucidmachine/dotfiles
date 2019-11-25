@@ -7,34 +7,32 @@ filetype off
 call plug#begin('~/.config/nvim/plugged')
 
 " Language Support
-"Plugin 'dense-analysis/ale'             " Async LSP server support
-Plug 'masukomi/vim-markdown-folding'  " Fold markdown headers
-Plug 'reedes/vim-pencil'              " Format and nav improvements for prose
-Plug 'rust-lang/rust.vim'             " Rust support including Syntastic integration
-Plug 'scrooloose/syntastic'           " Syntax checking system
-"Plug 'valloric/youcompleteme'         " LSP-based tab completion
-Plug 'vimoutliner/vimoutliner'        " Outline mode for .otl files
+Plug 'masukomi/vim-markdown-folding'            " Fold markdown headers
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP-based completion engine
+Plug 'reedes/vim-pencil'                        " Prose format and nav
+Plug 'rust-lang/rust.vim'                       " Rust support 
+Plug 'scrooloose/syntastic'                     " Syntax checking system
+Plug 'vimoutliner/vimoutliner'                  " Outline mode for .otl files
 
 " Appearance
-Plug 'dylanaraps/wal'                 " Integrate colorscheme with wal util
-Plug 'itchyny/lightline.vim'          " Lightweight status line
-Plug 'mhinz/vim-signify'              " VCS diff gutter
-Plug 'Yggdroot/indentLine'            " Display vertical indentation level lines
+Plug 'dylanaraps/wal'                           " Set colorscheme with wal util
+Plug 'itchyny/lightline.vim'                    " Lightweight status line
+Plug 'mhinz/vim-signify'                        " VCS diff gutter
+Plug 'Yggdroot/indentLine'                      " Indentation level lines
 
 " Other
-Plug 'ervandew/supertab'              " Tab completion
-Plug 'editorconfig/editorconfig-vim'  " Cross-editor configuration files
-Plug 'garbas/vim-snipmate'            " Snippets
-Plug 'kien/ctrlp.vim'                 " Fuzzy finder for files, buffers, tags, etc.
+Plug 'ervandew/supertab'                        " Tab completion
+Plug 'editorconfig/editorconfig-vim'            " Cross-editor config files
+Plug 'garbas/vim-snipmate'                      " Snippets
+Plug 'kien/ctrlp.vim'                           " Fuzzy finder pallette
 Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'scrooloose/nerdtree'            " File tree explorer
-Plug 'tomtom/tcomment_vim'            " Filetype-sensible comment
+Plug 'scrooloose/nerdtree'                      " File tree explorer
+Plug 'tomtom/tcomment_vim'                      " Filetype-sensible comment
 Plug 'tomtom/tlib_vim'
-Plug 'terryma/vim-multiple-cursors'   " Multi-cursor
-Plug 'tpope/vim-fugitive'             " Git commands from inside ViM
-Plug 'tpope/vim-surround'             " Matching parens, braces, tags, etc.
-Plug 'vim-scripts/taglist.vim'        " Code tag viewer
-Plug 'VundleVim/Vundle.vim'           " Plugin manager
+Plug 'terryma/vim-multiple-cursors'             " Multi-cursor
+Plug 'tpope/vim-fugitive'                       " Git commands from inside ViM
+Plug 'tpope/vim-surround'                       " Match parens, tags, etc.
+Plug 'vim-scripts/taglist.vim'                  " Code tag viewer
 
 call plug#end()
 
