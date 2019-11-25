@@ -9,7 +9,13 @@ call plug#begin('~/.config/nvim/plugged')
 " Language Support
 Plug 'derekwyatt/vim-scala'                     " Scala support
 Plug 'masukomi/vim-markdown-folding'            " Fold markdown headers
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP-based completion engine
+Plug 'neoclide/coc.nvim', {
+\   'branch': 'release'
+\}                                              " LSP-based completion engine
+Plug 'Olical/conjure', {
+\   'tag': 'v2.1.0',
+\   'do': 'bin/compile'
+\}                                              " Clojure support
 Plug 'reedes/vim-pencil'                        " Prose format and nav
 Plug 'rust-lang/rust.vim'                       " Rust support 
 Plug 'scrooloose/syntastic'                     " Syntax checking system
@@ -149,6 +155,9 @@ noremap <silent> <C-c> ggVG"+y
 """""""""""""""
 " Plugin Config
 """""""""""""""
+" CoC
+let g:coc_global_extensions = ['coc-conjure']
+
 " Rust Racer
 set hidden
 let $RUST_SRC_PATH = "~/src/rust/src/"
