@@ -7,11 +7,10 @@
 - link:
     ~/.bash_aliases: bash/bash_aliases
     ~/.bashrc: bash/bashrc
+    ~/.config/nvim: neovim
     ~/.git-prompt.sh: git/git-sh-prompt
     ~/.palette: bash/palette
     ~/.profile: bash/profile
-    ~/.vim: vim
-    ~/.vimrc: vim/vimrc
 
 - shell:
-    - [vim +PluginInstall +qall, Installing Vim plugins]
+    - [nvim +PluginInstall +qall, Installing NeoVim plugins]
