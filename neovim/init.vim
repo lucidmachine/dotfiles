@@ -7,6 +7,7 @@ filetype off
 call plug#begin('~/.config/nvim/plugged')
 
 " Language Support
+Plug 'derekwyatt/vim-scala'                     " Scala support
 Plug 'masukomi/vim-markdown-folding'            " Fold markdown headers
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP-based completion engine
 Plug 'reedes/vim-pencil'                        " Prose format and nav
@@ -51,13 +52,14 @@ set shiftwidth=4
 set smarttab
 set tabstop=4
 
-" Filetype Support
+" Filetypes
 filetype on
 filetype plugin on
 filetype indent on
 syntax on
 
-" Filetype-specific Settings
+au BufRead,BufNewFile *.sbt set filetype=scala
+
 autocmd FileType make setlocal noexpandtab
 autocmd FileType votl setlocal nowrap
 autocmd FileType votl setlocal spell
