@@ -13,4 +13,4 @@
     ~/.profile: bash/profile
 
 - shell:
-    - [nvim +PluginInstall +qall, Installing NeoVim plugins]
+    - [nvim +PlugInstall +qall, Installing NeoVim plugins]
