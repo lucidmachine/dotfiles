@@ -22,7 +22,7 @@ Plug 'scrooloose/syntastic'                     " Syntax checking system
 Plug 'vimoutliner/vimoutliner'                  " Outline mode for .otl files
 
 " Appearance
-Plug 'dylanaraps/wal'                           " Set colorscheme with wal util
+Plug 'crusoexia/vim-monokai'                    " Monokai theme
 Plug 'itchyny/lightline.vim'                    " Lightweight status line
 Plug 'mhinz/vim-signify'                        " VCS diff gutter
 Plug 'Yggdroot/indentLine'                      " Indentation level lines
@@ -111,7 +111,7 @@ endif
 
 " Theme
 try
-    colorscheme wal
+    colorscheme monokai
 catch /^Vim\%((\a\+)\)\=:E185
     colorscheme murphy
 endtry

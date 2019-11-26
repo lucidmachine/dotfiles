@@ -47,9 +47,6 @@ case "$TERM" in
 esac
 PS1="$term_prompt$term_title"
 
-# Color scheme
-(cat ~/.cache/wal/sequences &)
-
 # Toolchains
 export NVM_DIR="${HOME}/.nvm"
 source_if_exists "${NVM_DIR}/nvm.sh"
