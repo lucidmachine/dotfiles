@@ -119,7 +119,7 @@ set background=dark
 
 " Ruler / Status line
 set laststatus=2
-let g:lightline = {'colorscheme': 'seoul256'}
+let g:lightline = {'colorscheme': 'wombat'}
 
 " Gutter
 set number
