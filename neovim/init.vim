@@ -40,6 +40,7 @@ Plug 'terryma/vim-multiple-cursors'             " Multi-cursor
 Plug 'tpope/vim-fugitive'                       " Git commands from inside ViM
 Plug 'tpope/vim-surround'                       " Match parens, tags, etc.
 Plug 'vim-scripts/taglist.vim'                  " Code tag viewer
+Plug 'wincent/loupe'                            " Search enhancements
 
 call plug#end()
 
@@ -86,10 +87,6 @@ augroup END
 set mouse=a
 
 " Search
-set incsearch
-set hlsearch
-set ignorecase
-set smartcase
 if executable('rg')
     set grepprg=rg\ --color=never
     let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
