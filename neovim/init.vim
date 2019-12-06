@@ -74,6 +74,13 @@ augroup pencil
     autocmd FileType markdown,mkd   call pencil#init({'wrap': 'soft'})
     autocmd FileType text           call pencil#init({'wrap': 'soft'})
 augroup END
+augroup XML
+    autocmd!
+    autocmd FileType xml let g:xml_syntax_folding=1
+    autocmd FileType xml setlocal foldmethod=syntax
+    autocmd FileType xml :syntax on
+    autocmd FileType xml :%foldopen!
+augroup END
 
 " Mouse support
 set mouse=a
