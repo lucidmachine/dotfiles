@@ -12,6 +12,7 @@
     - ripgrep
     - tmux
     - tree
+    - wget
 
 - cask:
     - iterm2
