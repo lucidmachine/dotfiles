@@ -39,6 +39,3 @@ alias svnu='svn update'
 
 # Updates
 alias update='sudo apt-get update && sudo apt-get upgrade -y'
-
-# Vimming!
-alias vim='vim -p'
