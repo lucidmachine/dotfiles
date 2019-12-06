@@ -142,6 +142,9 @@ set number
 let mapleader = " "
 let maplocalleader = ","
 
+" Buffers
+noremap <silent> <C-c> ggVG"+y
+
 " Comments
 noremap <C-_> :TComment<CR>
 
@@ -154,9 +157,6 @@ noremap <silent> <C-o> :browse confirm e<CR>
 " View Panes
 noremap <silent> <F8> :NERDTreeToggle<CR>
 noremap <silent> <F7> :TlistToggle<CR>
-
-" Buffers
-noremap <silent> <C-c> ggVG"+y
 
 
 """""""""""""""
