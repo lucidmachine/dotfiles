@@ -69,9 +69,6 @@ au BufRead,BufNewFile *.sbt set filetype=scala
 autocmd FileType make setlocal noexpandtab
 autocmd FileType votl setlocal nowrap
 autocmd FileType votl setlocal spell
-augroup filetype
-    autocmd BufNewFile,BufRead *.html set filetype=php
-augroup END
 augroup pencil
     autocmd!
     autocmd FileType markdown,mkd   call pencil#init({'wrap': 'soft'})
