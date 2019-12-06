@@ -1,3 +1,4 @@
 *.swp
 install.conf.yaml
 neovim/plugged
+neovim/spell
