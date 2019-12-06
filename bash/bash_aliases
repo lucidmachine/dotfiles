@@ -29,6 +29,14 @@ else
     alias ll='ls --color -lha'
 fi
 
+# Subversion
+alias svna='svn add'
+alias svnc='svn commit --message '
+alias svnd='svn diff'
+alias svnl='svn log --limit 5'
+alias svns='svn status'
+alias svnu='svn update'
+
 # Updates
 alias update='sudo apt-get update && sudo apt-get upgrade -y'
 
