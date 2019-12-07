@@ -143,12 +143,18 @@ noremap <silent> <C-c> ggVG"+y
 " Comments
 noremap <C-_> :TComment<CR>
 
-" File Commands
-noremap <silent> <C-o> :browse confirm e<CR>
-
-" View Panes
+" Sidebars
 noremap <silent> <F8> :NERDTreeToggle<CR>
+noremap <silent> <Leader>ft :NERDTreeToggle<CR>
 noremap <silent> <F7> :TlistToggle<CR>
+noremap <silent> <Leader>gt :TlistToggle<CR>
+
+" Windows
+noremap <Leader>wo :only<CR>
+noremap <Leader>wh <C-W>h
+noremap <Leader>wj <C-W>j
+noremap <Leader>wk <C-W>k
+noremap <Leader>wl <C-W>l
 
 
 """""""""""""""
