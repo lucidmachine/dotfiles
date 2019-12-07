@@ -41,6 +41,7 @@ Plug 'tpope/vim-fugitive'                       " Git commands from inside ViM
 Plug 'tpope/vim-surround'                       " Match parens, tags, etc.
 Plug 'vim-scripts/taglist.vim'                  " Code tag viewer
 Plug 'wincent/loupe'                            " Search enhancements
+Plug 'wincent/terminus'                         " Terminal integration
 
 call plug#end()
 
@@ -82,9 +83,6 @@ augroup XML
     autocmd FileType xml :syntax on
     autocmd FileType xml :%foldopen!
 augroup END
-
-" Mouse support
-set mouse=a
 
 " Search
 if executable('rg')
@@ -144,9 +142,6 @@ noremap <silent> <C-c> ggVG"+y
 
 " Comments
 noremap <C-_> :TComment<CR>
-
-" Function Key Bindings
-set pastetoggle=<F2>
 
 " File Commands
 noremap <silent> <C-o> :browse confirm e<CR>
