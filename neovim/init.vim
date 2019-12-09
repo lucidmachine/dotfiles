@@ -155,6 +155,10 @@ noremap <Leader>wh <C-W>h
 noremap <Leader>wj <C-W>j
 noremap <Leader>wk <C-W>k
 noremap <Leader>wl <C-W>l
+noremap <Leader>wH <C-W>H
+noremap <Leader>wJ <C-W>J
+noremap <Leader>wK <C-W>K
+noremap <Leader>wL <C-W>L
 
 
 """""""""""""""
