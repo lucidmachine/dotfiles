@@ -121,7 +121,7 @@ set laststatus=2
 let g:lightline = {'colorscheme': 'wombat'}
 
 " Gutter
-set number
+set number relativenumber
 
 
 """"""""""
