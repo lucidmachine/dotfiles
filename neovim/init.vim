@@ -131,9 +131,9 @@ set number relativenumber
 " TODO: command! todo :vimgrep /TODO/j **/*.$current_file's_extension | :cw
 
 
-""""""""""""""
-" Keybindings
-""""""""""""""
+""""""""""
+" Mappings
+""""""""""
 let mapleader = " "
 let maplocalleader = ","
 
