@@ -132,7 +132,7 @@ set number relativenumber
 
 
 """"""""""""""
-" Key Bindings
+" Keybindings
 """"""""""""""
 let mapleader = " "
 let maplocalleader = ","
@@ -142,6 +142,9 @@ noremap <silent> <C-c> ggVG"+y
 
 " Comments
 noremap <C-_> :TComment<CR>
+
+" Gutters
+noremap <silent> <Leader>tl :call mappings#cycle_numbering()<CR>
 
 " Sidebars
 noremap <silent> <F8> :NERDTreeToggle<CR>
