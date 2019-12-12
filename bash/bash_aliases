@@ -21,7 +21,7 @@ alias gitvd='git difftool'
 alias grep='grep --color=auto'
 
 # ls
-if [[ "$(uname)" -eq "Darwin" ]]; then
+if [[ "$(uname)" == "Darwin" ]]; then
     alias ls='ls -hG'
     alias ll='ls -lhaG'
 else
