@@ -1,0 +1,39 @@
+# C/C++
+*.a
+*.gch
+*.o
+*.obj
+*.so
+
+# IntelliJ
+.idea/
+*.iml
+
+# Java
+*.class
+*.ear
+*.jar
+*.war
+
+# macOS
+.DS_Store/
+
+# Python
+__pycache__/
+env/
+venv/
+*.py[cod]
+*$py.class
+.env
+.venv
+
+# Rust
+**/*.rs.bk
+
+# Vim
+*.swo
+*.swp
+tags
+
+*.gmo
+*.in

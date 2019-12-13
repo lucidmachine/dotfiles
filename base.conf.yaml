@@ -8,6 +8,7 @@
     ~/.bash_aliases: bash/bash_aliases
     ~/.bashrc: bash/bashrc
     ~/.config/nvim: neovim
+    ~/.gitignore: git/gitignore
     ~/.git-prompt.sh: git/git-sh-prompt
     ~/.palette: bash/palette
     ~/.profile: bash/profile
