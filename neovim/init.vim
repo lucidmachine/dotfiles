@@ -100,6 +100,24 @@ set visualbell
 """"""""""""
 " Appearance
 """"""""""""
+" Active/ Inactive Windows
+augroup ActiveWindow
+    autocmd!
+    if exists('+colorcolumn')
+        " Active window, highlight columns right of 'textwidth'
+        autocmd BufEnter,FocusGained,VimEnter,WinEnter * 
+            \if autocmds#should_colorcolumn() | 
+                \let &l:colorcolumn='+' . join(range(0, 254), ',+') | 
+            \endif
+
+        " Inactive window, highlight everything
+        autocmd FocusLost,WinLeave * 
+            \if autocmds#should_colorcolumn() | 
+                \let &l:colorcolumn=join(range(1, 255), ',') | 
+            \endif
+    endif
+augroup END
+
 " Cmder color palette fix
 if !empty($CONEMUBUILD)
     set term=xterm
