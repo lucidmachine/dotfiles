@@ -69,22 +69,22 @@ filetype plugin on
 filetype indent on
 syntax on
 
-autocmd BufRead,BufNewFile *.sbt set filetype=scala
+au BufRead,BufNewFile *.sbt set filetype=scala
 
-autocmd FileType make setlocal noexpandtab
-autocmd FileType votl setlocal nowrap
-autocmd FileType votl setlocal spell
+au FileType make setlocal noexpandtab
+au FileType votl setlocal nowrap
+au FileType votl setlocal spell
 augroup pencil
-    autocmd!
-    autocmd FileType markdown,mkd   call pencil#init({'wrap': 'soft'})
-    autocmd FileType text           call pencil#init({'wrap': 'soft'})
+    au!
+    au FileType markdown,mkd   call pencil#init({'wrap': 'soft'})
+    au FileType text           call pencil#init({'wrap': 'soft'})
 augroup END
 augroup XML
-    autocmd!
-    autocmd FileType xml let g:xml_syntax_folding=1
-    autocmd FileType xml setlocal foldmethod=syntax
-    autocmd FileType xml :syntax on
-    autocmd FileType xml :%foldopen!
+    au!
+    au FileType xml let g:xml_syntax_folding=1
+    au FileType xml setlocal foldmethod=syntax
+    au FileType xml :syntax on
+    au FileType xml :%foldopen!
 augroup END
 
 " Search
@@ -106,24 +106,6 @@ set visualbell
 """"""""""""
 " Appearance
 """"""""""""
-" Active/ Inactive Windows
-augroup ActiveWindow
-    autocmd!
-    if exists('+colorcolumn')
-        " Active window, highlight columns right of 'textwidth'
-        autocmd BufEnter,FocusGained,VimEnter,WinEnter * 
-            \if autocmds#should_colorcolumn() | 
-                \let &l:colorcolumn='+' . join(range(0, 254), ',+') | 
-            \endif
-
-        " Inactive window, highlight everything
-        autocmd FocusLost,WinLeave * 
-            \if autocmds#should_colorcolumn() | 
-                \let &l:colorcolumn=join(range(1, 255), ',') | 
-            \endif
-    endif
-augroup END
-
 " Cmder color palette fix
 if !empty($CONEMUBUILD)
     set term=xterm
@@ -131,6 +113,18 @@ if !empty($CONEMUBUILD)
     let &t_AB = "\e[48;5;%dm"
     let &t_AF = "\e[38;5;%dm"
 endif
+
+" Focus
+if exists('+winhighlight')
+    augroup focus
+        au!
+        au ColorScheme * hi link MyInactiveWin ColorColumn | hi link MyNormalWin Normal
+        au FileType,BufWinEnter * call autocmds#configure_winhighlight()
+        au FocusGained * hi link MyNormalWin Normal
+        au FocusLost * hi link MyNormalWin MyInactiveWin
+    augroup END
+endif
+
 
 " Cursor
 set cursorline
