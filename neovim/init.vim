@@ -59,6 +59,9 @@ set nowrap
 set shiftwidth=4
 set smarttab
 set tabstop=4
+if v:version > 703
+    set formatoptioons +=j                      " Join sans comment leader
+endif
 
 " Filetypes
 filetype on
@@ -66,7 +69,7 @@ filetype plugin on
 filetype indent on
 syntax on
 
-au BufRead,BufNewFile *.sbt set filetype=scala
+autocmd BufRead,BufNewFile *.sbt set filetype=scala
 
 autocmd FileType make setlocal noexpandtab
 autocmd FileType votl setlocal nowrap
