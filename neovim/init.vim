@@ -60,7 +60,7 @@ set shiftwidth=4
 set smarttab
 set tabstop=4
 if v:version > 703
-    set formatoptioons +=j                      " Join sans comment leader
+    set formatoptions +=j                      " Join sans comment leader
 endif
 
 " Filetypes
