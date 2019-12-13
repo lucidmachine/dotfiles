@@ -14,6 +14,7 @@ alias gitca='git commit -a -m '
 alias gitco='git checkout'
 alias gitd='git diff'
 alias gitl='git log -n 5'
+alias gitp='git push'
 alias gits='git status'
 alias gitvd='git difftool'
 
