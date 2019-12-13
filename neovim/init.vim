@@ -108,6 +108,9 @@ if !empty($CONEMUBUILD)
     let &t_AF = "\e[38;5;%dm"
 endif
 
+" Cursor
+set cursorline
+
 " Theme
 try
     colorscheme monokai
