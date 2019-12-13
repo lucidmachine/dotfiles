@@ -95,7 +95,10 @@ if executable('rg')
 endif
 
 " UI
-set updatetime=1000
+set lazyredraw                                  " Macros don't redraw
+
+" Working files
+set updatetime=1000                             " Write to swap every n ms
 
 " Visual Bell
 set visualbell
