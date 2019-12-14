@@ -33,6 +33,7 @@ Plug 'editorconfig/editorconfig-vim'            " Cross-editor config files
 Plug 'garbas/vim-snipmate'                      " Snippets
 Plug 'kien/ctrlp.vim'                           " Fuzzy finder pallette
 Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'markonm/traces.vim'                       " Substitute preview
 Plug 'scrooloose/nerdtree'                      " File tree explorer
 Plug 'tomtom/tcomment_vim'                      " Filetype-sensible comment
 Plug 'tomtom/tlib_vim'
