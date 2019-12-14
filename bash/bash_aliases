@@ -30,6 +30,11 @@ else
     alias ll='ls --color -lha'
 fi
 
+# NeoVim
+if [ $(which nvim) ]; then
+    alias vim='nvim'
+fi
+
 # Subversion
 alias svna='svn add'
 alias svnc='svn commit --message '
