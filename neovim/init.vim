@@ -73,12 +73,13 @@ syntax on
 au BufRead,BufNewFile *.sbt set filetype=scala
 
 au FileType make setlocal noexpandtab
-au FileType votl setlocal nowrap
 au FileType votl setlocal spell
 augroup pencil
     au!
-    au FileType markdown,mkd   call pencil#init({'wrap': 'soft'})
-    au FileType text           call pencil#init({'wrap': 'soft'})
+    au FileType markdown,mkd    call pencil#init({'wrap': 'soft'})
+    au FileType markdown,mkd    setlocal spell
+    au FileType text            call pencil#init({'wrap': 'hard'})
+    au FileType text            setlocal spell
 augroup END
 augroup XML
     au!
