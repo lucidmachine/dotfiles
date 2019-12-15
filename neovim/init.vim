@@ -43,6 +43,7 @@ Plug 'tpope/vim-projectionist'                  " Project navigation
 Plug 'tpope/vim-surround'                       " Match parens, tags, etc.
 Plug 'vim-scripts/taglist.vim'                  " Code tag viewer
 Plug 'wincent/loupe'                            " Search enhancements
+Plug 'wincent/scalpel'                          " Quick replace word
 Plug 'wincent/terminus'                         " Terminal integration
 
 call plug#end()
@@ -170,6 +171,9 @@ noremap <C-_> :TComment<CR>
 
 " Gutters
 noremap <silent> <Leader>tl :call mappings#cycle_numbering()<CR>
+
+" Refactorings
+nmap <Leader>rr <Plug>(Scalpel)
 
 " Sidebars
 noremap <silent> <F8> :NERDTreeToggle<CR>
