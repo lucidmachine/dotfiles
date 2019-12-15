@@ -39,6 +39,7 @@ Plug 'tomtom/tcomment_vim'                      " Filetype-sensible comment
 Plug 'tomtom/tlib_vim'
 Plug 'terryma/vim-multiple-cursors'             " Multi-cursor
 Plug 'tpope/vim-fugitive'                       " Git commands from inside ViM
+Plug 'tpope/vim-projectionist'                  " Project navigation
 Plug 'tpope/vim-surround'                       " Match parens, tags, etc.
 Plug 'vim-scripts/taglist.vim'                  " Code tag viewer
 Plug 'wincent/loupe'                            " Search enhancements
@@ -88,6 +89,7 @@ augroup XML
     au FileType xml :syntax on
     au FileType xml :%foldopen!
 augroup END
+au FileType json setlocal conceallevel=0        " Don't hide quotes
 
 " Search
 if executable('rg')
@@ -192,6 +194,14 @@ noremap <Leader>wL <C-W>L
 """""""""""""""
 " CoC
 let g:coc_global_extensions = ['coc-conjure']
+
+" Projectionist
+let g:projectionist_heuristics = {
+    \   '*': {
+    \       '*.c': {
+    \       }
+    \   }
+    \}
 
 " Rust Racer
 set hidden
