@@ -169,9 +169,6 @@ noremap <silent> <C-c> ggVG"+y
 " Comments
 noremap <C-_> :TComment<CR>
 
-" Gutters
-noremap <silent> <Leader>tl :call mappings#cycle_numbering()<CR>
-
 " Refactorings
 nmap <Leader>rr <Plug>(Scalpel)
 
@@ -180,6 +177,11 @@ noremap <silent> <F8> :NERDTreeToggle<CR>
 noremap <silent> <Leader>ft :NERDTreeToggle<CR>
 noremap <silent> <F7> :TlistToggle<CR>
 noremap <silent> <Leader>gt :TlistToggle<CR>
+
+" Toggles
+noremap <silent> <Leader>tc :call mappings#cycle_colorcolumn()<CR>
+noremap <silent> <Leader>tl :call mappings#cycle_numbering()<CR>
+
 
 " Windows
 noremap <Leader>wo :only<CR>

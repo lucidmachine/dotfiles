@@ -11,3 +11,12 @@ function! mappings#cycle_numbering() abort
     set number!<CR>
   endif
 endfunction
+
+function! mappings#cycle_colorcolumn() abort
+    execute {
+          \ '': 'set colorcolumn=81',
+          \ '0': 'set colorcolumn=81',
+          \ '81': 'set colorcolumn=101',
+          \ '101': 'set colorcolumn=0',
+          \ }[&colorcolumn]
+endfunction
