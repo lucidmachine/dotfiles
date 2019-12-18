@@ -163,11 +163,12 @@ set number relativenumber
 let mapleader = " "
 let maplocalleader = ","
 
-" Buffers
-noremap <silent> <C-c> ggVG"+y
-
 " Comments
 noremap <C-_> :TComment<CR>
+
+" Copy Ranges
+noremap <silent> <Leader>c :call mappings#copy_buffer_to_clipboard()<CR>
+xnoremap <silent> <Leader>c :call mappings#copy_selection_to_clipboard()<CR>
 
 " Refactorings
 nmap <Leader>rr <Plug>(Scalpel)
@@ -181,7 +182,6 @@ noremap <silent> <Leader>gt :TlistToggle<CR>
 " Toggles
 noremap <silent> <Leader>tc :call mappings#cycle_colorcolumn()<CR>
 noremap <silent> <Leader>tl :call mappings#cycle_numbering()<CR>
-
 
 " Windows
 noremap <Leader>wo :only<CR>
