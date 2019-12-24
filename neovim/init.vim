@@ -34,7 +34,6 @@ Plug 'garbas/vim-snipmate'                      " Snippets
 Plug 'kien/ctrlp.vim'                           " Fuzzy finder pallette
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'markonm/traces.vim'                       " Substitute preview
-Plug 'scrooloose/nerdtree'                      " File tree explorer
 Plug 'tomtom/tcomment_vim'                      " Filetype-sensible comment
 Plug 'tomtom/tlib_vim'
 Plug 'terryma/vim-multiple-cursors'             " Multi-cursor
@@ -91,6 +90,12 @@ augroup XML
     au FileType xml :%foldopen!
 augroup END
 au FileType json setlocal conceallevel=0        " Don't hide quotes
+
+" File tree browser
+let g:netrw_banner = 0                          " Disable banner
+let g:netrw_liststyle = 3                       " Filetree browser style
+let g:netrw_altv = 1                            " Split vertically
+let g:netrw_bufsettings = 'number'              " Use line numbers
 
 " Search
 if executable('rg')
@@ -173,9 +178,11 @@ xnoremap <silent> <Leader>c :call mappings#copy_selection_to_clipboard()<CR>
 " Refactorings
 nmap <Leader>rr <Plug>(Scalpel)
 
-" Sidebars
-noremap <silent> <F8> :NERDTreeToggle<CR>
-noremap <silent> <Leader>ft :NERDTreeToggle<CR>
+" Files
+noremap <silent> <F8> :Vexplore<CR>
+noremap <silent> <Leader>ft :Vexplore<CR>
+
+" Tags
 noremap <silent> <F7> :TlistToggle<CR>
 noremap <silent> <Leader>gt :TlistToggle<CR>
 
