@@ -28,7 +28,6 @@ Plug 'mhinz/vim-signify'                        " VCS diff gutter
 Plug 'Yggdroot/indentLine'                      " Indentation level lines
 
 " Other
-Plug 'ervandew/supertab'                        " Tab completion
 Plug 'editorconfig/editorconfig-vim'            " Cross-editor config files
 Plug 'garbas/vim-snipmate'                      " Snippets
 Plug 'kien/ctrlp.vim'                           " Fuzzy finder pallette
