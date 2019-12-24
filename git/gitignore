@@ -33,6 +33,7 @@ venv/
 # Vim
 *.swo
 *.swp
+.netrwhist
 tags
 
 *.gmo
