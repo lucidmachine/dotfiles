@@ -73,6 +73,7 @@ syntax on
 au BufRead,BufNewFile *.sbt set filetype=scala
 
 au FileType make setlocal noexpandtab
+au FileType markdown setlocal conceallevel=0
 au FileType votl setlocal spell
 augroup pencil
     au!
