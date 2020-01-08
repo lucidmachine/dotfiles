@@ -216,6 +216,7 @@ noremap <Leader>wL <C-W>L
 " Plugin Config
 """""""""""""""
 " CoC
+let g:coc_enable_locationlist = 0
 let g:coc_global_extensions = ['coc-conjure']
 
 " Projectionist
