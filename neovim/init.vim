@@ -33,6 +33,7 @@ Plug 'garbas/vim-snipmate'                      " Snippets
 Plug 'kien/ctrlp.vim'                           " Fuzzy finder pallette
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'markonm/traces.vim'                       " Substitute preview
+Plug 'milkypostman/vim-togglelist'              " Toggle fix lists
 Plug 'tomtom/tcomment_vim'                      " Filetype-sensible comment
 Plug 'tomtom/tlib_vim'
 Plug 'terryma/vim-multiple-cursors'             " Multi-cursor
@@ -189,6 +190,14 @@ noremap <silent> <Leader>gt :TlistToggle<CR>
 " Toggles
 noremap <silent> <Leader>tc :call mappings#cycle_colorcolumn()<CR>
 noremap <silent> <Leader>tl :call mappings#cycle_numbering()<CR>
+
+" Lists
+noremap <silent> <Leader>ll :call ToggleLocationList()<CR>
+noremap <silent> <Leader>ln :lnext<CR>
+noremap <silent> <Leader>lp :lprevious<CR>
+noremap <silent> <Leader>qq :call ToggleQuickfixList()<CR>
+noremap <silent> <Leader>qn :cnext<CR>
+noremap <silent> <Leader>qp :cprevious<CR>
 
 " Windows
 noremap <Leader>wo :only<CR>
