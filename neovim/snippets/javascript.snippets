@@ -1,10 +1,9 @@
 # Prototype
 snippet proto
 	${1:class_name}.prototype.${2:method_name} =
-	function(${3:first_argument}) {
+	(${3:first_argument}) => {
 		${4:// body...}
 	};
-	${1:/* condition */} ? ${2:a} : ${3:b}
 # switch
 snippet switch
 	switch(${1:expression}) {
@@ -23,4 +22,4 @@ snippet case
 	${3}
 # setTimeout function
 snippet timeout
-	setTimeout(function() {${3}}${2}, ${1:10};
+	setTimeout(() => {${3}}${2}, ${1:10};
