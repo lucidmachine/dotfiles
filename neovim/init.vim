@@ -181,7 +181,7 @@ nmap <Leader>rr <Plug>(Scalpel)
 
 " Files
 noremap <silent> <F8> :Vexplore<CR>
-noremap <silent> <Leader>ft :Vexplore<CR>
+noremap <silent> <Leader>ff :Explore<CR>
 
 " Tags
 noremap <silent> <F7> :TlistToggle<CR>
