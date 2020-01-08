@@ -287,3 +287,6 @@ let Tlist_Auto_Update = 1
 let Tlist_Inc_Winwidth = 0
 let Tlist_Sort_Type = "name"
 let Tlist_Use_SingleClick = 1
+
+" Toggle List
+let g:toggle_list_no_mappings = 1
