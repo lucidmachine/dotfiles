@@ -37,28 +37,6 @@ snippet once
 	${2}
 
 	#endif /* end of include guard: $1 */
-# If Condition
-snippet if
-	if (${1:/* condition */}) {
-		${2:/* code */}
-	}
-snippet el
-	else {
-		${1}
-	}
-# Tertiary conditional
-snippet t
-	${1:/* condition */} ? ${2:a} : ${3:b}
-# Do While Loop
-snippet do
-	do {
-		${2:/* code */}
-	} while (${1:/* condition */});
-# While Loop
-snippet wh
-	while (${1:/* condition */}) {
-		${2:/* code */}
-	}
 # For Loop
 snippet for
 	for (${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
