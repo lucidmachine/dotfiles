@@ -201,6 +201,7 @@ noremap <silent> <Leader>qp :cprevious<CR>
 
 " Windows
 noremap <Leader>wo :only<CR>
+noremap <Leader>ww <C-W>=
 noremap <Leader>wh <C-W>h
 noremap <Leader>wj <C-W>j
 noremap <Leader>wk <C-W>k
