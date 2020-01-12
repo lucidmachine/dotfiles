@@ -170,7 +170,8 @@ let mapleader = " "
 let maplocalleader = ","
 
 " Comments
-noremap <C-_> :TComment<CR>
+noremap <silent> <Leader>; :TComment<CR>
+xnoremap <silent> <Leader>; :TComment<CR>
 
 " Copy Ranges
 noremap <silent> <Leader>c :call mappings#copy_buffer_to_clipboard()<CR>
