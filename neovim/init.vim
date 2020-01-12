@@ -216,6 +216,9 @@ noremap <Leader>wL <C-W>L
 """""""""""""""
 " Plugin Config
 """""""""""""""
+" Conjure
+let g:conjure_log_direction = "horizontal"
+
 " CoC
 let g:coc_enable_locationlist = 0
 let g:coc_global_extensions = ['coc-conjure']
