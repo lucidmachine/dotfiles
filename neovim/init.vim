@@ -58,9 +58,9 @@ set backspace=indent,eol,start
 set autoindent
 set expandtab
 set nowrap
-set shiftwidth=4
+set shiftwidth=2
 set smarttab
-set tabstop=4
+set tabstop=2
 if v:version > 703
     set formatoptions +=j                      " Join sans comment leader
 endif
