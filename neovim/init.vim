@@ -205,6 +205,10 @@ noremap <silent> <Leader>qq :call ToggleQuickfixList()<CR>
 noremap <silent> <Leader>qn :cnext<CR>
 noremap <silent> <Leader>qp :cprevious<CR>
 
+" Vim Configuration
+noremap <silent> <Leader>vv :tabnew $MYVIMRC<CR>
+noremap <silent> <Leader>vr :source $MYVIMRC<CR>
+
 " Windows
 noremap <Leader>wo :only<CR>
 noremap <Leader>ww <C-W>=
