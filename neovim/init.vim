@@ -125,6 +125,11 @@ if !empty($CONEMUBUILD)
     let &t_AF = "\e[38;5;%dm"
 endif
 
+" ColorColumn
+if exists('+colorcolumn')
+    set colorcolumn=101
+endif
+
 " Focus
 if exists('+winhighlight')
     augroup focus
