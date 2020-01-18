@@ -111,6 +111,11 @@ if executable('rg')
     let g:ctrlp_use_caching = 0
 endif
 
+" Terminal
+if has('nvim')
+  au TermOpen * :startinsert
+endif
+
 " UI
 set lazyredraw                                  " Macros don't redraw
 
