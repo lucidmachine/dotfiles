@@ -158,7 +158,10 @@ set laststatus=2
 let g:lightline = {'colorscheme': 'wombat'}
 
 " Gutter
-set number relativenumber
+set number
+if exists('+relativenumber')
+  set relativenumber
+endif
 
 
 """"""""""
@@ -195,7 +198,6 @@ noremap <silent> <Leader>gt :TlistToggle<CR>
 
 " Toggles
 noremap <silent> <Leader>tc :call mappings#cycle_colorcolumn()<CR>
-noremap <silent> <Leader>tl :call mappings#cycle_numbering()<CR>
 
 " Lists
 noremap <silent> <Leader>ll :call ToggleLocationList()<CR>
