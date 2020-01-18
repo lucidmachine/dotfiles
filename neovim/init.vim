@@ -218,6 +218,11 @@ noremap <silent> <Leader>qq :call ToggleQuickfixList()<CR>
 noremap <silent> <Leader>qn :cnext<CR>
 noremap <silent> <Leader>qp :cprevious<CR>
 
+" Terminal
+if has('nvim')
+  tnoremap <Esc> <C-\><C-n>
+endif
+
 " Vim Configuration
 noremap <silent> <Leader>vv :tabnew $MYVIMRC<CR>
 noremap <silent> <Leader>vr :source $MYVIMRC<CR>
