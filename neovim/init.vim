@@ -30,6 +30,7 @@ Plug 'Yggdroot/indentLine'                      " Indentation level lines
 " Other
 Plug 'editorconfig/editorconfig-vim'            " Cross-editor config files
 Plug 'garbas/vim-snipmate'                      " Snippets
+Plug 'jiangmiao/auto-pairs'                     " Balance paired characters
 Plug 'kien/ctrlp.vim'                           " Fuzzy finder pallette
 Plug 'MarcWeber/vim-addon-mw-utils'             " Dependency for Snipmate
 Plug 'markonm/traces.vim'                       " Substitute preview
@@ -39,7 +40,7 @@ Plug 'tomtom/tlib_vim'                          " Dependency for TComment
 Plug 'terryma/vim-multiple-cursors'             " Multi-cursor
 Plug 'tpope/vim-fugitive'                       " Git commands from inside ViM
 Plug 'tpope/vim-projectionist'                  " Project navigation
-Plug 'tpope/vim-surround'                       " Match parens, tags, etc.
+Plug 'tpope/vim-surround'                       " Manipulate parens, tags, etc.
 Plug 'vim-scripts/taglist.vim'                  " Code tag viewer
 Plug 'wincent/loupe'                            " Search enhancements
 Plug 'wincent/scalpel'                          " Quick replace word
