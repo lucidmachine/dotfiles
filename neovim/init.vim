@@ -31,6 +31,7 @@ Plug 'Yggdroot/indentLine'                      " Indentation level lines
 Plug 'editorconfig/editorconfig-vim'            " Cross-editor config files
 Plug 'garbas/vim-snipmate'                      " Snippets
 Plug 'jiangmiao/auto-pairs'                     " Balance paired characters
+Plug 'junegunn/rainbow_parentheses.vim'         " Rainbow parentheses
 Plug 'kien/ctrlp.vim'                           " Fuzzy finder pallette
 Plug 'MarcWeber/vim-addon-mw-utils'             " Dependency for Snipmate
 Plug 'markonm/traces.vim'                       " Substitute preview
@@ -77,6 +78,10 @@ au BufRead,BufNewFile *.sbt set filetype=scala
 au FileType make setlocal noexpandtab
 au FileType markdown setlocal conceallevel=0
 au FileType votl setlocal spell
+augroup rainbow_lisp
+  autocmd!
+  autocmd FileType lisp,clojure,scheme RainbowParentheses
+augroup END
 augroup pencil
     au!
     au FileType markdown,mkd    call pencil#init({'wrap': 'soft'})
