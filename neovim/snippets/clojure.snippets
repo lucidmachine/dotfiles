@@ -1,0 +1,24 @@
+# Function
+snippet defn
+	(defn ${1:name}
+		"${2:docs}"
+		[${3:param}]
+		${4:expression})
+# Multi-arity function
+snippet defnm
+	(defn ${1:name}
+		"${2:docs}"
+		([] ${3:expression})
+		([${3:param}] ${4:expression})
+	)
+# Test suite
+snippet deft
+	(deftest ${1:name}
+		(testing "${2:description}"
+			(is ${3:expression}))
+		${4}
+	)
+# Test
+snippet test
+	(testing "${1:description}"
+		(is ${2:expression}))
