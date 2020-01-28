@@ -1,5 +1,5 @@
 
-- aptget:
+- apt-get:
     - bash
     - curl
     - exuberant-ctags
