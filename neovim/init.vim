@@ -188,6 +188,21 @@ endif
 let mapleader = " "
 let maplocalleader = ","
 
+" Buffers
+noremap <silent> <Leader>bb :buffers<CR>
+noremap <silent> <Leader>ba :ball<CR>
+noremap <silent> <Leader>b1 :buffer 1<CR>
+noremap <silent> <Leader>b2 :buffer 2<CR>
+noremap <silent> <Leader>b3 :buffer 3<CR>
+noremap <silent> <Leader>b4 :buffer 4<CR>
+noremap <silent> <Leader>b5 :buffer 5<CR>
+noremap <silent> <Leader>b6 :buffer 6<CR>
+noremap <silent> <Leader>b7 :buffer 7<CR>
+noremap <silent> <Leader>b8 :buffer 8<CR>
+noremap <silent> <Leader>b9 :buffer 9<CR>
+noremap <silent> <Leader>b0 :buffer 10<CR>
+
+
 " Comments
 noremap <silent> <Leader>; :TComment<CR>
 xnoremap <silent> <Leader>; :TComment<CR>
