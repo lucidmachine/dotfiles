@@ -1,0 +1,85 @@
+# Prototype
+snippet proto
+	${1:class_name}.prototype.${2:method_name} =
+	(${3:first_argument}) => {
+		${4:// body...}
+	};
+# switch
+snippet switch
+	switch(${1:expression}) {
+		case '${3:case}':
+			${4:// code}
+			break;
+		${5}
+		default:
+			${2:// code}
+	}
+# case
+snippet case
+	case '${1:case}':
+		${2:// code}
+		break;
+	${3}
+# setTimeout function
+snippet timeout
+	setTimeout(() => {${3}}${2}, ${1:10};
+# Angular Component
+snippet ngcomp
+	import { Component, OnInit } from '@angular/core';
+
+	@Component({
+		selector: '${1:name}',
+		templateUrl: './${1:name}.component.html',
+		styleUrls: ['./${1:name}.component.less'],
+	})
+	export class ${2:Name}Component implements OnInit {
+		constructor(
+			${3}
+		) { }
+
+		ngOnInit() {
+
+		}
+	}
+# Angular Pipe
+snippet ngpipe
+	import { Pipe, PipeTransform } from '@angular/core';
+
+	@Pipe({
+		name: '${1:name}'
+	})
+	export class ${2:Name}Pipe implements PipeTransform {
+		transform(value: any, ...args: any[]): any {
+			${3}
+		}
+	}
+# Angular Service
+snippet ngserve
+	import { Injectable } from '@angular/core';
+
+	@Injectable({ providedin: ${2:'root'} })
+	export class ${1:Name}Service {
+		constructor(
+			${3}
+		) { }
+	}
+# Angular HTTP Service
+	import { Injectable } from '@angular/core';
+	import { HttpClient } from '@angular/common/http';
+
+	@Injectable({providedin: ${2:'root'}})
+	export class ${1:Name}Service {
+		constructor(
+			private httpClient: HttpClient${3}
+		) { }
+	}
+# Angular Directive
+snippet ngdirect
+	import { Directive } from '@angular/core';
+
+	@Directive({ selector: '[${1:selector-name}]' })
+	export class ${2:Name}Directive {
+		constructor(
+			${3}
+		) { }
+	}
