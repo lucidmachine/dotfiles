@@ -253,6 +253,12 @@ noremap <Leader>wH <C-W>H
 noremap <Leader>wJ <C-W>J
 noremap <Leader>wK <C-W>K
 noremap <Leader>wL <C-W>L
+noremap <Leader>wr <C-W>r
+noremap <Leader>wR <C-W>R
+noremap <Leader>w< <C-W><
+noremap <Leader>w> <C-W>>
+noremap <Leader>w+ <C-W>+
+noremap <Leader>w- <C-W>-
 
 
 """""""""""""""
