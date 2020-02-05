@@ -116,11 +116,12 @@ endif
 " UI
 set lazyredraw                                  " Macros don't redraw
 
+" Visual Bell
+set visualbell
+
 " Working files
 set updatetime=1000                             " Write to swap every n ms
 
-" Visual Bell
-set visualbell
 
 """"""""""""
 " Appearance
@@ -138,6 +139,9 @@ if exists('+colorcolumn')
     set colorcolumn=101
 endif
 
+" Cursor
+set cursorline
+
 " Focus
 if exists('+winhighlight')
     augroup focus
@@ -149,9 +153,15 @@ if exists('+winhighlight')
     augroup END
 endif
 
+" Gutter
+set number
+if exists('+relativenumber')
+  set relativenumber
+endif
 
-" Cursor
-set cursorline
+" Ruler / Status line
+set laststatus=2
+let g:lightline = {'colorscheme': 'wombat'}
 
 " Theme
 try
@@ -160,16 +170,6 @@ catch /^Vim\%((\a\+)\)\=:E185
     colorscheme murphy
 endtry
 set background=dark
-
-" Ruler / Status line
-set laststatus=2
-let g:lightline = {'colorscheme': 'wombat'}
-
-" Gutter
-set number
-if exists('+relativenumber')
-  set relativenumber
-endif
 
 
 """"""""""
@@ -207,19 +207,9 @@ xnoremap <silent> <Leader>; :TComment<CR>
 noremap <silent> <Leader>c :call mappings#copy_buffer_to_clipboard()<CR>
 xnoremap <silent> <Leader>c :call mappings#copy_selection_to_clipboard()<CR>
 
-" Refactorings
-nmap <Leader>rr <Plug>(Scalpel)
-
 " Files
 noremap <silent> <F8> :Vexplore<CR>
 noremap <silent> <Leader>ff :Explore<CR>
-
-" Tags
-noremap <silent> <F7> :TlistToggle<CR>
-noremap <silent> <Leader>gt :TlistToggle<CR>
-
-" Toggles
-noremap <silent> <Leader>tc :call mappings#cycle_colorcolumn()<CR>
 
 " Lists
 noremap <silent> <Leader>ll :call ToggleLocationList()<CR>
@@ -229,10 +219,20 @@ noremap <silent> <Leader>qq :call ToggleQuickfixList()<CR>
 noremap <silent> <Leader>qn :cnext<CR>
 noremap <silent> <Leader>qp :cprevious<CR>
 
+" Refactorings
+nmap <Leader>rr <Plug>(Scalpel)
+
+" Tags
+noremap <silent> <F7> :TlistToggle<CR>
+noremap <silent> <Leader>gt :TlistToggle<CR>
+
 " Terminal
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>
 endif
+
+" Toggles
+noremap <silent> <Leader>tc :call mappings#cycle_colorcolumn()<CR>
 
 " Vim Configuration
 noremap <silent> <Leader>vv :tabnew $MYVIMRC<CR>
@@ -260,12 +260,12 @@ noremap <Leader>w- <C-W>-
 """""""""""""""
 " Plugin Config
 """""""""""""""
-" Conjure
-let g:conjure_log_direction = "horizontal"
-
 " CoC
 let g:coc_enable_locationlist = 0
 let g:coc_global_extensions = ['coc-conjure']
+
+" Conjure
+let g:conjure_log_direction = "horizontal"
 
 " Projectionist
 function! s:project(...)
