@@ -304,10 +304,6 @@ for s:extension in ['.js', '.jsx', '.ts', '.tsx']
         \ }])
 endfor
 
-" Rust Racer
-set hidden
-let $RUST_SRC_PATH = "~/src/rust/src/"
-
 " Signify
 let g:signify_vcs_list = ['git', 'hg', 'bzr']
 let g:signify_update_on_focusgained = 1
