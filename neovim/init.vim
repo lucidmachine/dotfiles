@@ -173,13 +173,6 @@ set background=dark
 
 
 """"""""""
-" Commands
-""""""""""
-" Find all TODOs and FIXMEs in the current project and list them in the 
-" TODO: command! todo :vimgrep /TODO/j **/*.$current_file's_extension | :cw
-
-
-""""""""""
 " Mappings
 """"""""""
 let mapleader = " "
