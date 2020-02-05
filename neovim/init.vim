@@ -179,45 +179,45 @@ let mapleader = " "
 let maplocalleader = ","
 
 " Buffers
-noremap <silent> <Leader>bb :buffers<CR>
-noremap <silent> <Leader>ba :ball<CR>
-noremap <silent> <Leader>b1 :buffer 1<CR>
-noremap <silent> <Leader>b2 :buffer 2<CR>
-noremap <silent> <Leader>b3 :buffer 3<CR>
-noremap <silent> <Leader>b4 :buffer 4<CR>
-noremap <silent> <Leader>b5 :buffer 5<CR>
-noremap <silent> <Leader>b6 :buffer 6<CR>
-noremap <silent> <Leader>b7 :buffer 7<CR>
-noremap <silent> <Leader>b8 :buffer 8<CR>
-noremap <silent> <Leader>b9 :buffer 9<CR>
-noremap <silent> <Leader>b0 :buffer 10<CR>
+noremap <silent> <leader>bb :buffers<CR>
+noremap <silent> <leader>ba :ball<CR>
+noremap <silent> <leader>b1 :buffer 1<CR>
+noremap <silent> <leader>b2 :buffer 2<CR>
+noremap <silent> <leader>b3 :buffer 3<CR>
+noremap <silent> <leader>b4 :buffer 4<CR>
+noremap <silent> <leader>b5 :buffer 5<CR>
+noremap <silent> <leader>b6 :buffer 6<CR>
+noremap <silent> <leader>b7 :buffer 7<CR>
+noremap <silent> <leader>b8 :buffer 8<CR>
+noremap <silent> <leader>b9 :buffer 9<CR>
+noremap <silent> <leader>b0 :buffer 10<CR>
 
 " Comments
-noremap <silent> <Leader>; :TComment<CR>
-xnoremap <silent> <Leader>; :TComment<CR>
+noremap <silent> <leader>; :TComment<CR>
+xnoremap <silent> <leader>; :TComment<CR>
 
 " Copy Ranges
-noremap <silent> <Leader>c :call mappings#copy_buffer_to_clipboard()<CR>
-xnoremap <silent> <Leader>c :call mappings#copy_selection_to_clipboard()<CR>
+noremap <silent> <leader>c :call mappings#copy_buffer_to_clipboard()<CR>
+xnoremap <silent> <leader>c :call mappings#copy_selection_to_clipboard()<CR>
 
 " Files
 noremap <silent> <F8> :Vexplore<CR>
-noremap <silent> <Leader>ff :Explore<CR>
+noremap <silent> <leader>ff :Explore<CR>
 
 " Lists
-noremap <silent> <Leader>ll :call ToggleLocationList()<CR>
-noremap <silent> <Leader>ln :lnext<CR>
-noremap <silent> <Leader>lp :lprevious<CR>
-noremap <silent> <Leader>qq :call ToggleQuickfixList()<CR>
-noremap <silent> <Leader>qn :cnext<CR>
-noremap <silent> <Leader>qp :cprevious<CR>
+noremap <silent> <leader>ll :call ToggleLocationList()<CR>
+noremap <silent> <leader>ln :lnext<CR>
+noremap <silent> <leader>lp :lprevious<CR>
+noremap <silent> <leader>qq :call ToggleQuickfixList()<CR>
+noremap <silent> <leader>qn :cnext<CR>
+noremap <silent> <leader>qp :cprevious<CR>
 
 " Refactorings
-nmap <Leader>rr <Plug>(Scalpel)
+nmap <leader>rr <Plug>(Scalpel)
 
 " Tags
 noremap <silent> <F7> :TlistToggle<CR>
-noremap <silent> <Leader>gt :TlistToggle<CR>
+noremap <silent> <leader>gt :TlistToggle<CR>
 
 " Terminal
 if has('nvim')
@@ -225,29 +225,29 @@ if has('nvim')
 endif
 
 " Toggles
-noremap <silent> <Leader>tc :call mappings#cycle_colorcolumn()<CR>
+noremap <silent> <leader>tc :call mappings#cycle_colorcolumn()<CR>
 
 " Vim Configuration
-noremap <silent> <Leader>vv :tabnew $MYVIMRC<CR>
-noremap <silent> <Leader>vr :source $MYVIMRC<CR>
+noremap <silent> <leader>vv :tabnew $MYVIMRC<CR>
+noremap <silent> <leader>vr :source $MYVIMRC<CR>
 
 " Windows
-noremap <Leader>wo :only<CR>
-noremap <Leader>ww <C-W>=
-noremap <Leader>wh <C-W>h
-noremap <Leader>wj <C-W>j
-noremap <Leader>wk <C-W>k
-noremap <Leader>wl <C-W>l
-noremap <Leader>wH <C-W>H
-noremap <Leader>wJ <C-W>J
-noremap <Leader>wK <C-W>K
-noremap <Leader>wL <C-W>L
-noremap <Leader>wr <C-W>r
-noremap <Leader>wR <C-W>R
-noremap <Leader>w< <C-W><
-noremap <Leader>w> <C-W>>
-noremap <Leader>w+ <C-W>+
-noremap <Leader>w- <C-W>-
+noremap <leader>wo :only<CR>
+noremap <leader>ww <C-W>=
+noremap <leader>wh <C-W>h
+noremap <leader>wj <C-W>j
+noremap <leader>wk <C-W>k
+noremap <leader>wl <C-W>l
+noremap <leader>wH <C-W>H
+noremap <leader>wJ <C-W>J
+noremap <leader>wK <C-W>K
+noremap <leader>wL <C-W>L
+noremap <leader>wr <C-W>r
+noremap <leader>wR <C-W>R
+noremap <leader>w< <C-W><
+noremap <leader>w> <C-W>>
+noremap <leader>w+ <C-W>+
+noremap <leader>w- <C-W>-
 
 
 """""""""""""""
