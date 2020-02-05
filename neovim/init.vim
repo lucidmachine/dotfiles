@@ -7,7 +7,6 @@ filetype off
 call plug#begin('~/.config/nvim/plugged')
 
 " Language Support
-Plug 'derekwyatt/vim-scala'                     " Scala support
 Plug 'masukomi/vim-markdown-folding'            " Fold markdown headers
 Plug 'neoclide/coc.nvim', {
 \   'branch': 'release'
@@ -17,8 +16,6 @@ Plug 'Olical/conjure', {
 \   'do': 'bin/compile'
 \}                                              " Clojure support
 Plug 'reedes/vim-pencil'                        " Prose format and nav
-Plug 'rust-lang/rust.vim'                       " Rust support 
-Plug 'scrooloose/syntastic'                     " Syntax checking system
 Plug 'vimoutliner/vimoutliner'                  " Outline mode for .otl files
 
 " Appearance
@@ -321,16 +318,6 @@ let $RUST_SRC_PATH = "~/src/rust/src/"
 " Signify
 let g:signify_vcs_list = ['git', 'hg', 'bzr']
 let g:signify_update_on_focusgained = 1
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " Taglist
 let Tlist_Auto_Highlight_Tag = 1
