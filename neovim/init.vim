@@ -202,6 +202,12 @@ xnoremap <silent> <leader>c :call mappings#copy_selection_to_clipboard()<CR>
 noremap <silent> <F8> :Vexplore<CR>
 noremap <silent> <leader>ff :Explore<CR>
 
+" Goto
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
 " Lists
 noremap <silent> <leader>ll :call ToggleLocationList()<CR>
 noremap <silent> <leader>ln :lnext<CR>
