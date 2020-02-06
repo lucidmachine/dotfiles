@@ -198,6 +198,9 @@ xnoremap <silent> <leader>; :TComment<CR>
 noremap <silent> <leader>c :call mappings#copy_buffer_to_clipboard()<CR>
 xnoremap <silent> <leader>c :call mappings#copy_selection_to_clipboard()<CR>
 
+" Documentation
+nnoremap <silent> K :call mappings#show_documentation()<CR>
+
 " Files
 noremap <silent> <F8> :Vexplore<CR>
 noremap <silent> <leader>ff :Explore<CR>

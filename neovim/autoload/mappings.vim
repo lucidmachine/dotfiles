@@ -17,3 +17,12 @@ endfunction
 function! mappings#copy_selection_to_clipboard() abort
     call setreg('+', functions#get_visual_selection())
 endfunction
+
+" Show documentation for symbol under cursor with CoC
+function! mappings#show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
