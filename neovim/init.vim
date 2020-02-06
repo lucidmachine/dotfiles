@@ -118,7 +118,7 @@ set lazyredraw                                  " Macros don't redraw
 set visualbell
 
 " Working files
-set updatetime=1000                             " Write to swap every n ms
+set updatetime=300                              " Write to swap every n ms
 
 
 """"""""""""
