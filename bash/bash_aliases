@@ -1,19 +1,19 @@
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias alert='notify-send --urgency=low --icon "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # du
-alias du='du -c -h'
+alias du='du --total --human-readable'
 
 # Git
 alias gita='git add'
 alias gitb='git branch'
 alias gitbn='git checkout -b '
-alias gitc='git commit -m '
-alias gitca='git commit -a -m '
+alias gitc='git commit --message '
+alias gitca='git commit --all --message '
 alias gitco='git checkout'
 alias gitd='git diff'
-alias gitl='git log -n 5'
+alias gitl='git log --max-count 5'
 alias gitp='git push'
 alias gits='git status'
 alias gitvd='git difftool'
@@ -24,10 +24,10 @@ alias grep='grep --color=auto'
 # ls
 if [[ "$(uname)" == "Darwin" ]]; then
     alias ls='ls -hG'
-    alias ll='ls -lhaG'
+    alias ll='ls -lhAG'
 else
-    alias ls='ls -h --color'
-    alias ll='ls --color -lha'
+    alias ls='ls --human-readable --color'
+    alias ll='ls --color --human-readable --almost-all -l'
 fi
 
 # NeoVim
