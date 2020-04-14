@@ -20,20 +20,24 @@ alias gitsf='git status | rev | cut --delimiter=" " --fields=1 | rev'
 alias gitvd='git difftool'
 
 # grep
-alias grep='grep --color=auto'
+if [ $(which rg) ]; then
+  alias grep='rg'
+else 
+  alias grep='grep --color=auto'
+fi
 
 # ls
 if [[ "$(uname)" == "Darwin" ]]; then
-    alias ls='ls -hG'
-    alias ll='ls -lhAG'
+  alias ls='ls -hG'
+  alias ll='ls -lhAG'
 else
-    alias ls='ls --human-readable --color'
-    alias ll='ls --color --human-readable --almost-all -l'
+  alias ls='ls --human-readable --color'
+  alias ll='ls --color --human-readable --almost-all -l'
 fi
 
 # NeoVim
 if [ $(which nvim) ]; then
-    alias vim='nvim'
+  alias vim='nvim'
 fi
 
 # Subversion
