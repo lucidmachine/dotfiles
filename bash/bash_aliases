@@ -16,6 +16,7 @@ alias gitd='git diff'
 alias gitl='git log --max-count 5'
 alias gitp='git push'
 alias gits='git status'
+alias gitsf='git status | rev | cut --delimiter=" " --fields=1 | rev'
 alias gitvd='git difftool'
 
 # grep
@@ -41,6 +42,7 @@ alias svnc='svn commit --message '
 alias svnd='svn diff'
 alias svnl='svn log --limit 5'
 alias svns='svn status'
+alias svnsf='svn status | rev | cut --delimiter=" " --fields=1 | rev'
 alias svnu='svn update'
 
 # Updates
