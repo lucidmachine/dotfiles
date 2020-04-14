@@ -1,6 +1,7 @@
 
 - brew:
     - bash
+    - clojure/tools/clojure
     - ctags
     - curl
     - git
