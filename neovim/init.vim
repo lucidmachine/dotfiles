@@ -289,27 +289,17 @@ let g:projectionist_heuristics = {
     \   }
     \ }
 
-for s:extension in ['.js', '.jsx', '.ts', '.tsx']
+for s:extension in ['.js', '.ts']
     call s:project(
         \ ['*' . s:extension, {
         \   'alternate': [
-        \     '{dirname}/{basename}.test' . s:extension,
-        \     '{dirname}/__tests__/{basename}-test' . s:extension,
-        \     '{dirname}/__tests__/{basename}-mocha' . s:extension
+        \     '{dirname}/{basename}.spec' . s:extension
         \   ],
         \   'type': 'source'
         \ }],
-        \ ['*.test' . s:extension, {
+        \ ['*.spec' . s:extension, {
         \   'alternate': '{basename}' . s:extension,
         \   'type': 'test',
-        \ }],
-        \ ['**/__tests__/*-test' . s:extension, {
-        \   'alternate': '{dirname}/{basename}' . s:extension,
-        \   'type': 'test'
-        \ }],
-        \ ['**/__tests__/*-mocha' . s:extension, {
-        \   'alternate': '{dirname}/{basename}' . s:extension,
-        \   'type': 'test'
         \ }])
 endfor
 
