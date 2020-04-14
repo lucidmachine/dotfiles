@@ -5,6 +5,9 @@
 *.obj
 *.so
 
+# Chef
+.kitchen/
+
 # IntelliJ
 .idea/
 *.iml
