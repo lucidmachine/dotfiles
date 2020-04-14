@@ -194,9 +194,11 @@ noremap <silent> <leader>b0 :buffer 10<CR>
 noremap <silent> <leader>; :TComment<CR>
 xnoremap <silent> <leader>; :TComment<CR>
 
-" Copy Ranges
-noremap <silent> <leader>c :call mappings#copy_buffer_to_clipboard()<CR>
-xnoremap <silent> <leader>c :call mappings#copy_selection_to_clipboard()<CR>
+" Copy
+noremap <silent> <leader>cc :call mappings#copy_buffer_to_clipboard()<CR>
+xnoremap <silent> <leader>cc :call mappings#copy_selection_to_clipboard()<CR>
+noremap <silent> <leader>cp :call mappings#copy_current_file_relative_path_to_clipboard()<CR>
+noremap <silent> <leader>cP :call mappings#copy_current_file_absolute_path_to_clipboard()<CR>
 
 " Documentation
 nnoremap <silent> K :call mappings#show_documentation()<CR>
