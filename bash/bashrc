@@ -47,10 +47,5 @@ case "$TERM" in
 esac
 PS1="$term_prompt$term_title"
 
-# Toolchains
-export NVM_DIR="${HOME}/.nvm"
-source_if_exists "${NVM_DIR}/nvm.sh"
-source_if_exists "${NVM_DIR}/bash_completion"
-
 # Environment
 ENVIRONMENT='local'
