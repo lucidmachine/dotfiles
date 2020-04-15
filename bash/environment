@@ -1,0 +1,6 @@
+# Toolchains
+export NVM_DIR="${HOME}/.nvm"
+source_if_exists "${NVM_DIR}/nvm.sh"
+
+# Machine-specific environment extensions
+source_if_exists "${HOME}/.environment-ext"
