@@ -27,6 +27,7 @@ link "${BASEDIR}/bash/profile"      "${HOME}/.profile"
 link "${BASEDIR}/git/gitignore"     "${HOME}/.gitignore"
 link "${BASEDIR}/git/git-sh-prompt" "${HOME}/.git-prompt.sh"
 link "${BASEDIR}/neovim"            "${HOME}/.config/nvim"
+link "${BASEDIR}/neovim"            "${HOME}/.vim"
 
 # Packages
 echo
@@ -69,9 +70,14 @@ elif [ $(which brew) ]; then
     iterm2
 fi
 
-# Neovim Plugins
+# Editor Plugins
 echo
 echo "###########################"
-echo "# Installing Neovim Plugins"
+echo "# Installing Editor Plugins"
 echo "###########################"
-#nvim +PlugInstall +qall
+if [ $(which nvim) ]; then
+  nvim +PlugInstall +qall
+elif [ $(which vim) ]; then
+  vim +PlugInstall +qall
+fi
+
