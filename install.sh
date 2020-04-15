@@ -50,6 +50,11 @@ if [ $(which apt-get) ]; then
     tree \
     wget
 elif [ $(which brew) ]; then
+  # brew errors when packages which are already installed have upgrades
+  # available, so we upgrade the universe before attempting to install
+  brew upgrade 
+  brew cask upgrade
+
   brew install \
     bash \
     clojure/tools/clojure \
@@ -65,7 +70,6 @@ elif [ $(which brew) ]; then
     tmux \
     tree \
     wget
-
   brew cask install \
     iterm2
 fi
