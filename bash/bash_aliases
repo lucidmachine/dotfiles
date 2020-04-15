@@ -48,6 +48,3 @@ alias svnl='svn log --limit 5'
 alias svns='svn status'
 alias svnsf='svn status | rev | cut --delimiter=" " --fields=1 | rev'
 alias svnu='svn update'
-
-# Updates
-alias update='sudo apt-get update && sudo apt-get upgrade -y'
