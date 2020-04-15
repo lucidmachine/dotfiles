@@ -16,6 +16,7 @@ source_if_exists () {
 source_if_exists "${HOME}/.palette"
 source_if_exists "${HOME}/.bash_aliases"
 source_if_exists "${HOME}/.bash_completion"
+source_if_exists "${HOME}/.environment"
 source_if_exists "${HOME}/.git-prompt.sh"
 
 # Shell options
@@ -46,6 +47,3 @@ case "$TERM" in
         ;;
 esac
 PS1="$term_prompt$term_title"
-
-# Environment
-ENVIRONMENT='local'
