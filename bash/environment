@@ -1,9 +1,8 @@
-# PATH
-export PATH="${HOME}/bin:$PATH"
+# n - Node version manager
+export N_PREFIX="${HOME}/.n"
 
-# Toolchains
-export NVM_DIR="${HOME}/.nvm"
-source_if_exists "${NVM_DIR}/nvm.sh"
+# PATH
+export PATH="${HOME}/bin:${N_PREFIX}/bin:$PATH"
 
 # Machine-specific environment extensions
 source_if_exists "${HOME}/.environment-ext"
