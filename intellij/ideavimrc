@@ -1,0 +1,73 @@
+""""""""""""
+" Appearance
+""""""""""""
+" Gutter
+set number
+set relativenumber
+
+
+""""""""""
+" Mappings
+""""""""""
+let mapleader = " "
+let maplocalleader = ","
+
+" Comments
+noremap <silent> <leader>; :action CommentByLineComment<CR>
+xnoremap <silent> <leader>; :action CommentByLineComment<CR>
+
+" Copy
+" noremap <silent> <leader>cc :call mappings#copy_buffer_to_clipboard()<CR>
+" xnoremap <silent> <leader>cc :call mappings#copy_selection_to_clipboard()<CR>
+noremap <silent> <leader>cp :action CopyContentRootPath<CR>
+noremap <silent> <leader>cP :action CopyAbsolutePath<CR>
+
+" Documentation
+nnoremap <silent> K :action QuickJavaDoc<CR>
+
+" Files
+noremap <silent> <leader>ff :action ActivateProjectToolWindow<CR>
+
+" Goto
+nmap <silent> gd :action GotoDeclaration<CR>
+nmap <silent> gy :action GotoTypeDeclaration<CR>
+nmap <silent> gi :action GotoImplementatin<CR>
+" nmap <silent> gr <Plug>(coc-references)
+
+" Lists
+" noremap <silent> <leader>ll :call ToggleLocationList()<CR>
+" noremap <silent> <leader>ln :lnext<CR>
+" noremap <silent> <leader>lp :lprevious<CR>
+" noremap <silent> <leader>qq :call ToggleQuickfixList()<CR>
+" noremap <silent> <leader>qn :cnext<CR>
+" noremap <silent> <leader>qp :cprevious<CR>
+
+" Refactorings
+nmap <leader>ri :action Inline<CR>
+nmap <leader>rr :action RenameElement<CR>
+
+
+" Tags
+" noremap <silent> <leader>gt :TlistToggle<CR>
+
+" IDEAVim Configuration
+" noremap <silent> <leader>vv :tabnew $MYVIMRC<CR>
+noremap <silent> <leader>vr :source ~/.ideavimrc
+
+" Windows
+noremap <leader>wo :only<CR>
+" noremap <leader>ww <C-W>=
+noremap <leader>wh <C-W>h
+noremap <leader>wj <C-W>j
+noremap <leader>wk <C-W>k
+noremap <leader>wl <C-W>l
+" noremap <leader>wH <C-W>H
+" noremap <leader>wJ <C-W>J
+" noremap <leader>wK <C-W>K
+" noremap <leader>wL <C-W>L
+" noremap <leader>wr <C-W>r
+" noremap <leader>wR <C-W>R
+" noremap <leader>w< <C-W><
+" noremap <leader>w> <C-W>>
+" noremap <leader>w+ <C-W>+
+" noremap <leader>w- <C-W>-
