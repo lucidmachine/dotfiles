@@ -27,8 +27,8 @@ link "${BASEDIR}/bash/profile"      "${HOME}/.profile"
 link "${BASEDIR}/bash/rc"           "${HOME}/.bashrc"
 link "${BASEDIR}/git/gitignore"     "${HOME}/.gitignore"
 link "${BASEDIR}/git/git-sh-prompt" "${HOME}/.git-prompt.sh"
-link "${BASEDIR}/neovim"            "${HOME}/.config/nvim"
-link "${BASEDIR}/neovim"            "${HOME}/.vim"
+link "${BASEDIR}/neovim/"            "${HOME}/.config/nvim"
+link "${BASEDIR}/neovim/"            "${HOME}/.vim"
 
 # Packages
 echo
@@ -53,7 +53,7 @@ if [ $(which apt-get) ]; then
 elif [ $(which brew) ]; then
   # brew errors when packages which are already installed have upgrades
   # available, so we upgrade the universe before attempting to install
-  brew upgrade 
+  brew upgrade
   brew cask upgrade
 
   brew install \
