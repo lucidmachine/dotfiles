@@ -203,7 +203,6 @@ noremap <silent> <leader>cP :call mappings#copy_current_file_absolute_path_to_cl
 nnoremap <silent> K :call mappings#show_documentation()<CR>
 
 " Files
-noremap <silent> <F8> :Vexplore<CR>
 noremap <silent> <leader>ff :Explore<CR>
 
 " Goto
@@ -224,7 +223,6 @@ noremap <silent> <leader>qp :cprevious<CR>
 nmap <leader>rr <Plug>(Scalpel)
 
 " Tags
-noremap <silent> <F7> :TlistToggle<CR>
 noremap <silent> <leader>gt :TlistToggle<CR>
 
 " Terminal
