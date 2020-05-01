@@ -29,6 +29,7 @@ link "${BASEDIR}/git/gitignore"       "${HOME}/.gitignore"
 link "${BASEDIR}/git/git-sh-prompt"   "${HOME}/.git-prompt.sh"
 link "${BASEDIR}/neovim/"             "${HOME}/.config/nvim"
 link "${BASEDIR}/neovim/"             "${HOME}/.vim"
+link "${BASEDIR}/ranger/"             "${HOME}/.config/ranger"
 
 # Packages
 echo
