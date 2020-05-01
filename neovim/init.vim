@@ -30,7 +30,7 @@ Plug 'ctrlpvim/ctrlp.vim'                       " Fuzzy finder pallette
 Plug 'editorconfig/editorconfig-vim'            " Cross-editor config files
 Plug 'garbas/vim-snipmate'                      " Snippets
 Plug 'jiangmiao/auto-pairs'                     " Balance paired characters
-Plug 'junegunn/rainbow_parentheses.vim'         " Rainbow parentheses
+Plug 'kien/rainbow_parentheses.vim'             " Rainbow parentheses
 Plug 'MarcWeber/vim-addon-mw-utils'             " Dependency for Snipmate
 Plug 'markonm/traces.vim'                       " Substitute preview
 Plug 'milkypostman/vim-togglelist'              " Toggle fix lists
@@ -76,7 +76,7 @@ au FileType make setlocal noexpandtab
 au FileType votl setlocal spell
 augroup rainbow_lisp
   autocmd!
-  autocmd FileType lisp,clojure,scheme RainbowParentheses
+  autocmd FileType lisp,clojure,scheme RainbowParenthesesToggleAll
 augroup END
 augroup pencil
     au!
