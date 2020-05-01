@@ -8,6 +8,9 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Language Support
 Plug 'elubow/cql-vim'                           " Cassandra Query Language support
+Plug 'l04m33/vlime', {
+\   'rtp': 'vim/'
+\}                                              " Common Lisp support
 Plug 'masukomi/vim-markdown-folding'            " Fold markdown headers
 Plug 'neoclide/coc.nvim', {
 \   'branch': 'release'
