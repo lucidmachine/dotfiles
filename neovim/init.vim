@@ -55,6 +55,7 @@ set backspace=indent,eol,start
 
 " Document Formatting
 set autoindent
+set conceallevel=0                             " Don't conceal characters
 set expandtab
 set nowrap
 set shiftwidth=2
@@ -71,7 +72,6 @@ filetype indent on
 syntax on
 
 au FileType make setlocal noexpandtab
-au FileType markdown setlocal conceallevel=0
 au FileType votl setlocal spell
 augroup rainbow_lisp
   autocmd!
@@ -91,7 +91,6 @@ augroup XML
     au FileType xml :syntax on
     au FileType xml :%foldopen!
 augroup END
-au FileType json setlocal conceallevel=0        " Don't hide quotes
 
 " File tree browser
 let g:netrw_banner = 0                          " Disable banner
