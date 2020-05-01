@@ -40,6 +40,9 @@ if [ $(which nvim) ]; then
   alias vim='nvim'
 fi
 
+# Ranger
+alias r='ranger'
+
 # Subversion
 alias svna='svn add'
 alias svnc='svn commit --message '
