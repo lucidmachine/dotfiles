@@ -4,5 +4,16 @@ export N_PREFIX="${HOME}/.n"
 # PATH
 export PATH="${HOME}/bin:${N_PREFIX}/bin:$PATH"
 
+# Set default editor
+if [ $(which nvim) ];   then export VISUAL='nvim'
+elif [ $(which vim) ];  then export VISUAL='vim'
+elif [ $(which vi) ];   then export VISUAL='vi'
+fi
+
+# Set default pager
+if [ $(which less) ];   then export PAGER='less'
+elif [ $(which more) ]; then export PAGER='more'
+fi
+
 # Machine-specific environment extensions
 source_if_exists "${HOME}/.environment-ext"
