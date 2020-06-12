@@ -1,5 +1,5 @@
 # dotfiles
-CLI setup, powered by [dotbot](https://github.com/anishathalye/dotbot).
+CLI setup, powered by a shell script.
 
 ## Configures
 * bash
@@ -11,18 +11,8 @@ CLI setup, powered by [dotbot](https://github.com/anishathalye/dotbot).
     * Prompt    
 * NeoVim
     * Plugins
-        * Language support
-        * Appearance
-        * Completion
-        * File finding
-        * Tag navigation
     * Settings
     * Mappings
-        * Buffers
-        * Comments
-        * Line numbers
-        * Sidebars
-        * Windows
     * Snippets
 
 ## Installs
@@ -36,5 +26,6 @@ CLI setup, powered by [dotbot](https://github.com/anishathalye/dotbot).
 * neovim
 * ranger
 * ripgrep
+* tmux
 * tree
 * wget
