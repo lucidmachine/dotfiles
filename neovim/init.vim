@@ -40,6 +40,7 @@ Plug 'milkypostman/vim-togglelist'              " Toggle fix lists
 Plug 'tomtom/tcomment_vim'                      " Filetype-sensible comment
 Plug 'tomtom/tlib_vim'                          " Dependency for TComment
 Plug 'terryma/vim-multiple-cursors'             " Multi-cursor
+Plug 'thinca/vim-visualstar'                    " Search a visual mode selection
 Plug 'tpope/vim-fugitive'                       " Git commands from inside ViM
 Plug 'tpope/vim-projectionist'                  " Project navigation
 Plug 'tpope/vim-surround'                       " Manipulate parens, tags, etc.
