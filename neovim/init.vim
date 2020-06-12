@@ -34,6 +34,9 @@ Plug 'editorconfig/editorconfig-vim'            " Cross-editor config files
 Plug 'garbas/vim-snipmate'                      " Snippets
 Plug 'jiangmiao/auto-pairs'                     " Balance paired characters
 Plug 'kien/rainbow_parentheses.vim'             " Rainbow parentheses
+Plug 'liuchengxu/vim-which-key', {
+\   'on': ['WhichKey', 'WhichKey!']
+\}                                              " Show mappings on timeout
 Plug 'MarcWeber/vim-addon-mw-utils'             " Dependency for Snipmate
 Plug 'markonm/traces.vim'                       " Substitute preview
 Plug 'milkypostman/vim-togglelist'              " Toggle fix lists
@@ -241,6 +244,9 @@ noremap <silent> <leader>tc :call mappings#cycle_colorcolumn()<CR>
 " Vim Configuration
 noremap <silent> <leader>vv :tabnew $MYVIMRC<CR>
 noremap <silent> <leader>vr :source $MYVIMRC<CR>
+
+" WhichKey
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 
 " Windows
 noremap <leader>wo :only<CR>
