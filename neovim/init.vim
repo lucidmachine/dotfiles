@@ -13,7 +13,7 @@ Plug 'l04m33/vlime', {
 \}                                              " Common Lisp support
 Plug 'masukomi/vim-markdown-folding'            " Fold markdown headers
 Plug 'neoclide/coc.nvim', {
-\   'branch': 'release'
+\   'tag': 'v0.0.78'
 \}                                              " LSP-based completion engine
 Plug 'Olical/conjure', {
 \   'tag': 'v2.1.0',
