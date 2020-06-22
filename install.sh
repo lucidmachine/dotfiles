@@ -37,7 +37,22 @@ echo
 echo "###########################"
 echo "# Installing Packages"
 echo "###########################"
-if [ $(which apt-get) ]; then
+if [ $(which pamac) ]; then
+  sudo pamac install --no-confirm \
+    bash \
+    curl \
+    ctags \
+    git \
+    htop \
+    less \
+    make \
+    neovim \
+    ranger \
+    ripgrep \
+    tmux \
+    tree \
+    wget
+elif [ $(which apt-get) ]; then
   sudo apt-get install -y \
     bash \
     curl \
@@ -83,8 +98,12 @@ echo "###########################"
 echo "# Installing Editor Plugins"
 echo "###########################"
 if [ $(which nvim) ]; then
+  echo "Installing plugins in nvim"
   nvim +PlugInstall +qall
 elif [ $(which vim) ]; then
+  echo "Installing plugins in vim"
   vim +PlugInstall +qall
+else
+  echo "Unable to locate editor"
 fi
 
