@@ -44,6 +44,7 @@ if [ $(which pamac) ]; then
     ctags \
     git \
     htop \
+    jq \
     less \
     make \
     neovim \
@@ -59,6 +60,7 @@ elif [ $(which apt-get) ]; then
     exuberant-ctags \
     git \
     htop \
+    jq \
     less \
     make \
     neovim \
@@ -80,6 +82,7 @@ elif [ $(which brew) ]; then
     curl \
     git \
     htop \
+    jq \
     less \
     make \
     neovim \
