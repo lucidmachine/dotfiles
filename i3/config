@@ -82,8 +82,8 @@ bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 #
 
 # Backlight
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Compton
 bindsym $mod+t exec --no-startup-id pkill compton
