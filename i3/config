@@ -126,7 +126,7 @@ mode "$mode_system" {
 # Close
 bindsym $mod+Shift+q kill
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-#
+
 # Float
 bindsym $mod+Shift+space floating toggle
 
@@ -212,10 +212,8 @@ bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_
 #
 # Applications
 #
-# assign [class="Thunderbird"] $ws1
-# assign [class="Pale moon"] $ws2
-# assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
+assign [class="Telegram"] $ws4
+assign [class="Thunderbird"] $ws4
 
 for_window [urgent=latest] focus
 
