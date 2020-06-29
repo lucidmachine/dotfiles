@@ -63,8 +63,8 @@ mode "$mode_gaps_outer" {
 # Launchers
 #
 bindsym $mod+Return exec terminal
-bindsym $mod+F2 exec palemoon
-bindsym $mod+F3 exec ranger
+bindsym $mod+w exec firefox
+bindsym $mod+e exec ranger
 bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+Ctrl+m exec pavucontrol
 
