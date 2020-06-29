@@ -2,6 +2,7 @@
 install.conf.yaml
 neovim/plugged
 neovim/spell
+neovim/.netrwhist
 ranger/bookmarks
 ranger/history
 ranger/tagged
