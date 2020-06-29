@@ -70,6 +70,7 @@ if [ $(which pamac) ]; then
     bash \
     curl \
     ctags \
+    fd \
     git \
     htop \
     jq \
@@ -86,6 +87,7 @@ elif [ $(which apt-get) ]; then
     bash \
     curl \
     exuberant-ctags \
+    fd \
     git \
     htop \
     jq \
@@ -108,6 +110,7 @@ elif [ $(which brew) ]; then
     clojure/tools/clojure \
     ctags \
     curl \
+    fd \
     git \
     htop \
     jq \

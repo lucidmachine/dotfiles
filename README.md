@@ -27,6 +27,7 @@ Configuration, powered by a shell script.
 * bash
 * curl
 * Exuberant CTags
+* fd
 * git
 * htop
 * less
