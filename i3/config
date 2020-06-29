@@ -16,9 +16,9 @@ bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
-bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 bindsym $mod+minus scratchpad show
+bindsym $mod+space focus mode_toggle
 
 #
 # Gaps
