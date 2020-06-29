@@ -71,6 +71,7 @@ if [ $(which pamac) ]; then
     curl \
     ctags \
     fd \
+    fzf \
     git \
     htop \
     jq \
@@ -88,6 +89,7 @@ elif [ $(which apt-get) ]; then
     curl \
     exuberant-ctags \
     fd \
+    fzf \
     git \
     htop \
     jq \
@@ -111,6 +113,7 @@ elif [ $(which brew) ]; then
     ctags \
     curl \
     fd \
+    fzf \
     git \
     htop \
     jq \
