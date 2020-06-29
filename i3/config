@@ -12,11 +12,11 @@ floating_modifier $mod
 #
 # Focus
 #
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
-bindsym $mod+a focus parent
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+p focus parent
 bindsym $mod+minus scratchpad show
 bindsym $mod+space focus mode_toggle
 
@@ -76,7 +76,6 @@ bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 
-bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 
 #
 # Services
@@ -130,11 +129,20 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 # Float
 bindsym $mod+Shift+space floating toggle
 
+# Layout
+bindsym $mod+a mode "$mode_layout"
+set $mode_layout layout: d(e)fault, (s)tacking, (t)abbed
+mode "$mode_layout" {
+  bindsym e layout toggle split, mode "default"
+  bindsym s layout stacking, mode "default"
+  bindsym t layout tabbed, mode "default"
+}
+
 # Move
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+f fullscreen toggle
 
@@ -156,14 +164,7 @@ mode "resize" {
 }
 
 # Split
-bindsym $mod+h split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
-bindsym $mod+q split toggle
-bindsym $mod+e layout toggle split
-
-# Stack
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+s split toggle
 
 # Stick
 bindsym $mod+Shift+s sticky toggle
