@@ -1,19 +1,27 @@
 # dotfiles
-CLI setup, powered by a shell script.
+Configuration, powered by a shell script.
 
 ## Configures
 * bash
-    * RC
-    * Profile
-    * Aliases
-    * Color palette
+  * RC
+  * Profile
+  * Aliases
+  * Color palette
+* i3
+  * Bindings
+  * Services
+  * Settings
+  * Status Bar
 * Git
-    * Prompt    
+  * Prompt    
 * NeoVim
-    * Plugins
-    * Settings
-    * Mappings
-    * Snippets
+  * Plugins
+  * Settings
+  * Mappings
+  * Snippets
+* Ranger
+  * Appearance
+  * Bindings
 
 ## Installs
 * bash
