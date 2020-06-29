@@ -20,11 +20,6 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 bindsym $mod+minus scratchpad show
 
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 #
 # Gaps
 #
@@ -131,11 +126,6 @@ bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+f fullscreen toggle
-
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 bindsym $mod+h split h;exec notify-send 'tile horizontally'
 bindsym $mod+v split v;exec notify-send 'tile vertically'
