@@ -81,17 +81,23 @@ bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 #
 # Services
 #
+
+# Backlight
+# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
+# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+
+# Compton
+bindsym $mod+t exec --no-startup-id pkill compton
+bindsym $mod+Ctrl+t exec --no-startup-id compton -b
+
+# Dunst
+bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+
+# i3
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+m bar mode toggle
 
-bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
-
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 
 #
@@ -117,9 +123,14 @@ mode "$mode_system" {
 #
 # Windows
 #
+# Close
 bindsym $mod+Shift+q kill
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+#
+# Float
+bindsym $mod+Shift+space floating toggle
 
+# Move
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
@@ -127,18 +138,7 @@ bindsym $mod+Shift+semicolon move right
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+f fullscreen toggle
 
-bindsym $mod+h split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
-bindsym $mod+q split toggle
-
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-bindsym $mod+Shift+space floating toggle
-
-bindsym $mod+Shift+s sticky toggle
-
+# Resize
 bindsym $mod+r mode "resize"
 mode "resize" {
   bindsym j resize shrink width 5 px or 5 ppt
@@ -154,6 +154,19 @@ mode "resize" {
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
+
+# Split
+bindsym $mod+h split h;exec notify-send 'tile horizontally'
+bindsym $mod+v split v;exec notify-send 'tile vertically'
+bindsym $mod+q split toggle
+bindsym $mod+e layout toggle split
+
+# Stack
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+
+# Stick
+bindsym $mod+Shift+s sticky toggle
 
 
 #
