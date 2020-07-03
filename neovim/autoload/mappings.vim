@@ -8,6 +8,16 @@ function! mappings#cycle_colorcolumn() abort
         \ }[&colorcolumn]
 endfunction
 
+" Cycle through inccommand modes
+" NeoVim only, please guard this function appropriately
+function! mappings#cycle_inccommand() abort
+  execute {
+    \ 'nosplit':  'set inccommand=split',
+    \ 'split':    'set inccommand=nosplit',
+  \}[&inccommand]
+endfunction
+
+
 " Copy buffer to clipboard
 function! mappings#copy_buffer_to_clipboard() abort
   call setreg('+', join(getline(1, '$'), "\n"))

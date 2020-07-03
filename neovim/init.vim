@@ -240,6 +240,9 @@ endif
 
 " Toggles
 noremap <silent> <leader>tc :call mappings#cycle_colorcolumn()<CR>
+if has('nvim')
+  noremap <silent> <leader>ts :call mappings#cycle_inccommand()<CR>
+endif
 
 " Vim Configuration
 noremap <silent> <leader>vv :tabnew $MYVIMRC<CR>
