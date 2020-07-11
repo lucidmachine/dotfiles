@@ -277,7 +277,7 @@ bar {
     binding_mode       #16a085 #2C2C2C #F9FAF9
     urgent_workspace   #16a085 #FDF6E3 #E5201D
   }
-  font xft:URWGothic-Book 11
+  font pango:Bitstream Vera Sans 11, FontAwesome 11
 	strip_workspace_numbers yes
 }
 
@@ -353,7 +353,8 @@ smart_borders on
 #
 # Fonts
 #
-font xft:URWGothic-Book 11
+# Use fc-list to list, fc-match to search
+font pango:Bitstream Vera Sans 11
 
 #
 # Workspaces
