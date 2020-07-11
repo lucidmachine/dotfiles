@@ -136,6 +136,9 @@ mode "$mode_layout" {
   bindsym e layout toggle split, mode "default"
   bindsym s layout stacking, mode "default"
   bindsym t layout tabbed, mode "default"
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 # Move
