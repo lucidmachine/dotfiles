@@ -44,6 +44,8 @@ nmap <silent> gi :action GotoImplementatin<CR>
 
 " Refactorings
 nmap <leader>ri :action Inline<CR>
+nmap <leader>rl :action ReformatCode<CR>
+nmap <leader>ro :action OptimizeImports<CR>
 nmap <leader>rr :action RenameElement<CR>
 
 
