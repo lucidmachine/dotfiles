@@ -33,6 +33,9 @@ venv/
 # Rust
 **/*.rs.bk
 
+# Vagrant
+.vagrant/
+
 # Vim
 *.swo
 *.swp
