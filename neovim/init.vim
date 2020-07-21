@@ -120,6 +120,9 @@ if has('nvim')
   au TermOpen * :startinsert
 endif
 
+" Textwidth
+set textwidth=100
+
 " UI
 set lazyredraw                                  " Macros don't redraw
 
@@ -143,7 +146,7 @@ endif
 
 " ColorColumn
 if exists('+colorcolumn')
-    set colorcolumn=101
+  let &colorcolumn = &textwidth + 1
 endif
 
 " Cursor
@@ -241,7 +244,7 @@ if has('nvim')
 endif
 
 " Toggles
-noremap <silent> <leader>tc :call mappings#cycle_colorcolumn()<CR>
+noremap <silent> <leader>tc :call mappings#cycle_columns()<CR>
 if has('nvim')
   noremap <silent> <leader>ts :call mappings#cycle_inccommand()<CR>
 endif

@@ -1,11 +1,18 @@
-" Cycle through colorcolumn at line 81, 101, and off.
-function! mappings#cycle_colorcolumn() abort
+" Cycle the number of columns
+" 100 -> 120 -> 80 -> 100
+function! mappings#cycle_columns() abort
   execute {
-        \ '': 'set colorcolumn=81',
-        \ '0': 'set colorcolumn=81',
-        \ '81': 'set colorcolumn=101',
-        \ '101': 'set colorcolumn=0',
-        \ }[&colorcolumn]
+        \ '': 'set textwidth=100',
+        \ '100': 'set textwidth=120',
+        \ '120': 'set textwidth=80',
+        \ '80': 'set textwidth=100'
+        \ }[&textwidth]
+
+  echo &textwidth
+
+  if exists('+colorcolumn')
+    let &colorcolumn = &textwidth + 1
+  endif
 endfunction
 
 " Cycle through inccommand modes
