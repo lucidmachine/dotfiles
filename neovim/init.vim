@@ -254,8 +254,8 @@ noremap <silent> <leader>vv :tabnew $MYVIMRC<CR>
 noremap <silent> <leader>vr :source $MYVIMRC<CR>
 
 " WhichKey
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
-nnoremap <silent> <localleader> :WhichKey ','<CR>
+nnoremap <silent> <leader> :WhichKey '<leader>'<CR>
+nnoremap <silent> <localleader> :WhichKey '<localleader>'<CR>
 
 " Windows
 noremap <leader>wo :only<CR>
