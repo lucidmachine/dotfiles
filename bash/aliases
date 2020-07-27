@@ -22,7 +22,7 @@ alias gitvd='git difftool'
 # grep
 if [ $(which rg) ]; then
   alias grep='rg'
-else 
+else
   alias grep='grep --color=auto'
 fi
 
@@ -30,9 +30,11 @@ fi
 if [[ "$(uname)" == "Darwin" ]]; then
   alias ls='ls -hG'
   alias ll='ls -lhAG'
+  alias lt='ls -t'
 else
   alias ls='ls --human-readable --color'
   alias ll='ls --color --human-readable --almost-all -l'
+  alias lt='ls --color --human-readable --sort=time'
 fi
 
 # NeoVim
@@ -49,5 +51,5 @@ alias svnc='svn commit --message '
 alias svnd='svn diff'
 alias svnl='svn log --limit 5'
 alias svns='svn status'
-alias svnsf='svn status | rev | cut -d" " -f1 | rev'
+alias svnsf='svn status | grep --invert-match --regexp="^---" | rev | cut -d" " -f1 | rev'
 alias svnu='svn update'
