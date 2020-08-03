@@ -87,12 +87,9 @@ augroup rainbow_lisp
 augroup END
 augroup pencil
     au!
-    au FileType markdown,mkd    call pencil#init({'wrap': 'soft'})
-    au FileType markdown,mkd    setlocal spell
-    au FileType markdown,mkd    setlocal conceallevel=0
-    au FileType text            call pencil#init({'wrap': 'hard'})
-    au FileType text            setlocal spell
-    au FileType text            setlocal conceallevel=0
+    au FileType markdown,text call pencil#init({'wrap': 'hard'})
+    au FileType markdown,text setlocal spell
+    au FileType markdown,text setlocal conceallevel=0
 augroup END
 augroup XML
     au!
