@@ -15,5 +15,7 @@ if [ $(which less) ];   then export PAGER='less'
 elif [ $(which more) ]; then export PAGER='more'
 fi
 
-# Machine-specific environment extensions
-source_if_exists "${HOME}/.environment-ext"
+# Set default visual diff command
+if [ $(which meld) ];     then export VISUAL_DIFF='meld'
+elif [ $(which kdiff3) ]; then export VISUAL_DIFF='kdiff3'
+fi

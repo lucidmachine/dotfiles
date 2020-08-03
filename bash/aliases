@@ -53,3 +53,4 @@ alias svnl='svn log --limit 5'
 alias svns='svn status'
 alias svnsf='svn status | grep --invert-match --regexp="^---" | rev | cut -d" " -f1 | rev'
 alias svnu='svn update'
+alias svnvd="svn diff --diff-cmd ${VISUAL_DIFF}"
