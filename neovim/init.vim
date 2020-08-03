@@ -115,6 +115,9 @@ if executable('rg')
     let g:ctrlp_use_caching = 0
 endif
 
+" Splits
+set splitbelow
+
 " Terminal
 if has('nvim')
   au TermOpen * :startinsert
