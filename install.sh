@@ -59,6 +59,7 @@ link "${BASEDIR}/i3status"            "${HOME}/.config/i3status"
 link "${BASEDIR}/neovim"              "${HOME}/.config/nvim"
 link "${BASEDIR}/neovim"              "${HOME}/.vim"
 link "${BASEDIR}/ranger"              "${HOME}/.config/ranger"
+link "${BASEDIR}/tmux/tmux.conf"      "${HOME}/.tmux.conf"
 
 # Packages
 echo
