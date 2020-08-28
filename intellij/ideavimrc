@@ -21,6 +21,7 @@ xnoremap <silent> <leader>; :action CommentByLineComment<CR>
 " xnoremap <silent> <leader>cc :call mappings#copy_selection_to_clipboard()<CR>
 noremap <silent> <leader>cp :action CopyContentRootPath<CR>
 noremap <silent> <leader>cP :action CopyAbsolutePath<CR>
+noremap <silent> <leader>cr :action CopyReference<CR>
 
 " Documentation
 nnoremap <silent> K :action QuickJavaDoc<CR>
