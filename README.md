@@ -22,6 +22,8 @@ Configuration, powered by a shell script.
 * Ranger
   * Appearance
   * Bindings
+* tmux
+  * Color support
 
 ## Installs
 * bash
