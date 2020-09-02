@@ -16,8 +16,7 @@ Plug 'neoclide/coc.nvim', {
 \   'tag': 'v0.0.78'
 \}                                              " LSP-based completion engine
 Plug 'Olical/conjure', {
-\   'tag': 'v2.1.0',
-\   'do': 'bin/compile'
+\   'tag': 'v4.1.0'
 \}                                              " Clojure support
 Plug 'reedes/vim-pencil'                        " Prose format and nav
 Plug 'vimoutliner/vimoutliner'                  " Outline mode for .otl files
