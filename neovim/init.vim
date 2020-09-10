@@ -36,10 +36,9 @@ Plug 'liuchengxu/vim-which-key', {
 Plug 'MarcWeber/vim-addon-mw-utils'             " Dependency for Snipmate
 Plug 'markonm/traces.vim'                       " Substitute preview
 Plug 'milkypostman/vim-togglelist'              " Toggle fix lists
-Plug 'tomtom/tcomment_vim'                      " Filetype-sensible comment
-Plug 'tomtom/tlib_vim'                          " Dependency for TComment
 Plug 'terryma/vim-multiple-cursors'             " Multi-cursor
 Plug 'thinca/vim-visualstar'                    " Search a visual mode selection
+Plug 'tpope/vim-commentary'                     " Toggle comments
 Plug 'tpope/vim-fugitive'                       " Git commands from inside ViM
 Plug 'tpope/vim-projectionist'                  " Project navigation
 Plug 'tpope/vim-surround'                       " Manipulate parens, tags, etc.
@@ -197,8 +196,10 @@ noremap <silent> <leader>b9 :buffer 9<CR>
 noremap <silent> <leader>b0 :buffer 10<CR>
 
 " Comments
-noremap <silent> <leader>; :TComment<CR>
-xnoremap <silent> <leader>; :TComment<CR>
+xmap <leader>; <Plug>Commentary
+nmap <leader>; <Plug>Commentary
+omap <leader>; <Plug>Commentary
+nmap <leader>;; <Plug>CommentaryLine
 
 " Copy
 noremap <silent> <leader>cc :call mappings#copy_buffer_to_clipboard()<CR>
