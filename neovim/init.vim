@@ -39,7 +39,6 @@ Plug 'milkypostman/vim-togglelist'              " Toggle fix lists
 Plug 'thinca/vim-visualstar'                    " Search a visual mode selection
 Plug 'tpope/vim-commentary'                     " Toggle comments
 Plug 'tpope/vim-fugitive'                       " Git commands from inside ViM
-Plug 'tpope/vim-projectionist'                  " Project navigation
 Plug 'tpope/vim-surround'                       " Manipulate parens, tags, etc.
 Plug 'vim-scripts/taglist.vim'                  " Code tag viewer
 Plug 'wincent/loupe'                            " Search enhancements
@@ -279,40 +278,6 @@ let g:coc_global_extensions = ['coc-conjure']
 
 " Conjure
 let g:conjure_log_direction = "horizontal"
-
-" Projectionist
-function! s:project(...)
-  for [l:pattern, l:projection] in a:000
-    let g:projectionist_heuristics['*'][l:pattern] = l:projection
-  endfor
-endfunction
-
-let g:projectionist_heuristics = {
-    \   '*': {
-    \     '*.c': {
-    \       'alternate': '{}.h',
-    \       'type': 'source'
-    \     },
-    \     '*.h': {
-    \       'alternate': '{}.c',
-    \       'type': 'header'
-    \     }
-    \   }
-    \ }
-
-for s:extension in ['.js', '.ts']
-    call s:project(
-        \ ['*' . s:extension, {
-        \   'alternate': [
-        \     '{dirname}/{basename}.spec' . s:extension
-        \   ],
-        \   'type': 'source'
-        \ }],
-        \ ['*.spec' . s:extension, {
-        \   'alternate': '{basename}' . s:extension,
-        \   'type': 'test',
-        \ }])
-endfor
 
 " Signify
 let g:signify_vcs_list = ['git', 'hg', 'bzr']
