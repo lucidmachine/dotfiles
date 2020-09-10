@@ -36,7 +36,6 @@ Plug 'liuchengxu/vim-which-key', {
 Plug 'MarcWeber/vim-addon-mw-utils'             " Dependency for Snipmate
 Plug 'markonm/traces.vim'                       " Substitute preview
 Plug 'milkypostman/vim-togglelist'              " Toggle fix lists
-Plug 'terryma/vim-multiple-cursors'             " Multi-cursor
 Plug 'thinca/vim-visualstar'                    " Search a visual mode selection
 Plug 'tpope/vim-commentary'                     " Toggle comments
 Plug 'tpope/vim-fugitive'                       " Git commands from inside ViM
