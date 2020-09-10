@@ -16,7 +16,6 @@ Plug 'neoclide/coc.nvim', {
 Plug 'Olical/conjure', {
 \   'tag': 'v4.1.0'
 \}                                              " Clojure support
-Plug 'reedes/vim-pencil'                        " Prose format and nav
 Plug 'vimoutliner/vimoutliner'                  " Outline mode for .otl files
 
 " Appearance
@@ -82,11 +81,9 @@ augroup rainbow_lisp
   autocmd!
   autocmd FileType lisp,clojure,scheme RainbowParenthesesToggleAll
 augroup END
-augroup pencil
+augroup prose
     au!
-    au FileType markdown,text call pencil#init({'wrap': 'hard'})
     au FileType markdown,text setlocal spell
-    au FileType markdown,text setlocal conceallevel=0
 augroup END
 augroup XML
     au!
