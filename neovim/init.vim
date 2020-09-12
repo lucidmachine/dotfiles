@@ -5,18 +5,27 @@ filetype off
 call plug#begin('~/.config/nvim/plugged')
 
 " Language Support
-Plug 'elubow/cql-vim'                           " Cassandra Query Language support
+Plug 'elubow/cql-vim', {
+\   'for': 'cql'
+\}                                              " Cassandra Query Language support
 Plug 'l04m33/vlime', {
-\   'rtp': 'vim/'
+\   'rtp': 'vim/',
+\   'for': 'lisp'
 \}                                              " Common Lisp support
-Plug 'masukomi/vim-markdown-folding'            " Fold markdown headers
+Plug 'masukomi/vim-markdown-folding', {
+\   'for': 'markdown'
+\}                                              " Fold markdown headers
 Plug 'neoclide/coc.nvim', {
-\   'tag': 'v0.0.78'
+\   'tag': 'v0.0.78',
+\   'frozen': 'true'
 \}                                              " LSP-based completion engine
 Plug 'Olical/conjure', {
-\   'tag': 'v4.1.0'
+\   'tag': 'v4.1.0',
+\   'for': 'clojure'
 \}                                              " Clojure support
-Plug 'vimoutliner/vimoutliner'                  " Outline mode for .otl files
+Plug 'vimoutliner/vimoutliner', {
+\   'for': 'votl'
+\}                                              " Outline mode for .otl files
 
 " Appearance
 Plug 'crusoexia/vim-monokai'                    " Monokai theme
