@@ -20,7 +20,7 @@ Plug 'neoclide/coc.nvim', {
 \   'frozen': 'true'
 \}                                              " LSP-based completion engine
 Plug 'Olical/conjure', {
-\   'tag': 'v4.1.0',
+\   'tag': 'v4.5.0',
 \   'for': 'clojure'
 \}                                              " Clojure support
 Plug 'vimoutliner/vimoutliner', {
