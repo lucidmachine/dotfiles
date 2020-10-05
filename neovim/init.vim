@@ -187,7 +187,7 @@ set background=dark
 " Mappings
 """"""""""
 let mapleader = " "
-let maplocalleader = ","
+let maplocalleader = "  "
 
 " Buffers
 noremap <silent> <leader>bb :buffers<CR>
