@@ -1,12 +1,9 @@
 " Cycle the number of columns
 " 100 -> 120 -> 80 -> 100
+" If the current textwidth isn't part of the cycle, then it will restart at 100
 function! mappings#cycle_columns() abort
-  execute {
-        \ '': 'set textwidth=100',
-        \ '100': 'set textwidth=120',
-        \ '120': 'set textwidth=80',
-        \ '80': 'set textwidth=100'
-        \ }[&textwidth]
+  let next_width = { 100: '120', 120: '80', 80: '100', }
+  let &textwidth = get(next_width, &textwidth, '100')
 
   echo &textwidth
 
