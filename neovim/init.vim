@@ -302,3 +302,18 @@ let Tlist_Use_SingleClick = 1
 
 " Toggle List
 let g:toggle_list_no_mappings = 1
+
+" WhichKey
+let g:which_key_map = {}
+let g:which_key_map._ = { 'name': '+TComment' }
+let g:which_key_map.b = { 'name': '+buffers' }
+let g:which_key_map.c = { 'name': '+copy' }
+let g:which_key_map.f = { 'name': '+files' }
+let g:which_key_map.g = { 'name': '+goto' }
+let g:which_key_map.l = { 'name': '+locationlist' }
+let g:which_key_map.r = { 'name': '+refactor' }
+let g:which_key_map.t = { 'name': '+toggle' }
+let g:which_key_map.v = { 'name': '+vim' }
+let g:which_key_map.w = { 'name': '+window' }
+let g:which_key_map.q = { 'name': '+quickfixlist' }
+autocmd! User vim-which-key call which_key#register('<Space>', "g:which_key_map")
