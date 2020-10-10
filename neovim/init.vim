@@ -66,14 +66,14 @@ set backspace=indent,eol,start
 
 " Document Formatting
 set autoindent
-set conceallevel=0                             " Don't conceal characters
+set conceallevel=0                               " Don't conceal characters
 set expandtab
 set nowrap
 set shiftwidth=2
 set smarttab
 set tabstop=2
 if v:version > 703
-  set formatoptions +=j                        " Join sans comment leader
+  set formatoptions +=j                          " Join sans comment leader
 endif
 
 " Filetypes
