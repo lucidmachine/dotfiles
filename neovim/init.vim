@@ -284,7 +284,14 @@ noremap <leader>w- <C-W>-
 """""""""""""""
 " CoC
 let g:coc_enable_locationlist = 0
-let g:coc_global_extensions = ['coc-conjure']
+let g:coc_global_extensions = [
+      \'coc-angular'
+      \'coc-conjure'
+      \'coc-eslint'
+      \'coc-java'
+      \'coc-marketplace'
+      \'coc-sh'
+      \]
 
 " Conjure
 let g:conjure_log_direction = "horizontal"
