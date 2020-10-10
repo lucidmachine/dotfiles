@@ -285,12 +285,12 @@ noremap <leader>w- <C-W>-
 " CoC
 let g:coc_enable_locationlist = 0
 let g:coc_global_extensions = [
-      \'coc-angular'
-      \'coc-conjure'
-      \'coc-eslint'
-      \'coc-java'
-      \'coc-marketplace'
-      \'coc-sh'
+      \'coc-angular',
+      \'coc-conjure',
+      \'coc-eslint',
+      \'coc-java',
+      \'coc-marketplace',
+      \'coc-sh',
       \]
 
 " Conjure
