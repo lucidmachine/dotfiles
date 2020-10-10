@@ -16,9 +16,9 @@ endfunction
 " NeoVim only, please guard this function appropriately
 function! mappings#cycle_inccommand() abort
   execute {
-    \ 'nosplit':  'set inccommand=split',
-    \ 'split':    'set inccommand=nosplit',
-  \}[&inccommand]
+        \ 'nosplit':  'set inccommand=split',
+        \ 'split':    'set inccommand=nosplit',
+        \}[&inccommand]
 endfunction
 
 

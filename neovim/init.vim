@@ -6,54 +6,54 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Language Support
 Plug 'elubow/cql-vim', {
-\   'for': 'cql'
-\}                                              " Cassandra Query Language support
+      \   'for': 'cql'
+      \}                                         " Cassandra Query Language support
 Plug 'l04m33/vlime', {
-\   'rtp': 'vim/',
-\   'for': 'lisp'
-\}                                              " Common Lisp support
+      \   'rtp': 'vim/',
+      \   'for': 'lisp'
+      \}                                         " Common Lisp support
 Plug 'masukomi/vim-markdown-folding', {
-\   'for': 'markdown'
-\}                                              " Fold markdown headers
+      \   'for': 'markdown'
+      \}                                         " Fold markdown headers
 Plug 'neoclide/coc.nvim', {
-\   'tag': 'v0.0.78',
-\   'frozen': 'true'
-\}                                              " LSP-based completion engine
+      \   'tag': 'v0.0.78',
+      \   'frozen': 'true'
+      \}                                         " LSP-based completion engine
 Plug 'Olical/conjure', {
-\   'tag': 'v4.5.0',
-\   'for': 'clojure'
-\}                                              " Clojure support
+      \   'tag': 'v4.5.0',
+      \   'for': 'clojure'
+      \}                                         " Clojure support
 Plug 'vimoutliner/vimoutliner', {
-\   'for': 'votl'
-\}                                              " Outline mode for .otl files
+      \   'for': 'votl'
+      \}                                         " Outline mode for .otl files
 
 " Appearance
-Plug 'crusoexia/vim-monokai'                    " Monokai theme
-Plug 'itchyny/lightline.vim'                    " Lightweight status line
-Plug 'mhinz/vim-signify'                        " VCS diff gutter
-Plug 'Yggdroot/indentLine'                      " Indentation level lines
+Plug 'crusoexia/vim-monokai'                     " Monokai theme
+Plug 'itchyny/lightline.vim'                     " Lightweight status line
+Plug 'mhinz/vim-signify'                         " VCS diff gutter
+Plug 'Yggdroot/indentLine'                       " Indentation level lines
 
 " Other
-Plug 'ctrlpvim/ctrlp.vim'                       " Fuzzy finder pallette
-Plug 'editorconfig/editorconfig-vim'            " Cross-editor config files
-Plug 'garbas/vim-snipmate'                      " Snippets
-Plug 'jiangmiao/auto-pairs'                     " Balance paired characters
-Plug 'kien/rainbow_parentheses.vim'             " Rainbow parentheses
+Plug 'ctrlpvim/ctrlp.vim'                        " Fuzzy finder pallette
+Plug 'editorconfig/editorconfig-vim'             " Cross-editor config files
+Plug 'garbas/vim-snipmate'                       " Snippets
+Plug 'jiangmiao/auto-pairs'                      " Balance paired characters
+Plug 'kien/rainbow_parentheses.vim'              " Rainbow parentheses
 Plug 'liuchengxu/vim-which-key', {
-\   'on': ['WhichKey', 'WhichKey!']
-\}                                              " Show mappings on timeout
-Plug 'MarcWeber/vim-addon-mw-utils'             " Dependency for Snipmate
-Plug 'markonm/traces.vim'                       " Substitute preview
-Plug 'milkypostman/vim-togglelist'              " Toggle fix lists
-Plug 'thinca/vim-visualstar'                    " Search a visual mode selection
-Plug 'tomtom/tlib_vim'                          " Dependency for Snipmate
-Plug 'tpope/vim-commentary'                     " Toggle comments
-Plug 'tpope/vim-fugitive'                       " Git commands from inside ViM
-Plug 'tpope/vim-surround'                       " Manipulate parens, tags, etc.
-Plug 'vim-scripts/taglist.vim'                  " Code tag viewer
-Plug 'wincent/loupe'                            " Search enhancements
-Plug 'wincent/scalpel'                          " Quick replace word
-Plug 'wincent/terminus'                         " Terminal integration
+      \   'on': ['WhichKey', 'WhichKey!']
+      \}                                         " Show mappings on timeout
+Plug 'MarcWeber/vim-addon-mw-utils'              " Dependency for Snipmate
+Plug 'markonm/traces.vim'                        " Substitute preview
+Plug 'milkypostman/vim-togglelist'               " Toggle fix lists
+Plug 'thinca/vim-visualstar'                     " Search a visual mode selection
+Plug 'tomtom/tlib_vim'                           " Dependency for Snipmate
+Plug 'tpope/vim-commentary'                      " Toggle comments
+Plug 'tpope/vim-fugitive'                        " Git commands from inside ViM
+Plug 'tpope/vim-surround'                        " Manipulate parens, tags, etc.
+Plug 'vim-scripts/taglist.vim'                   " Code tag viewer
+Plug 'wincent/loupe'                             " Search enhancements
+Plug 'wincent/scalpel'                           " Quick replace word
+Plug 'wincent/terminus'                          " Terminal integration
 
 call plug#end()
 
@@ -73,7 +73,7 @@ set shiftwidth=2
 set smarttab
 set tabstop=2
 if v:version > 703
-    set formatoptions +=j                      " Join sans comment leader
+  set formatoptions +=j                        " Join sans comment leader
 endif
 
 " Filetypes
@@ -89,28 +89,28 @@ augroup rainbow_lisp
   autocmd FileType lisp,clojure,scheme RainbowParenthesesToggleAll
 augroup END
 augroup prose
-    au!
-    au FileType markdown,text setlocal spell
+  au!
+  au FileType markdown,text setlocal spell
 augroup END
 augroup XML
-    au!
-    au FileType xml let g:xml_syntax_folding=1
-    au FileType xml setlocal foldmethod=syntax
-    au FileType xml :syntax on
-    au FileType xml :%foldopen!
+  au!
+  au FileType xml let g:xml_syntax_folding=1
+  au FileType xml setlocal foldmethod=syntax
+  au FileType xml :syntax on
+  au FileType xml :%foldopen!
 augroup END
 
 " File tree browser
-let g:netrw_banner = 0                          " Disable banner
-let g:netrw_liststyle = 3                       " Filetree browser style
-let g:netrw_altv = 1                            " Split vertically
-let g:netrw_bufsettings = 'number'              " Use line numbers
+let g:netrw_banner = 0                           " Disable banner
+let g:netrw_liststyle = 3                        " Filetree browser style
+let g:netrw_altv = 1                             " Split vertically
+let g:netrw_bufsettings = 'number'               " Use line numbers
 
 " Search
 if executable('rg')
-    set grepprg=rg\ --color=never
-    let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-    let g:ctrlp_use_caching = 0
+  set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
 endif
 
 " Splits
@@ -125,13 +125,13 @@ endif
 set textwidth=100
 
 " UI
-set lazyredraw                                  " Macros don't redraw
+set lazyredraw                                   " Macros don't redraw
 
 " Visual Bell
 set visualbell
 
 " Working files
-set updatetime=300                              " Write to swap every n ms
+set updatetime=300                               " Write to swap every n ms
 
 
 """"""""""""
@@ -139,10 +139,10 @@ set updatetime=300                              " Write to swap every n ms
 """"""""""""
 " Cmder color palette fix
 if !empty($CONEMUBUILD)
-    set term=xterm
-    set t_Co=256
-    let &t_AB = "\e[48;5;%dm"
-    let &t_AF = "\e[38;5;%dm"
+  set term=xterm
+  set t_Co=256
+  let &t_AB = "\e[48;5;%dm"
+  let &t_AF = "\e[38;5;%dm"
 endif
 
 " ColorColumn
@@ -155,13 +155,13 @@ set cursorline
 
 " Focus
 if exists('+winhighlight')
-    augroup focus
-        au!
-        au ColorScheme * hi link MyInactiveWin ColorColumn | hi link MyNormalWin Normal
-        au FileType,BufWinEnter * call autocmds#configure_winhighlight()
-        au FocusGained * hi link MyNormalWin Normal
-        au FocusLost * hi link MyNormalWin MyInactiveWin
-    augroup END
+  augroup focus
+    au!
+    au ColorScheme * hi link MyInactiveWin ColorColumn | hi link MyNormalWin Normal
+    au FileType,BufWinEnter * call autocmds#configure_winhighlight()
+    au FocusGained * hi link MyNormalWin Normal
+    au FocusLost * hi link MyNormalWin MyInactiveWin
+  augroup END
 endif
 
 " Gutter
@@ -176,9 +176,9 @@ let g:lightline = {'colorscheme': 'wombat'}
 
 " Theme
 try
-    colorscheme monokai
+  colorscheme monokai
 catch /^Vim\%((\a\+)\)\=:E185
-    colorscheme murphy
+  colorscheme murphy
 endtry
 set background=dark
 
