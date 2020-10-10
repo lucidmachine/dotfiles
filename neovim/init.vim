@@ -34,10 +34,11 @@ Plug 'mhinz/vim-signify'                         " VCS diff gutter
 Plug 'Yggdroot/indentLine'                       " Indentation level lines
 
 " Other
-Plug 'ctrlpvim/ctrlp.vim'                        " Fuzzy finder pallette
 Plug 'editorconfig/editorconfig-vim'             " Cross-editor config files
 Plug 'garbas/vim-snipmate'                       " Snippets
 Plug 'jiangmiao/auto-pairs'                      " Balance paired characters
+Plug 'junegunn/fzf'                              " Fuzzy finder
+Plug 'junegunn/fzf.vim'                          " Vim integration for fzf
 Plug 'kien/rainbow_parentheses.vim'              " Rainbow parentheses
 Plug 'liuchengxu/vim-which-key', {
       \   'on': ['WhichKey', 'WhichKey!']
@@ -109,8 +110,6 @@ let g:netrw_bufsettings = 'number'               " Use line numbers
 " Search
 if executable('rg')
   set grepprg=rg\ --color=never
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-  let g:ctrlp_use_caching = 0
 endif
 
 " Splits
@@ -190,18 +189,8 @@ let mapleader = " "
 let maplocalleader = "  "
 
 " Buffers
-noremap <silent> <leader>bb :buffers<CR>
+noremap <silent> <leader>bb :Buffers<CR>
 noremap <silent> <leader>ba :ball<CR>
-noremap <silent> <leader>b1 :buffer 1<CR>
-noremap <silent> <leader>b2 :buffer 2<CR>
-noremap <silent> <leader>b3 :buffer 3<CR>
-noremap <silent> <leader>b4 :buffer 4<CR>
-noremap <silent> <leader>b5 :buffer 5<CR>
-noremap <silent> <leader>b6 :buffer 6<CR>
-noremap <silent> <leader>b7 :buffer 7<CR>
-noremap <silent> <leader>b8 :buffer 8<CR>
-noremap <silent> <leader>b9 :buffer 9<CR>
-noremap <silent> <leader>b0 :buffer 10<CR>
 
 " Comments
 xmap <leader>; <Plug>Commentary
@@ -219,7 +208,8 @@ noremap <silent> <leader>cP :call mappings#copy_current_file_absolute_path_to_cl
 nnoremap <silent> K :call mappings#show_documentation()<CR>
 
 " Files
-noremap <silent> <leader>ff :Explore<CR>
+noremap <silent> <leader>ff :Files<CR>
+noremap <silent> <leader>fe :Explore<CR>
 
 " Goto
 nmap <silent> gd <Plug>(coc-definition)
@@ -295,6 +285,21 @@ let g:coc_global_extensions = [
 
 " Conjure
 let g:conjure_log_direction = "horizontal"
+
+" fzf
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+      \ 'ctrl-q': function('s:build_quickfix_list'),
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-t': 'tab split',
+      \ 'ctrl-x': 'split',
+      \ 'ctrl-v': 'vsplit',
+      \}
 
 " Signify
 let g:signify_vcs_list = ['git', 'hg', 'bzr']
