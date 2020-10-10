@@ -203,6 +203,7 @@ nnoremap <silent> K :call mappings#show_documentation()<CR>
 " Files
 noremap <silent> <leader>ff :Files<CR>
 noremap <silent> <leader>fe :Explore<CR>
+noremap <silent> <leader>fg :GFiles<CR>
 
 " Goto
 nmap <silent> gd <Plug>(coc-definition)
