@@ -83,16 +83,9 @@ filetype plugin on
 filetype indent on
 syntax on
 
+au FileType lisp,clojure,scheme RainbowParenthesesToggleAll
 au FileType make setlocal noexpandtab
-au FileType votl setlocal spell
-augroup rainbow_lisp
-  autocmd!
-  autocmd FileType lisp,clojure,scheme RainbowParenthesesToggleAll
-augroup END
-augroup prose
-  au!
-  au FileType markdown,text setlocal spell
-augroup END
+au FileType markdown,text,votl setlocal spell
 augroup XML
   au!
   au FileType xml let g:xml_syntax_folding=1
