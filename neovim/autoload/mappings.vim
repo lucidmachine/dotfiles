@@ -15,10 +15,10 @@ endfunction
 " Cycle through inccommand modes
 " NeoVim only, please guard this function appropriately
 function! mappings#cycle_inccommand() abort
-  execute {
-        \ 'nosplit':  'set inccommand=split',
-        \ 'split':    'set inccommand=nosplit',
-        \}[&inccommand]
+  let next_mode = { 'split': 'nosplit', 'nosplit': 'split' }
+  let &inccommand = get(next_mode, &inccommand, 'split')
+
+  echo &inccommand
 endfunction
 
 
