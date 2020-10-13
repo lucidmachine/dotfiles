@@ -5,13 +5,14 @@ filetype off
 call plug#begin('~/.config/nvim/plugged')
 
 " Language Support
+Plug 'bakpakin/fennel.vim'                       " Fennel language support
 Plug 'elubow/cql-vim', {
       \   'for': 'cql'
       \}                                         " Cassandra Query Language support
 Plug 'l04m33/vlime', {
       \   'rtp': 'vim/',
       \   'for': 'lisp'
-      \}                                         " Common Lisp support
+      \}                                         " Common Lisp environment
 Plug 'masukomi/vim-markdown-folding', {
       \   'for': 'markdown'
       \}                                         " Fold markdown headers
@@ -21,8 +22,8 @@ Plug 'neoclide/coc.nvim', {
       \}                                         " LSP-based completion engine
 Plug 'Olical/conjure', {
       \   'tag': 'v4.5.0',
-      \   'for': 'clojure'
-      \}                                         " Clojure support
+      \   'for': ['clojure', 'fennel']
+      \}                                         " Clojure and Fennel environment
 Plug 'vimoutliner/vimoutliner', {
       \   'for': 'votl'
       \}                                         " Outline mode for .otl files
