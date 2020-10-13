@@ -7,25 +7,25 @@ call plug#begin('~/.config/nvim/plugged')
 " Language Support
 Plug 'bakpakin/fennel.vim'                       " Fennel language support
 Plug 'elubow/cql-vim', {
-      \   'for': 'cql'
+      \ 'for': 'cql'
       \}                                         " Cassandra Query Language support
 Plug 'l04m33/vlime', {
-      \   'rtp': 'vim/',
-      \   'for': 'lisp'
+      \ 'rtp': 'vim/',
+      \ 'for': 'lisp'
       \}                                         " Common Lisp environment
 Plug 'masukomi/vim-markdown-folding', {
-      \   'for': 'markdown'
+      \ 'for': 'markdown'
       \}                                         " Fold markdown headers
 Plug 'neoclide/coc.nvim', {
-      \   'tag': 'v0.0.78',
-      \   'frozen': 'true'
+      \ 'tag': 'v0.0.78',
+      \ 'frozen': 'true'
       \}                                         " LSP-based completion engine
 Plug 'Olical/conjure', {
-      \   'tag': 'v4.5.0',
-      \   'for': ['clojure', 'fennel']
+      \ 'tag': 'v4.5.0',
+      \ 'for': ['clojure', 'fennel']
       \}                                         " Clojure and Fennel environment
 Plug 'vimoutliner/vimoutliner', {
-      \   'for': 'votl'
+      \ 'for': 'votl'
       \}                                         " Outline mode for .otl files
 
 " Appearance
@@ -42,7 +42,7 @@ Plug 'junegunn/fzf'                              " Fuzzy finder
 Plug 'junegunn/fzf.vim'                          " Vim integration for fzf
 Plug 'kien/rainbow_parentheses.vim'              " Rainbow parentheses
 Plug 'liuchengxu/vim-which-key', {
-      \   'on': ['WhichKey', 'WhichKey!']
+      \ 'on': ['WhichKey', 'WhichKey!']
       \}                                         " Show mappings on timeout
 Plug 'MarcWeber/vim-addon-mw-utils'              " Dependency for Snipmate
 Plug 'markonm/traces.vim'                        " Substitute preview
