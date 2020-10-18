@@ -1,33 +1,57 @@
 snippet main
 	public static void main (String [] args)
 	{
-		${1:/* code */}
+		${1}
 	}
 snippet prsf
 	private static final 
 		${1}
-snippet ca
-	catch(${1:Exception} ${2:e}) ${3}
-snippet j.u
-	java.util
-snippet j.i
-	java.io.
-snippet j.b
-	java.beans.
-snippet j.n
-	java.net.
-snippet j.m
-	java.math.
-	public class ${1:`Filename()`} extends ${2:TestCase}
-snippet t
-	public void test${1:Name}() throws Exception ${2}
-snippet cl
-	class ${1:`Filename("", "untitled")`} ${2}
-snippet in
-	interface ${1:`Filename("", "untitled")`} ${2:extends Parent}${3}
-snippet m
-	${1:void} ${2:method}(${3}) ${4:throws }${5}
-snippet co
-	static public final ${1:String} ${2:var} = ${3};${4}
-snippet cos
-	static public final String ${1:var} = "${2}";${3}
+snippet test
+	@Test
+	public void ${1}_given${2}_when${3}_then${4}() {
+		// TODO
+		fail();${5}
+	}
+snippet class
+	package ${1:pkg};
+
+
+	/** ${2} */
+	class ${3:`Filename("", "untitled")`} {
+		${4}
+	}
+snippet inter
+	package ${1:pkg};
+
+
+	/** ${2} */
+	interface ${3:`Filename("", "untitled")`} {
+		${4}
+	}
+snippet testclass
+	package ${1:pkg};
+
+	import static org.junit.Assert.assertEquals;
+	import static org.junit.Assert.assertTrue;
+	import static org.junit.Assert.fail;
+	import static org.mockito.ArgumentMatchers.any;
+	import static org.mockito.ArgumentMatchers.eq;
+	import static org.mockito.Mockito.doThrow;
+	import static org.mockito.Mockito.mock;
+	import static org.mockito.Mockito.never;
+	import static org.mockito.Mockito.times;
+	import static org.mockito.Mockito.verify;
+	import static org.mockito.Mockito.when;
+	import static org.mockito.MockitoAnnotations.initMocks;
+
+	import org.junit.Before;
+	import org.junit.BeforeClass;
+	import org.junit.Test;
+	import org.mockito.Mock;
+	import org.mockito.Spy;
+
+
+	/** ${2} */
+	class ${3:`Filename("", "untitled")`} {
+		${4}
+	}
