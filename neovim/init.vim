@@ -179,8 +179,8 @@ set background=dark
 """"""""""
 " Mappings
 """"""""""
-let mapleader = " "
-let maplocalleader = "  "
+let mapleader = ' '
+let maplocalleader = '\'
 
 " Buffers
 noremap <silent> <leader>bb :Buffers<CR>
@@ -323,4 +323,4 @@ let g:which_key_map.t = { 'name': '+toggle' }
 let g:which_key_map.v = { 'name': '+vim' }
 let g:which_key_map.w = { 'name': '+window' }
 let g:which_key_map.q = { 'name': '+quickfixlist' }
-autocmd! User vim-which-key call which_key#register('<Space>', "g:which_key_map")
+autocmd! User vim-which-key call which_key#register("<leader>", "g:which_key_map")
