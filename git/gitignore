@@ -8,6 +8,11 @@
 # Chef
 .kitchen/
 
+# Eclipse
+.settings/
+.classpath
+.project
+
 # IntelliJ
 .idea/
 *.iml
