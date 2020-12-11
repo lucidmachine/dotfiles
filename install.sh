@@ -46,7 +46,6 @@ echo
 echo "###########################"
 echo "# Creating Symlinks"
 echo "###########################"
-link "${BASEDIR}/bash/environment"    "${HOME}/.environment"
 link "${BASEDIR}/bash/palette"        "${HOME}/.palette"
 link "${BASEDIR}/bash/profile"        "${HOME}/.profile"
 link "${BASEDIR}/bash/rc"             "${HOME}/.bashrc"
@@ -59,6 +58,7 @@ link "${BASEDIR}/neovim"              "${HOME}/.config/nvim"
 link "${BASEDIR}/neovim"              "${HOME}/.vim"
 link "${BASEDIR}/ranger"              "${HOME}/.config/ranger"
 link "${BASEDIR}/sh/aliases"          "${HOME}/.aliases"
+link "${BASEDIR}/sh/environment"      "${HOME}/.environment"
 link "${BASEDIR}/tmux/tmux.conf"      "${HOME}/.tmux.conf"
 
 # Packages
