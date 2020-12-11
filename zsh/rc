@@ -1,0 +1,106 @@
+# ~/.zshrc: Executed by zsh(1) for non-login shells.
+
+# Enable profiling this .zshrc. See the bottom of the file for the call.
+# zmodload zsh/zprof
+
+#
+# Imports and Declarations
+#
+
+function source_if_exists() {
+  if [ -s $1 ]; then
+    . $1
+  fi
+}
+
+# Source other files
+source_if_exists "${HOME}/.environment-ext"
+source_if_exists "${HOME}/.environment"
+# source_if_exists "${HOME}/.palette"
+source_if_exists "${HOME}/.aliases"
+# source_if_exists "${HOME}/.git-prompt.sh"
+
+# Load zsh functions
+autoload -U \
+  compinit \
+  colors \
+  zcalc
+
+
+#
+# Completions
+#
+compinit -d
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'  # Case insensitive tab completion
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"    # Colored completion (different colors for dirs/files/etc)
+zstyle ':completion:*' rehash true                         # Automatically find new executables in path 
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+
+#
+# History
+#
+HISTFILE=~/.zsh_history         # Write shared command history to ~/.zsh_history
+SAVEHIST=10000                  # Save the 10000 most recent commands
+HISTSIZE=10000                  # Load 10000 comands into memory from the history file
+setopt APPEND_HISTORY           # Append history instead of overwriting
+setopt EXTENDED_HISTORY         # Save each command’s beginning timestamp and duration
+setopt HIST_IGNORE_ALL_DUPS     # If a new command is a duplicate, remove the older one
+setopt INC_APPEND_HISTORY_TIME  # Write commands to the history as soon as they complete
+setopt SHARE_HISTORY            # All sessions write to the same history file
+
+
+#
+# Keybindings
+#
+bindkey -e
+
+# Key support
+bindkey '^[[7~' beginning-of-line                  # Home key
+bindkey '^[[H' beginning-of-line                   # Home key
+if [[ "${terminfo[khome]}" != "" ]]; then
+  bindkey "${terminfo[khome]}" beginning-of-line   # [Home] - Go to beginning of line
+fi
+bindkey '^[[8~' end-of-line                        # End key
+bindkey '^[[F' end-of-line                         # End key
+if [[ "${terminfo[kend]}" != "" ]]; then
+  bindkey "${terminfo[kend]}" end-of-line          # [End] - Go to end of line
+fi
+bindkey '^[[2~' overwrite-mode                     # Insert key
+bindkey '^[[3~' delete-char                        # Delete key
+bindkey '^[[C'  forward-char                       # Right key
+bindkey '^[[D'  backward-char                      # Left key
+bindkey '^[[5~' history-beginning-search-backward  # Page up key
+bindkey '^[[6~' history-beginning-search-forward   # Page down key
+
+# Navigation
+bindkey '^[Oc' forward-word                        # Navigate forward with ctrl+right
+bindkey '^[Od' backward-word                       # Navigate backward with ctrl+left
+bindkey '^[[1;5D' backward-word                    # Navigate backward with ctrl+left
+bindkey '^[[1;5C' forward-word                     # Navigate forward with ctrl+right
+bindkey '^H' backward-kill-word                    # Delete previous word with ctrl+backspace
+bindkey '^[[Z' undo                                # Shift+tab undo last action
+
+
+#
+# Misc.
+#
+setopt AUTO_CD                  # If only a directory path is entered, cd there.
+setopt CORRECT                  # Suggest corrections for typos in commands
+setopt CORRECT_ALL              # Suggest corrections for typos in command arguments
+setopt EXTENDED_GLOB            # Extended globbing. Allows using regular expressions with *
+setopt NO_BEEP                  # No beep
+setopt NO_CASE_GLOB             # Case insensitive globbing
+setopt NUMERIC_GLOB_SORT        # Sort filenames numerically when it makes sense
+setopt RC_EXPAND_PARAM          # Array expension with parameters
+
+
+#
+# Prompt
+#
+# TODO
+
+# Profile this .zshrc
+# zprof
