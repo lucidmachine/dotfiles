@@ -58,8 +58,9 @@ link "${BASEDIR}/neovim"              "${HOME}/.vim"
 link "${BASEDIR}/ranger"              "${HOME}/.config/ranger"
 link "${BASEDIR}/sh/aliases"          "${HOME}/.aliases"
 link "${BASEDIR}/sh/environment"      "${HOME}/.environment"
-link "${BASEDIR}/sh/profile"          "${HOME}/.profile"
+link "${BASEDIR}/sh/environment"      "${HOME}/.zshenv"
 link "${BASEDIR}/tmux/tmux.conf"      "${HOME}/.tmux.conf"
+link "${BASEDIR}/zsh/rc"              "${HOME}/.zshrc"
 
 # Packages
 echo
