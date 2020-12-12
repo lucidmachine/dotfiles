@@ -16,7 +16,6 @@ function source_if_exists() {
 # Source other files
 source_if_exists "${HOME}/.environment-ext"
 source_if_exists "${HOME}/.environment"
-# source_if_exists "${HOME}/.palette"
 source_if_exists "${HOME}/.aliases"
 source_if_exists "${HOME}/.git-prompt.sh"
 
