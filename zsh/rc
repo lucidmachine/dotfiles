@@ -18,7 +18,7 @@ source_if_exists "${HOME}/.environment-ext"
 source_if_exists "${HOME}/.environment"
 # source_if_exists "${HOME}/.palette"
 source_if_exists "${HOME}/.aliases"
-# source_if_exists "${HOME}/.git-prompt.sh"
+source_if_exists "${HOME}/.git-prompt.sh"
 
 # Load zsh functions
 autoload -U \
@@ -100,7 +100,10 @@ setopt RC_EXPAND_PARAM          # Array expension with parameters
 #
 # Prompt
 #
-# TODO
+setopt PROMPT_SUBST
+PROMPT='
+%B%F{green}%n@%m%f %F{blue}%~%f%F{white}$(__git_ps1 " (%s)")%f%b
+$ ' # Must be single-quoted. If __git_ps1 is expanded at load, then Git info will be stale
 
 # Profile this .zshrc
 # zprof
