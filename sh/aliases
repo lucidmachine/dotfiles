@@ -46,6 +46,11 @@ if [ $(is_installed nvim) ]; then
   alias vim='nvim'
 fi
 
+# Open
+if [ ! $(is_installed open) && $(is_installed rifle) ]; then
+  alias open='rifle'
+fi
+
 # Ranger
 alias r='ranger'
 
