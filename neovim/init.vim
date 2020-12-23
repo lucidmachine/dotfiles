@@ -27,6 +27,7 @@ Plug 'Olical/conjure', {
 Plug 'vimoutliner/vimoutliner', {
       \ 'for': 'votl'
       \}                                         " Outline mode for .otl files
+Plug 'vim-scripts/confluencewiki.vim'            " Confluence wiki syntax
 
 " Appearance
 Plug 'crusoexia/vim-monokai'                     " Monokai theme
@@ -86,7 +87,7 @@ syntax on
 
 au FileType lisp,clojure,scheme RainbowParenthesesToggleAll
 au FileType make setlocal noexpandtab
-au FileType markdown,text,votl setlocal spell
+au FileType confluence,markdown,text,votl setlocal spell
 augroup XML
   au!
   au FileType xml let g:xml_syntax_folding=1
