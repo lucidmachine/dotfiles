@@ -1,3 +1,7 @@
+function is_installed() {
+  which $1 &> /dev/null
+}
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low --icon "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -20,7 +24,7 @@ alias gitsf='git status | rev | cut -d" " -f1 | rev'
 alias gitvd='git difftool'
 
 # grep
-if [ $(which rg) ]; then
+if [ $(is_installed rg) ]; then
   alias grep='rg'
 else
   alias grep='grep --color=auto'
@@ -38,7 +42,7 @@ else
 fi
 
 # NeoVim
-if [ $(which nvim) ]; then
+if [ $(is_installed nvim) ]; then
   alias vim='nvim'
 fi
 

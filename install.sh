@@ -31,6 +31,10 @@ function link() {
   fi
 }
 
+function is_installed() {
+  which $1 &> /dev/null
+}
+
 # Set vars
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -67,7 +71,7 @@ echo
 echo "###########################"
 echo "# Installing Packages"
 echo "###########################"
-if [ $(which pamac) ]; then
+if [ $(is_installed pamac) ]; then
   sudo pamac install --no-confirm \
     bash \
     curl \
@@ -86,7 +90,7 @@ if [ $(which pamac) ]; then
     tree \
     wget \
     zsh
-elif [ $(which apt-get) ]; then
+elif [ $(is_installed apt-get) ]; then
   sudo apt-get install -y \
     bash \
     curl \
@@ -105,7 +109,7 @@ elif [ $(which apt-get) ]; then
     tree \
     wget \
     zsh
-elif [ $(which brew) ]; then
+elif [ $(is_installed brew) ]; then
   # brew errors when packages which are already installed have upgrades
   # available, so we upgrade the universe before attempting to install
   brew upgrade
@@ -139,10 +143,10 @@ echo
 echo "###########################"
 echo "# Installing Editor Plugins"
 echo "###########################"
-if [ $(which nvim) ]; then
+if [ $(is_installed nvim) ]; then
   echo "Installing plugins in nvim"
   nvim +PlugInstall +qall
-elif [ $(which vim) ]; then
+elif [ $(is_installed vim) ]; then
   echo "Installing plugins in vim"
   vim +PlugInstall +qall
 else
