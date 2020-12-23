@@ -84,7 +84,8 @@ if [ $(which pamac) ]; then
     ripgrep \
     tmux \
     tree \
-    wget
+    wget \
+    zsh
 elif [ $(which apt-get) ]; then
   sudo apt-get install -y \
     bash \
@@ -102,7 +103,8 @@ elif [ $(which apt-get) ]; then
     ripgrep \
     tmux \
     tree \
-    wget
+    wget \
+    zsh
 elif [ $(which brew) ]; then
   # brew errors when packages which are already installed have upgrades
   # available, so we upgrade the universe before attempting to install
@@ -126,7 +128,8 @@ elif [ $(which brew) ]; then
     ripgrep \
     tmux \
     tree \
-    wget
+    wget \
+    zsh
   brew cask install \
     iterm2
 fi

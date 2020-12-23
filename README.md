@@ -2,7 +2,7 @@
 Configuration, powered by a shell script.
 
 ## Configures
-* bash
+* bash and zsh
   * RC
   * Profile
   * Aliases
