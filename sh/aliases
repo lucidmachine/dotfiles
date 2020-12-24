@@ -47,7 +47,7 @@ if [ $(is_installed nvim) ]; then
 fi
 
 # Open
-if [ ! $(is_installed open) && $(is_installed rifle) ]; then
+if [ ! $(is_installed open) -a $(is_installed rifle) ]; then
   alias open='rifle'
 fi
 
