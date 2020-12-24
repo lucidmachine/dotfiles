@@ -32,7 +32,7 @@ function link() {
 }
 
 function is_installed() {
-  which $1 &> /dev/null
+  /usr/bin/which $1 2> /dev/null
 }
 
 # Set vars

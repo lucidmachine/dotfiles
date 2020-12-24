@@ -1,5 +1,5 @@
 function is_installed() {
-  which $1 &> /dev/null
+  /usr/bin/which $1 2> /dev/null
 }
 
 # Add an "alert" alias for long running commands.  Use like so:
