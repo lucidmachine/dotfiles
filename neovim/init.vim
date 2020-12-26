@@ -9,6 +9,9 @@ Plug 'bakpakin/fennel.vim'                       " Fennel language support
 Plug 'elubow/cql-vim', {
       \ 'for': 'cql'
       \}                                         " Cassandra Query Language support
+Plug 'gberenfield/cljfold.vim', {
+      \ 'for': 'clojure'
+      \}
 Plug 'l04m33/vlime', {
       \ 'rtp': 'vim/',
       \ 'for': 'lisp'
@@ -268,6 +271,9 @@ noremap <leader>w- <C-W>-
 """""""""""""""
 " Plugin Config
 """""""""""""""
+" cljfold.vim
+let g:clojure_foldwords = "def,defn,defmacro,defmethod,defschema,defprotocol,defrecord"
+
 " CoC
 let g:coc_enable_locationlist = 0
 let g:coc_global_extensions = [
