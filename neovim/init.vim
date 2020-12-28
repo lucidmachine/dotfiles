@@ -272,7 +272,7 @@ noremap <leader>w- <C-W>-
 " Plugin Config
 """""""""""""""
 " cljfold.vim
-let g:clojure_foldwords = "def,defn,defmacro,defmethod,defschema,defprotocol,defrecord"
+let g:clojure_foldwords = "def,defn,defmacro,defmethod,defschema,defprotocol,defrecord,comment"
 
 " CoC
 let g:coc_enable_locationlist = 0
