@@ -90,7 +90,7 @@ syntax on
 
 au FileType lisp,clojure,scheme RainbowParenthesesToggleAll
 au FileType make setlocal noexpandtab
-au FileType confluence,markdown,text,votl setlocal spell
+au FileType confluencewiki,markdown,text,votl setlocal spell
 augroup XML
   au!
   au FileType xml let g:xml_syntax_folding=1
