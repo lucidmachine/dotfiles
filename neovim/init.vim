@@ -44,7 +44,6 @@ Plug 'garbas/vim-snipmate'                       " Snippets
 Plug 'jiangmiao/auto-pairs'                      " Balance paired characters
 Plug 'junegunn/fzf'                              " Fuzzy finder
 Plug 'junegunn/fzf.vim'                          " Vim integration for fzf
-Plug 'kien/rainbow_parentheses.vim'              " Rainbow parentheses
 Plug 'liuchengxu/vim-which-key', {
       \ 'on': ['WhichKey', 'WhichKey!']
       \}                                         " Show mappings on timeout
@@ -88,7 +87,6 @@ filetype plugin on
 filetype indent on
 syntax on
 
-au FileType lisp,clojure,scheme RainbowParenthesesToggleAll
 au FileType make setlocal noexpandtab
 au FileType confluencewiki,markdown,text,votl setlocal spell
 augroup XML
