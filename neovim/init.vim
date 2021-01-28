@@ -11,7 +11,7 @@ Plug 'elubow/cql-vim', {
       \}                                         " Cassandra Query Language support
 Plug 'gberenfield/cljfold.vim', {
       \ 'for': 'clojure'
-      \}
+      \}                                         " Configurable folding for Clojure
 Plug 'l04m33/vlime', {
       \ 'rtp': 'vim/',
       \ 'for': 'lisp'
