@@ -24,6 +24,7 @@ Configuration, powered by a shell script.
   * Bindings
 * tmux
   * Color support
+  * Bindings
 
 ## Installs
 * bash
