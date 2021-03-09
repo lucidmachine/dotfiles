@@ -20,7 +20,7 @@ Plug 'masukomi/vim-markdown-folding', {
       \ 'for': 'markdown'
       \}                                         " Fold markdown headers
 Plug 'neoclide/coc.nvim', {
-      \ 'tag': 'v0.0.78',
+      \ 'tag': 'v0.0.80',
       \ 'frozen': 'true'
       \}                                         " LSP-based completion engine
 Plug 'Olical/conjure', {
