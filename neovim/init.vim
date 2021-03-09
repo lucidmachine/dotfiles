@@ -260,6 +260,7 @@ noremap <leader>wK <C-W>K
 noremap <leader>wL <C-W>L
 noremap <leader>wr <C-W>r
 noremap <leader>wR <C-W>R
+noremap <leader>wx <C-W>x
 noremap <leader>w< <C-W><
 noremap <leader>w> <C-W>>
 noremap <leader>w+ <C-W>+
