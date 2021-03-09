@@ -27,7 +27,8 @@ noremap <silent> <leader>cr :action CopyReference<CR>
 nnoremap <silent> K :action QuickJavaDoc<CR>
 
 " Files
-noremap <silent> <leader>ff :action ActivateProjectToolWindow<CR>
+noremap <silent> <leader>fe :action ActivateProjectToolWindow<CR>
+noremap <silent> <leader>ff :action GotoFile<CR>
 
 " Goto
 nmap <silent> gd :action GotoDeclaration<CR>
