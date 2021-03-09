@@ -56,6 +56,7 @@ Plug 'tpope/vim-commentary'                      " Toggle comments
 Plug 'tpope/vim-fugitive'                        " Git commands from inside ViM
 Plug 'tpope/vim-surround'                        " Manipulate parens, tags, etc.
 Plug 'vim-scripts/taglist.vim'                   " Code tag viewer
+Plug 'wincent/ferret'                            " Project search enhancements
 Plug 'wincent/loupe'                             " Search enhancements
 Plug 'wincent/scalpel'                           " Quick replace word
 Plug 'wincent/terminus'                          " Terminal integration
