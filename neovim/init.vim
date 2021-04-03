@@ -352,7 +352,6 @@ let g:toggle_list_no_mappings = 1
 
 " WhichKey
 let g:which_key_map = {}
-let g:which_key_map._ = { 'name': '+TComment' }
 let g:which_key_map.b = { 'name': '+buffers' }
 let g:which_key_map.c = { 'name': '+copy' }
 let g:which_key_map.f = { 'name': '+files' }
