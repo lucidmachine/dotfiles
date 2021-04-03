@@ -151,7 +151,7 @@ set cursorline
 
 " Focus
 if exists('+winhighlight')
-  augroup focus
+  augroup focuswinhighlight
     au!
     au ColorScheme * hi link MyInactiveWin ColorColumn | hi link MyNormalWin Normal
     au FileType,BufWinEnter * call autocmds#configure_winhighlight()
@@ -159,12 +159,23 @@ if exists('+winhighlight')
     au FocusLost * hi link MyNormalWin MyInactiveWin
   augroup END
 endif
+if exists('+relativenumber')
+  augroup focusrelativenumber
+    au!
+    au BufEnter,BufNew,BufWinEnter,WinEnter * set relativenumber
+    au BufLeave,BufWinLeave,WinLeave * set norelativenumber
+  augroup END
+endif
+if exists('+cursorline')
+  augroup focuscursorline
+    au!
+    au BufEnter,BufNew,BufWinEnter,WinEnter * set cursorline
+    au BufLeave,BufWinLeave,WinLeave * set nocursorline
+  augroup END
+endif
 
 " Gutter
 set number
-if exists('+relativenumber')
-  set relativenumber
-endif
 
 " Ruler / Status line
 set laststatus=2
