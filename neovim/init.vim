@@ -253,6 +253,12 @@ xmap <silent> <leader>ra <Plug>(coc-codeaction-selected)
 nmap <leader>ro :call CocAction('organizeImport')<CR><CR>
 nmap <silent> <leader> rw <Plug>(coc-refactor)
 
+" Search
+nmap <leader>ss <Plug>(FerretAck)
+nmap <leader>sl <Plug>(FerretLack)
+nmap <leader>sr <Plug>(FerretAcks)
+nmap <leader>sw <Plug>(FerretAckWord)
+
 " Tags
 noremap <silent> <leader>gt :TlistToggle<CR>
 
@@ -353,6 +359,7 @@ let g:which_key_map.f = { 'name': '+files' }
 let g:which_key_map.g = { 'name': '+goto' }
 let g:which_key_map.l = { 'name': '+locationlist' }
 let g:which_key_map.r = { 'name': '+refactor' }
+let g:which_key_map.s = { 'name': '+search' }
 let g:which_key_map.t = { 'name': '+toggle' }
 let g:which_key_map.v = { 'name': '+vim' }
 let g:which_key_map.w = { 'name': '+window' }
