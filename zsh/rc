@@ -25,6 +25,9 @@ autoload -U \
   colors \
   zcalc
 
+# Load zoxide
+eval "$(zoxide init zsh)"
+
 
 #
 # Completions

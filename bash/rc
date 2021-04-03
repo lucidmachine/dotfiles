@@ -19,6 +19,9 @@ source_if_exists "${HOME}/.aliases"
 source_if_exists "${HOME}/.bash_completion"
 source_if_exists "${HOME}/.git-prompt.sh"
 
+# Load zoxide
+eval "$(zoxide init bash)"
+
 # Shell options
 shopt -s checkwinsize   # Check window size after each command
 shopt -s globstar       # '**' expansion

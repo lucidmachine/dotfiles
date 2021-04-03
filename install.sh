@@ -89,6 +89,7 @@ if [ $(is_installed pamac) ]; then
     tmux \
     tree \
     wget \
+    zoxide-bin \
     zsh
 elif [ $(is_installed apt-get) ]; then
   sudo apt-get install -y \
@@ -108,6 +109,7 @@ elif [ $(is_installed apt-get) ]; then
     tmux \
     tree \
     wget \
+    zoxide \
     zsh
 elif [ $(is_installed brew) ]; then
   # brew errors when packages which are already installed have upgrades
@@ -133,6 +135,7 @@ elif [ $(is_installed brew) ]; then
     tmux \
     tree \
     wget \
+    zoxide \
     zsh
   brew cask install \
     iterm2
