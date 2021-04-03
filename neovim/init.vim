@@ -247,6 +247,11 @@ noremap <silent> <leader>qp :cprevious<CR>
 
 " Refactorings
 nmap <leader>rr <Plug>(Scalpel)
+nmap <leader>rR <Plug>(coc-rename)
+nmap <silent> <leader>ra <Plug>(coc-codeaction-line)
+xmap <silent> <leader>ra <Plug>(coc-codeaction-selected)
+nmap <leader>ro :call CocAction('organizeImport')<CR><CR>
+nmap <silent> <leader> rw <Plug>(coc-refactor)
 
 " Tags
 noremap <silent> <leader>gt :TlistToggle<CR>
