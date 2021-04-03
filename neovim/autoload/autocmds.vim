@@ -1,5 +1,5 @@
 let g:WinHighlightFileTypeBlacklist = ['diff', 'undotree', 'nerdtree']
-let g:WinHighlightBufferTypeWhitelist = ['nofile', 'nowrite', 'acwrite', 'quickfix', 'help']
+let g:WinHighlightBufferTypeWhitelist = ['nofile', 'nowrite', 'acwrite', 'quickfix']
 
 function! autocmds#should_winhighlight() abort
   return index(g:WinHighlightFileTypeBlacklist, &filetype) == -1
