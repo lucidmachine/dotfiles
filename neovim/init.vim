@@ -189,6 +189,17 @@ catch /^Vim\%((\a\+)\)\=:E185
 endtry
 set background=dark
 
+""""""""""
+" Commands
+""""""""""
+if has('nvim') || has('terminal')
+  command! Splitterm execute ":split | :terminal"
+  command! Sterm execute ":Splitterm"
+  command! Vsplitterm execute ":vsplit | :terminal"
+  command! Vterm execute ":Vsplitterm"
+endif
+command! We execute ":write | :edit"
+
 
 """"""""""
 " Mappings
