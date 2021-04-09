@@ -43,6 +43,8 @@ echo "###########################"
 echo "# Creating Directories"
 echo "###########################"
 dir "${HOME}/.config"
+dir "${HOME}/bin"
+dir "${HOME}/src"
 
 
 # Symlinks
