@@ -216,10 +216,10 @@ bindsym $mod+Shift+b move container to workspace back_and_forth
 #
 # Applications
 #
-assign [class="Discord"] $ws4
+assign [class="Slack"] $ws4
 assign [class="Telegram"] $ws4
 assign [class="Thunderbird"] $ws4
-assign [class="Slack"] $ws4
+assign [class="discord"] $ws4
 
 for_window [urgent=latest] focus
 

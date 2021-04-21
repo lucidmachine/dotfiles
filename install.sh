@@ -150,7 +150,7 @@ echo "# Installing Editor Plugins"
 echo "###########################"
 if [ $(is_installed nvim) ]; then
   echo "Installing plugins in nvim"
-  nvim --headless +PlugInstall +qall
+  nvim --headless +PlugInstall +CocInstall +qall
 elif [ $(is_installed vim) ]; then
   echo "Installing plugins in vim"
   vim +PlugInstall +qall
