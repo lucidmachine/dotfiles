@@ -16,6 +16,9 @@ Plug 'l04m33/vlime', {
       \ 'rtp': 'vim/',
       \ 'for': 'lisp'
       \}                                         " Common Lisp environment
+Plug 'lucidmachine/vim-velocity', {
+      \ 'for': 'vtl'
+      \}                                         " Velocity template support
 Plug 'masukomi/vim-markdown-folding', {
       \ 'for': 'markdown'
       \}                                         " Fold markdown headers
