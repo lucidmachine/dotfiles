@@ -52,6 +52,7 @@ echo
 echo "###########################"
 echo "# Creating Symlinks"
 echo "###########################"
+link "${BASEDIR}/alacritty"           "${HOME}/.config/alacritty"
 link "${BASEDIR}/bash/palette"        "${HOME}/.palette"
 link "${BASEDIR}/bash/rc"             "${HOME}/.bashrc"
 link "${BASEDIR}/git/gitignore"       "${HOME}/.gitignore"
@@ -75,6 +76,7 @@ echo "# Installing Packages"
 echo "###########################"
 if [ $(is_installed pamac) ]; then
   sudo pamac install --no-confirm \
+    alacritty \
     bash \
     curl \
     ctags \
@@ -95,6 +97,7 @@ if [ $(is_installed pamac) ]; then
     zsh
 elif [ $(is_installed apt-get) ]; then
   sudo apt-get install -y \
+    alacritty \
     bash \
     curl \
     exuberant-ctags \
@@ -120,6 +123,7 @@ elif [ $(is_installed brew) ]; then
   brew cask upgrade
 
   brew install \
+    alacritty \
     bash \
     clojure/tools/clojure \
     ctags \
