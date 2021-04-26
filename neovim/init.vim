@@ -36,7 +36,7 @@ Plug 'vimoutliner/vimoutliner', {
 Plug 'vim-scripts/confluencewiki.vim'            " Confluence wiki syntax
 
 " Appearance
-Plug 'crusoexia/vim-monokai'                     " Monokai theme
+Plug 'arcticicestudio/nord-vim'                  " Nord theme
 Plug 'itchyny/lightline.vim'                     " Lightweight status line
 Plug 'mhinz/vim-signify'                         " VCS diff gutter
 Plug 'Yggdroot/indentLine'                       " Indentation level lines
@@ -186,7 +186,7 @@ let g:lightline = {'colorscheme': 'wombat'}
 
 " Theme
 try
-  colorscheme monokai
+  colorscheme nord
 catch /^Vim\%((\a\+)\)\=:E185
   colorscheme murphy
 endtry
