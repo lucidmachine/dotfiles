@@ -67,6 +67,7 @@ link "${BASEDIR}/sh/aliases"          "${HOME}/.aliases"
 link "${BASEDIR}/sh/environment"      "${HOME}/.environment"
 link "${BASEDIR}/sh/environment"      "${HOME}/.zshenv"
 link "${BASEDIR}/tmux/tmux.conf"      "${HOME}/.tmux.conf"
+link "${BASEDIR}/x11/Xresources"      "${HOME}/.Xresources"
 link "${BASEDIR}/zsh/rc"              "${HOME}/.zshrc"
 
 # Packages
