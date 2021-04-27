@@ -267,16 +267,16 @@ bar {
 	bindsym button5 nop
 
   colors {
-    background #222D31
-    statusline #F9FAF9
-    separator  #454947
+    background $dblack
+    statusline $lwhite
+    separator  $lwhite
 
     #                  border  backgr. text
-    focused_workspace  #F9FAF9 #16a085 #292F34
-    active_workspace   #595B5B #353836 #FDF6E3
-    inactive_workspace #595B5B #222D31 #EEE8D5
-    binding_mode       #16a085 #2C2C2C #F9FAF9
-    urgent_workspace   #16a085 #FDF6E3 #E5201D
+    focused_workspace  $dblack $dblue  $dblack
+    active_workspace   $dblack $dcyan  $dblack
+    inactive_workspace $dblack $dblack $dwhite
+    binding_mode       $dblack $dwhite $dblack
+    urgent_workspace   $dblack $dred   $dwhite
   }
   font pango:Bitstream Vera Sans 11, FontAwesome 11
 	strip_workspace_numbers yes
@@ -306,31 +306,31 @@ hide_edge_borders none
 # Same logic applied to everything else.
 set_from_resource $background background
 set_from_resource $foreground foreground
-set_from_resource $color0     color0
-set_from_resource $color1     color1
-set_from_resource $color2     color2
-set_from_resource $color3     color3
-set_from_resource $color4     color4
-set_from_resource $color5     color5
-set_from_resource $color6     color6
-set_from_resource $color7     color7
-set_from_resource $color8     color8
-set_from_resource $color9     color9
-set_from_resource $color10    color10
-set_from_resource $color11    color11
-set_from_resource $color12    color12
-set_from_resource $color13    color13
-set_from_resource $color14    color14
-set_from_resource $color15    color15
+set_from_resource $dblack     color0
+set_from_resource $dred       color1
+set_from_resource $dgreen     color2
+set_from_resource $dyellow    color3
+set_from_resource $dblue      color4
+set_from_resource $dmagenta   color5
+set_from_resource $dcyan      color6
+set_from_resource $dwhite     color7
+set_from_resource $lblack     color8
+set_from_resource $lred       color9
+set_from_resource $lgreen     color10
+set_from_resource $lyellow    color11
+set_from_resource $lblue      color12
+set_from_resource $lmagenta   color13
+set_from_resource $lcyan      color14
+set_from_resource $lwhite     color15
 
 # Theme colors
-# class                   border  backgr. text    indic.  child_border
-  client.focused          $base0F $base0D $base00 $base0F $base0F
-  client.focused_inactive $base01 $base01 $base05 $base03 $base0F
-  client.unfocused        $base01 $base00 $base05 $base01 $base01
-  client.urgent           $base08 $base08 $base00 $base08 $base0F
-  client.placeholder      $base00 $base00 $base05 $base00 $base0F
-  client.background       $base0F
+# class                   border    backgr.   text     indic.   child_border
+  client.focused          $dblack   $dblue    $dblack  $lwhite
+  client.focused_inactive $dblack   $dblack   $dblack  $dblack
+  client.unfocused        $dblack   $dblack   $dblack  $dblack
+  client.urgent           $dblack   $dred     $dblack  $dblack
+  client.placeholder      $dblack   $dblack   $dblack  $dblack
+  client.background       $dblack
 
 #
 # Focus
