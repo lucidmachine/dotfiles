@@ -144,8 +144,6 @@ elif [ $(is_installed brew) ]; then
     wget \
     zoxide \
     zsh
-  brew cask install \
-    iterm2
 fi
 
 # Editor Plugins
