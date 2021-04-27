@@ -61,7 +61,7 @@ XTerm*selectToClipboard: true
 
 !! magenta dark/light
 *color5:                          nord15
-*color13:                         nord9
+*color13:                         nord15
 
 !! cyan dark/light
 *color6:                          nord8
