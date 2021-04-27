@@ -104,7 +104,7 @@ setopt RC_EXPAND_PARAM          # Array expension with parameters
 #
 setopt PROMPT_SUBST
 PROMPT='
-%B%F{green}%n@%m%f %F{blue}%~%f%F{white}$(__git_ps1 " (%s)")%f%b
+%B%F{blue}%n@%m%f %F{cyan}%~%f%F{white}$(__git_ps1 " (%s)")%f%b
 $ ' # Must be single-quoted. If __git_ps1 is expanded at load, then Git info will be stale
 
 # Profile this .zshrc

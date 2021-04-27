@@ -40,7 +40,7 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
   debian_chroot=$(cat /etc/debian_chroot)
 fi
 if [ "$color_prompt" = yes ]; then
-  term_prompt="\n${debian_chroot:+($debian_chroot)}$BGreen\u@\h $BBlue\w$BWhite\$(__git_ps1)$Color_Off\n\$ "
+  term_prompt="\n${debian_chroot:+($debian_chroot)}$BBlue\u@\h $BCyan\w$BWhite\$(__git_ps1)$Color_Off\n\$ "
 else
   term_prompt="\n${debian_chroot:+($debian_chroot)}\u@\h \w\$(__git_ps1)\n\$ "
 fi
