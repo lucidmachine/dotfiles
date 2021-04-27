@@ -27,6 +27,7 @@ Configuration, powered by a shell script.
   * Bindings
 
 ## Installs
+* alacritty
 * bash
 * curl
 * Exuberant CTags
@@ -34,6 +35,7 @@ Configuration, powered by a shell script.
 * fzf
 * git
 * htop
+* jq
 * less
 * make
 * neovim
@@ -42,3 +44,5 @@ Configuration, powered by a shell script.
 * tmux
 * tree
 * wget
+* zoxide
+* zsh
