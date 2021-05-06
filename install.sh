@@ -144,6 +144,22 @@ elif [ $(is_installed brew) ]; then
     wget \
     zoxide \
     zsh
+elif [ $(is_installed yum) ]; then
+  sudo yum install \
+    bash \
+    ctags \
+    curl \
+    git \
+    htop \
+    jq \
+    less \
+    make \
+    nodejs \
+    neovim \
+    tmux \
+    tree \
+    wget \
+    zsh
 fi
 
 # Editor Plugins

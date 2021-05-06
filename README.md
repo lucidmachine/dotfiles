@@ -39,6 +39,7 @@ Configuration, powered by a shell script.
 * less
 * make
 * neovim
+* node
 * ranger
 * ripgrep
 * tmux
@@ -46,3 +47,9 @@ Configuration, powered by a shell script.
 * wget
 * zoxide
 * zsh
+
+## "Tested" On
+* Manjaro
+* macOS 10.15
+* Ubuntu 18.04
+* CentOS 8
