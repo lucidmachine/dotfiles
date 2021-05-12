@@ -286,6 +286,7 @@ nnoremap <silent> <localleader> :WhichKey '<localleader>'<CR>
 
 " Windows
 noremap <leader>wo :only<CR>
+noremap <leader>wq <C-W>q
 noremap <leader>ww <C-W>=
 noremap <leader>wh <C-W>h
 noremap <leader>wj <C-W>j
