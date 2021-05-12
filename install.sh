@@ -145,7 +145,7 @@ elif [ $(is_installed brew) ]; then
     zoxide \
     zsh
 elif [ $(is_installed yum) ]; then
-  sudo yum install \
+  sudo yum install --assumeyes \
     bash \
     ctags \
     curl \
