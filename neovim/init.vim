@@ -182,7 +182,7 @@ set number
 
 " Ruler / Status line
 set laststatus=2
-let g:lightline = {'colorscheme': 'wombat'}
+let g:lightline = {'colorscheme': 'nord'}
 
 " Theme
 try
