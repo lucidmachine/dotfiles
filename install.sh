@@ -80,6 +80,7 @@ echo "###########################"
 if [[ -z "$(is_installed node)" ]]; then
   curl --location https://raw.githubusercontent.com/tj/n/master/bin/n \
     --output ${HOME}/.n/bin/n
+  chmod 755 ${HOME}/.n/bin/n
   bash ${HOME}/.n/bin/n lts
 fi
 
