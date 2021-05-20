@@ -38,7 +38,7 @@ disk "/" {
 
 battery all {
   # format = "%status %percentage %remaining %emptytime"
-  format = " %status %percentage"
+  format = "   %status %percentage  "
   format_down = ""
 
   last_full_capacity = true
@@ -46,10 +46,10 @@ battery all {
   low_threshold = 15
   threshold_type = time
 
-  status_chr = "⚡"
-  status_bat = ""
+  status_chr = ""
+  status_bat = ""
   status_unk = ""
-  status_full = "☻"
+  status_full = ""
 }
 
 tztime local {
