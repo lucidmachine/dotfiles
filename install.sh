@@ -43,6 +43,8 @@ echo "###########################"
 echo "# Creating Directories"
 echo "###########################"
 dir "${HOME}/.config"
+dir "${HOME}/.n"
+dir "${HOME}/.n/bin"
 dir "${HOME}/bin"
 dir "${HOME}/src"
 
@@ -75,6 +77,12 @@ echo
 echo "###########################"
 echo "# Installing Packages"
 echo "###########################"
+if [[ -z "$(is_installed node)" ]]; then
+  curl --location https://raw.githubusercontent.com/tj/n/master/bin/n \
+    --output ${HOME}/.n/bin/n
+  bash ${HOME}/.n/bin/n lts
+fi
+
 if [ $(is_installed pamac) ]; then
   sudo pamac install --no-confirm \
     alacritty \
@@ -154,7 +162,6 @@ elif [ $(is_installed yum) ]; then
     jq \
     less \
     make \
-    nodejs \
     neovim \
     tmux \
     tree \
