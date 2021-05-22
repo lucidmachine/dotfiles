@@ -335,7 +335,7 @@ set_from_resource $lwhite     color15
 #
 # Focus
 #
-# focus_follows_mouse no
+focus_follows_mouse no
 
 #
 # Gaps
