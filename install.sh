@@ -96,6 +96,7 @@ if command -v pamac &> /dev/null; then
     neovim \
     ranger \
     ripgrep \
+    shellcheck \
     tmux \
     tree \
     wget \
@@ -117,6 +118,7 @@ elif command -v apt-get &> /dev/null; then
     neovim \
     ranger \
     ripgrep \
+    shellcheck \
     tmux \
     tree \
     wget \
@@ -144,6 +146,7 @@ elif command -v brew &> /dev/null; then
     neovim \
     ranger \
     ripgrep \
+    shellcheck \
     tmux \
     tree \
     wget \
@@ -160,6 +163,7 @@ elif command -v yum &> /dev/null; then
     less \
     make \
     neovim \
+    shellcheck \
     tmux \
     tree \
     wget \
