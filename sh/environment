@@ -1,7 +1,3 @@
-function is_installed() {
-  /usr/bin/which $1 2> /dev/null
-}
-
 # n - Node version manager
 export N_PREFIX="${HOME}/.n"
 
@@ -9,17 +5,17 @@ export N_PREFIX="${HOME}/.n"
 export PATH="${HOME}/bin:${N_PREFIX}/bin:$PATH"
 
 # Set default editor
-if [ $(is_installed nvim) ];   then export VISUAL='nvim'
-elif [ $(is_installed vim) ];  then export VISUAL='vim'
-elif [ $(is_installed vi) ];   then export VISUAL='vi'
+if command -v nvim &> /dev/null;   then export VISUAL='nvim'
+elif command -v vim &> /dev/null;  then export VISUAL='vim'
+elif command -v vi &> /dev/null;   then export VISUAL='vi'
 fi
 
 # Set default pager
-if [ $(is_installed less) ];   then export PAGER='less'
-elif [ $(is_installed more) ]; then export PAGER='more'
+if command -v less &> /dev/null;   then export PAGER='less'
+elif command -v more &> /dev/null; then export PAGER='more'
 fi
 
 # Set default visual diff command
-if [ $(is_installed meld) ];     then export VISUAL_DIFF='meld'
-elif [ $(is_installed kdiff3) ]; then export VISUAL_DIFF='kdiff3'
+if command -v meld &> /dev/null;     then export VISUAL_DIFF='meld'
+elif command -v kdiff3 &> /dev/null; then export VISUAL_DIFF='kdiff3'
 fi

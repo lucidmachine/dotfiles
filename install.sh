@@ -31,10 +31,6 @@ function link() {
   fi
 }
 
-function is_installed() {
-  /usr/bin/which $1 2> /dev/null
-}
-
 # Set vars
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -77,14 +73,14 @@ echo
 echo "###########################"
 echo "# Installing Packages"
 echo "###########################"
-if [[ -z "$(is_installed node)" ]]; then
+if ! command -v node &> /dev/null; then
   curl --location https://raw.githubusercontent.com/tj/n/master/bin/n \
     --output ${HOME}/.n/bin/n
   chmod 755 ${HOME}/.n/bin/n
   bash ${HOME}/.n/bin/n lts
 fi
 
-if [ $(is_installed pamac) ]; then
+if command -v pamac &> /dev/null; then
   sudo pamac install --no-confirm \
     alacritty \
     bash \
@@ -105,7 +101,7 @@ if [ $(is_installed pamac) ]; then
     wget \
     zoxide-bin \
     zsh
-elif [ $(is_installed apt-get) ]; then
+elif command -v apt-get &> /dev/null; then
   sudo apt-get install -y \
     alacritty \
     bash \
@@ -126,7 +122,7 @@ elif [ $(is_installed apt-get) ]; then
     wget \
     zoxide \
     zsh
-elif [ $(is_installed brew) ]; then
+elif command -v brew &> /dev/null; then
   # brew errors when packages which are already installed have upgrades
   # available, so we upgrade the universe before attempting to install
   brew upgrade
@@ -153,7 +149,7 @@ elif [ $(is_installed brew) ]; then
     wget \
     zoxide \
     zsh
-elif [ $(is_installed yum) ]; then
+elif command -v yum &> /dev/null; then
   sudo yum install --assumeyes \
     bash \
     ctags \
@@ -175,10 +171,10 @@ echo
 echo "###########################"
 echo "# Installing Editor Plugins"
 echo "###########################"
-if [ $(is_installed nvim) ]; then
+if command -v nvim &> nvim; then
   echo "Installing plugins in nvim"
   nvim --headless +PlugInstall +CocInstall +qall
-elif [ $(is_installed vim) ]; then
+elif command -v vim &> vim; then
   echo "Installing plugins in vim"
   vim +PlugInstall +qall
 else
