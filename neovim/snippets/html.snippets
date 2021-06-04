@@ -51,7 +51,7 @@ snippet div
 		${2}
 	</div>
 snippet form
-	<form action="${1:`Filename('$1_submit')`}" method="${2:get}" accept-charset="utf-8">
+	<form action="${1:`Filename('${1}_submit')`}" method="${2:get}" accept-charset="utf-8">
 		${3}
 
 
@@ -60,7 +60,7 @@ snippet form
 snippet input
 	<input type="${1:text/submit/hidden/button}" name="${2:some_name}" value="${3}"`Close()`>${4}
 snippet label
-	<label for="${2:$1}">${1:name}</label><input type="${3:text/submit/hidden/button}" name="${4:$2}" value="${5}" id="${6:$2}"`Close()`>${7}
+	<label for="${2:${1}}">${1:name}</label><input type="${3:text/submit/hidden/button}" name="${4:${2}}" value="${5}" id="${6:${2}}"`Close()`>${7}
 snippet link
 	<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" charset="utf-8"`Close()`>${4}
 snippet mailto
@@ -68,12 +68,12 @@ snippet mailto
 snippet meta
 	<meta name="${1:name}" content="${2:content}"`Close()`>${3}
 snippet opt
-	<option value="${1:option}">${2:$1}</option>${3}
+	<option value="${1:option}">${2:${1}}</option>${3}
 snippet optt
 	<option>${1:option}</option>${2}
 snippet select
-	<select name="${1:some_name}" id="${2:$1}">
-		<option value="${3:option}">${4:$3}</option>
+	<select name="${1:some_name}" id="${2:${1}}">
+		<option value="${3:option}">${4:${3}}</option>
 	</select>${5}
 snippet table
 	<table border="${1:0}">
