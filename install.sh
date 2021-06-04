@@ -85,6 +85,7 @@ if command -v pamac &> /dev/null; then
     alacritty \
     babashka-bin \
     bash \
+    clj-kondo-bin \
     curl \
     ctags \
     fd \
@@ -134,6 +135,7 @@ elif command -v brew &> /dev/null; then
   brew install \
     alacritty \
     borkdude/brew/babashka \
+    borkdude/brew/clj-kondo \
     bash \
     clojure/tools/clojure \
     ctags \
