@@ -83,6 +83,7 @@ fi
 if command -v pamac &> /dev/null; then
   sudo pamac install --no-confirm \
     alacritty \
+    babashka-bin \
     bash \
     curl \
     ctags \
@@ -132,6 +133,7 @@ elif command -v brew &> /dev/null; then
 
   brew install \
     alacritty \
+    borkdude/brew/babashka \
     bash \
     clojure/tools/clojure \
     ctags \
