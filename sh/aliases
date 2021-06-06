@@ -37,11 +37,6 @@ else
   alias lt='ls --color --human-readable --sort=time'
 fi
 
-# NeoVim
-if command -v nvim &> /dev/null; then
-  alias vim='nvim'
-fi
-
 # Open
 if [ ! command -v open &> /dev/null -a command -v rifle &> /dev/null ]; then
   alias open='rifle'
@@ -59,3 +54,6 @@ alias svns='svn status'
 alias svnsf='svn status | grep --invert-match --regexp="^---" | rev | cut -d" " -f1 | rev'
 alias svnu='svn update'
 alias svnvd="svn diff --diff-cmd ${VISUAL_DIFF}"
+
+# Visual editor
+alias v='${VISUAL}'
