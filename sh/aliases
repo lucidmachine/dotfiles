@@ -58,5 +58,8 @@ alias svnsf='svn status | grep --invert-match --regexp="^---" | rev | cut -d" " 
 alias svnu='svn update'
 alias svnvd="svn diff --diff-cmd ${VISUAL_DIFF}"
 
+# Tmux
+alias t='tmux'
+
 # Visual editor
 alias v='${VISUAL}'

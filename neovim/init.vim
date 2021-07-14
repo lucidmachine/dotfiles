@@ -179,6 +179,7 @@ endif
 
 " Gutter
 set number
+set relativenumber
 
 " Ruler / Status line
 set laststatus=2
