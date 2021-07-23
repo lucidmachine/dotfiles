@@ -34,7 +34,7 @@ noremap <silent> <leader>ff :action GotoFile<CR>
 nmap <silent> gd :action GotoDeclaration<CR>
 nmap <silent> gy :action GotoTypeDeclaration<CR>
 nmap <silent> gi :action GotoImplementation<CR>
-" nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gr :action ShowUsages<CR>
 
 " Lists
 noremap <silent> <leader>ll :action ActivateProblemsViewToolWindow<CR>
