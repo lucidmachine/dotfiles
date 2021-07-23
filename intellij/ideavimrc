@@ -33,7 +33,7 @@ noremap <silent> <leader>ff :action GotoFile<CR>
 " Goto
 nmap <silent> gd :action GotoDeclaration<CR>
 nmap <silent> gy :action GotoTypeDeclaration<CR>
-nmap <silent> gi :action GotoImplementatin<CR>
+nmap <silent> gi :action GotoImplementation<CR>
 " nmap <silent> gr <Plug>(coc-references)
 
 " Lists
