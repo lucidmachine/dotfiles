@@ -245,6 +245,7 @@ nmap <silent> gr <Plug>(coc-references)
 noremap <silent> <leader>ll :call ToggleLocationList()<CR>
 noremap <silent> <leader>ln :lnext<CR>
 noremap <silent> <leader>lp :lprevious<CR>
+noremap <silent> <leader>ld :CocDiagnostics<CR>
 noremap <silent> <leader>qq :call ToggleQuickfixList()<CR>
 noremap <silent> <leader>qn :cnext<CR>
 noremap <silent> <leader>qp :cprevious<CR>
