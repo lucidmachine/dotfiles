@@ -20,7 +20,7 @@ alias gitsf='git status --short | rev | cut -d" " -f1 | rev'
 alias gitvd='git difftool'
 
 # fzf
-alias fzv='fzf | xargs ${VISUAL}'
+alias fzv='fzf --multi | xargs ${VISUAL}'
 
 # grep
 if command -v rg &> /dev/null; then
