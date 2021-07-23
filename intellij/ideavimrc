@@ -10,7 +10,7 @@ set relativenumber
 " Mappings
 """"""""""
 let mapleader = " "
-let maplocalleader = ","
+let maplocalleader = "\\"
 
 " Comments
 noremap <silent> <leader>; :action CommentByLineComment<CR>
