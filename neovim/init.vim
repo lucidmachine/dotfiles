@@ -27,7 +27,7 @@ Plug 'neoclide/coc.nvim', {
       \ 'frozen': 'true'
       \}                                         " LSP-based completion engine
 Plug 'Olical/conjure', {
-      \ 'tag': 'v4.14.1',
+      \ 'tag': 'v4.22.0',
       \ 'for': ['clojure', 'fennel']
       \}                                         " Clojure and Fennel environment
 Plug 'vimoutliner/vimoutliner', {
