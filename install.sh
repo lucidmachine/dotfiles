@@ -61,11 +61,13 @@ link "${BASEDIR}/i3status"            "${HOME}/.config/i3status"
 link "${BASEDIR}/neovim"              "${HOME}/.config/nvim"
 link "${BASEDIR}/neovim"              "${HOME}/.vim"
 link "${BASEDIR}/ranger"              "${HOME}/.config/ranger"
+link "${BASEDIR}/skhd"                "${HOME}/.config/skhd"
 link "${BASEDIR}/sh/aliases"          "${HOME}/.aliases"
 link "${BASEDIR}/sh/environment"      "${HOME}/.environment"
 link "${BASEDIR}/sh/environment"      "${HOME}/.zshenv"
 link "${BASEDIR}/tmux/tmux.conf"      "${HOME}/.tmux.conf"
 link "${BASEDIR}/x11/Xresources"      "${HOME}/.Xresources"
+link "${BASEDIR}/yabai"               "${HOME}/.config/yabai"
 link "${BASEDIR}/zsh/rc"              "${HOME}/.zshrc"
 
 # Packages
@@ -144,6 +146,8 @@ elif command -v brew &> /dev/null; then
     fzf \
     git \
     htop \
+    koekeishiya/formulae/skhd \
+    koekeishiya/formulae/yabai \
     jq \
     less \
     make \
