@@ -45,6 +45,7 @@ noremap <silent> <leader>ll :action ActivateProblemsViewToolWindow<CR>
 " noremap <silent> <leader>qp :cprevious<CR>
 
 " Refactorings
+nmap <leader>ra :action ShowIntentionActions<CR>
 nmap <leader>ri :action Inline<CR>
 nmap <leader>rl :action ReformatCode<CR>
 nmap <leader>ro :action OptimizeImports<CR>
