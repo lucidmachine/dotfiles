@@ -106,6 +106,9 @@ let g:netrw_liststyle = 3                        " Filetree browser style
 let g:netrw_altv = 1                             " Split vertically
 let g:netrw_bufsettings = 'number'               " Use line numbers
 
+" Folding
+set nofoldenable                                 " Start unfolded. Fold commands re-enable
+
 " Search
 if executable('rg')
   set grepprg=rg\ --color=never
