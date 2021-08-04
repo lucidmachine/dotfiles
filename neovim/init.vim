@@ -351,7 +351,6 @@ let g:snipMate = {
       \}
 
 " Signify
-let g:signify_vcs_list = ['git', 'hg', 'bzr']
 let g:signify_update_on_focusgained = 1
 
 " Taglist
