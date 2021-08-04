@@ -49,7 +49,7 @@ Configuration, powered by a shell script.
 * zsh
 
 ## "Tested" On
-* Manjaro
-* macOS 10.15
+* Manjaro 21.0
+* macOS 11
 * Ubuntu 18.04
 * CentOS 8
