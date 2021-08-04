@@ -1,8 +1,8 @@
 # #########
 # Launchers
 # #########
-cmd + alt - return             : alacritty
-cmd + alt - w                  : firefox
+cmd + alt - return              : alacritty
+cmd + alt - w                   : firefox
 
 
 # #################
@@ -76,7 +76,7 @@ cmd + alt - h                   : yabai -m window --focus west 2> /dev/null; \
                                         yabai -m query --windows --space "${focused_space_index}" \
                                           | jq 'map(select(.visible == 1)) | max_by(.frame.x) | .id' \
                                       ); \
-                                      yabai -m window --focus "${rightmost_window_id}"
+                                      yabai -m window --focus "${rightmost_window_id}"; \
                                     fi; \
                                   fi
 cmd + alt - j                   : yabai -m window --focus south
@@ -93,7 +93,7 @@ cmd + alt - l                   : yabai -m window --focus east 2> /dev/null; \
                                         yabai -m query --windows --space "${focused_space_index}" \
                                           | jq 'map(select(.visible == 1)) | min_by(.frame.x) | .id' \
                                       ); \
-                                      yabai -m window --focus "${leftmost_window_id}"
+                                      yabai -m window --focus "${leftmost_window_id}"; \
                                     fi; \
                                   fi
 cmd + alt - r                   : yabai -m window --focus recent
@@ -123,7 +123,7 @@ cmd + alt + ctrl + shift - 8    : yabai -m window --space 16
 
 # Swap
 cmd + alt + shift - h           : yabai -m window --swap west 2> /dev/null; \
-                                  if [ $? -eq 1 ] && [ $(yabai -m query --displays | jq 'length') -gt 1 ]; then
+                                  if [ $? -eq 1 ] && [ $(yabai -m query --displays | jq 'length') -gt 1 ]; then \
                                     yabai -m window --display next; \
                                     yabai -m display --focus next; \
                                     yabai -m window --swap east; \
@@ -131,7 +131,7 @@ cmd + alt + shift - h           : yabai -m window --swap west 2> /dev/null; \
 cmd + alt + shift - j           : yabai -m window --swap south
 cmd + alt + shift - k           : yabai -m window --swap north
 cmd + alt + shift - l           : yabai -m window --swap east 2> /dev/null; \
-                                  if [ $? -eq 1 ] && [ $(yabai -m query --displays | jq 'length') -gt 1 ]; then
+                                  if [ $? -eq 1 ] && [ $(yabai -m query --displays | jq 'length') -gt 1 ]; then \
                                     yabai -m window --display prev; \
                                     yabai -m display --focus prev; \
                                     yabai -m window --swap west; \
@@ -142,7 +142,7 @@ cmd + alt + shift - n           : yabai -m window --swap next
 
 # Warp
 cmd + alt + shift - n           : yabai -m window --warp west 2> /dev/null; \
-                                  if [ $? -eq 1 ] && [ $(yabai -m query --displays | jq 'length') -gt 1 ]; then
+                                  if [ $? -eq 1 ] && [ $(yabai -m query --displays | jq 'length') -gt 1 ]; then \
                                     yabai -m window --display next; \
                                     yabai -m display --focus next; \
                                     yabai -m window --warp east; \
@@ -150,7 +150,7 @@ cmd + alt + shift - n           : yabai -m window --warp west 2> /dev/null; \
 cmd + alt + shift - m           : yabai -m window --warp south
 cmd + alt + shift - 0x2B        : yabai -m window --warp north
 cmd + alt + shift - 0x2F        : yabai -m window --warp east 2> /dev/null; \
-                                  if [ $? -eq 1 ] && [ $(yabai -m query --displays | jq 'length') -gt 1 ]; then
+                                  if [ $? -eq 1 ] && [ $(yabai -m query --displays | jq 'length') -gt 1 ]; then \
                                     yabai -m window --display prev; \
                                     yabai -m display --focus prev; \
                                     yabai -m window --warp west; \
