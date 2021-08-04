@@ -319,6 +319,7 @@ let g:clojure_foldwords = "def,defn,defmacro,defmethod,defschema,defprotocol,def
 let g:coc_enable_locationlist = 0
 let g:coc_global_extensions = [
       \'coc-angular',
+      \'coc-clojure',
       \'coc-conjure',
       \'coc-eslint',
       \'coc-java',
