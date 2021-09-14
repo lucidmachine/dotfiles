@@ -41,7 +41,7 @@ else
 fi
 
 # Open
-if [ ! command -v open &> /dev/null -a command -v rifle &> /dev/null ]; then
+if [ ! $(command -v open 2> /dev/null) ] && [ $(command -v rifle 2> /dev/null) ]; then
   alias open='rifle'
 fi
 
