@@ -60,6 +60,7 @@ alias svnvd="svn diff --diff-cmd ${VISUAL_DIFF}"
 
 # Tmux
 alias t='tmux new'
+alias t='tmux new ${VISUAL}'
 
 # Visual editor
 alias v='${VISUAL}'
