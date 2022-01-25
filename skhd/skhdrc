@@ -2,7 +2,7 @@
 # Launchers
 # #########
 cmd + alt - return              : alacritty
-cmd + alt - w                   : /Applications/Firefox.app/Contents/MacOS/firefox
+cmd + alt - w                   : /Applications/Firefox\ Developer\ Edition.app/Contents/MacOS/firefox
 
 
 # #################
