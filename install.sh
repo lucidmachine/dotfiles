@@ -92,6 +92,7 @@ if command -v pamac &> /dev/null; then
     curl \
     ctags \
     fd \
+    firefox-developer-edition \
     fzf \
     git \
     htop \
@@ -145,6 +146,7 @@ elif command -v brew &> /dev/null; then
     ctags \
     curl \
     fd \
+    firefox-developer-edition \
     fzf \
     git \
     htop \
