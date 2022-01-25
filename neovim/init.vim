@@ -164,20 +164,6 @@ if exists('+winhighlight')
     au FocusLost * hi link MyNormalWin MyInactiveWin
   augroup END
 endif
-if exists('+relativenumber')
-  augroup focusrelativenumber
-    au!
-    au BufEnter,BufNew,BufWinEnter,WinEnter * set relativenumber
-    au BufLeave,BufWinLeave,WinLeave * set norelativenumber
-  augroup END
-endif
-if exists('+cursorline')
-  augroup focuscursorline
-    au!
-    au BufEnter,BufNew,BufWinEnter,WinEnter * set cursorline
-    au BufLeave,BufWinLeave,WinLeave * set nocursorline
-  augroup END
-endif
 
 " Gutter
 set number
