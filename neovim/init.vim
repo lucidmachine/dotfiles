@@ -317,6 +317,7 @@ let g:coc_global_extensions = [
       \'coc-clojure',
       \'coc-conjure',
       \'coc-eslint',
+      \'coc-go',
       \'coc-java',
       \'coc-marketplace',
       \'coc-sh',
