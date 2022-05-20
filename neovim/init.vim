@@ -16,6 +16,10 @@ Plug 'l04m33/vlime', {
       \ 'rtp': 'vim/',
       \ 'for': 'lisp'
       \}                                         " Common Lisp environment
+Plug 'fatih/vim-go', {
+      \'for': 'go',
+      \'do': ':GoUpdateBinaries'
+      \}                                         " Go support
 Plug 'lucidmachine/vim-velocity', {
       \ 'for': 'vtl'
       \}                                         " Velocity template support
