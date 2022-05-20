@@ -76,10 +76,11 @@ echo "###########################"
 echo "# Installing Packages"
 echo "###########################"
 if ! command -v node &> /dev/null; then
+  export N_PREFIX="${HOME}/.n"
   curl --location https://raw.githubusercontent.com/tj/n/master/bin/n \
-    --output ${HOME}/.n/bin/n
-  chmod 755 ${HOME}/.n/bin/n
-  bash ${HOME}/.n/bin/n lts
+    --output "${N_PREFIX}/bin/n"
+  chmod 755 "${N_PREFIX}/bin/n"
+  bash "${N_PREFIX}/bin/n" lts
 fi
 
 if command -v pamac &> /dev/null; then
