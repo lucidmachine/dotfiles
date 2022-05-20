@@ -166,7 +166,7 @@ elif command -v brew &> /dev/null; then
     wget \
     zoxide \
     zsh
-elif command -v yum &> /dev/null; then
+elif command -v yum &> /dev/null && sudo -v &> /dev/null; then
   sudo yum install --assumeyes \
     bash \
     ctags \
