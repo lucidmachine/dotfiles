@@ -26,7 +26,6 @@ Plug 'neoclide/coc.nvim', {
       \ 'branch': 'release'
       \}                                         " LSP-based completion engine
 Plug 'Olical/conjure', {
-      \ 'tag': 'v4.22.1',
       \ 'for': ['clojure', 'fennel']
       \}                                         " Clojure and Fennel environment
 Plug 'vimoutliner/vimoutliner', {
