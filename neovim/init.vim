@@ -170,7 +170,12 @@ set relativenumber
 
 " Ruler / Status line
 set laststatus=2
-let g:lightline = {'colorscheme': 'nord'}
+let g:lightline = {
+      \'colorscheme': 'nord',
+      \'inactive': {
+        \'left': [[], ['filename', 'modified']]
+        \}
+        \}
 
 " Theme
 try
