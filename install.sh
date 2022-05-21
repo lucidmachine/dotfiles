@@ -93,9 +93,12 @@ if command -v pamac &> /dev/null; then
     clj-kondo-bin \
     curl \
     ctags \
+    delve \
     fd \
     firefox-developer-edition \
     fzf \
+    go \
+    gopls \
     git \
     htop \
     jq \
