@@ -29,9 +29,12 @@ Configuration, powered by a shell script.
 ## Installs
 * alacritty
 * bash
+* Babashka
+* Clojure
 * curl
 * Exuberant CTags
 * fd
+* Firefox Developer Edition
 * fzf
 * git
 * htop
@@ -42,6 +45,7 @@ Configuration, powered by a shell script.
 * node
 * ranger
 * ripgrep
+* shellcheck
 * tmux
 * tree
 * wget
