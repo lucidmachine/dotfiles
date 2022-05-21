@@ -108,7 +108,7 @@ if command -v pamac &> /dev/null; then
     tmux \
     tree \
     wget \
-    zoxide-bin \
+    zoxide \
     zsh
 elif command -v apt-get &> /dev/null; then
   sudo apt-get install -y \
