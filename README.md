@@ -53,7 +53,7 @@ Configuration, powered by a shell script.
 * zsh
 
 ## "Tested" On
-* Manjaro 21.0
-* macOS 11
+* Manjaro 21.2
+* macOS 11.6
 * Ubuntu 18.04
-* CentOS 8
+* Oracle Linux 7.8
