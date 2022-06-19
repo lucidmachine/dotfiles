@@ -26,7 +26,6 @@ Plug 'neoclide/coc.nvim', {
       \ 'branch': 'release'
       \}                                         " LSP-based completion engine
 Plug 'Olical/conjure', {
-      \ 'tag': 'v4.22.1',
       \ 'for': ['clojure', 'fennel']
       \}                                         " Clojure and Fennel environment
 Plug 'vimoutliner/vimoutliner', {
@@ -164,20 +163,6 @@ if exists('+winhighlight')
     au FocusLost * hi link MyNormalWin MyInactiveWin
   augroup END
 endif
-if exists('+relativenumber')
-  augroup focusrelativenumber
-    au!
-    au BufEnter,BufNew,BufWinEnter,WinEnter * set relativenumber
-    au BufLeave,BufWinLeave,WinLeave * set norelativenumber
-  augroup END
-endif
-if exists('+cursorline')
-  augroup focuscursorline
-    au!
-    au BufEnter,BufNew,BufWinEnter,WinEnter * set cursorline
-    au BufLeave,BufWinLeave,WinLeave * set nocursorline
-  augroup END
-endif
 
 " Gutter
 set number
@@ -185,7 +170,12 @@ set relativenumber
 
 " Ruler / Status line
 set laststatus=2
-let g:lightline = {'colorscheme': 'nord'}
+let g:lightline = {
+      \'colorscheme': 'nord',
+      \'inactive': {
+        \'left': [[], ['filename', 'modified']]
+        \}
+        \}
 
 " Theme
 try
@@ -279,6 +269,7 @@ noremap <silent> <leader>tc :call mappings#cycle_columns()<CR>
 if has('nvim')
   noremap <silent> <leader>ts :call mappings#cycle_inccommand()<CR>
 endif
+noremap <silent> <leader>tp :call AutoPairsToggle()<CR>
 
 " Vim Configuration
 noremap <silent> <leader>vv :tabnew $MYVIMRC<CR>
@@ -325,6 +316,7 @@ let g:coc_global_extensions = [
       \'coc-java',
       \'coc-marketplace',
       \'coc-sh',
+      \'coc-tsserver',
       \]
 
 " Conjure

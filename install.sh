@@ -60,6 +60,7 @@ link "${BASEDIR}/i3"                  "${HOME}/.config/i3"
 link "${BASEDIR}/i3status"            "${HOME}/.config/i3status"
 link "${BASEDIR}/neovim"              "${HOME}/.config/nvim"
 link "${BASEDIR}/neovim"              "${HOME}/.vim"
+link "${BASEDIR}/neovim/init.vim"     "${HOME}/.vim/vimrc"
 link "${BASEDIR}/ranger"              "${HOME}/.config/ranger"
 link "${BASEDIR}/skhd"                "${HOME}/.config/skhd"
 link "${BASEDIR}/sh/aliases"          "${HOME}/.aliases"
@@ -76,10 +77,11 @@ echo "###########################"
 echo "# Installing Packages"
 echo "###########################"
 if ! command -v node &> /dev/null; then
+  export N_PREFIX="${HOME}/.n"
   curl --location https://raw.githubusercontent.com/tj/n/master/bin/n \
-    --output ${HOME}/.n/bin/n
-  chmod 755 ${HOME}/.n/bin/n
-  bash ${HOME}/.n/bin/n lts
+    --output "${N_PREFIX}/bin/n"
+  chmod 755 "${N_PREFIX}/bin/n"
+  bash "${N_PREFIX}/bin/n" lts
 fi
 
 if command -v pamac &> /dev/null; then
@@ -87,10 +89,12 @@ if command -v pamac &> /dev/null; then
     alacritty \
     babashka-bin \
     bash \
+    clojure-lsp-bin \
     clj-kondo-bin \
     curl \
     ctags \
     fd \
+    firefox-developer-edition \
     fzf \
     git \
     htop \
@@ -104,7 +108,7 @@ if command -v pamac &> /dev/null; then
     tmux \
     tree \
     wget \
-    zoxide-bin \
+    zoxide \
     zsh
 elif command -v apt-get &> /dev/null; then
   sudo apt-get install -y \
@@ -140,9 +144,11 @@ elif command -v brew &> /dev/null; then
     borkdude/brew/clj-kondo \
     bash \
     clojure/tools/clojure \
+    clojure-lsp/brew/clojure-lsp-native \
     ctags \
     curl \
     fd \
+    firefox-developer-edition \
     fzf \
     git \
     htop \
@@ -160,7 +166,7 @@ elif command -v brew &> /dev/null; then
     wget \
     zoxide \
     zsh
-elif command -v yum &> /dev/null; then
+elif command -v yum &> /dev/null && sudo -v &> /dev/null; then
   sudo yum install --assumeyes \
     bash \
     ctags \

@@ -2,9 +2,6 @@
 #   sleep 10; alert
 alias alert='notify-send --urgency=low --icon "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# du
-alias du='du --total --human-readable'
-
 # Git
 alias gita='git add'
 alias gitb='git branch'
@@ -59,7 +56,8 @@ alias svnu='svn update'
 alias svnvd="svn diff --diff-cmd ${VISUAL_DIFF}"
 
 # Tmux
-alias t='tmux'
+alias t='tmux new'
+alias tv='tmux new ${VISUAL}'
 
 # Visual editor
 alias v='${VISUAL}'
