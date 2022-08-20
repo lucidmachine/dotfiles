@@ -1,0 +1,130 @@
+"""""""""
+" General
+"""""""""
+" Backspace
+set backspace=indent,eol,start
+
+" Document Formatting
+set autoindent
+set conceallevel=0                               " Don't conceal characters
+set expandtab
+set nowrap
+set shiftwidth=2
+set smarttab
+set tabstop=2
+if v:version > 703
+  set formatoptions +=j                          " Join sans comment leader
+endif
+
+" Filetypes
+filetype on
+filetype plugin on
+filetype indent on
+syntax on
+
+au FileType make setlocal noexpandtab
+au FileType confluencewiki,markdown,text,votl setlocal spell
+augroup XML
+  au!
+  au FileType xml let g:xml_syntax_folding=1
+  au FileType xml setlocal foldmethod=syntax
+  au FileType xml :syntax on
+  au FileType xml :%foldopen!
+augroup END
+
+" File tree browser
+let g:netrw_banner = 0                           " Disable banner
+let g:netrw_liststyle = 3                        " Filetree browser style
+let g:netrw_altv = 1                             " Split vertically
+let g:netrw_bufsettings = 'number'               " Use line numbers
+
+" Folding
+set nofoldenable                                 " Start unfolded. Fold commands re-enable
+
+" Splits
+set splitbelow
+
+" Textwidth
+set textwidth=100
+
+" UI
+set lazyredraw                                   " Macros don't redraw
+
+" Visual Bell
+set visualbell
+
+" Working files
+set updatetime=300                               " Write to swap every n ms
+
+
+""""""""""""
+" Appearance
+""""""""""""
+" Cmder color palette fix
+if !empty($CONEMUBUILD)
+  set term=xterm
+  set t_Co=256
+  let &t_AB = "\e[48;5;%dm"
+  let &t_AF = "\e[38;5;%dm"
+endif
+
+" ColorColumn
+if exists('+colorcolumn')
+  let &colorcolumn = &textwidth + 1
+endif
+
+" Cursor
+set cursorline
+
+" Gutter
+set number
+set relativenumber
+
+" Ruler / Status line
+set laststatus=2
+
+" Theme
+colorscheme murphy
+set background=dark
+
+""""""""""
+" Commands
+""""""""""
+command! We execute ":write | :edit"
+
+
+""""""""""
+" Mappings
+""""""""""
+let mapleader = ' '
+let maplocalleader = '\'
+
+" Lists
+noremap <silent> <leader>ln :lnext<CR>
+noremap <silent> <leader>lp :lprevious<CR>
+noremap <silent> <leader>qn :cnext<CR>
+noremap <silent> <leader>qp :cprevious<CR>
+
+" Vim Configuration
+noremap <silent> <leader>vv :tabnew $MYVIMRC<CR>
+noremap <silent> <leader>vr :source $MYVIMRC<CR>
+
+" Windows
+noremap <leader>wo :only<CR>
+noremap <leader>wq <C-W>q
+noremap <leader>ww <C-W>=
+noremap <leader>wh <C-W>h
+noremap <leader>wj <C-W>j
+noremap <leader>wk <C-W>k
+noremap <leader>wl <C-W>l
+noremap <leader>wH <C-W>H
+noremap <leader>wJ <C-W>J
+noremap <leader>wK <C-W>K
+noremap <leader>wL <C-W>L
+noremap <leader>wr <C-W>r
+noremap <leader>wR <C-W>R
+noremap <leader>wx <C-W>x
+noremap <leader>w< <C-W><
+noremap <leader>w> <C-W>>
+noremap <leader>w+ <C-W>+
+noremap <leader>w- <C-W>-
