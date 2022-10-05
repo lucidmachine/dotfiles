@@ -247,6 +247,8 @@ nmap <leader>rr <Plug>(Scalpel)
 nmap <leader>rR <Plug>(coc-rename)
 nmap <silent> <leader>ra <Plug>(coc-codeaction-line)
 xmap <silent> <leader>ra <Plug>(coc-codeaction-selected)
+nmap <silent> <leader>rl <Plug>(coc-format)
+xmap <silent> <leader>rl <Plug>(coc-format-selected)
 nmap <leader>ro :call CocAction('organizeImport')<CR><CR>
 nmap <silent> <leader> rw <Plug>(coc-refactor)
 

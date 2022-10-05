@@ -59,14 +59,13 @@ link "${BASEDIR}/intellij/ideavimrc"  "${HOME}/.ideavimrc"
 link "${BASEDIR}/i3"                  "${HOME}/.config/i3"
 link "${BASEDIR}/i3status"            "${HOME}/.config/i3status"
 link "${BASEDIR}/neovim"              "${HOME}/.config/nvim"
-link "${BASEDIR}/neovim"              "${HOME}/.vim"
-link "${BASEDIR}/neovim/init.vim"     "${HOME}/.vim/vimrc"
 link "${BASEDIR}/ranger"              "${HOME}/.config/ranger"
 link "${BASEDIR}/skhd"                "${HOME}/.config/skhd"
 link "${BASEDIR}/sh/aliases"          "${HOME}/.aliases"
 link "${BASEDIR}/sh/environment"      "${HOME}/.environment"
 link "${BASEDIR}/sh/environment"      "${HOME}/.zshenv"
 link "${BASEDIR}/tmux/tmux.conf"      "${HOME}/.tmux.conf"
+link "${BASEDIR}/vim/vimrc"           "${HOME}/.vimrc"
 link "${BASEDIR}/x11/Xresources"      "${HOME}/.Xresources"
 link "${BASEDIR}/yabai"               "${HOME}/.config/yabai"
 link "${BASEDIR}/zsh/rc"              "${HOME}/.zshrc"
@@ -192,9 +191,6 @@ echo "###########################"
 if command -v nvim &> nvim; then
   echo "Installing plugins in nvim"
   nvim --headless +PlugInstall +CocInstall +qall
-elif command -v vim &> vim; then
-  echo "Installing plugins in vim"
-  vim +PlugInstall +qall
 else
   echo "Unable to locate editor"
 fi
