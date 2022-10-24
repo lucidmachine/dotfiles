@@ -145,7 +145,6 @@ elif command -v brew &> /dev/null; then
   # brew errors when packages which are already installed have upgrades
   # available, so we upgrade the universe before attempting to install
   brew upgrade
-  brew cask upgrade
 
   brew install \
     alacritty \
