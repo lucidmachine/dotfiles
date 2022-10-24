@@ -11,7 +11,10 @@ function dir() {
   elif [ -e ${target_dir} ]; then
     echo "${target_dir} already exists, but is not a directory. Skipping."
   else
-    mkdir --parents --verbose ${target_dir}
+    # mkdir short flags used for macOS compatibility
+    # -p - Create intermediate parent directories
+    # -v - Verbose input
+    mkdir -p -v ${target_dir}
   fi
 }
 
