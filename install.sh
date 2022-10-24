@@ -119,6 +119,7 @@ if command -v pamac &> /dev/null; then
     wget \
     zoxide \
     zsh
+
 elif command -v apt-get &> /dev/null; then
   sudo apt-get install -y \
     alacritty \
@@ -141,6 +142,7 @@ elif command -v apt-get &> /dev/null; then
     wget \
     zoxide \
     zsh
+
 elif command -v brew &> /dev/null; then
   # brew errors when packages which are already installed have upgrades
   # available, so we upgrade the universe before attempting to install
@@ -174,6 +176,10 @@ elif command -v brew &> /dev/null; then
     wget \
     zoxide \
     zsh
+
+  brew services start skhd
+  brew services start yabai
+
 elif command -v yum &> /dev/null && sudo -v &> /dev/null; then
   sudo yum install --assumeyes \
     bash \
