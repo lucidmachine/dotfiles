@@ -76,3 +76,8 @@ noremap <leader>wl <C-W>l
 " noremap <leader>w> <C-W>>
 " noremap <leader>w+ <C-W>+
 " noremap <leader>w- <C-W>-
+
+""""""""""
+" Settings
+""""""""""
+set ideajoin
