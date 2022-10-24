@@ -26,6 +26,7 @@
       }
     }
   },
-  "languageserver": {}
+  "languageserver": {},
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
 }
 
