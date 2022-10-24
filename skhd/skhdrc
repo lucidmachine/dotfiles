@@ -40,38 +40,10 @@ cmd + alt + shift - r           : yabai -m space --rotate 90
 #
 
 # Focus
-cmd + alt - h                   : yabai -m window --focus west 2> /dev/null; \
-                                  if [ $? -eq 1 ] && [ $(yabai -m query --displays | jq 'length') -gt 1 ]; then \
-                                    yabai -m display --focus next 2> /dev/null; \
-                                    if [ $? -eq 0 ]; then \
-                                      local focused_space_index=$(\
-                                        yabai -m query --spaces \
-                                          | jq 'map(select(.focused == 1) | .index) | .[0]' \
-                                      ); \
-                                      local rightmost_window_id=$(\
-                                        yabai -m query --windows --space "${focused_space_index}" \
-                                          | jq 'map(select(.visible == 1)) | max_by(.frame.x) | .id' \
-                                      ); \
-                                      yabai -m window --focus "${rightmost_window_id}"; \
-                                    fi; \
-                                  fi
+cmd + alt - h                   : bb -cp ${HOME}/src/yabai-tools/src -m yabai-tools.core/pairwise-focus-window-west!
 cmd + alt - j                   : yabai -m window --focus south
 cmd + alt - k                   : yabai -m window --focus north
-cmd + alt - l                   : yabai -m window --focus east 2> /dev/null; \
-                                  if [ $? -eq 1 ] && [ $(yabai -m query --displays | jq 'length') -gt 1 ]; then \
-                                    yabai -m display --focus prev 2> /dev/null; \
-                                    if [ $? -eq 0 ]; then \
-                                      local focused_space_index=$(\
-                                        yabai -m query --spaces \
-                                          | jq 'map(select(.focused == 1) | .index) | .[0]' \
-                                      ); \
-                                      local leftmost_window_id=$(\
-                                        yabai -m query --windows --space "${focused_space_index}" \
-                                          | jq 'map(select(.visible == 1)) | min_by(.frame.x) | .id' \
-                                      ); \
-                                      yabai -m window --focus "${leftmost_window_id}"; \
-                                    fi; \
-                                  fi
+cmd + alt - l                   : bb -cp ${HOME}/src/yabai-tools/src -m yabai-tools.core/pairwise-focus-window-east!
 cmd + alt - r                   : yabai -m window --focus recent
 cmd + alt - p                   : yabai -m window --focus prev
 cmd + alt - n                   : yabai -m window --focus next
@@ -98,37 +70,17 @@ cmd + alt + ctrl + shift - 7    : yabai -m window --space 15
 cmd + alt + ctrl + shift - 8    : yabai -m window --space 16
 
 # Swap
-cmd + alt + shift - h           : yabai -m window --swap west 2> /dev/null; \
-                                  if [ $? -eq 1 ] && [ $(yabai -m query --displays | jq 'length') -gt 1 ]; then \
-                                    yabai -m window --display next; \
-                                    yabai -m display --focus next; \
-                                    yabai -m window --swap east; \
-                                  fi
+cmd + alt + shift - h           : bb -cp ${HOME}/src/yabai-tools/src -m yabai-tools.core/pairwise-swap-window-west!
 cmd + alt + shift - j           : yabai -m window --swap south
 cmd + alt + shift - k           : yabai -m window --swap north
-cmd + alt + shift - l           : yabai -m window --swap east 2> /dev/null; \
-                                  if [ $? -eq 1 ] && [ $(yabai -m query --displays | jq 'length') -gt 1 ]; then \
-                                    yabai -m window --display prev; \
-                                    yabai -m display --focus prev; \
-                                    yabai -m window --swap west; \
-                                  fi
+cmd + alt + shift - l           : bb -cp ${HOME}/src/yabai-tools/src -m yabai-tools.core/pairwise-swap-window-east!
 cmd + alt + shift - r           : yabai -m window --swap recent
 cmd + alt + shift - p           : yabai -m window --swap prev
 cmd + alt + shift - n           : yabai -m window --swap next
 
 # Warp
-cmd + alt + shift - n           : yabai -m window --warp west 2> /dev/null; \
-                                  if [ $? -eq 1 ] && [ $(yabai -m query --displays | jq 'length') -gt 1 ]; then \
-                                    yabai -m window --display next; \
-                                    yabai -m display --focus next; \
-                                    yabai -m window --warp east; \
-                                  fi
+cmd + alt + shift - n           : bb -cp ${HOME}/src/yabai-tools/src -m yabai-tools.core/pairwise-warp-window-west!
 cmd + alt + shift - m           : yabai -m window --warp south
 cmd + alt + shift - 0x2B        : yabai -m window --warp north
-cmd + alt + shift - 0x2F        : yabai -m window --warp east 2> /dev/null; \
-                                  if [ $? -eq 1 ] && [ $(yabai -m query --displays | jq 'length') -gt 1 ]; then \
-                                    yabai -m window --display prev; \
-                                    yabai -m display --focus prev; \
-                                    yabai -m window --warp west; \
-                                  fi
+cmd + alt + shift - 0x2F        : bb -cp ${HOME}/src/yabai-tools/src -m yabai-tools.core/pairwise-warp-window-east!
 cmd + alt + shift - 0x29        : yabai -m window --warp recent
