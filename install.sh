@@ -80,10 +80,17 @@ echo "# Installing Packages"
 echo "###########################"
 if ! command -v node &> /dev/null; then
   export N_PREFIX="${HOME}/.n"
+
+  # Install n
   curl --location https://raw.githubusercontent.com/tj/n/master/bin/n \
     --output "${N_PREFIX}/bin/n"
   chmod 755 "${N_PREFIX}/bin/n"
+
+  # Install the latest Node.js LTS using n
   bash "${N_PREFIX}/bin/n" lts
+
+  # Add node to the path for the rest of this script. NeoVim's CoC plugin needs this
+  export PATH="${N_PREFIX}/bin:${PATH}"
 fi
 
 if command -v pamac &> /dev/null; then
