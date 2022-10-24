@@ -57,7 +57,7 @@ alias svnvd="svn diff --diff-cmd ${VISUAL_DIFF}"
 
 # Tmux
 alias t='tmux new'
-alias tv='tmux new ${VISUAL}'
+alias tv='tmux new ${VISUAL} -c "startinsert"'
 
 # Visual editor
 alias v='${VISUAL}'
