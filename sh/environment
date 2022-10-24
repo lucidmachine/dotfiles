@@ -3,6 +3,9 @@ export N_PREFIX="${HOME}/.n"
 
 # PATH
 export PATH="${HOME}/bin:${N_PREFIX}/bin:$PATH"
+if [ -d '/opt/homebrew' ]; then
+  export PATH="/opt/homebrew/bin:${PATH}"
+fi
 
 # LANG
 export LANG="en_us.UTF-8"
