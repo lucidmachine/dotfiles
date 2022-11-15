@@ -214,7 +214,7 @@ omap <leader>; <Plug>Commentary
 nmap <leader>;; <Plug>CommentaryLine
 
 " Completion
-inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
 
 " Copy
 noremap <silent> <leader>cc :call mappings#copy_buffer_to_clipboard()<CR>
