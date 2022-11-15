@@ -25,3 +25,8 @@ fi
 if command -v meld &> /dev/null;     then export VISUAL_DIFF='meld'
 elif command -v kdiff3 &> /dev/null; then export VISUAL_DIFF='kdiff3'
 fi
+
+# Set default browser
+if command -v firefox-developer-edition &> /dev/null; then export BROWSER='firefox-developer-edition'
+elif command-v firefox &> /dev/null;                  then export BROWSER='firefox'
+fi
