@@ -120,29 +120,6 @@ if command -v pamac &> /dev/null; then
     zoxide \
     zsh
 
-elif command -v apt-get &> /dev/null; then
-  sudo apt-get install -y \
-    alacritty \
-    bash \
-    curl \
-    exuberant-ctags \
-    fd \
-    fzf \
-    git \
-    htop \
-    jq \
-    less \
-    make \
-    neovim \
-    ranger \
-    ripgrep \
-    shellcheck \
-    tmux \
-    tree \
-    wget \
-    zoxide \
-    zsh
-
 elif command -v brew &> /dev/null; then
   # brew errors when packages which are already installed have upgrades
   # available, so we upgrade the universe before attempting to install

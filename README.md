@@ -55,5 +55,4 @@ Configuration, powered by a shell script.
 ## "Tested" On
 * Manjaro 21.2
 * macOS 11.6
-* Ubuntu 18.04
 * Oracle Linux 7.8
