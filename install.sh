@@ -98,6 +98,7 @@ if command -v pamac &> /dev/null; then
     alacritty \
     babashka-bin \
     bash \
+    clojure \
     clojure-lsp-bin \
     clj-kondo-bin \
     curl \
