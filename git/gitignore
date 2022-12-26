@@ -26,6 +26,9 @@
 *.jar
 *.war
 
+# LSP
+.lsp/
+
 # macOS
 .DS_Store
 
