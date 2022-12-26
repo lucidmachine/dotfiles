@@ -8,6 +8,9 @@
 # Chef
 .kitchen/
 
+# Clojure
+.clj-kondo/
+
 # Eclipse
 .settings/
 .classpath
