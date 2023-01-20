@@ -61,6 +61,7 @@ noremap <silent> <leader>vr :source ~/.ideavimrc
 
 " Windows
 noremap <leader>wo :only<CR>
+noremap <leader>wq :action CloseContent<CR>
 " noremap <leader>ww <C-W>=
 noremap <leader>wh <C-W>h
 noremap <leader>wj <C-W>j
