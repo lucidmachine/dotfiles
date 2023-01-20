@@ -322,6 +322,7 @@ let g:coc_global_extensions = [
       \'coc-java',
       \'coc-marketplace',
       \'coc-sh',
+      \'coc-snippets',
       \'coc-tsserver',
       \]
 
