@@ -74,10 +74,10 @@ set backspace=indent,eol,start
 " Document Formatting
 set autoindent
 set conceallevel=0                               " Don't conceal characters
-set expandtab
 set nowrap
-set shiftwidth=2
 set smarttab
+set expandtab
+set shiftwidth=2
 set tabstop=2
 if v:version > 703
   set formatoptions +=j                          " Join sans comment leader
@@ -269,8 +269,9 @@ if has('nvim')
   tnoremap <Esc> <C-\><C-n>
 endif
 
-" Toggles
+" Toggles and Cycles
 noremap <silent> <leader>tc :call mappings#cycle_columns()<CR>
+noremap <silent> <leader>ti :call mappings#cycle_indentation()<CR>
 if has('nvim')
   noremap <silent> <leader>ts :call mappings#cycle_inccommand()<CR>
 endif
