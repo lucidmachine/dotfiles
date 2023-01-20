@@ -272,10 +272,10 @@ endif
 " Toggles and Cycles
 noremap <silent> <leader>tc :call mappings#cycle_columns()<CR>
 noremap <silent> <leader>ti :call mappings#cycle_indentation()<CR>
+noremap <silent> <leader>tp :call AutoPairsToggle()<CR>
 if has('nvim')
   noremap <silent> <leader>ts :call mappings#cycle_inccommand()<CR>
 endif
-noremap <silent> <leader>tp :call AutoPairsToggle()<CR>
 
 " Vim Configuration
 noremap <silent> <leader>vv :tabnew $MYVIMRC<CR>
