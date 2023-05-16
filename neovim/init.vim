@@ -180,7 +180,7 @@ let g:lightline = {
 " Theme
 try
   colorscheme nord
-catch /^Vim\%((\a\+)\)\=:E185
+catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme murphy
 endtry
 set background=dark
