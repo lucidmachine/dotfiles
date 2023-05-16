@@ -7,9 +7,6 @@ if [ -d '/opt/homebrew' ]; then
   export PATH="/opt/homebrew/bin:${PATH}"
 fi
 
-# LANG
-export LANG="en_us.UTF-8"
-
 # XDG_CONFIG_HOME
 export XDG_CONFIG_HOME="${HOME}/.config"
 
