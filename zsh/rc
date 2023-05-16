@@ -18,6 +18,9 @@ source_if_exists "${HOME}/.environment-ext"
 source_if_exists "${HOME}/.environment"
 source_if_exists "${HOME}/.aliases"
 source_if_exists "${HOME}/.git-prompt.sh"
+source_if_exists "${HOME}/.fzf.zsh"
+source_if_exists "/usr/share/fzf/key-bindings.zsh"
+source_if_exists "/usr/share/fzf/completion.zsh"
 
 # Load zsh functions
 autoload -U \

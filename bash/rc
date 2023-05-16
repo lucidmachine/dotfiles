@@ -18,6 +18,9 @@ source_if_exists "${HOME}/.palette"
 source_if_exists "${HOME}/.aliases"
 source_if_exists "${HOME}/.bash_completion"
 source_if_exists "${HOME}/.git-prompt.sh"
+source_if_exists "${HOME}/.fzf.bash"
+source_if_exists "/usr/share/fzf/key-bindings.bash"
+source_if_exists "/usr/share/fzf/completion.bash"
 
 # Load zoxide
 eval "$(zoxide init bash)"
