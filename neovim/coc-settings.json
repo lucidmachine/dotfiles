@@ -27,6 +27,7 @@
     }
   },
   "languageserver": {},
+  "snippets.ultisnips.pythonPrompt": false,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
 }
 
