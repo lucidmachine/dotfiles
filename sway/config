@@ -1,0 +1,18 @@
+# Theme
+set $theme $HOME/.config/sway/themes.d/matcha-green
+
+# Definitions
+include $theme/definitions.conf
+include /etc/sway/definitions
+include $HOME/.config/sway/definitions.d/*.conf
+
+# I/O
+include /etc/sway/inputs/*
+include /etc/sway/outputs/*
+
+# Modes
+include $HOME/.config/sway/modes.d/*.conf
+
+# Configuration
+include /etc/sway/config.d/*
+include $HOME/.config/sway/config.d/*.conf
