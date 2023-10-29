@@ -1,5 +1,5 @@
 # Theme
-set $theme $HOME/.config/sway/themes.d/matcha-green
+set $theme $HOME/.config/sway/themes.d/nord
 
 # Definitions
 include $theme/definitions.conf
