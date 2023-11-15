@@ -3,7 +3,6 @@ set $theme $HOME/.config/sway/themes.d/nord
 
 # Definitions
 include $theme/definitions.conf
-include /etc/sway/definitions
 include $HOME/.config/sway/definitions.d/*.conf
 
 # I/O
