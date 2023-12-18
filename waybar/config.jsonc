@@ -18,7 +18,7 @@
     "position": "top",
 
     "modules-left": ["sway/workspaces", "custom/scratchpad"],
-    "modules-center": ["custom/wf-recorder", "sway/mode"],
+    "modules-center": ["custom/wf-recorder", "sway/mode", "custom/weather"],
     "modules-right": [
         // informational
         "custom/zeit",
@@ -65,7 +65,7 @@
 
     "clock": {
         "interval": 60,
-        "format": "{:%a %Y-%m-%d %I:%M %p}",
+        "format": "{:%e %b %Y %H:%M}",
         "tooltip": true,
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
         "on-click": "swaymsg exec \\$calendar"
@@ -233,6 +233,37 @@
         "on-scroll-up": "playerctl position 10+; pkill -RTMIN+5 waybar",
         "on-scroll-down": "playerctl position 10-; pkill -RTMIN+5 waybar",
         "signal": 5
+    },
+
+    "custom/weather": {
+        "icon-size": 42,
+        "format": "{icon} {}",
+        "tooltip": true,
+        "interval": 3600,
+        // accepts -c/--city <city> -t/--temperature <C/F> -d/--distance <km/miles>
+        "exec": "/usr/share/sway/scripts/weather.py",
+        "return-type": "json",
+        "format-icons": {
+            "Unknown": "",
+            "Cloudy": "󰖐",
+            "Fog": "",
+            "HeavyRain": "",
+            "HeavyShowers": "",
+            "HeavySnow": "",
+            "HeavySnowShowers": "󰜗",
+            "LightRain": "",
+            "LightShowers": "",
+            "LightSleet": "",
+            "LightSleetShowers": "",
+            "LightSnow": "",
+            "LightSnowShowers": "󰙿",
+            "PartlyCloudy": "",
+            "Sunny": "",
+            "ThunderyHeavyRain": "󰙾",
+            "ThunderyShowers": "",
+            "ThunderySnowShowers": "",
+            "VeryCloudy": ""
+        }
     },
 
     "custom/zeit": {
