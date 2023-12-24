@@ -19,7 +19,7 @@ Plug 'l04m33/vlime', {
 Plug 'lucidmachine/vim-velocity', {
       \ 'for': 'vtl'
       \}                                         " Velocity template support
-Plug 'masukomi/vim-markdown-folding', {
+Plug 'mikeboiko/vim-markdown-folding', {
       \ 'for': 'markdown'
       \}                                         " Fold markdown headers
 Plug 'neoclide/coc.nvim', {
