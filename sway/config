@@ -13,5 +13,4 @@ include /etc/sway/outputs/*
 include $HOME/.config/sway/modes.d/*.conf
 
 # Configuration
-include /etc/sway/config.d/*
 include $HOME/.config/sway/config.d/*.conf
