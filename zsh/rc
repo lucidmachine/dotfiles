@@ -96,7 +96,6 @@ bindkey '^[[Z' undo                                # Shift+tab undo last action
 #
 setopt AUTO_CD                  # If only a directory path is entered, cd there.
 setopt CORRECT                  # Suggest corrections for typos in commands
-setopt CORRECT_ALL              # Suggest corrections for typos in command arguments
 setopt EXTENDED_GLOB            # Extended globbing. Allows using regular expressions with *
 setopt NO_BEEP                  # No beep
 setopt NO_CASE_GLOB             # Case insensitive globbing
