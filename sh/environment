@@ -3,9 +3,6 @@ export N_PREFIX="${HOME}/.n"
 
 # PATH
 export PATH="${HOME}/bin:${N_PREFIX}/bin:$PATH"
-if [ -d '/opt/homebrew' ]; then
-  export PATH="/opt/homebrew/bin:${PATH}"
-fi
 
 # XDG_CONFIG_HOME
 export XDG_CONFIG_HOME="${HOME}/.config"
