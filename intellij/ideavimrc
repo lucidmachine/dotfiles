@@ -12,6 +12,9 @@ set relativenumber
 let mapleader = " "
 let maplocalleader = "\\"
 
+" Buffers
+noremap <silent> <leader>bb :action RecentFiles<CR>
+
 " Comments
 noremap <silent> <leader>; :action CommentByLineComment<CR>
 xnoremap <silent> <leader>; :action CommentByLineComment<CR>
