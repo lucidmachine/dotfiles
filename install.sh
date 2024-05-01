@@ -74,7 +74,6 @@ link "${BASEDIR}/tmux/tmux.conf"      "${HOME}/.tmux.conf"
 link "${BASEDIR}/vim/vimrc"           "${HOME}/.vimrc"
 link "${BASEDIR}/waybar"              "${XDG_CONFIG_HOME}/waybar"
 link "${BASEDIR}/x11/Xresources"      "${HOME}/.Xresources"
-link "${BASEDIR}/yabai"               "${XDG_CONFIG_HOME}/yabai"
 link "${BASEDIR}/zsh/rc"              "${HOME}/.zshrc"
 
 # Packages
@@ -145,7 +144,6 @@ elif command -v brew &> /dev/null; then
     git \
     htop \
     koekeishiya/formulae/skhd \
-    koekeishiya/formulae/yabai \
     jq \
     less \
     make \
@@ -160,7 +158,6 @@ elif command -v brew &> /dev/null; then
     zsh
 
   brew services start skhd
-  brew services start yabai
 
 elif command -v yum &> /dev/null && sudo -v &> /dev/null; then
   sudo yum install --assumeyes \
