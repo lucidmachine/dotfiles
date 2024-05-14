@@ -329,6 +329,7 @@ lua << EOF
 require'lspconfig'.angularls.setup{}
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.clojure_lsp.setup{}
+require'lspconfig'.eslint.setup{}
 require'lspconfig'.jdtls.setup{}
 EOF
 

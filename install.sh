@@ -183,7 +183,9 @@ elif command -v yum &> /dev/null && sudo -v &> /dev/null; then
     zsh
 fi
 
-npm install --global @angular/language-server
+npm install --global \
+  @angular/language-server \
+  vscode-langservers-extracted
 
 # Editor Plugins
 echo
