@@ -28,6 +28,9 @@ Plug 'mikeboiko/vim-markdown-folding', {
 Plug 'Olical/conjure', {
       \ 'for': ['clojure', 'fennel']
       \}                                         " Clojure and Fennel environment
+Plug 'pmizio/typescript-tools.nvim', {
+      \ 'for': ['typescript', 'javascript']
+      \}
 Plug 'vimoutliner/vimoutliner', {
       \ 'for': 'votl'
       \}                                         " Outline mode for .otl files
@@ -52,6 +55,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'              " Dependency for Snipmate
 Plug 'markonm/traces.vim'                        " Substitute preview
 Plug 'milkypostman/vim-togglelist'               " Toggle fix lists
 Plug 'neovim/nvim-lspconfig'                     " LSP configuration
+Plug 'nvim-lua/plenary.nvim'                     " Lua utility library
 Plug 'thinca/vim-visualstar'                     " Search a visual mode selection
 Plug 'tomtom/tlib_vim'                           " Dependency for Snipmate
 Plug 'tpope/vim-commentary'                      " Toggle comments
@@ -358,6 +362,16 @@ let Tlist_Use_SingleClick = 1
 
 " Toggle List
 let g:toggle_list_no_mappings = 1
+
+" TypeScript Tools
+lua << EOF
+require'typescript-tools'.setup {
+  settings = {
+    separate_diagnostic_server = true,
+    publish_diagnostic_on = 'insert_leave'
+  }
+}
+EOF
 
 " WhichKey
 let g:which_key_map = {}

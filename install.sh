@@ -121,6 +121,7 @@ if command -v pamac &> /dev/null; then
     shellcheck \
     tmux \
     tree \
+    typescript-language-server \
     wget \
     zoxide \
     zsh
@@ -155,6 +156,7 @@ elif command -v brew &> /dev/null; then
     shellcheck \
     tmux \
     tree \
+    typescript-language-server \
     wget \
     zoxide \
     zsh
