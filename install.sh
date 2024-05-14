@@ -115,6 +115,7 @@ if command -v pamac &> /dev/null; then
     jdtls \
     jq \
     less \
+    lua-language-server \
     make \
     marksman \
     neovim \
@@ -152,6 +153,7 @@ elif command -v brew &> /dev/null; then
     jdtls \
     jq \
     less \
+    lua-language-server \
     make \
     marksman \
     neovim \
