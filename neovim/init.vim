@@ -22,9 +22,6 @@ Plug 'lucidmachine/vim-velocity', {
 Plug 'mikeboiko/vim-markdown-folding', {
       \ 'for': 'markdown'
       \}                                         " Fold markdown headers
-Plug 'neoclide/coc.nvim', {
-      \ 'branch': 'release'
-      \}                                         " LSP-based completion engine
 Plug 'Olical/conjure', {
       \ 'for': ['clojure', 'fennel']
       \}                                         " Clojure and Fennel environment
@@ -214,7 +211,7 @@ omap <leader>; <Plug>Commentary
 nmap <leader>;; <Plug>CommentaryLine
 
 " Completion
-inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
+" inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
 
 " Copy
 noremap <silent> <leader>cc :call mappings#copy_buffer_to_clipboard()<CR>
@@ -231,29 +228,29 @@ noremap <silent> <leader>fe :Explore<CR>
 noremap <silent> <leader>fg :GFiles<CR>
 
 " Goto
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+" nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
 
 " Lists
 noremap <silent> <leader>ll :call ToggleLocationList()<CR>
 noremap <silent> <leader>ln :lnext<CR>
 noremap <silent> <leader>lp :lprevious<CR>
-noremap <silent> <leader>ld :CocDiagnostics<CR>
+" noremap <silent> <leader>ld :CocDiagnostics<CR>
 noremap <silent> <leader>qq :call ToggleQuickfixList()<CR>
 noremap <silent> <leader>qn :cnext<CR>
 noremap <silent> <leader>qp :cprevious<CR>
 
 " Refactorings
 nmap <leader>rr <Plug>(Scalpel)
-nmap <leader>rR <Plug>(coc-rename)
-nmap <silent> <leader>ra <Plug>(coc-codeaction-line)
-xmap <silent> <leader>ra <Plug>(coc-codeaction-selected)
-nmap <silent> <leader>rl <Plug>(coc-format)
-xmap <silent> <leader>rl <Plug>(coc-format-selected)
-nmap <leader>ro :call CocAction('organizeImport')<CR><CR>
-nmap <silent> <leader> rw <Plug>(coc-refactor)
+" nmap <leader>rR <Plug>(coc-rename)
+" nmap <silent> <leader>ra <Plug>(coc-codeaction-line)
+" xmap <silent> <leader>ra <Plug>(coc-codeaction-selected)
+" nmap <silent> <leader>rl <Plug>(coc-format)
+" xmap <silent> <leader>rl <Plug>(coc-format-selected)
+" nmap <leader>ro :call CocAction('organizeImport')<CR><CR>
+" nmap <silent> <leader> rw <Plug>(coc-refactor)
 
 " Search
 nmap <leader>ss <Plug>(FerretAck)
@@ -311,20 +308,6 @@ noremap <leader>w- <C-W>-
 """""""""""""""
 " cljfold.vim
 let g:clojure_foldwords = "def,defn,defmacro,defmethod,defschema,defprotocol,defrecord,deftest,comment,testing"
-
-" CoC
-let g:coc_enable_locationlist = 0
-let g:coc_global_extensions = [
-      \'coc-angular',
-      \'coc-clojure',
-      \'coc-conjure',
-      \'coc-eslint',
-      \'coc-java',
-      \'coc-marketplace',
-      \'coc-sh',
-      \'coc-snippets',
-      \'coc-tsserver',
-      \]
 
 " Conjure
 let g:conjure_log_direction = "horizontal"
