@@ -92,7 +92,7 @@ if ! command -v node &> /dev/null; then
   # Install the latest Node.js LTS using n
   bash "${N_PREFIX}/bin/n" lts
 
-  # Add node to the path for the rest of this script. NeoVim's CoC plugin needs this
+  # Add node to the path for the rest of this script
   export PATH="${N_PREFIX}/bin:${PATH}"
 fi
 
@@ -180,6 +180,8 @@ elif command -v yum &> /dev/null && sudo -v &> /dev/null; then
     wget \
     zsh
 fi
+
+npm install --global @angular/language-server
 
 # Editor Plugins
 echo

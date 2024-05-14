@@ -326,6 +326,7 @@ let g:conjure_log_direction = "horizontal"
 
 " nvim-lspconfig
 lua << EOF
+require'lspconfig'.angularls.setup{}
 require'lspconfig'.clojure_lsp.setup{}
 require'lspconfig'.jdtls.setup{}
 EOF
