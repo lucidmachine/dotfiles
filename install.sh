@@ -116,6 +116,7 @@ if command -v pamac &> /dev/null; then
     jq \
     less \
     make \
+    marksman \
     neovim \
     ranger \
     ripgrep \
@@ -152,6 +153,7 @@ elif command -v brew &> /dev/null; then
     jq \
     less \
     make \
+    marksman \
     neovim \
     ranger \
     ripgrep \

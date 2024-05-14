@@ -331,6 +331,7 @@ require'lspconfig'.bashls.setup{}
 require'lspconfig'.clojure_lsp.setup{}
 require'lspconfig'.eslint.setup{}
 require'lspconfig'.jdtls.setup{}
+require'lspconfig'.marksman{}
 EOF
 
 " fzf
