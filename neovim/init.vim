@@ -16,6 +16,9 @@ Plug 'l04m33/vlime', {
       \ 'rtp': 'vim/',
       \ 'for': 'lisp'
       \}                                         " Common Lisp environment
+Plug 'mfussenegger/nvim-jdtls', {
+      \ 'for': 'java'
+      \}                                         " Java JDTLS LSP Extensions
 Plug 'lucidmachine/vim-velocity', {
       \ 'for': 'vtl'
       \}                                         " Velocity template support
@@ -48,6 +51,7 @@ Plug 'liuchengxu/vim-which-key', {
 Plug 'MarcWeber/vim-addon-mw-utils'              " Dependency for Snipmate
 Plug 'markonm/traces.vim'                        " Substitute preview
 Plug 'milkypostman/vim-togglelist'               " Toggle fix lists
+Plug 'neovim/nvim-lspconfig'                     " LSP configuration
 Plug 'thinca/vim-visualstar'                     " Search a visual mode selection
 Plug 'tomtom/tlib_vim'                           " Dependency for Snipmate
 Plug 'tpope/vim-commentary'                      " Toggle comments
@@ -219,8 +223,12 @@ xnoremap <silent> <leader>cc :call mappings#copy_selection_to_clipboard()<CR>
 noremap <silent> <leader>cp :call mappings#copy_current_file_relative_path_to_clipboard()<CR>
 noremap <silent> <leader>cP :call mappings#copy_current_file_absolute_path_to_clipboard()<CR>
 
-" Documentation
-nnoremap <silent> K :call mappings#show_documentation()<CR>
+" Diagnostics
+noremap <silent> <leader>dl :lua vim.diagnostic.setloclist()<CR>
+noremap <silent> <leader>dn :lua vim.diagnostic.goto_next()<CR>
+noremap <silent> <leader>do :lua vim.diagnostic.open_float()<CR>
+noremap <silent> <leader>dp :lua vim.diagnostic.goto_prev()<CR>
+noremap <silent> <leader>dq :lua vim.diagnostic.setqflist()<CR>
 
 " Files
 noremap <silent> <leader>ff :Files<CR>
@@ -228,28 +236,28 @@ noremap <silent> <leader>fe :Explore<CR>
 noremap <silent> <leader>fg :GFiles<CR>
 
 " Goto
-" nmap <silent> gd <Plug>(coc-definition)
-" nmap <silent> gy <Plug>(coc-type-definition)
-" nmap <silent> gi <Plug>(coc-implementation)
-" nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gd :lua vim.lsp.buf.definition()<CR>
+nmap <silent> gy :lua vim.lsp.buf.type_definition()<CR>
+nmap <silent> gi :lua vim.lsp.buf.implementation()<CR>
+nmap <silent> gr :lua vim.lsp.buf.references()<CR>
+
+" Hover
+noremap <silent> K :lua vim.lsp.buf.hover()<CR>
 
 " Lists
 noremap <silent> <leader>ll :call ToggleLocationList()<CR>
 noremap <silent> <leader>ln :lnext<CR>
 noremap <silent> <leader>lp :lprevious<CR>
-" noremap <silent> <leader>ld :CocDiagnostics<CR>
 noremap <silent> <leader>qq :call ToggleQuickfixList()<CR>
 noremap <silent> <leader>qn :cnext<CR>
 noremap <silent> <leader>qp :cprevious<CR>
 
 " Refactorings
 nmap <leader>rr <Plug>(Scalpel)
-" nmap <leader>rR <Plug>(coc-rename)
-" nmap <silent> <leader>ra <Plug>(coc-codeaction-line)
-" xmap <silent> <leader>ra <Plug>(coc-codeaction-selected)
-" nmap <silent> <leader>rl <Plug>(coc-format)
-" xmap <silent> <leader>rl <Plug>(coc-format-selected)
-" nmap <leader>ro :call CocAction('organizeImport')<CR><CR>
+nmap <leader>rR :lua vim.lsp.buf.rename()<CR>
+nmap <silent> <leader>ra :lua vim.lsp.buf.code_action()<CR>
+nmap <silent> <leader>rl :lua vim.lsp.buf.format()<CR>
+nmap <silent> <leader>ro :lua require('jdtls').organize_imports()<CR>
 " nmap <silent> <leader> rw <Plug>(coc-refactor)
 
 " Search
@@ -311,6 +319,12 @@ let g:clojure_foldwords = "def,defn,defmacro,defmethod,defschema,defprotocol,def
 
 " Conjure
 let g:conjure_log_direction = "horizontal"
+
+" nvim-lspconfig
+lua << EOF
+require'lspconfig'.clojure_lsp.setup{}
+require'lspconfig'.jdtls.setup{}
+EOF
 
 " fzf
 function! s:build_quickfix_list(lines)
