@@ -363,6 +363,7 @@ require'lspconfig'.lua_ls.setup {
   }
 }
 require'lspconfig'.marksman.setup{}
+require'lspconfig'.vimls.setup{}
 EOF
 
 " fzf

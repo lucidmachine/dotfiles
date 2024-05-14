@@ -189,6 +189,7 @@ fi
 
 npm install --global \
   @angular/language-server \
+  vim-language-server \
   vscode-langservers-extracted
 
 # Editor Plugins
