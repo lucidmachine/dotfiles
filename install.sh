@@ -111,6 +111,7 @@ if command -v pamac &> /dev/null; then
     fzf \
     git \
     htop \
+    jdtls \
     jq \
     less \
     make \
@@ -144,6 +145,7 @@ elif command -v brew &> /dev/null; then
     git \
     htop \
     koekeishiya/formulae/skhd \
+    jdtls \
     jq \
     less \
     make \
