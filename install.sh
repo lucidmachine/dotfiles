@@ -101,6 +101,7 @@ if command -v pamac &> /dev/null; then
     alacritty \
     babashka-bin \
     bash \
+    bash-language-server \
     clojure \
     clojure-lsp-bin \
     clj-kondo-bin \
@@ -133,6 +134,7 @@ elif command -v brew &> /dev/null; then
 
   brew install \
     alacritty \
+    bash-language-server \
     borkdude/brew/babashka \
     borkdude/brew/clj-kondo \
     bash \
