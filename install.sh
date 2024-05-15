@@ -92,7 +92,7 @@ if ! command -v node &> /dev/null; then
   # Install the latest Node.js LTS using n
   bash "${N_PREFIX}/bin/n" lts
 
-  # Add node to the path for the rest of this script. NeoVim's CoC plugin needs this
+  # Add node to the path for the rest of this script
   export PATH="${N_PREFIX}/bin:${PATH}"
 fi
 
@@ -101,6 +101,7 @@ if command -v pamac &> /dev/null; then
     alacritty \
     babashka-bin \
     bash \
+    bash-language-server \
     clojure \
     clojure-lsp-bin \
     clj-kondo-bin \
@@ -111,15 +112,19 @@ if command -v pamac &> /dev/null; then
     fzf \
     git \
     htop \
+    jdtls \
     jq \
     less \
+    lua-language-server \
     make \
+    marksman \
     neovim \
     ranger \
     ripgrep \
     shellcheck \
     tmux \
     tree \
+    typescript-language-server \
     wget \
     zoxide \
     zsh
@@ -131,6 +136,7 @@ elif command -v brew &> /dev/null; then
 
   brew install \
     alacritty \
+    bash-language-server \
     borkdude/brew/babashka \
     borkdude/brew/clj-kondo \
     bash \
@@ -144,15 +150,19 @@ elif command -v brew &> /dev/null; then
     git \
     htop \
     koekeishiya/formulae/skhd \
+    jdtls \
     jq \
     less \
+    lua-language-server \
     make \
+    marksman \
     neovim \
     ranger \
     ripgrep \
     shellcheck \
     tmux \
     tree \
+    typescript-language-server \
     wget \
     zoxide \
     zsh
@@ -176,6 +186,11 @@ elif command -v yum &> /dev/null && sudo -v &> /dev/null; then
     wget \
     zsh
 fi
+
+npm install --global \
+  @angular/language-server \
+  vim-language-server \
+  vscode-langservers-extracted
 
 # Editor Plugins
 echo

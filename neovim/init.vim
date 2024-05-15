@@ -16,18 +16,21 @@ Plug 'l04m33/vlime', {
       \ 'rtp': 'vim/',
       \ 'for': 'lisp'
       \}                                         " Common Lisp environment
+Plug 'mfussenegger/nvim-jdtls', {
+      \ 'for': 'java'
+      \}                                         " Java JDTLS LSP Extensions
 Plug 'lucidmachine/vim-velocity', {
       \ 'for': 'vtl'
       \}                                         " Velocity template support
 Plug 'mikeboiko/vim-markdown-folding', {
       \ 'for': 'markdown'
       \}                                         " Fold markdown headers
-Plug 'neoclide/coc.nvim', {
-      \ 'branch': 'release'
-      \}                                         " LSP-based completion engine
 Plug 'Olical/conjure', {
       \ 'for': ['clojure', 'fennel']
       \}                                         " Clojure and Fennel environment
+Plug 'pmizio/typescript-tools.nvim', {
+      \ 'for': ['typescript', 'javascript']
+      \}
 Plug 'vimoutliner/vimoutliner', {
       \ 'for': 'votl'
       \}                                         " Outline mode for .otl files
@@ -51,6 +54,8 @@ Plug 'liuchengxu/vim-which-key', {
 Plug 'MarcWeber/vim-addon-mw-utils'              " Dependency for Snipmate
 Plug 'markonm/traces.vim'                        " Substitute preview
 Plug 'milkypostman/vim-togglelist'               " Toggle fix lists
+Plug 'neovim/nvim-lspconfig'                     " LSP configuration
+Plug 'nvim-lua/plenary.nvim'                     " Lua utility library
 Plug 'thinca/vim-visualstar'                     " Search a visual mode selection
 Plug 'tomtom/tlib_vim'                           " Dependency for Snipmate
 Plug 'tpope/vim-commentary'                      " Toggle comments
@@ -214,7 +219,7 @@ omap <leader>; <Plug>Commentary
 nmap <leader>;; <Plug>CommentaryLine
 
 " Completion
-inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
+" inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
 
 " Copy
 noremap <silent> <leader>cc :call mappings#copy_buffer_to_clipboard()<CR>
@@ -222,8 +227,12 @@ xnoremap <silent> <leader>cc :call mappings#copy_selection_to_clipboard()<CR>
 noremap <silent> <leader>cp :call mappings#copy_current_file_relative_path_to_clipboard()<CR>
 noremap <silent> <leader>cP :call mappings#copy_current_file_absolute_path_to_clipboard()<CR>
 
-" Documentation
-nnoremap <silent> K :call mappings#show_documentation()<CR>
+" Diagnostics
+noremap <silent> <leader>dl :lua vim.diagnostic.setloclist()<CR>
+noremap <silent> <leader>dn :lua vim.diagnostic.goto_next()<CR>
+noremap <silent> <leader>do :lua vim.diagnostic.open_float()<CR>
+noremap <silent> <leader>dp :lua vim.diagnostic.goto_prev()<CR>
+noremap <silent> <leader>dq :lua vim.diagnostic.setqflist()<CR>
 
 " Files
 noremap <silent> <leader>ff :Files<CR>
@@ -231,29 +240,29 @@ noremap <silent> <leader>fe :Explore<CR>
 noremap <silent> <leader>fg :GFiles<CR>
 
 " Goto
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gd :lua vim.lsp.buf.definition()<CR>
+nmap <silent> gy :lua vim.lsp.buf.type_definition()<CR>
+nmap <silent> gi :lua vim.lsp.buf.implementation()<CR>
+nmap <silent> gr :lua vim.lsp.buf.references()<CR>
+
+" Hover
+noremap <silent> K :lua vim.lsp.buf.hover()<CR>
 
 " Lists
 noremap <silent> <leader>ll :call ToggleLocationList()<CR>
 noremap <silent> <leader>ln :lnext<CR>
 noremap <silent> <leader>lp :lprevious<CR>
-noremap <silent> <leader>ld :CocDiagnostics<CR>
 noremap <silent> <leader>qq :call ToggleQuickfixList()<CR>
 noremap <silent> <leader>qn :cnext<CR>
 noremap <silent> <leader>qp :cprevious<CR>
 
 " Refactorings
 nmap <leader>rr <Plug>(Scalpel)
-nmap <leader>rR <Plug>(coc-rename)
-nmap <silent> <leader>ra <Plug>(coc-codeaction-line)
-xmap <silent> <leader>ra <Plug>(coc-codeaction-selected)
-nmap <silent> <leader>rl <Plug>(coc-format)
-xmap <silent> <leader>rl <Plug>(coc-format-selected)
-nmap <leader>ro :call CocAction('organizeImport')<CR><CR>
-nmap <silent> <leader> rw <Plug>(coc-refactor)
+nmap <leader>rR :lua vim.lsp.buf.rename()<CR>
+nmap <silent> <leader>ra :lua vim.lsp.buf.code_action()<CR>
+nmap <silent> <leader>rl :lua vim.lsp.buf.format()<CR>
+nmap <silent> <leader>ro :lua require('jdtls').organize_imports()<CR>
+" nmap <silent> <leader> rw <Plug>(coc-refactor)
 
 " Search
 nmap <leader>ss <Plug>(FerretAck)
@@ -312,22 +321,50 @@ noremap <leader>w- <C-W>-
 " cljfold.vim
 let g:clojure_foldwords = "def,defn,defmacro,defmethod,defschema,defprotocol,defrecord,deftest,comment,testing"
 
-" CoC
-let g:coc_enable_locationlist = 0
-let g:coc_global_extensions = [
-      \'coc-angular',
-      \'coc-clojure',
-      \'coc-conjure',
-      \'coc-eslint',
-      \'coc-java',
-      \'coc-marketplace',
-      \'coc-sh',
-      \'coc-snippets',
-      \'coc-tsserver',
-      \]
-
 " Conjure
 let g:conjure_log_direction = "horizontal"
+
+" nvim-lspconfig
+lua << EOF
+require'lspconfig'.angularls.setup{}
+require'lspconfig'.bashls.setup{}
+require'lspconfig'.clojure_lsp.setup{}
+require'lspconfig'.eslint.setup{}
+require'lspconfig'.jdtls.setup{}
+require'lspconfig'.lua_ls.setup {
+  on_init = function(client)
+    local path = client.workspace_folders[1].name
+    if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
+      return
+    end
+
+    client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+      runtime = {
+        -- Tell the language server which version of Lua you're using
+        -- (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT'
+      },
+      -- Make the server aware of Neovim runtime files
+      workspace = {
+        checkThirdParty = false,
+        library = {
+          vim.env.VIMRUNTIME
+          -- Depending on the usage, you might want to add additional paths here.
+          -- "${3rd}/luv/library"
+          -- "${3rd}/busted/library",
+        }
+        -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
+        -- library = vim.api.nvim_get_runtime_file("", true)
+      }
+    })
+  end,
+  settings = {
+    Lua = {}
+  }
+}
+require'lspconfig'.marksman.setup{}
+require'lspconfig'.vimls.setup{}
+EOF
 
 " fzf
 function! s:build_quickfix_list(lines)
@@ -361,6 +398,16 @@ let Tlist_Use_SingleClick = 1
 
 " Toggle List
 let g:toggle_list_no_mappings = 1
+
+" TypeScript Tools
+lua << EOF
+require'typescript-tools'.setup {
+  settings = {
+    separate_diagnostic_server = true,
+    publish_diagnostic_on = 'insert_leave'
+  }
+}
+EOF
 
 " WhichKey
 let g:which_key_map = {}
