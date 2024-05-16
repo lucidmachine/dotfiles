@@ -44,10 +44,13 @@ Plug 'Yggdroot/indentLine'                       " Indentation level lines
 
 " Other
 Plug 'editorconfig/editorconfig-vim'             " Cross-editor config files
-Plug 'garbas/vim-snipmate'                       " Snippets
 Plug 'jiangmiao/auto-pairs'                      " Balance paired characters
 Plug 'junegunn/fzf'                              " Fuzzy finder
 Plug 'junegunn/fzf.vim'                          " Vim integration for fzf
+Plug 'L3MON4D3/LuaSnip', {
+      \ 'tag': 'v2.*',
+      \ 'do': 'make install_jsregexp'
+      \}                                         " Snippets
 Plug 'liuchengxu/vim-which-key', {
       \ 'on': ['WhichKey', 'WhichKey!']
       \}                                         " Show mappings on timeout
@@ -270,6 +273,12 @@ nmap <leader>sl <Plug>(FerretLack)
 nmap <leader>sr <Plug>(FerretAcks)
 nmap <leader>sw <Plug>(FerretAckWord)
 
+" Snippets
+imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
+snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
+snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+
 " Tags
 noremap <silent> <leader>gt :TlistToggle<CR>
 
@@ -381,10 +390,10 @@ let g:fzf_action = {
       \ 'ctrl-v': 'vsplit',
       \}
 
-" SnipMate
-let g:snipMate = {
-      \ 'snippet_version' : 1
-      \}
+" LuaSnip
+lua << EOF
+require('luasnip.loaders.from_snipmate').lazy_load()
+EOF
 
 " Signify
 let g:signify_update_on_focusgained = 1
