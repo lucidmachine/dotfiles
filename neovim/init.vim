@@ -48,7 +48,8 @@ Plug 'hrsh7th/cmp-buffer'                        " nvim-cmp buffer source
 Plug 'hrsh7th/cmp-path'                          " nvim-cmp filesystem source
 Plug 'hrsh7th/cmp-cmdline'                       " nvim-cmp source for Vim commands
 Plug 'hrsh7th/nvim-cmp'                          " nvim-cmp core
-Plug 'hrsh7th/nvim-cmp-lua'                      " nvim-cmp source for nvim Lua APIs
+Plug 'hrsh7th/cmp-nvim-lua'                      " nvim-cmp source for nvim Lua APIs
+Plug 'onsails/lspkind.nvim'                      " nvim-cmp source formatting
 Plug 'saadparwaiz1/cmp_luasnip'                  " nvim-cmp LuaSnip source
 
 " Other
@@ -363,6 +364,7 @@ EOF
 " nvim-cmp
 lua << EOF
 local cmp = require'cmp'
+local lspkind = require'lspkind'
 
 cmp.setup({
   snippet = {
@@ -386,7 +388,19 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
     { name = 'buffer', keyword_length = 5 },
-  })
+  }),
+  formatting = {
+    format = lspkind.cmp_format({
+      with_text = false,
+      menu = {
+        buffer = '[buf]',
+        nvim_lsp = '[lsp]',
+        nvim_lua = '[api]',
+        path = '[path]',
+        luasnip = '[snip]',
+      }
+    })
+  }
 })
 
 -- Use buffer source for `/` and `?`.
