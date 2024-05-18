@@ -7,13 +7,13 @@ Configuration, powered by a shell script.
   * Profile
   * Aliases
   * Color palette
+* Git
+  * Prompt    
 * i3
   * Bindings
   * Services
   * Settings
   * Status Bar
-* Git
-  * Prompt    
 * NeoVim
   * Plugins
   * Settings
@@ -22,6 +22,11 @@ Configuration, powered by a shell script.
 * Ranger
   * Appearance
   * Bindings
+* Sway
+  * Bindings
+  * Services
+  * Settings
+  * Status Bar
 * tmux
   * Color support
   * Bindings
@@ -34,18 +39,28 @@ Configuration, powered by a shell script.
 * curl
 * Exuberant CTags
 * fd
-* Firefox Developer Edition
+* Firefox
 * fzf
 * git
 * htop
 * jq
+* LSP Servers:
+    * Angular Language Server
+    * Bash Language Server
+    * Clojure LSP
+    * Eclipse JDT
+    * Marksman
+    * TypeScript Language Server
+    * Vim Language Server
+    * VSCode Language Servers Extracted
 * less
 * make
+* n and NodeJS
 * neovim
-* node
 * ranger
 * ripgrep
 * shellcheck
+* skhd
 * tmux
 * tree
 * wget
@@ -53,6 +68,6 @@ Configuration, powered by a shell script.
 * zsh
 
 ## "Tested" On
-* Manjaro 21.2
-* macOS 11.6
-* Oracle Linux 7.8
+* Manjaro 24.0
+* macOS 12.7
+* Amazon Linux 2
