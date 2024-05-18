@@ -42,6 +42,15 @@ Plug 'itchyny/lightline.vim'                     " Lightweight status line
 Plug 'mhinz/vim-signify'                         " VCS diff gutter
 Plug 'Yggdroot/indentLine'                       " Indentation level lines
 
+" Completion
+Plug 'hrsh7th/cmp-nvim-lsp'                      " nvim-cmp LSP source
+Plug 'hrsh7th/cmp-buffer'                        " nvim-cmp buffer source
+Plug 'hrsh7th/cmp-path'                          " nvim-cmp filesystem source
+Plug 'hrsh7th/cmp-cmdline'                       " nvim-cmp source for Vim commands
+Plug 'hrsh7th/nvim-cmp'                          " nvim-cmp core
+Plug 'hrsh7th/nvim-cmp-lua'                      " nvim-cmp source for nvim Lua APIs
+Plug 'saadparwaiz1/cmp_luasnip'                  " nvim-cmp LuaSnip source
+
 " Other
 Plug 'editorconfig/editorconfig-vim'             " Cross-editor config files
 Plug 'jiangmiao/auto-pairs'                      " Balance paired characters
@@ -60,7 +69,7 @@ Plug 'neovim/nvim-lspconfig'                     " LSP configuration
 Plug 'nvim-lua/plenary.nvim'                     " Lua utility library
 Plug 'thinca/vim-visualstar'                     " Search a visual mode selection
 Plug 'tpope/vim-commentary'                      " Toggle comments
-Plug 'tpope/vim-fugitive'                        " Git commands from inside ViM
+Plug 'tpope/vim-fugitive'                        " Git commands from inside Vim
 Plug 'tpope/vim-surround'                        " Manipulate parens, tags, etc.
 Plug 'vim-scripts/taglist.vim'                   " Code tag viewer
 Plug 'wincent/ferret'                            " Project search enhancements
@@ -331,14 +340,96 @@ let g:clojure_foldwords = "def,defn,defmacro,defmethod,defschema,defprotocol,def
 " Conjure
 let g:conjure_log_direction = "horizontal"
 
+" fzf
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+      \ 'ctrl-q': function('s:build_quickfix_list'),
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-t': 'tab split',
+      \ 'ctrl-x': 'split',
+      \ 'ctrl-v': 'vsplit',
+      \}
+
+" LuaSnip
+lua << EOF
+require('luasnip.loaders.from_snipmate').lazy_load()
+EOF
+
+" nvim-cmp
+lua << EOF
+local cmp = require'cmp'
+
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+  }),
+  sources = cmp.config.sources({ -- Order of sources dictactes order of results
+    { name = 'nvim_lua' },
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'buffer', keyword_length = 5 },
+  })
+})
+
+-- Use buffer source for `/` and `?`.
+cmp.setup.cmdline({ '/', '?' }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+-- Use cmdline & path source for ':'.
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' },
+    { name = 'cmdline' },
+  }),
+  matching = { disallow_symbol_nonprefix_matching = false }
+})
+
+-- Set up lspconfig.
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+EOF
+
 " nvim-lspconfig
 lua << EOF
-require'lspconfig'.angularls.setup{}
-require'lspconfig'.bashls.setup{}
-require'lspconfig'.clojure_lsp.setup{}
-require'lspconfig'.eslint.setup{}
-require'lspconfig'.jdtls.setup{}
+require'lspconfig'.angularls.setup {
+  capabilities = capabilities
+}
+require'lspconfig'.bashls.setup {
+  capabilities = capabilities
+}
+require'lspconfig'.clojure_lsp.setup {
+  capabilities = capabilities
+}
+require'lspconfig'.eslint.setup {
+  capabilities = capabilities
+}
+require'lspconfig'.jdtls.setup {
+  capabilities = capabilities
+}
 require'lspconfig'.lua_ls.setup {
+  capabilities = capabilities,
   on_init = function(client)
     local path = client.workspace_folders[1].name
     if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
@@ -369,28 +460,12 @@ require'lspconfig'.lua_ls.setup {
     Lua = {}
   }
 }
-require'lspconfig'.marksman.setup{}
-require'lspconfig'.vimls.setup{}
-EOF
-
-" fzf
-function! s:build_quickfix_list(lines)
-  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
-  copen
-  cc
-endfunction
-
-let g:fzf_action = {
-      \ 'ctrl-q': function('s:build_quickfix_list'),
-      \ 'ctrl-s': 'split',
-      \ 'ctrl-t': 'tab split',
-      \ 'ctrl-x': 'split',
-      \ 'ctrl-v': 'vsplit',
-      \}
-
-" LuaSnip
-lua << EOF
-require('luasnip.loaders.from_snipmate').lazy_load()
+require'lspconfig'.marksman.setup {
+  capabilities = capabilities
+}
+require'lspconfig'.vimls.setup {
+  capabilities = capabilities
+}
 EOF
 
 " Signify
