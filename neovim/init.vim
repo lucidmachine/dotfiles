@@ -54,13 +54,11 @@ Plug 'L3MON4D3/LuaSnip', {
 Plug 'liuchengxu/vim-which-key', {
       \ 'on': ['WhichKey', 'WhichKey!']
       \}                                         " Show mappings on timeout
-Plug 'MarcWeber/vim-addon-mw-utils'              " Dependency for Snipmate
 Plug 'markonm/traces.vim'                        " Substitute preview
 Plug 'milkypostman/vim-togglelist'               " Toggle fix lists
 Plug 'neovim/nvim-lspconfig'                     " LSP configuration
 Plug 'nvim-lua/plenary.nvim'                     " Lua utility library
 Plug 'thinca/vim-visualstar'                     " Search a visual mode selection
-Plug 'tomtom/tlib_vim'                           " Dependency for Snipmate
 Plug 'tpope/vim-commentary'                      " Toggle comments
 Plug 'tpope/vim-fugitive'                        " Git commands from inside ViM
 Plug 'tpope/vim-surround'                        " Manipulate parens, tags, etc.
