@@ -197,7 +197,7 @@ echo
 echo "###########################"
 echo "# Installing Editor Plugins"
 echo "###########################"
-if command -v nvim &> nvim; then
+if command -v nvim &> /dev/null; then
   echo "Installing plugins in nvim"
   nvim --headless +PlugInstall +CocInstall +qall
 else
