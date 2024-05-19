@@ -525,6 +525,9 @@ require'nvim-treesitter.configs'.setup {
     'vimdoc',
     'xml',
     'yaml'
+  },
+  highlight = {
+    enable = true,
   }
 }
 EOF
