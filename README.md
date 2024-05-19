@@ -18,6 +18,8 @@ Configuration, powered by a shell script.
   * Plugins
   * Settings
   * Mappings
+  * Completion
+  * Parsers
   * Snippets
 * Ranger
   * Appearance
