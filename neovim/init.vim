@@ -96,9 +96,7 @@ set smarttab
 set expandtab
 set shiftwidth=2
 set tabstop=2
-if v:version > 703
-  set formatoptions +=j                          " Join sans comment leader
-endif
+set formatoptions +=j                            " Join sans comment leader
 
 " Filetypes
 filetype on
@@ -136,9 +134,7 @@ endif
 set splitbelow
 
 " Terminal
-if has('nvim')
-  au TermOpen * :startinsert
-endif
+au TermOpen * :startinsert
 
 " Textwidth
 set textwidth=100
@@ -165,23 +161,19 @@ if !empty($CONEMUBUILD)
 endif
 
 " ColorColumn
-if exists('+colorcolumn')
-  let &colorcolumn = &textwidth + 1
-endif
+let &colorcolumn = &textwidth + 1
 
 " Cursor
 set cursorline
 
 " Focus
-if exists('+winhighlight')
-  augroup focuswinhighlight
-    au!
-    au ColorScheme * hi link MyInactiveWin ColorColumn | hi link MyNormalWin Normal
-    au FileType,BufWinEnter * call autocmds#configure_winhighlight()
-    au FocusGained * hi link MyNormalWin Normal
-    au FocusLost * hi link MyNormalWin MyInactiveWin
-  augroup END
-endif
+augroup focuswinhighlight
+  au!
+  au ColorScheme * hi link MyInactiveWin ColorColumn | hi link MyNormalWin Normal
+  au FileType,BufWinEnter * call autocmds#configure_winhighlight()
+  au FocusGained * hi link MyNormalWin Normal
+  au FocusLost * hi link MyNormalWin MyInactiveWin
+augroup END
 
 " Gutter
 set number
@@ -203,12 +195,10 @@ set background=dark
 """"""""""
 " Commands
 """"""""""
-if has('nvim') || has('terminal')
-  command! Splitterm execute ":split | :terminal"
-  command! Sterm execute ":Splitterm"
-  command! Vsplitterm execute ":vsplit | :terminal"
-  command! Vterm execute ":Vsplitterm"
-endif
+command! Splitterm execute ":split | :terminal"
+command! Sterm execute ":Splitterm"
+command! Vsplitterm execute ":vsplit | :terminal"
+command! Vterm execute ":Vsplitterm"
 command! We execute ":write | :edit"
 
 
@@ -290,17 +280,13 @@ snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
 noremap <silent> <leader>gt :TlistToggle<CR>
 
 " Terminal
-if has('nvim')
-  tnoremap <Esc> <C-\><C-n>
-endif
+tnoremap <Esc> <C-\><C-n>
 
 " Toggles and Cycles
 noremap <silent> <leader>tc :call mappings#cycle_columns()<CR>
 noremap <silent> <leader>ti :call mappings#cycle_indentation()<CR>
 noremap <silent> <leader>tp :call AutoPairsToggle()<CR>
-if has('nvim')
-  noremap <silent> <leader>ts :call mappings#cycle_inccommand()<CR>
-endif
+noremap <silent> <leader>ts :call mappings#cycle_inccommand()<CR>
 
 " Vim Configuration
 noremap <silent> <leader>vv :tabnew $MYVIMRC<CR>
