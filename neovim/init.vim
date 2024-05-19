@@ -68,6 +68,7 @@ Plug 'markonm/traces.vim'                        " Substitute preview
 Plug 'milkypostman/vim-togglelist'               " Toggle fix lists
 Plug 'neovim/nvim-lspconfig'                     " LSP configuration
 Plug 'nvim-lua/plenary.nvim'                     " Lua utility library
+Plug 'nvim-treesitter/nvim-treesitter'           " Treesitter config and abstraction
 Plug 'thinca/vim-visualstar'                     " Search a visual mode selection
 Plug 'tpope/vim-commentary'                      " Toggle comments
 Plug 'tpope/vim-fugitive'                        " Git commands from inside Vim
@@ -479,6 +480,52 @@ require'lspconfig'.marksman.setup {
 }
 require'lspconfig'.vimls.setup {
   capabilities = capabilities
+}
+EOF
+
+" nvim-treesitter
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {
+    'angular',
+    'bash',
+    'clojure',
+    'css',
+    'csv',
+    'diff',
+    'dockerfile',
+    'fennel',
+    'git_config',
+    'git_rebase',
+    'gitattributes',
+    'gitcommit',
+    'gitignore',
+    'go',
+    'gomod',
+    'helm',
+    'html',
+    'http',
+    'java',
+    'javascript',
+    'json',
+    'lua',
+    'luadoc',
+    'make',
+    'markdown',
+    'markdown_inline',
+    'properties',
+    'python',
+    'ruby',
+    'scss',
+    'sql',
+    'terraform',
+    'tmux',
+    'typescript',
+    'vim',
+    'vimdoc',
+    'xml',
+    'yaml'
+  }
 }
 EOF
 
