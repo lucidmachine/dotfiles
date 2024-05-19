@@ -123,6 +123,8 @@ let g:netrw_altv = 1                             " Split vertically
 let g:netrw_bufsettings = 'number'               " Use line numbers
 
 " Folding
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 set nofoldenable                                 " Start unfolded. Fold commands re-enable
 
 " Search
