@@ -85,27 +85,50 @@ call plug#end()
 """""""""
 " General
 """""""""
-" Backspace
-set backspace=indent,eol,start
+lua << EOF
+-- Backspace
+vim.opt.backspace='indent,eol,start'
 
-" Document Formatting
-set autoindent
-set conceallevel=0                               " Don't conceal characters
-set nowrap
-set smarttab
-set expandtab
-set shiftwidth=2
-set tabstop=2
-set formatoptions +=j                            " Join sans comment leader
+-- Document Formatting
+vim.o.autoindent = true
+vim.o.conceallevel = 0
+vim.o.wrap = false
+vim.o.smarttab = true
+vim.o.expandtab = true
+vim.o.shiftwidth = 2
+vim.o.tabstop = 2
+vim.opt.formatoptions = {
+  -- See: :h fo-table
+  c = true,
+  j = true,
+  l = true,
+  o = true,
+  q = true,
+  r = true,
+}
 
-" Filetypes
-filetype on
-filetype plugin on
-filetype indent on
-syntax on
+-- Filetypes
+vim.cmd([[
+  filetype on
+  filetype plugin on
+  filetype indent on
+  syntax on
+]])
 
-au FileType make setlocal noexpandtab
-au FileType confluencewiki,markdown,text,votl setlocal spell
+vim.api.nvim_create_autocmd(
+  {'FileType'},
+  { pattern = 'make',
+    command = 'setlocal noexpandtab' }
+)
+
+vim.api.nvim_create_autocmd(
+  {'FileType'},
+  { pattern = 'confluencewiki,markdown,text,votl',
+    command = 'setlocal spell'
+  }
+)
+EOF
+
 augroup XML
   au!
   au FileType xml let g:xml_syntax_folding=1
