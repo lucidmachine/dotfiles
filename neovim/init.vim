@@ -37,9 +37,9 @@ Plug 'vimoutliner/vimoutliner', {
 Plug 'vim-scripts/confluencewiki.vim'            " Confluence wiki syntax
 
 " Appearance
-Plug 'arcticicestudio/nord-vim'                  " Nord theme
 Plug 'itchyny/lightline.vim'                     " Lightweight status line
 Plug 'mhinz/vim-signify'                         " VCS diff gutter
+Plug 'shaunsingh/nord.nvim'                      " Nord theme with Treesitter support
 Plug 'Yggdroot/indentLine'                       " Indentation level lines
 
 " Completion
@@ -197,11 +197,7 @@ let g:lightline = {
         \}
 
 " Theme
-try
-  colorscheme nord
-catch /^Vim\%((\a\+)\)\=:E185/
-  colorscheme murphy
-endtry
+colorscheme murphy
 set background=dark
 
 """"""""""
@@ -362,6 +358,13 @@ let g:fzf_action = {
 " LuaSnip
 lua << EOF
 require('luasnip.loaders.from_snipmate').lazy_load()
+EOF
+
+" nord.nvim
+lua << EOF
+vim.g.nord_borders = true
+vim.g.nord_italic = true
+require('nord').set()
 EOF
 
 " nvim-cmp
