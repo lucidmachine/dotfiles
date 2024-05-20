@@ -114,39 +114,29 @@ vim.cmd([[
   filetype indent on
   syntax on
 ]])
-
 vim.api.nvim_create_autocmd(
   {'FileType'},
   { pattern = 'make',
     command = 'setlocal noexpandtab' }
 )
-
 vim.api.nvim_create_autocmd(
   {'FileType'},
   { pattern = 'confluencewiki,markdown,text,votl',
     command = 'setlocal spell'
   }
 )
+
+-- File tree browser
+vim.g.netrw_banner = 0                           -- Disable banner
+vim.g.netrw_liststyle = 3                        -- Filetree browser style
+vim.g.netrw_altv = 1                             -- Split vertically
+vim.g.netrw_bufsettings = 'number'               -- Use line numbers
+
+-- Folding
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.wo.foldenable = false                        -- Start unfolded. Re-enabled on fold
 EOF
-
-augroup XML
-  au!
-  au FileType xml let g:xml_syntax_folding=1
-  au FileType xml setlocal foldmethod=syntax
-  au FileType xml :syntax on
-  au FileType xml :%foldopen!
-augroup END
-
-" File tree browser
-let g:netrw_banner = 0                           " Disable banner
-let g:netrw_liststyle = 3                        " Filetree browser style
-let g:netrw_altv = 1                             " Split vertically
-let g:netrw_bufsettings = 'number'               " Use line numbers
-
-" Folding
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
-set nofoldenable                                 " Start unfolded. Fold commands re-enable
 
 " Search
 if executable('rg')
