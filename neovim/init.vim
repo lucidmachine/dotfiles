@@ -136,30 +136,35 @@ vim.g.netrw_bufsettings = 'number'               -- Use line numbers
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.wo.foldenable = false                        -- Start unfolded. Re-enabled on fold
+
+-- Search
+if vim.fn.executable('rg') then
+  vim.o.grepprg = 'rg --color=never'
+end
+
+-- Splits
+vim.o.splitbelow = true
+
+-- Terminal
+vim.api.nvim_create_autocmd(
+  {'TermOpen'},
+  { pattern = '*',
+    command = ':startinsert'
+  }
+)
+
+-- Textwidth
+vim.o.textwidth = 100
+
+-- UI
+vim.o.lazyredraw = true                          -- Macros don't redraw
+
+-- Visual Bell
+vim.o.visualbell = true
+
+-- Working files
+vim.o.updatetime = 300                           -- Write to swap every n ms
 EOF
-
-" Search
-if executable('rg')
-  set grepprg=rg\ --color=never
-endif
-
-" Splits
-set splitbelow
-
-" Terminal
-au TermOpen * :startinsert
-
-" Textwidth
-set textwidth=100
-
-" UI
-set lazyredraw                                   " Macros don't redraw
-
-" Visual Bell
-set visualbell
-
-" Working files
-set updatetime=300                               " Write to swap every n ms
 
 
 """"""""""""
