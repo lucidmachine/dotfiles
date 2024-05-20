@@ -198,11 +198,14 @@ EOF
 """"""""""
 " Commands
 """"""""""
-command! Splitterm execute ":split | :terminal"
-command! Sterm execute ":Splitterm"
-command! Vsplitterm execute ":vsplit | :terminal"
-command! Vterm execute ":Vsplitterm"
-command! We execute ":write | :edit"
+lua << EOF
+vim.api.nvim_create_user_command('Splitterm', ':split | :terminal', {})
+vim.api.nvim_create_user_command('Sterm', ':Splitterm', {})
+vim.api.nvim_create_user_command('Vsplitterm', ':vsplit | :terminal', {})
+vim.api.nvim_create_user_command('Vterm', ':Vsplitterm', {})
+vim.api.nvim_create_user_command('We', ':write | :edit', {})
+vim.api.nvim_create_user_command('Qa', ':qall', {})
+EOF
 
 
 """"""""""
