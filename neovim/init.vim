@@ -170,45 +170,30 @@ EOF
 """"""""""""
 " Appearance
 """"""""""""
-" Cmder color palette fix
-if !empty($CONEMUBUILD)
-  set term=xterm
-  set t_Co=256
-  let &t_AB = "\e[48;5;%dm"
-  let &t_AF = "\e[38;5;%dm"
-endif
+lua << EOF
+-- ColorColumn
+vim.o.colorcolumn = tostring(vim.o.textwidth + 1)
 
-" ColorColumn
-let &colorcolumn = &textwidth + 1
+-- Cursor
+vim.o.cursorline = true
 
-" Cursor
-set cursorline
+-- Gutter
+vim.o.number = true
+vim.o.relativenumber = true
 
-" Focus
-augroup focuswinhighlight
-  au!
-  au ColorScheme * hi link MyInactiveWin ColorColumn | hi link MyNormalWin Normal
-  au FileType,BufWinEnter * call autocmds#configure_winhighlight()
-  au FocusGained * hi link MyNormalWin Normal
-  au FocusLost * hi link MyNormalWin MyInactiveWin
-augroup END
+-- Ruler / Status line
+vim.o.laststatus = 2
+vim.g.lightline = {
+  colorscheme = 'nord',
+  inactive = {
+    left = { {  }, { 'filename', 'modified' } }
+  }
+}
 
-" Gutter
-set number
-set relativenumber
-
-" Ruler / Status line
-set laststatus=2
-let g:lightline = {
-      \'colorscheme': 'nord',
-      \'inactive': {
-        \'left': [[], ['filename', 'modified']]
-        \}
-        \}
-
-" Theme
-colorscheme murphy
-set background=dark
+-- Theme
+vim.cmd.colorscheme('murphy')
+vim.o.background = 'dark'
+EOF
 
 """"""""""
 " Commands
