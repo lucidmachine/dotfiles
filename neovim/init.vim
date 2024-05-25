@@ -211,116 +211,155 @@ EOF
 """"""""""
 " Mappings
 """"""""""
-let mapleader = ' '
-let maplocalleader = '\'
+lua << EOF
+vim.g.mapleader = ' '
+vim.g.maplocalleader = '\\'
 
-" Buffers
-noremap <silent> <leader>bb :Buffers<CR>
-noremap <silent> <leader>ba :ball<CR>
+-- Buffers
+vim.keymap.set('n', '<Leader>bb', '<Cmd>Buffers<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>ba', '<Cmd>ball<CR>', { silent = true })
 
-" Comments
-xmap <leader>; <Plug>Commentary
-nmap <leader>; <Plug>Commentary
-omap <leader>; <Plug>Commentary
-nmap <leader>;; <Plug>CommentaryLine
+-- Comments
+vim.keymap.set('x', '<Leader>;', '<Plug>Commentary')
+vim.keymap.set('n', '<Leader>;', '<Plug>Commentary')
+vim.keymap.set('o', '<Leader>;', '<Plug>Commentary')
+vim.keymap.set('n', '<Leader>;;', '<Plug>CommentaryLine')
 
-" Completion
-" inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
+-- Copy
+vim.keymap.set(
+  'n',
+  '<leader>cc',
+  ':call mappings#copy_buffer_to_clipboard()<CR>',
+  { silent = true }
+)
+vim.keymap.set(
+  'x',
+  '<leader>cc',
+  ':call mappings#copy_selection_to_clipboard()<CR>',
+  { silent = true }
+)
+vim.keymap.set(
+  'n',
+  '<leader>cp',
+  ':call mappings#copy_current_file_relative_path_to_clipboard()<CR>',
+  { silent = true }
+)
+vim.keymap.set(
+  'n',
+  '<leader>cP',
+  ':call mappings#copy_current_file_absolute_path_to_clipboard()<CR>',
+  { silent = true }
+)
 
-" Copy
-noremap <silent> <leader>cc :call mappings#copy_buffer_to_clipboard()<CR>
-xnoremap <silent> <leader>cc :call mappings#copy_selection_to_clipboard()<CR>
-noremap <silent> <leader>cp :call mappings#copy_current_file_relative_path_to_clipboard()<CR>
-noremap <silent> <leader>cP :call mappings#copy_current_file_absolute_path_to_clipboard()<CR>
+-- Diagnostics
+vim.keymap.set('n', '<Leader>dl', vim.diagnostic.setloclist, { silent = true })
+vim.keymap.set('n', '<Leader>dn', vim.diagnostic.goto_next, { silent = true })
+vim.keymap.set('n', '<Leader>do', vim.diagnostic.open_float, { silent = true })
+vim.keymap.set('n', '<Leader>dp', vim.diagnostic.goto_prev, { silent = true })
+vim.keymap.set('n', '<Leader>dq', vim.diagnostic.setqflist, { silent = true })
 
-" Diagnostics
-noremap <silent> <leader>dl :lua vim.diagnostic.setloclist()<CR>
-noremap <silent> <leader>dn :lua vim.diagnostic.goto_next()<CR>
-noremap <silent> <leader>do :lua vim.diagnostic.open_float()<CR>
-noremap <silent> <leader>dp :lua vim.diagnostic.goto_prev()<CR>
-noremap <silent> <leader>dq :lua vim.diagnostic.setqflist()<CR>
+-- Files
+vim.keymap.set('n', '<Leader>ff', ':Files<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>fe', ':Explore<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>fg', ':GFiles<CR>', { silent = true })
 
-" Files
-noremap <silent> <leader>ff :Files<CR>
-noremap <silent> <leader>fe :Explore<CR>
-noremap <silent> <leader>fg :GFiles<CR>
+-- Goto
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition)
+vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
+vim.keymap.set('n', 'gr', vim.lsp.buf.references)
 
-" Goto
-nmap <silent> gd :lua vim.lsp.buf.definition()<CR>
-nmap <silent> gy :lua vim.lsp.buf.type_definition()<CR>
-nmap <silent> gi :lua vim.lsp.buf.implementation()<CR>
-nmap <silent> gr :lua vim.lsp.buf.references()<CR>
+-- Hover
+vim.keymap.set('n', 'K', vim.lsp.buf.hover)
 
-" Hover
-noremap <silent> K :lua vim.lsp.buf.hover()<CR>
+-- Lists
+vim.keymap.set('n', '<Leader>ll', ':call ToggleLocationList()<CR>')
+vim.keymap.set('n', '<Leader>ln', ':lnext<CR>')
+vim.keymap.set('n', '<Leader>lp', ':lprevious<CR>')
+vim.keymap.set('n', '<Leader>qq', ':call ToggleQuickfixList()<CR>')
+vim.keymap.set('n', '<Leader>qn', ':cnext<CR>')
+vim.keymap.set('n', '<Leader>qp', ':cprevious<CR>')
 
-" Lists
-noremap <silent> <leader>ll :call ToggleLocationList()<CR>
-noremap <silent> <leader>ln :lnext<CR>
-noremap <silent> <leader>lp :lprevious<CR>
-noremap <silent> <leader>qq :call ToggleQuickfixList()<CR>
-noremap <silent> <leader>qn :cnext<CR>
-noremap <silent> <leader>qp :cprevious<CR>
+-- Refactorings
+vim.keymap.set('n', '<Leader>rr', '<Plug>(Scalpel)')
+vim.keymap.set('n', '<Leader>rR', vim.lsp.buf.rename)
+vim.keymap.set('n', '<Leader>ra', vim.lsp.buf.code_action)
+vim.keymap.set('n', '<Leader>rl', vim.lsp.buf.format)
+vim.keymap.set('n', '<Leader>ro', function() require('jdtls').organize_imports() end)
 
-" Refactorings
-nmap <leader>rr <Plug>(Scalpel)
-nmap <leader>rR :lua vim.lsp.buf.rename()<CR>
-nmap <silent> <leader>ra :lua vim.lsp.buf.code_action()<CR>
-nmap <silent> <leader>rl :lua vim.lsp.buf.format()<CR>
-nmap <silent> <leader>ro :lua require('jdtls').organize_imports()<CR>
-" nmap <silent> <leader> rw <Plug>(coc-refactor)
+-- Search
+vim.keymap.set('n', '<Leader>ss', '<Plug>(FerretAck)')
+vim.keymap.set('n', '<Leader>sl', '<Plug>(FerretLack)')
+vim.keymap.set('n', '<Leader>sr', '<Plug>(FerretAcks)')
+vim.keymap.set('n', '<Leader>sw', '<Plug>(FerretAckWord)')
 
-" Search
-nmap <leader>ss <Plug>(FerretAck)
-nmap <leader>sl <Plug>(FerretLack)
-nmap <leader>sr <Plug>(FerretAcks)
-nmap <leader>sw <Plug>(FerretAckWord)
+-- Snippets
+vim.keymap.set(
+  'i',
+  '<Tab>',
+  function()
+    if require('luasnip').expand_or_jumpable() then
+      return '<Plug>luasnip-expand-or-jump'
+    else
+      return '<Tab>'
+    end
+  end,
+  { expr = true,
+    silent = true }
+)
+vim.keymap.set(
+  's',
+  '<Tab>',
+  function() require('luasnip').jump(1) end,
+  { silent = true }
+)
+vim.keymap.set(
+  { 'i', 's' },
+  '<S-Tab>',
+  function() require('luasnip').jump(-1) end,
+  { silent = true }
+)
 
-" Snippets
-imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
-inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
-snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
-snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+-- Tags
+vim.keymap.set('n', '<Leader>gt', '<Cmd>TlistToggle<CR>', { silent = true })
 
-" Tags
-noremap <silent> <leader>gt :TlistToggle<CR>
+-- Terminal
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
-" Terminal
-tnoremap <Esc> <C-\><C-n>
+-- Toggles and Cycles
+vim.keymap.set('n', '<Leader>tc', ':call mappings#cycle_columns()<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>ti', ':call mappings#cycle_indentation()<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>tp', ':call AutoPairsToggle<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>ts', ':call mappings#cycle_inccommand()<CR>', { silent = true })
 
-" Toggles and Cycles
-noremap <silent> <leader>tc :call mappings#cycle_columns()<CR>
-noremap <silent> <leader>ti :call mappings#cycle_indentation()<CR>
-noremap <silent> <leader>tp :call AutoPairsToggle()<CR>
-noremap <silent> <leader>ts :call mappings#cycle_inccommand()<CR>
+-- Vim Configuration
+vim.keymap.set('n', '<Leader>vv', ':tabnew $MYVIMRC')
+vim.keymap.set('n', '<Leader>vr', ':source $MYVIMRC')
 
-" Vim Configuration
-noremap <silent> <leader>vv :tabnew $MYVIMRC<CR>
-noremap <silent> <leader>vr :source $MYVIMRC<CR>
+-- WhichKey
+vim.keymap.set('n', '<Leader>', ':WhichKey \'<Leader>\'<CR>')
+vim.keymap.set('n', '<Localleader>', ':WhichKey \'<Localleader>\'<CR>')
 
-" WhichKey
-nnoremap <silent> <leader> :WhichKey '<leader>'<CR>
-nnoremap <silent> <localleader> :WhichKey '<localleader>'<CR>
-
-" Windows
-noremap <leader>wo :only<CR>
-noremap <leader>wq <C-W>q
-noremap <leader>ww <C-W>=
-noremap <leader>wh <C-W>h
-noremap <leader>wj <C-W>j
-noremap <leader>wk <C-W>k
-noremap <leader>wl <C-W>l
-noremap <leader>wH <C-W>H
-noremap <leader>wJ <C-W>J
-noremap <leader>wK <C-W>K
-noremap <leader>wL <C-W>L
-noremap <leader>wr <C-W>r
-noremap <leader>wR <C-W>R
-noremap <leader>wx <C-W>x
-noremap <leader>w< <C-W><
-noremap <leader>w> <C-W>>
-noremap <leader>w+ <C-W>+
-noremap <leader>w- <C-W>-
+-- Windows
+vim.keymap.set('n', '<Leader>wo', ':only<CR>')
+vim.keymap.set('n', '<Leader>wq', '<C-W>q')
+vim.keymap.set('n', '<Leader>ww', '<C-W>=')
+vim.keymap.set('n', '<Leader>wh', '<C-W>h')
+vim.keymap.set('n', '<Leader>wj', '<C-W>j')
+vim.keymap.set('n', '<Leader>wk', '<C-W>k')
+vim.keymap.set('n', '<Leader>wl', '<C-W>l')
+vim.keymap.set('n', '<Leader>wH', '<C-W>H')
+vim.keymap.set('n', '<Leader>wJ', '<C-W>J')
+vim.keymap.set('n', '<Leader>wK', '<C-W>K')
+vim.keymap.set('n', '<Leader>wL', '<C-W>L')
+vim.keymap.set('n', '<Leader>wr', '<C-W>r')
+vim.keymap.set('n', '<Leader>wR', '<C-W>R')
+vim.keymap.set('n', '<Leader>wx', '<C-W>x')
+vim.keymap.set('n', '<Leader>w<', '<C-W><')
+vim.keymap.set('n', '<Leader>w>', '<C-W>>')
+vim.keymap.set('n', '<Leader>w+', '<C-W>+')
+vim.keymap.set('n', '<Leader>w-', '<C-W>-')
+EOF
 
 
 """""""""""""""
@@ -361,8 +400,8 @@ EOF
 
 " nvim-cmp
 lua << EOF
-local cmp = require'cmp'
-local lspkind = require'lspkind'
+local cmp = require('cmp')
+local lspkind = require('lspkind')
 
 cmp.setup({
   snippet = {
@@ -425,22 +464,22 @@ EOF
 
 " nvim-lspconfig
 lua << EOF
-require'lspconfig'.angularls.setup {
+require('lspconfig').angularls.setup {
   capabilities = capabilities
 }
-require'lspconfig'.bashls.setup {
+require('lspconfig').bashls.setup {
   capabilities = capabilities
 }
-require'lspconfig'.clojure_lsp.setup {
+require('lspconfig').clojure_lsp.setup {
   capabilities = capabilities
 }
-require'lspconfig'.eslint.setup {
+require('lspconfig').eslint.setup {
   capabilities = capabilities
 }
-require'lspconfig'.jdtls.setup {
+require('lspconfig').jdtls.setup {
   capabilities = capabilities
 }
-require'lspconfig'.lua_ls.setup {
+require('lspconfig').lua_ls.setup {
   capabilities = capabilities,
   on_init = function(client)
     local path = client.workspace_folders[1].name
@@ -472,17 +511,17 @@ require'lspconfig'.lua_ls.setup {
     Lua = {}
   }
 }
-require'lspconfig'.marksman.setup {
+require('lspconfig').marksman.setup {
   capabilities = capabilities
 }
-require'lspconfig'.vimls.setup {
+require('lspconfig').vimls.setup {
   capabilities = capabilities
 }
 EOF
 
 " nvim-treesitter
 lua << EOF
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup {
   ensure_installed = {
     'angular',
     'bash',
@@ -544,7 +583,7 @@ let g:toggle_list_no_mappings = 1
 
 " TypeScript Tools
 lua << EOF
-require'typescript-tools'.setup {
+require('typescript-tools').setup {
   settings = {
     separate_diagnostic_server = true,
     publish_diagnostic_on = 'insert_leave'
