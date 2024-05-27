@@ -82,10 +82,10 @@ Plug 'wincent/terminus'                          " Terminal integration
 call plug#end()
 
 
-"""""""""
-" General
-"""""""""
 lua << EOF
+----------
+-- General
+----------
 -- Backspace
 vim.opt.backspace='indent,eol,start'
 
@@ -164,13 +164,11 @@ vim.o.visualbell = true
 
 -- Working files
 vim.o.updatetime = 300                           -- Write to swap every n ms
-EOF
 
 
-""""""""""""
-" Appearance
-""""""""""""
-lua << EOF
+-------------
+-- Appearance
+-------------
 -- ColorColumn
 vim.o.colorcolumn = tostring(vim.o.textwidth + 1)
 
@@ -193,25 +191,21 @@ vim.g.lightline = {
 -- Theme
 vim.cmd.colorscheme('murphy')
 vim.o.background = 'dark'
-EOF
 
-""""""""""
-" Commands
-""""""""""
-lua << EOF
+-----------
+-- Commands
+-----------
 vim.api.nvim_create_user_command('Splitterm', ':split | :terminal', {})
 vim.api.nvim_create_user_command('Sterm', ':Splitterm', {})
 vim.api.nvim_create_user_command('Vsplitterm', ':vsplit | :terminal', {})
 vim.api.nvim_create_user_command('Vterm', ':Vsplitterm', {})
 vim.api.nvim_create_user_command('We', ':write | :edit', {})
 vim.api.nvim_create_user_command('Qa', ':qall', {})
-EOF
 
 
-""""""""""
-" Mappings
-""""""""""
-lua << EOF
+-----------
+-- Mappings
+-----------
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
@@ -359,13 +353,11 @@ vim.keymap.set('n', '<Leader>w<', '<C-W><')
 vim.keymap.set('n', '<Leader>w>', '<C-W>>')
 vim.keymap.set('n', '<Leader>w+', '<C-W>+')
 vim.keymap.set('n', '<Leader>w-', '<C-W>-')
-EOF
 
 
-"""""""""""""""
-" Plugin Config
-"""""""""""""""
-lua << EOF
+----------------
+-- Plugin Config
+----------------
 -- cljfold.vim
 vim.g.clojure_foldwords = 'def,defn,defmacro,defmethod,defschema,defprotocol,defrecord,deftest,comment,testing'
 
