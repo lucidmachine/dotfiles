@@ -1,5 +1,3 @@
-lua << EOF
-
 ----------
 -- Plugins
 ----------
@@ -90,7 +88,7 @@ call plug#end()
 -- General
 ----------
 -- Backspace
-vim.opt.backspace='indent,eol,start'
+vim.opt.backspace = 'indent,eol,start'
 
 -- Document Formatting
 vim.o.autoindent = true
@@ -118,27 +116,30 @@ vim.cmd([[
   syntax on
 ]])
 vim.api.nvim_create_autocmd(
-  {'FileType'},
-  { pattern = 'make',
-    command = 'setlocal noexpandtab' }
+  { 'FileType' },
+  {
+    pattern = 'make',
+    command = 'setlocal noexpandtab'
+  }
 )
 vim.api.nvim_create_autocmd(
-  {'FileType'},
-  { pattern = 'confluencewiki,markdown,text,votl',
+  { 'FileType' },
+  {
+    pattern = 'confluencewiki,markdown,text,votl',
     command = 'setlocal spell'
   }
 )
 
 -- File tree browser
-vim.g.netrw_banner = 0                           -- Disable banner
-vim.g.netrw_liststyle = 3                        -- Filetree browser style
-vim.g.netrw_altv = 1                             -- Split vertically
-vim.g.netrw_bufsettings = 'number'               -- Use line numbers
+vim.g.netrw_banner = 0             -- Disable banner
+vim.g.netrw_liststyle = 3          -- Filetree browser style
+vim.g.netrw_altv = 1               -- Split vertically
+vim.g.netrw_bufsettings = 'number' -- Use line numbers
 
 -- Folding
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.wo.foldenable = false                        -- Start unfolded. Re-enabled on fold
+vim.wo.foldenable = false -- Start unfolded. Re-enabled on fold
 
 -- Search
 if vim.fn.executable('rg') then
@@ -150,8 +151,9 @@ vim.o.splitbelow = true
 
 -- Terminal
 vim.api.nvim_create_autocmd(
-  {'TermOpen'},
-  { pattern = '*',
+  { 'TermOpen' },
+  {
+    pattern = '*',
     command = ':startinsert'
   }
 )
@@ -160,13 +162,13 @@ vim.api.nvim_create_autocmd(
 vim.o.textwidth = 100
 
 -- UI
-vim.o.lazyredraw = true                          -- Macros don't redraw
+vim.o.lazyredraw = true -- Macros don't redraw
 
 -- Visual Bell
 vim.o.visualbell = true
 
 -- Working files
-vim.o.updatetime = 300                           -- Write to swap every n ms
+vim.o.updatetime = 300 -- Write to swap every n ms
 
 
 -------------
@@ -187,7 +189,7 @@ vim.o.laststatus = 2
 vim.g.lightline = {
   colorscheme = 'nord',
   inactive = {
-    left = { {  }, { 'filename', 'modified' } }
+    left = { {}, { 'filename', 'modified' } }
   }
 }
 
@@ -301,8 +303,10 @@ vim.keymap.set(
       return '<Tab>'
     end
   end,
-  { expr = true,
-    silent = true }
+  {
+    expr = true,
+    silent = true
+  }
 )
 vim.keymap.set(
   's',
@@ -403,11 +407,11 @@ cmp.setup({
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   }),
-  sources = cmp.config.sources({ -- Order of sources dictactes order of results
+  sources = cmp.config.sources({                       -- Order of sources dictactes order of results
     { name = 'nvim_lua' },
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
-    { name = 'buffer', keyword_length = 5 },
+    { name = 'buffer',  keyword_length = 5 },
   }),
   formatting = {
     format = lspkind.cmp_format({
@@ -464,7 +468,7 @@ require('lspconfig').lua_ls.setup {
   capabilities = capabilities,
   on_init = function(client)
     local path = client.workspace_folders[1].name
-    if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
+    if vim.loop.fs_stat(path .. '/.luarc.json') or vim.loop.fs_stat(path .. '/.luarc.jsonc') then
       return
     end
 
@@ -584,4 +588,3 @@ local which_key_map = {
 }
 vim.g.which_key_map = which_key_map
 vim.cmd([[autocmd! User vim-which-key call which_key#register("<Space>", "g:which_key_map")]])
-EOF
