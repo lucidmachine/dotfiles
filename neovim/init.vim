@@ -337,8 +337,8 @@ vim.keymap.set('n', '<Leader>vv', ':tabnew $MYVIMRC')
 vim.keymap.set('n', '<Leader>vr', ':source $MYVIMRC')
 
 -- WhichKey
-vim.keymap.set('n', '<Leader>', ':WhichKey \'<Leader>\'<CR>')
-vim.keymap.set('n', '<Localleader>', ':WhichKey \'<Localleader>\'<CR>')
+vim.keymap.set('n', '<Leader>', ':WhichKey \'<Leader>\'<CR>', { silent = true })
+vim.keymap.set('n', '<Localleader>', ':WhichKey \'<Localleader>\'<CR>', { silent = true })
 
 -- Windows
 vim.keymap.set('n', '<Leader>wo', ':only<CR>')
@@ -365,41 +365,29 @@ EOF
 """""""""""""""
 " Plugin Config
 """""""""""""""
-" cljfold.vim
-let g:clojure_foldwords = "def,defn,defmacro,defmethod,defschema,defprotocol,defrecord,deftest,comment,testing"
-
-" Conjure
-let g:conjure_log_direction = "horizontal"
-
-" fzf
-function! s:build_quickfix_list(lines)
-  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
-  copen
-  cc
-endfunction
-
-let g:fzf_action = {
-      \ 'ctrl-q': function('s:build_quickfix_list'),
-      \ 'ctrl-s': 'split',
-      \ 'ctrl-t': 'tab split',
-      \ 'ctrl-x': 'split',
-      \ 'ctrl-v': 'vsplit',
-      \}
-
-" LuaSnip
 lua << EOF
+-- cljfold.vim
+vim.g.clojure_foldwords = 'def,defn,defmacro,defmethod,defschema,defprotocol,defrecord,deftest,comment,testing'
+
+-- Conjure
+vim.g.conjure_log_direction = 'horizontal'
+
+-- fzf
+local fzf_action = {}
+fzf_action['ctrl-s'] = 'split'
+fzf_action['ctrl-t'] = 'tab split'
+fzf_action['ctrl-v'] = 'vsplit'
+vim.g.fzf_action = fzf_action
+
+-- LuaSnip
 require('luasnip.loaders.from_snipmate').lazy_load()
-EOF
 
-" nord.nvim
-lua << EOF
+-- nord.nvim
 vim.g.nord_borders = true
-vim.g.nord_italic = true
+vim.g.nord_italic = false
 require('nord').set()
-EOF
 
-" nvim-cmp
-lua << EOF
+-- nvim-cmp
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 
@@ -460,10 +448,8 @@ cmp.setup.cmdline(':', {
 
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-EOF
 
-" nvim-lspconfig
-lua << EOF
+-- nvim-lspconfig
 require('lspconfig').angularls.setup {
   capabilities = capabilities
 }
@@ -517,10 +503,8 @@ require('lspconfig').marksman.setup {
 require('lspconfig').vimls.setup {
   capabilities = capabilities
 }
-EOF
 
-" nvim-treesitter
-lua << EOF
+-- nvim-treesitter
 require('nvim-treesitter.configs').setup {
   ensure_installed = {
     'angular',
@@ -566,42 +550,43 @@ require('nvim-treesitter.configs').setup {
     enable = true,
   }
 }
-EOF
 
-" Signify
-let g:signify_update_on_focusgained = 1
+-- Signify
+vim.g.signify_update_on_focusgained = 1
 
-" Taglist
-let Tlist_Auto_Highlight_Tag = 1
-let Tlist_Auto_Update = 1
-let Tlist_Inc_Winwidth = 0
-let Tlist_Sort_Type = "name"
-let Tlist_Use_SingleClick = 1
+-- Taglist
+vim.g.Tlist_Auto_Highlight_Tag = 1
+vim.g.Tlist_Auto_Update = 1
+vim.g.Tlist_Inc_Winwidth = 0
+vim.g.Tlist_Sort_Type = 'name'
+vim.g.Tlist_Use_Right_Window = 1
+vim.g.Tlist_Use_SingleClick = 1
 
-" Toggle List
-let g:toggle_list_no_mappings = 1
+-- Toggle List
+vim.g.toggle_list_no_mappings = 1
 
-" TypeScript Tools
-lua << EOF
+-- TypeScript Tools
 require('typescript-tools').setup {
   settings = {
     separate_diagnostic_server = true,
     publish_diagnostic_on = 'insert_leave'
   }
 }
-EOF
 
-" WhichKey
-let g:which_key_map = {}
-let g:which_key_map.b = { 'name': '+buffers' }
-let g:which_key_map.c = { 'name': '+copy' }
-let g:which_key_map.f = { 'name': '+files' }
-let g:which_key_map.g = { 'name': '+goto' }
-let g:which_key_map.l = { 'name': '+locationlist' }
-let g:which_key_map.r = { 'name': '+refactor' }
-let g:which_key_map.s = { 'name': '+search' }
-let g:which_key_map.t = { 'name': '+toggle' }
-let g:which_key_map.v = { 'name': '+vim' }
-let g:which_key_map.w = { 'name': '+window' }
-let g:which_key_map.q = { 'name': '+quickfixlist' }
+-- WhichKey
+local which_key_map = {
+  b = { name = '+buffers' },
+  c = { name = '+copy' },
+  f = { name = '+files' },
+  g = { name = '+goto' },
+  l = { name = '+locationlist' },
+  q = { name = '+quickfixlist' },
+  r = { name = '+refactor' },
+  s = { name = '+search' },
+  t = { name = '+toggle' },
+  v = { name = '+vim' },
+  w = { name = '+window' },
+}
+vim.g.which_key_map = which_key_map
+EOF
 autocmd! User vim-which-key call which_key#register("<Space>", "g:which_key_map")
