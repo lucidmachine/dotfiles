@@ -55,6 +55,7 @@ Plug 'saadparwaiz1/cmp_luasnip'                  " nvim-cmp LuaSnip source
 
 " Other
 Plug 'editorconfig/editorconfig-vim'             " Cross-editor config files
+Plug 'folke/which-key.nvim'                      " Show mappings on timeout
 Plug 'jiangmiao/auto-pairs'                      " Balance paired characters
 Plug 'junegunn/fzf'                              " Fuzzy finder
 Plug 'junegunn/fzf.vim'                          " Vim integration for fzf
@@ -62,9 +63,6 @@ Plug 'L3MON4D3/LuaSnip', {
       \ 'tag': 'v2.*',
       \ 'do': 'make install_jsregexp'
       \}                                         " Snippets
-Plug 'liuchengxu/vim-which-key', {
-      \ 'on': ['WhichKey', 'WhichKey!']
-      \}                                         " Show mappings on timeout
 Plug 'markonm/traces.vim'                        " Substitute preview
 Plug 'milkypostman/vim-togglelist'               " Toggle fix lists
 Plug 'neovim/nvim-lspconfig'                     " LSP configuration
@@ -337,10 +335,6 @@ vim.keymap.set('n', '<Leader>ts', ':call mappings#cycle_inccommand()<CR>', { sil
 vim.keymap.set('n', '<Leader>vv', ':tabnew $MYVIMRC')
 vim.keymap.set('n', '<Leader>vr', ':source $MYVIMRC')
 
--- WhichKey
-vim.keymap.set('n', '<Leader>', ':WhichKey \'<Leader>\'<CR>', { silent = true })
-vim.keymap.set('n', '<Localleader>', ':WhichKey \'<Localleader>\'<CR>', { silent = true })
-
 -- Windows
 vim.keymap.set('n', '<Leader>wo', ':only<CR>')
 vim.keymap.set('n', '<Leader>wq', '<C-W>q')
@@ -573,18 +567,37 @@ require('typescript-tools').setup {
 }
 
 -- WhichKey
-local which_key_map = {
-  b = { name = '+buffers' },
-  c = { name = '+copy' },
-  f = { name = '+files' },
-  g = { name = '+goto' },
-  l = { name = '+locationlist' },
-  q = { name = '+quickfixlist' },
-  r = { name = '+refactor' },
-  s = { name = '+search' },
-  t = { name = '+toggle' },
-  v = { name = '+vim' },
-  w = { name = '+window' },
-}
-vim.g.which_key_map = which_key_map
-vim.cmd([[autocmd! User vim-which-key call which_key#register("<Space>", "g:which_key_map")]])
+local wk = require('which-key')
+wk.register({
+  b = { name = '(B)uffers' },
+  c = {
+    name = '(C)opy',
+    c = 'Buffer',
+    p = 'Relative (p)ath',
+    P = 'Absolute (p)ath',
+  },
+  d = {
+    name = '(D)iagnostics',
+    l = '(L)ocationlist',
+    n = '(N)ext',
+    o = '(O)pen',
+    p = '(P)revious',
+    q = '(Q)uickfixlist',
+  },
+  f = { name = '(F)iles' },
+  g = { name = '(G)oto' },
+  l = { name = '(L)ocationlist' },
+  q = { name = '(Q)uickfixlist' },
+  r = {
+    name = '(R)efactor',
+    a = '(A)ctions',
+    l = '(L)ayout',
+    o = '(O)ptimize imports',
+    r = '(R)ename (Scalpel)',
+    R = '(R)ename (LSP)',
+  },
+  s = { name = '(S)earch' },
+  t = { name = '(T)oggle / Cycle' },
+  v = { name = '(V)im' },
+  w = { name = '(W)indow' },
+}, { prefix = "<Leader>" })
