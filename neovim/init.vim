@@ -1,6 +1,9 @@
-"""""""""
-" Plugins
-"""""""""
+lua << EOF
+
+----------
+-- Plugins
+----------
+vim.cmd([[
 filetype off
 call plug#begin('~/.config/nvim/plugged')
 
@@ -80,9 +83,9 @@ Plug 'wincent/scalpel'                           " Quick replace word
 Plug 'wincent/terminus'                          " Terminal integration
 
 call plug#end()
+]])
 
 
-lua << EOF
 ----------
 -- General
 ----------
@@ -580,5 +583,5 @@ local which_key_map = {
   w = { name = '+window' },
 }
 vim.g.which_key_map = which_key_map
+vim.cmd([[autocmd! User vim-which-key call which_key#register("<Space>", "g:which_key_map")]])
 EOF
-autocmd! User vim-which-key call which_key#register("<Space>", "g:which_key_map")
