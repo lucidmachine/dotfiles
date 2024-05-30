@@ -1,85 +1,104 @@
 ----------
 -- Plugins
 ----------
-vim.cmd([[
-filetype off
-call plug#begin('~/.config/nvim/plugged')
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-" Language Support
-Plug 'bakpakin/fennel.vim'                       " Fennel language support
-Plug 'elubow/cql-vim', {
-      \ 'for': 'cql'
-      \}                                         " Cassandra Query Language support
-Plug 'gberenfield/cljfold.vim', {
-      \ 'for': 'clojure'
-      \}                                         " Configurable folding for Clojure
-Plug 'l04m33/vlime', {
-      \ 'rtp': 'vim/',
-      \ 'for': 'lisp'
-      \}                                         " Common Lisp environment
-Plug 'mfussenegger/nvim-jdtls', {
-      \ 'for': 'java'
-      \}                                         " Java JDTLS LSP Extensions
-Plug 'lucidmachine/vim-velocity', {
-      \ 'for': 'vtl'
-      \}                                         " Velocity template support
-Plug 'mikeboiko/vim-markdown-folding', {
-      \ 'for': 'markdown'
-      \}                                         " Fold markdown headers
-Plug 'Olical/conjure', {
-      \ 'for': ['clojure', 'fennel']
-      \}                                         " Clojure and Fennel environment
-Plug 'pmizio/typescript-tools.nvim', {
-      \ 'for': ['typescript', 'javascript']
-      \}
-Plug 'vimoutliner/vimoutliner', {
-      \ 'for': 'votl'
-      \}                                         " Outline mode for .otl files
-Plug 'vim-scripts/confluencewiki.vim'            " Confluence wiki syntax
+require('lazy').setup({
+  -- Language Support
+  {
+    'bakpakin/fennel.vim',
+    ft = 'fennel'
+  },                                              -- Fennel
+  {
+    'elubow/cql-vim',
+    ft = 'cql'
+  },                                              -- Cassandra Query Language
+  {
+    'gberenfield/cljfold.vim',
+    ft = 'clojure'
+  },                                              -- Configurable Clojure Folding
+  {
+    'mfussenegger/nvim-jdtls',
+    ft = 'java'
+  },                                              -- Java JDTLS Extensions
+  {
+    'lucidmachine/vim-velocity',
+    ft = 'vtl'
+  },                                              -- Velocity
+  {
+    'mikeboiko/vim-markdown-folding',
+    ft = 'markdown'
+  },                                              -- Fold Markdown headers
+  {
+    'Olical/conjure',
+    ft = { 'clojure', 'fennel' }
+  },                                              -- Interactive Eval
+  {
+    'pmizio/typescript-tools.nvim',
+    ft = { 'typescript', 'javascript' }
+  },                                              -- TS/JS LSP extensions
+  {
+    'vimoutliner/vimoutliner',
+    ft = 'votl'
+  },                                              -- Outline mode for .otl
+  {
+    'vim-scripts/confluencewiki.vim',
+    ft = 'confluencewiki'
+  },                                              -- Confluence wiki syntax
 
-" Appearance
-Plug 'itchyny/lightline.vim'                     " Lightweight status line
-Plug 'mhinz/vim-signify'                         " VCS diff gutter
-Plug 'shaunsingh/nord.nvim'                      " Nord theme with Treesitter support
-Plug 'Yggdroot/indentLine'                       " Indentation level lines
+  -- Appearance
+  { 'itchyny/lightline.vim' },                    -- Lightweight status line
+  { 'mhinz/vim-signify' },                        -- VCS diff gutter
+  { 'shaunsingh/nord.nvim' },                     -- Nord theme for Treesitter
+  { 'Yggdroot/indentLine' },                      -- Indentation level lines
 
-" Completion
-Plug 'hrsh7th/cmp-nvim-lsp'                      " nvim-cmp LSP source
-Plug 'hrsh7th/cmp-buffer'                        " nvim-cmp buffer source
-Plug 'hrsh7th/cmp-path'                          " nvim-cmp filesystem source
-Plug 'hrsh7th/cmp-cmdline'                       " nvim-cmp source for Vim commands
-Plug 'hrsh7th/nvim-cmp'                          " nvim-cmp core
-Plug 'hrsh7th/cmp-nvim-lua'                      " nvim-cmp source for nvim Lua APIs
-Plug 'onsails/lspkind.nvim'                      " nvim-cmp source formatting
-Plug 'saadparwaiz1/cmp_luasnip'                  " nvim-cmp LuaSnip source
+  -- Completion
+  { 'hrsh7th/cmp-nvim-lsp' },                     -- nvim-cmp LSP source
+  { 'hrsh7th/cmp-buffer' },                       -- nvim-cmp buffer source
+  { 'hrsh7th/cmp-path' },                         -- nvim-cmp filesystem source
+  { 'hrsh7th/cmp-cmdline' },                      -- nvim-cmp source for Vim commands
+  { 'hrsh7th/nvim-cmp' },                         -- nvim-cmp core
+  { 'hrsh7th/cmp-nvim-lua' },                     -- nvim-cmp source for nvim Lua APIs
+  { 'onsails/lspkind.nvim' },                     -- nvim-cmp source formatting
+  { 'saadparwaiz1/cmp_luasnip' },                 -- nvim-cmp LuaSnip source
 
-" Other
-Plug 'editorconfig/editorconfig-vim'             " Cross-editor config files
-Plug 'folke/which-key.nvim'                      " Show mappings on timeout
-Plug 'jiangmiao/auto-pairs'                      " Balance paired characters
-Plug 'junegunn/fzf'                              " Fuzzy finder
-Plug 'junegunn/fzf.vim'                          " Vim integration for fzf
-Plug 'L3MON4D3/LuaSnip', {
-      \ 'tag': 'v2.*',
-      \ 'do': 'make install_jsregexp'
-      \}                                         " Snippets
-Plug 'markonm/traces.vim'                        " Substitute preview
-Plug 'milkypostman/vim-togglelist'               " Toggle fix lists
-Plug 'neovim/nvim-lspconfig'                     " LSP configuration
-Plug 'nvim-lua/plenary.nvim'                     " Lua utility library
-Plug 'nvim-treesitter/nvim-treesitter'           " Treesitter config and abstraction
-Plug 'thinca/vim-visualstar'                     " Search a visual mode selection
-Plug 'tpope/vim-commentary'                      " Toggle comments
-Plug 'tpope/vim-fugitive'                        " Git commands from inside Vim
-Plug 'tpope/vim-surround'                        " Manipulate parens, tags, etc.
-Plug 'vim-scripts/taglist.vim'                   " Code tag viewer
-Plug 'wincent/ferret'                            " Project search enhancements
-Plug 'wincent/loupe'                             " Search enhancements
-Plug 'wincent/scalpel'                           " Quick replace word
-Plug 'wincent/terminus'                          " Terminal integration
-
-call plug#end()
-]])
+  -- Other
+  { 'editorconfig/editorconfig-vim' },            -- Cross-editor config files
+  { 'folke/which-key.nvim' },                     -- Show mappings on timeout
+  { 'jiangmiao/auto-pairs' },                     -- Balance paired characters
+  { 'junegunn/fzf' },                             -- Fuzzy finder
+  { 'junegunn/fzf.vim' },                         -- Vim integration for fzf
+  {
+    'L3MON4D3/LuaSnip',
+    version = 'v2.*',
+    build = 'make install_jsregexp'
+  },                                              -- Snippets
+  { 'markonm/traces.vim' },                       -- Substitute preview
+  { 'milkypostman/vim-togglelist' },              -- Toggle fix lists
+  { 'neovim/nvim-lspconfig' },                    -- LSP configuration
+  { 'nvim-lua/plenary.nvim' },                    -- Lua utility library
+  { 'nvim-treesitter/nvim-treesitter' },          -- Treesitter config and abstraction
+  { 'thinca/vim-visualstar' },                    -- Search a visual mode selection
+  { 'tpope/vim-commentary' },                     -- Toggle comments
+  { 'tpope/vim-fugitive' },                       -- Git commands from inside Vim
+  { 'tpope/vim-surround' },                       -- Manipulate parens, tags, etc.
+  { 'vim-scripts/taglist.vim' },                  -- Code tag viewer
+  { 'wincent/ferret' },                           -- Project search enhancements
+  { 'wincent/loupe' },                            -- Search enhancements
+  { 'wincent/scalpel' },                          -- Quick replace word
+  { 'wincent/terminus' },                         -- Terminal integration
+})
 
 
 ----------
