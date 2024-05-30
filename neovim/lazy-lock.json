@@ -17,7 +17,7 @@
   "fzf": { "branch": "master", "commit": "3c09c77269d848f5e7dd8f350a90e8d7ed760845" },
   "fzf.vim": { "branch": "master", "commit": "1dcdb21db618055134cd611f4f5918f6d00a5df0" },
   "indentLine": { "branch": "master", "commit": "b96a75985736da969ac38b72a7716a8c57bdde98" },
-  "lazy.nvim": { "branch": "main", "commit": "14d76aac4bd3ff07c1fca074c210f28f766a931e" },
+  "lazy.nvim": { "branch": "main", "commit": "24fa2a97085ca8a7220b5b078916f81e316036fd" },
   "lightline.vim": { "branch": "master", "commit": "b1e91b41f5028d65fa3d31a425ff21591d5d957f" },
   "loupe": { "branch": "main", "commit": "af1eb735c9787b8a67a7db24651116f56cefeeb0" },
   "lspkind.nvim": { "branch": "master", "commit": "1735dd5a5054c1fb7feaf8e8658dbab925f4f0cf" },
