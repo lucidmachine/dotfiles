@@ -1,8 +1,8 @@
-*.swp
 install.conf.yaml
-neovim/plugged
-neovim/spell
+neovim/plugin/packer_compiled.lua
 neovim/.netrwhist
-ranger/bookmarks
-ranger/history
-ranger/tagged
+
+neovim/spell/
+neovim/plugged/
+
+*.swp
