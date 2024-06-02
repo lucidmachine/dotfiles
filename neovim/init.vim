@@ -37,29 +37,41 @@ Plug 'vimoutliner/vimoutliner', {
 Plug 'vim-scripts/confluencewiki.vim'            " Confluence wiki syntax
 
 " Appearance
-Plug 'arcticicestudio/nord-vim'                  " Nord theme
 Plug 'itchyny/lightline.vim'                     " Lightweight status line
 Plug 'mhinz/vim-signify'                         " VCS diff gutter
+Plug 'shaunsingh/nord.nvim'                      " Nord theme with Treesitter support
 Plug 'Yggdroot/indentLine'                       " Indentation level lines
+
+" Completion
+Plug 'hrsh7th/cmp-nvim-lsp'                      " nvim-cmp LSP source
+Plug 'hrsh7th/cmp-buffer'                        " nvim-cmp buffer source
+Plug 'hrsh7th/cmp-path'                          " nvim-cmp filesystem source
+Plug 'hrsh7th/cmp-cmdline'                       " nvim-cmp source for Vim commands
+Plug 'hrsh7th/nvim-cmp'                          " nvim-cmp core
+Plug 'hrsh7th/cmp-nvim-lua'                      " nvim-cmp source for nvim Lua APIs
+Plug 'onsails/lspkind.nvim'                      " nvim-cmp source formatting
+Plug 'saadparwaiz1/cmp_luasnip'                  " nvim-cmp LuaSnip source
 
 " Other
 Plug 'editorconfig/editorconfig-vim'             " Cross-editor config files
-Plug 'garbas/vim-snipmate'                       " Snippets
 Plug 'jiangmiao/auto-pairs'                      " Balance paired characters
 Plug 'junegunn/fzf'                              " Fuzzy finder
 Plug 'junegunn/fzf.vim'                          " Vim integration for fzf
+Plug 'L3MON4D3/LuaSnip', {
+      \ 'tag': 'v2.*',
+      \ 'do': 'make install_jsregexp'
+      \}                                         " Snippets
 Plug 'liuchengxu/vim-which-key', {
       \ 'on': ['WhichKey', 'WhichKey!']
       \}                                         " Show mappings on timeout
-Plug 'MarcWeber/vim-addon-mw-utils'              " Dependency for Snipmate
 Plug 'markonm/traces.vim'                        " Substitute preview
 Plug 'milkypostman/vim-togglelist'               " Toggle fix lists
 Plug 'neovim/nvim-lspconfig'                     " LSP configuration
 Plug 'nvim-lua/plenary.nvim'                     " Lua utility library
+Plug 'nvim-treesitter/nvim-treesitter'           " Treesitter config and abstraction
 Plug 'thinca/vim-visualstar'                     " Search a visual mode selection
-Plug 'tomtom/tlib_vim'                           " Dependency for Snipmate
 Plug 'tpope/vim-commentary'                      " Toggle comments
-Plug 'tpope/vim-fugitive'                        " Git commands from inside ViM
+Plug 'tpope/vim-fugitive'                        " Git commands from inside Vim
 Plug 'tpope/vim-surround'                        " Manipulate parens, tags, etc.
 Plug 'vim-scripts/taglist.vim'                   " Code tag viewer
 Plug 'wincent/ferret'                            " Project search enhancements
@@ -84,9 +96,7 @@ set smarttab
 set expandtab
 set shiftwidth=2
 set tabstop=2
-if v:version > 703
-  set formatoptions +=j                          " Join sans comment leader
-endif
+set formatoptions +=j                            " Join sans comment leader
 
 " Filetypes
 filetype on
@@ -111,6 +121,8 @@ let g:netrw_altv = 1                             " Split vertically
 let g:netrw_bufsettings = 'number'               " Use line numbers
 
 " Folding
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 set nofoldenable                                 " Start unfolded. Fold commands re-enable
 
 " Search
@@ -122,9 +134,7 @@ endif
 set splitbelow
 
 " Terminal
-if has('nvim')
-  au TermOpen * :startinsert
-endif
+au TermOpen * :startinsert
 
 " Textwidth
 set textwidth=100
@@ -151,23 +161,19 @@ if !empty($CONEMUBUILD)
 endif
 
 " ColorColumn
-if exists('+colorcolumn')
-  let &colorcolumn = &textwidth + 1
-endif
+let &colorcolumn = &textwidth + 1
 
 " Cursor
 set cursorline
 
 " Focus
-if exists('+winhighlight')
-  augroup focuswinhighlight
-    au!
-    au ColorScheme * hi link MyInactiveWin ColorColumn | hi link MyNormalWin Normal
-    au FileType,BufWinEnter * call autocmds#configure_winhighlight()
-    au FocusGained * hi link MyNormalWin Normal
-    au FocusLost * hi link MyNormalWin MyInactiveWin
-  augroup END
-endif
+augroup focuswinhighlight
+  au!
+  au ColorScheme * hi link MyInactiveWin ColorColumn | hi link MyNormalWin Normal
+  au FileType,BufWinEnter * call autocmds#configure_winhighlight()
+  au FocusGained * hi link MyNormalWin Normal
+  au FocusLost * hi link MyNormalWin MyInactiveWin
+augroup END
 
 " Gutter
 set number
@@ -183,22 +189,16 @@ let g:lightline = {
         \}
 
 " Theme
-try
-  colorscheme nord
-catch /^Vim\%((\a\+)\)\=:E185/
-  colorscheme murphy
-endtry
+colorscheme murphy
 set background=dark
 
 """"""""""
 " Commands
 """"""""""
-if has('nvim') || has('terminal')
-  command! Splitterm execute ":split | :terminal"
-  command! Sterm execute ":Splitterm"
-  command! Vsplitterm execute ":vsplit | :terminal"
-  command! Vterm execute ":Vsplitterm"
-endif
+command! Splitterm execute ":split | :terminal"
+command! Sterm execute ":Splitterm"
+command! Vsplitterm execute ":vsplit | :terminal"
+command! Vterm execute ":Vsplitterm"
 command! We execute ":write | :edit"
 
 
@@ -270,21 +270,23 @@ nmap <leader>sl <Plug>(FerretLack)
 nmap <leader>sr <Plug>(FerretAcks)
 nmap <leader>sw <Plug>(FerretAckWord)
 
+" Snippets
+imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
+snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
+snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+
 " Tags
 noremap <silent> <leader>gt :TlistToggle<CR>
 
 " Terminal
-if has('nvim')
-  tnoremap <Esc> <C-\><C-n>
-endif
+tnoremap <Esc> <C-\><C-n>
 
 " Toggles and Cycles
 noremap <silent> <leader>tc :call mappings#cycle_columns()<CR>
 noremap <silent> <leader>ti :call mappings#cycle_indentation()<CR>
 noremap <silent> <leader>tp :call AutoPairsToggle()<CR>
-if has('nvim')
-  noremap <silent> <leader>ts :call mappings#cycle_inccommand()<CR>
-endif
+noremap <silent> <leader>ts :call mappings#cycle_inccommand()<CR>
 
 " Vim Configuration
 noremap <silent> <leader>vv :tabnew $MYVIMRC<CR>
@@ -324,14 +326,116 @@ let g:clojure_foldwords = "def,defn,defmacro,defmethod,defschema,defprotocol,def
 " Conjure
 let g:conjure_log_direction = "horizontal"
 
+" fzf
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+      \ 'ctrl-q': function('s:build_quickfix_list'),
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-t': 'tab split',
+      \ 'ctrl-x': 'split',
+      \ 'ctrl-v': 'vsplit',
+      \}
+
+" LuaSnip
+lua << EOF
+require('luasnip.loaders.from_snipmate').lazy_load()
+EOF
+
+" nord.nvim
+lua << EOF
+vim.g.nord_borders = true
+vim.g.nord_italic = true
+require('nord').set()
+EOF
+
+" nvim-cmp
+lua << EOF
+local cmp = require'cmp'
+local lspkind = require'lspkind'
+
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+  }),
+  sources = cmp.config.sources({ -- Order of sources dictactes order of results
+    { name = 'nvim_lua' },
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'buffer', keyword_length = 5 },
+  }),
+  formatting = {
+    format = lspkind.cmp_format({
+      with_text = false,
+      menu = {
+        buffer = '[buf]',
+        nvim_lsp = '[lsp]',
+        nvim_lua = '[api]',
+        path = '[path]',
+        luasnip = '[snip]',
+      }
+    })
+  }
+})
+
+-- Use buffer source for `/` and `?`.
+cmp.setup.cmdline({ '/', '?' }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+-- Use cmdline & path source for ':'.
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' },
+    { name = 'cmdline' },
+  }),
+  matching = { disallow_symbol_nonprefix_matching = false }
+})
+
+-- Set up lspconfig.
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+EOF
+
 " nvim-lspconfig
 lua << EOF
-require'lspconfig'.angularls.setup{}
-require'lspconfig'.bashls.setup{}
-require'lspconfig'.clojure_lsp.setup{}
-require'lspconfig'.eslint.setup{}
-require'lspconfig'.jdtls.setup{}
+require'lspconfig'.angularls.setup {
+  capabilities = capabilities
+}
+require'lspconfig'.bashls.setup {
+  capabilities = capabilities
+}
+require'lspconfig'.clojure_lsp.setup {
+  capabilities = capabilities
+}
+require'lspconfig'.eslint.setup {
+  capabilities = capabilities
+}
+require'lspconfig'.jdtls.setup {
+  capabilities = capabilities
+}
 require'lspconfig'.lua_ls.setup {
+  capabilities = capabilities,
   on_init = function(client)
     local path = client.workspace_folders[1].name
     if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
@@ -362,29 +466,62 @@ require'lspconfig'.lua_ls.setup {
     Lua = {}
   }
 }
-require'lspconfig'.marksman.setup{}
-require'lspconfig'.vimls.setup{}
+require'lspconfig'.marksman.setup {
+  capabilities = capabilities
+}
+require'lspconfig'.vimls.setup {
+  capabilities = capabilities
+}
 EOF
 
-" fzf
-function! s:build_quickfix_list(lines)
-  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
-  copen
-  cc
-endfunction
-
-let g:fzf_action = {
-      \ 'ctrl-q': function('s:build_quickfix_list'),
-      \ 'ctrl-s': 'split',
-      \ 'ctrl-t': 'tab split',
-      \ 'ctrl-x': 'split',
-      \ 'ctrl-v': 'vsplit',
-      \}
-
-" SnipMate
-let g:snipMate = {
-      \ 'snippet_version' : 1
-      \}
+" nvim-treesitter
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {
+    'angular',
+    'bash',
+    'clojure',
+    'css',
+    'csv',
+    'diff',
+    'dockerfile',
+    'fennel',
+    'git_config',
+    'git_rebase',
+    'gitattributes',
+    'gitcommit',
+    'gitignore',
+    'go',
+    'gomod',
+    'helm',
+    'html',
+    'http',
+    'java',
+    'javascript',
+    'json',
+    'lua',
+    'luadoc',
+    'make',
+    'markdown',
+    'markdown_inline',
+    'properties',
+    'python',
+    'ruby',
+    'scss',
+    'sql',
+    'terraform',
+    'tmux',
+    'typescript',
+    'vim',
+    'vimdoc',
+    'xml',
+    'yaml'
+  },
+  highlight = {
+    enable = true,
+  }
+}
+EOF
 
 " Signify
 let g:signify_update_on_focusgained = 1
