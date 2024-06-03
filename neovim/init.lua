@@ -1,4 +1,5 @@
 require('options')
 require('appearance')
-require('commands')
 require('plugins')
+require('mappings')
+require('commands')
