@@ -1,0 +1,6 @@
+vim.api.nvim_create_user_command('Splitterm', ':split | :terminal', {})
+vim.api.nvim_create_user_command('Sterm', ':Splitterm', {})
+vim.api.nvim_create_user_command('Vsplitterm', ':vsplit | :terminal', {})
+vim.api.nvim_create_user_command('Vterm', ':Vsplitterm', {})
+vim.api.nvim_create_user_command('We', ':write | :edit', {})
+vim.api.nvim_create_user_command('Qa', ':qall', {})
