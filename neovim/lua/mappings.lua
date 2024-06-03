@@ -26,13 +26,13 @@ vim.keymap.set(
 )
 vim.keymap.set(
   'n',
-  '<leader>cp',
+  '<Leader>cp',
   ':call mappings#copy_current_file_relative_path_to_clipboard()<CR>',
   { silent = true }
 )
 vim.keymap.set(
   'n',
-  '<leader>cP',
+  '<Leader>cP',
   ':call mappings#copy_current_file_absolute_path_to_clipboard()<CR>',
   { silent = true }
 )
