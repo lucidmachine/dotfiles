@@ -132,65 +132,7 @@ require('lazy').setup({
       'onsails/lspkind.nvim',
       'saadparwaiz1/cmp_luasnip',
     },
-    config = function()
-      local cmp = require('cmp')
-      local lspkind = require('lspkind')
-
-      cmp.setup({
-        snippet = {
-          expand = function(args)
-            require('luasnip').lsp_expand(args.body)
-          end,
-        },
-        window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
-        },
-        mapping = cmp.mapping.preset.insert({
-          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-f>'] = cmp.mapping.scroll_docs(4),
-          ['<C-Space>'] = cmp.mapping.complete(),
-          ['<C-e>'] = cmp.mapping.abort(),
-          ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        }),
-        sources = cmp.config.sources({                       -- Order of sources dictactes order of results
-          { name = 'nvim_lua' },
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = 'buffer',  keyword_length = 5 },
-        }),
-        formatting = {
-          format = lspkind.cmp_format({
-            with_text = false,
-            menu = {
-              buffer = '[buf]',
-              nvim_lsp = '[lsp]',
-              nvim_lua = '[api]',
-              path = '[path]',
-              luasnip = '[snip]',
-            }
-          })
-        }
-      })
-
-      -- Use buffer source for `/` and `?`.
-      cmp.setup.cmdline({ '/', '?' }, {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-          { name = 'buffer' }
-        }
-      })
-
-      -- Use cmdline & path source for ':'.
-      cmp.setup.cmdline(':', {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = cmp.config.sources({
-          { name = 'path' },
-          { name = 'cmdline' },
-        }),
-        matching = { disallow_symbol_nonprefix_matching = false }
-      })
-    end
+    config = function() require('plugins.nvim-cmp') end
   },                              -- nvim-cmp core
   { 'hrsh7th/cmp-nvim-lua' },     -- nvim-cmp source for nvim Lua APIs
   { 'onsails/lspkind.nvim' },     -- nvim-cmp source formatting
