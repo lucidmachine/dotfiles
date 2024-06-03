@@ -30,21 +30,7 @@ require('lazy').setup({
   {
     'gberenfield/cljfold.vim',
     ft = 'clojure',
-    config = function()
-      local foldwords = {
-        'def',
-        'defn',
-        'defmacro',
-        'defmethod',
-        'defschema',
-        'defprotocol',
-        'defrecord',
-        'deftest',
-        'comment',
-        'testing'
-      }
-      vim.g.clojure_foldwords = table.concat(foldwords, ',')
-    end,
+    config = function() require('plugins.cljfold-vim') end,
   }, -- Configurable Clojure Folding
   {
     'mfussenegger/nvim-jdtls',
@@ -162,9 +148,7 @@ require('lazy').setup({
     'L3MON4D3/LuaSnip',
     version = 'v2.*',
     build = 'make install_jsregexp',
-    config = function()
-      require('luasnip.loaders.from_snipmate').lazy_load()
-    end
+    config = function() require('luasnip.loaders.from_snipmate').lazy_load() end
   },                        -- Snippets
   { 'markonm/traces.vim' }, -- Substitute preview
   {
