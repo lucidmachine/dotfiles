@@ -12,6 +12,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+
 -- Setup plugins
 require('lazy').setup({
 
@@ -180,53 +181,7 @@ require('lazy').setup({
   { 'nvim-lua/plenary.nvim' }, -- Lua utility library
   {
     'nvim-treesitter/nvim-treesitter',
-    config = function()
-      require('nvim-treesitter.configs').setup {
-        ensure_installed = {
-          'angular',
-          'bash',
-          'clojure',
-          'css',
-          'csv',
-          'diff',
-          'dockerfile',
-          'fennel',
-          'git_config',
-          'git_rebase',
-          'gitattributes',
-          'gitcommit',
-          'gitignore',
-          'go',
-          'gomod',
-          'helm',
-          'html',
-          'http',
-          'java',
-          'javascript',
-          'json',
-          'lua',
-          'luadoc',
-          'make',
-          'markdown',
-          'markdown_inline',
-          'properties',
-          'python',
-          'ruby',
-          'scss',
-          'sql',
-          'terraform',
-          'tmux',
-          'typescript',
-          'vim',
-          'vimdoc',
-          'xml',
-          'yaml'
-        },
-        highlight = {
-          enable = true,
-        }
-      }
-    end
+    config = function() require('plugins.nvim-treesitter') end
   },                           -- Treesitter config and abstraction
   { 'thinca/vim-visualstar' }, -- Search a visual mode selection
   { 'tpope/vim-commentary' },  -- Toggle comments
