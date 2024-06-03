@@ -14,7 +14,10 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup plugins
 require('lazy').setup({
+
+  -------------------
   -- Language Support
+  -------------------
   {
     'bakpakin/fennel.vim',
     ft = 'fennel',
@@ -82,7 +85,10 @@ require('lazy').setup({
     ft = 'confluencewiki',
   }, -- Confluence wiki syntax
 
+
+  -------------
   -- Appearance
+  -------------
   {
     'itchyny/lightline.vim',
     config = function()
@@ -110,7 +116,9 @@ require('lazy').setup({
   },                         -- Nord theme with Treesitter support
   { 'Yggdroot/indentLine' }, -- Indentation level lines
 
+  -------------
   -- Completion
+  -------------
   { 'hrsh7th/cmp-nvim-lsp' }, -- nvim-cmp LSP source
   { 'hrsh7th/cmp-buffer' },   -- nvim-cmp buffer source
   { 'hrsh7th/cmp-path' },     -- nvim-cmp filesystem source
@@ -192,42 +200,8 @@ require('lazy').setup({
   { 'editorconfig/editorconfig-vim' }, -- Cross-editor config files
   {
     'folke/which-key.nvim',
-    config = function()
-      local wk = require('which-key')
-      wk.register({
-        b = { name = '(B)uffers' },
-        c = {
-          name = '(C)opy',
-          c = 'Buffer',
-          p = 'Relative (p)ath',
-          P = 'Absolute (p)ath',
-        },
-        d = {
-          name = '(D)iagnostics',
-          l = '(L)ocationlist',
-          n = '(N)ext',
-          o = '(O)pen',
-          p = '(P)revious',
-          q = '(Q)uickfixlist',
-        },
-        f = { name = '(F)iles' },
-        g = { name = '(G)oto' },
-        l = { name = '(L)ocationlist' },
-        q = { name = '(Q)uickfixlist' },
-        r = {
-          name = '(R)efactor',
-          a = '(A)ctions',
-          l = '(L)ayout',
-          o = '(O)ptimize imports',
-          r = '(R)ename (Scalpel)',
-          R = '(R)ename (LSP)',
-        },
-        s = { name = '(S)earch' },
-        t = { name = '(T)oggle / Cycle' },
-        v = { name = '(V)im' },
-        w = { name = '(W)indow' },
-      }, { prefix = "<Leader>" })
-    end
+    event = 'VeryLazy',
+    init = function() require('plugins.which-key-nvim') end
   },                          -- Show mappings on timeout
   { 'jiangmiao/auto-pairs' }, -- Balance paired characters
   { 'junegunn/fzf' },         -- Fuzzy finder
