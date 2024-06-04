@@ -49,14 +49,7 @@ require('lazy').setup({
   -------------
   {
     'itchyny/lightline.vim',
-    init = function()
-      vim.g.lightline = {
-        colorscheme = 'nord',
-        inactive = {
-          left = { {}, { 'filename', 'modified' } }
-        }
-      }
-    end,
+    init = function() require('plugins.lightline-vim') end,
   },
   {
     'mhinz/vim-signify',
