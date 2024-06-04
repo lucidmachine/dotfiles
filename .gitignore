@@ -1,6 +1,7 @@
 install.conf.yaml
 neovim/plugin/packer_compiled.lua
 neovim/.netrwhist
+sway/generated_background.svg
 
 neovim/spell/
 neovim/plugged/
