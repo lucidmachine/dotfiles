@@ -40,14 +40,7 @@ require('lazy').setup({
     'pmizio/typescript-tools.nvim',
     ft = { 'typescript', 'javascript' },
     dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      require('typescript-tools').setup {
-        settings = {
-          separate_diagnostic_server = true,
-          publish_diagnostic_on = 'insert_leave'
-        }
-      }
-    end,
+    config = function() require('plugins.typescript-tools-nvim') end,
   },
   { 'vimoutliner/vimoutliner',        ft = 'votl', },
   { 'vim-scripts/confluencewiki.vim', ft = 'confluencewiki', },
