@@ -98,13 +98,7 @@ require('lazy').setup({
   { 'junegunn/fzf' },
   {
     'junegunn/fzf.vim',
-    init = function()
-      local fzf_action = {}
-      fzf_action['ctrl-s'] = 'split'
-      fzf_action['ctrl-t'] = 'tab split'
-      fzf_action['ctrl-v'] = 'vsplit'
-      vim.g.fzf_action = fzf_action
-    end
+    init = function() require('plugins.fzf-vim') end
   },
   {
     'L3MON4D3/LuaSnip',
