@@ -6,7 +6,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    "--branch=stable",
     lazypath,
   })
 end
@@ -19,41 +19,27 @@ require('lazy').setup({
   -------------------
   -- Language Support
   -------------------
-  {
-    'bakpakin/fennel.vim',
-    ft = 'fennel',
-  }, -- Fennel
-  {
-    'elubow/cql-vim',
-    ft = 'cql',
-  }, -- Cassandra Query Language
+  { 'bakpakin/fennel.vim', ft = 'fennel', },
+  { 'elubow/cql-vim',      ft = 'cql', },
   {
     'gberenfield/cljfold.vim',
     ft = 'clojure',
     config = function() require('plugins.cljfold-vim') end,
-  }, -- Configurable Clojure Folding
-  {
-    'mfussenegger/nvim-jdtls',
-    ft = 'java',
-  }, -- Java JDTLS Extensions
-  {
-    'lucidmachine/vim-velocity',
-    ft = 'vtl',
-  }, -- Velocity
-  {
-    'mikeboiko/vim-markdown-folding',
-    ft = 'markdown'
-  }, -- Fold Markdown headers
+  },
+  { 'mfussenegger/nvim-jdtls',        ft = 'java', },
+  { 'lucidmachine/vim-velocity',      ft = 'vtl', },
+  { 'mikeboiko/vim-markdown-folding', ft = 'markdown' },
   {
     'Olical/conjure',
     ft = { 'clojure', 'fennel' },
     config = function()
       vim.g.conjure_log_direction = 'horizontal'
     end
-  }, -- Interactive Eval
+  },
   {
     'pmizio/typescript-tools.nvim',
     ft = { 'typescript', 'javascript' },
+    dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('typescript-tools').setup {
         settings = {
@@ -62,15 +48,9 @@ require('lazy').setup({
         }
       }
     end,
-  }, -- TS/JS LSP extensions
-  {
-    'vimoutliner/vimoutliner',
-    ft = 'votl',
-  }, -- Outline mode for .otl
-  {
-    'vim-scripts/confluencewiki.vim',
-    ft = 'confluencewiki',
-  }, -- Confluence wiki syntax
+  },
+  { 'vimoutliner/vimoutliner',        ft = 'votl', },
+  { 'vim-scripts/confluencewiki.vim', ft = 'confluencewiki', },
 
 
   -------------
@@ -86,13 +66,11 @@ require('lazy').setup({
         }
       }
     end,
-  }, -- Lightweight status line
+  },
   {
     'mhinz/vim-signify',
-    config = function()
-      vim.g.signify_update_on_focusgained = 1
-    end,
-  }, -- VCS diff gutter
+    config = function() vim.g.signify_update_on_focusgained = 1 end,
+  },
   {
     'shaunsingh/nord.nvim',
     config = function()
@@ -100,16 +78,17 @@ require('lazy').setup({
       vim.g.nord_italic = false
       require('nord').set()
     end
-  },                         -- Nord theme with Treesitter support
-  { 'Yggdroot/indentLine' }, -- Indentation level lines
+  },
+  { 'Yggdroot/indentLine' },
+
 
   -------------
   -- Completion
   -------------
-  { 'hrsh7th/cmp-nvim-lsp' }, -- nvim-cmp LSP source
-  { 'hrsh7th/cmp-buffer' },   -- nvim-cmp buffer source
-  { 'hrsh7th/cmp-path' },     -- nvim-cmp filesystem source
-  { 'hrsh7th/cmp-cmdline' },  -- nvim-cmp source for Vim commands
+  { 'hrsh7th/cmp-nvim-lsp' },
+  { 'hrsh7th/cmp-buffer' },
+  { 'hrsh7th/cmp-path' },
+  { 'hrsh7th/cmp-cmdline' },
   {
     'hrsh7th/nvim-cmp',
     dependencies = {
@@ -120,20 +99,23 @@ require('lazy').setup({
       'saadparwaiz1/cmp_luasnip',
     },
     config = function() require('plugins.nvim-cmp') end
-  },                              -- nvim-cmp core
-  { 'hrsh7th/cmp-nvim-lua' },     -- nvim-cmp source for nvim Lua APIs
-  { 'onsails/lspkind.nvim' },     -- nvim-cmp source formatting
-  { 'saadparwaiz1/cmp_luasnip' }, -- nvim-cmp LuaSnip source
+  },
+  { 'hrsh7th/cmp-nvim-lua' },
+  { 'onsails/lspkind.nvim' },
+  { 'saadparwaiz1/cmp_luasnip' },
 
+
+  --------
   -- Other
-  { 'editorconfig/editorconfig-vim' }, -- Cross-editor config files
+  --------
+  { 'editorconfig/editorconfig-vim' },
   {
     'folke/which-key.nvim',
     event = 'VeryLazy',
     init = function() require('plugins.which-key-nvim') end
-  },                          -- Show mappings on timeout
-  { 'jiangmiao/auto-pairs' }, -- Balance paired characters
-  { 'junegunn/fzf' },         -- Fuzzy finder
+  },
+  { 'jiangmiao/auto-pairs' },
+  { 'junegunn/fzf' },
   {
     'junegunn/fzf.vim',
     config = function()
@@ -143,34 +125,29 @@ require('lazy').setup({
       fzf_action['ctrl-v'] = 'vsplit'
       vim.g.fzf_action = fzf_action
     end
-  }, -- Vim integration for fzf
+  },
   {
     'L3MON4D3/LuaSnip',
     version = 'v2.*',
     build = 'make install_jsregexp',
     config = function() require('luasnip.loaders.from_snipmate').lazy_load() end
-  },                        -- Snippets
-  { 'markonm/traces.vim' }, -- Substitute preview
-  {
-    'milkypostman/vim-togglelist',
-    config = function()
-      vim.g.toggle_list_no_mappings = 1
-    end
-  }, -- Toggle fix lists
+  },
+  { 'markonm/traces.vim' },
+  { 'milkypostman/vim-togglelist', config = function() vim.g.toggle_list_no_mappings = 1 end },
   {
     'neovim/nvim-lspconfig',
     dependencies = { 'hrsh7th/cmp-nvim-lsp' },
     config = function() require('plugins.nvim-lspconfig') end
-  },                           -- LSP configuration
-  { 'nvim-lua/plenary.nvim' }, -- Lua utility library
+  },
+  { 'nvim-lua/plenary.nvim' },
   {
     'nvim-treesitter/nvim-treesitter',
     config = function() require('plugins.nvim-treesitter') end
-  },                           -- Treesitter config and abstraction
-  { 'thinca/vim-visualstar' }, -- Search a visual mode selection
-  { 'tpope/vim-commentary' },  -- Toggle comments
-  { 'tpope/vim-fugitive' },    -- Git commands from inside Vim
-  { 'tpope/vim-surround' },    -- Manipulate parens, tags, etc.
+  },
+  { 'thinca/vim-visualstar' },
+  { 'tpope/vim-commentary' },
+  { 'tpope/vim-fugitive' },
+  { 'tpope/vim-surround' },
   {
     'vim-scripts/taglist.vim',
     config = function()
@@ -181,9 +158,9 @@ require('lazy').setup({
       vim.g.Tlist_Use_Right_Window = 1
       vim.g.Tlist_Use_SingleClick = 1
     end
-  },                      -- Code tag viewer
-  { 'wincent/ferret' },   -- Project search enhancements
-  { 'wincent/loupe' },    -- Search enhancements
-  { 'wincent/scalpel' },  -- Quick replace word
-  { 'wincent/terminus' }, -- Terminal integration
+  },
+  { 'wincent/ferret' },
+  { 'wincent/loupe' },
+  { 'wincent/scalpel' },
+  { 'wincent/terminus' },
 })
