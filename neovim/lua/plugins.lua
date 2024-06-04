@@ -24,7 +24,7 @@ require('lazy').setup({
   {
     'gberenfield/cljfold.vim',
     ft = 'clojure',
-    config = function() require('plugins.cljfold-vim') end,
+    init = function() require('plugins.cljfold-vim') end,
   },
   { 'mfussenegger/nvim-jdtls',        ft = 'java', },
   { 'lucidmachine/vim-velocity',      ft = 'vtl', },
@@ -51,7 +51,7 @@ require('lazy').setup({
   -------------
   {
     'itchyny/lightline.vim',
-    config = function()
+    init = function()
       vim.g.lightline = {
         colorscheme = 'nord',
         inactive = {
@@ -62,7 +62,7 @@ require('lazy').setup({
   },
   {
     'mhinz/vim-signify',
-    config = function() vim.g.signify_update_on_focusgained = 1 end,
+    init = function() vim.g.signify_update_on_focusgained = 1 end,
   },
   {
     'shaunsingh/nord.nvim',
@@ -111,7 +111,7 @@ require('lazy').setup({
   { 'junegunn/fzf' },
   {
     'junegunn/fzf.vim',
-    config = function()
+    init = function()
       local fzf_action = {}
       fzf_action['ctrl-s'] = 'split'
       fzf_action['ctrl-t'] = 'tab split'
@@ -126,7 +126,9 @@ require('lazy').setup({
     config = function() require('luasnip.loaders.from_snipmate').lazy_load() end
   },
   { 'markonm/traces.vim' },
-  { 'milkypostman/vim-togglelist', config = function() vim.g.toggle_list_no_mappings = 1 end },
+  {
+    'milkypostman/vim-togglelist',
+    init = function() vim.g.toggle_list_no_mappings = 1 end },
   {
     'neovim/nvim-lspconfig',
     dependencies = { 'hrsh7th/cmp-nvim-lsp' },
@@ -143,7 +145,7 @@ require('lazy').setup({
   { 'tpope/vim-surround' },
   {
     'vim-scripts/taglist.vim',
-    config = function()
+    init = function()
       vim.g.Tlist_Auto_Highlight_Tag = 1
       vim.g.Tlist_Auto_Update = 1
       vim.g.Tlist_Inc_Winwidth = 0
