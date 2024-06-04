@@ -1,17 +1,3 @@
-" Cycle the number of columns
-" 100 -> 120 -> 80 -> 100
-" If the current textwidth isn't part of the cycle, then it will restart at 100
-function! mappings#cycle_columns() abort
-  let next_width = { 100: '120', 120: '80', 80: '100', }
-  let &textwidth = get(next_width, &textwidth, '100')
-
-  echo &textwidth
-
-  if exists('+colorcolumn')
-    let &colorcolumn = &textwidth + 1
-  endif
-endfunction
-
 " Cycle through inccommand modes
 " NeoVim only, please guard this function appropriately
 function! mappings#cycle_inccommand() abort
