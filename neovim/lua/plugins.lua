@@ -32,9 +32,7 @@ require('lazy').setup({
   {
     'Olical/conjure',
     ft = { 'clojure', 'fennel' },
-    config = function()
-      vim.g.conjure_log_direction = 'horizontal'
-    end
+    config = function() require('plugins.conjure') end
   },
   {
     'pmizio/typescript-tools.nvim',
