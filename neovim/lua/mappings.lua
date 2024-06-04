@@ -115,7 +115,7 @@ vim.keymap.set('n', '<Leader>gt', '<Cmd>TlistToggle<CR>', { silent = true })
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- Toggles and Cycles
-vim.keymap.set('n', '<Leader>tc', ':call mappings#cycle_columns()<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>tc', require('functions').cycleColumns, { silent = true })
 vim.keymap.set('n', '<Leader>ti', ':call mappings#cycle_indentation()<CR>', { silent = true })
 vim.keymap.set('n', '<Leader>tp', ':call AutoPairsToggle<CR>', { silent = true })
 vim.keymap.set('n', '<Leader>ts', ':call mappings#cycle_inccommand()<CR>', { silent = true })
