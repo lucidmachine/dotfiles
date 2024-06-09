@@ -81,4 +81,19 @@ M.cycleIndentationMode = function()
   vim.print(message)
 end
 
+
+local getCurrentBufferContents = function()
+  local currentBufferLines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+  local currentBufferContents = table.concat(currentBufferLines, '\n')
+
+  return currentBufferContents
+end
+
+--- Copy the contents of the current buffer to the clipboard
+M.copyBufferToClipboard = function()
+  local currentBufferContents = getCurrentBufferContents()
+
+  vim.fn.setreg('+', currentBufferContents)
+end
+
 return M

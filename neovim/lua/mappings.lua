@@ -15,7 +15,7 @@ vim.keymap.set('n', '<Leader>;;', '<Plug>CommentaryLine')
 vim.keymap.set(
   'n',
   '<Leader>cc',
-  ':call mappings#copy_buffer_to_clipboard()<CR>',
+  require('functions').copyBufferToClipboard,
   { silent = true }
 )
 vim.keymap.set(
