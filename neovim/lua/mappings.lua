@@ -118,7 +118,7 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 vim.keymap.set('n', '<Leader>tc', require('functions').cycleColumns, { silent = true })
 vim.keymap.set('n', '<Leader>ti', ':call mappings#cycle_indentation()<CR>', { silent = true })
 vim.keymap.set('n', '<Leader>tp', ':call AutoPairsToggle<CR>', { silent = true })
-vim.keymap.set('n', '<Leader>ts', ':call mappings#cycle_inccommand()<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>ts', require('functions').cycleInccommand, { silent = true })
 
 -- Vim Configuration
 vim.keymap.set('n', '<Leader>vv', ':tabnew $MYVIMRC')

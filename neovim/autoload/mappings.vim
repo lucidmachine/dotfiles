@@ -1,12 +1,3 @@
-" Cycle through inccommand modes
-" NeoVim only, please guard this function appropriately
-function! mappings#cycle_inccommand() abort
-  let next_mode = { 'split': 'nosplit', 'nosplit': 'split' }
-  let &inccommand = get(next_mode, &inccommand, 'split')
-
-  echo &inccommand
-endfunction
-
 " Set the indentation mode
 " Modes:
 "   's2' - Tab = 2 Spaces
