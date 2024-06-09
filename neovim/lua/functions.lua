@@ -1,13 +1,13 @@
 local M = {}
 
-local nextWidths = {
+local widthCycle = {
   [100] = 120,
   [120] = 80,
   [80] = 100,
 }
 
 local nextWidth = function(currentWidth)
-  return nextWidths[currentWidth] or 100
+  return widthCycle[currentWidth] or 100
 end
 
 --- Cycle the textwidth and color column
