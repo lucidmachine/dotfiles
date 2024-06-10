@@ -31,7 +31,7 @@ require('lazy').setup({
   { 'mikeboiko/vim-markdown-folding', ft = 'markdown' },
   {
     'Olical/conjure',
-    ft = { 'clojure', 'fennel' },
+    ft = { 'clojure', 'fennel', 'lua' },
     config = function() require('plugins.conjure') end
   },
   {
