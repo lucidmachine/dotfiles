@@ -33,7 +33,7 @@ vim.keymap.set(
 vim.keymap.set(
   'n',
   '<Leader>cP',
-  ':call mappings#copy_current_file_absolute_path_to_clipboard()<CR>',
+  require('functions').copyCurrentFileAbsolutePathToClipboard,
   { silent = true }
 )
 

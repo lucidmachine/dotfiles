@@ -125,4 +125,14 @@ M.copyCurrentFileRelativePathToClipboard = function()
   vim.fn.setreg('+', getCurrentFileRelativePath())
 end
 
+
+local getCurrentFileAbsolutePath = function()
+  return vim.fn.expand('%:p')
+end
+
+--- Copy absolute path of the current file to the clipboard
+M.copyCurrentFileAbsolutePathToClipboard = function()
+  vim.fn.setreg('+', getCurrentFileAbsolutePath())
+end
+
 return M
