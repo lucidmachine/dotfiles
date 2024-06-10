@@ -116,4 +116,13 @@ M.copyVisualSelectionToClipboard = function()
 end
 
 
+local getCurrentFileRelativePath = function()
+  return vim.fn.expand('%:P')
+end
+
+--- Copy relative path of the current file to the clipboard
+M.copyCurrentFileRelativePathToClipboard = function()
+  vim.fn.setreg('+', getCurrentFileRelativePath())
+end
+
 return M

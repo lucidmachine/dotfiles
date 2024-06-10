@@ -27,7 +27,7 @@ vim.keymap.set(
 vim.keymap.set(
   'n',
   '<Leader>cp',
-  ':call mappings#copy_current_file_relative_path_to_clipboard()<CR>',
+  require('functions').copyCurrentFileRelativePathToClipboard,
   { silent = true }
 )
 vim.keymap.set(
