@@ -96,4 +96,30 @@ M.copyBufferToClipboard = function()
   vim.fn.setreg('+', currentBufferContents)
 end
 
+
+function GetVisualSelectionContents()
+  local mode = vim.fn.mode()
+
+  local pos1, pos2
+  if mode == 'v' then
+    pos1 = vim.fn.getpos('v')
+    pos2 = vim.fn.getpos('.')
+  else
+    pos1 = vim.fn.getpos('\'<')
+    pos2 = vim.fn.getpos('\'>')
+  end
+
+  local lines = vim.fn.getregion(pos1, pos2, { type = mode })
+
+  return vim.fn.join(lines, '\n')
+end
+
+--- Copy the visual selection to the clipboard
+M.copyVisualSelectionToClipboard = function()
+  local visualSelectionContents = GetVisualSelectionContents()
+
+  vim.fn.setreg('+', visualSelectionContents)
+end
+
+
 return M

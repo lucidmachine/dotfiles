@@ -21,7 +21,7 @@ vim.keymap.set(
 vim.keymap.set(
   'x',
   '<Leader>cc',
-  ':call mappings#copy_selection_to_clipboard()<CR>',
+  function() require('functions').copyVisualSelectionToClipboard() end,
   { silent = true }
 )
 vim.keymap.set(
