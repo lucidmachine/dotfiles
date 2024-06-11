@@ -97,6 +97,7 @@ require('lazy').setup({
   { 'junegunn/fzf' },
   {
     'junegunn/fzf.vim',
+    build = function() vim.fn['fzf#install']() end,
     init = function() require('plugins.fzf-vim') end
   },
   {
