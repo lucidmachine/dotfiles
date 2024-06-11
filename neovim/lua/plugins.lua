@@ -88,7 +88,6 @@ require('lazy').setup({
   --------
   -- Other
   --------
-  { 'editorconfig/editorconfig-vim' },
   {
     'folke/which-key.nvim',
     event = 'VeryLazy',
