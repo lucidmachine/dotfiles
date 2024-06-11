@@ -78,6 +78,7 @@ require('lazy').setup({
       'onsails/lspkind.nvim',
       'saadparwaiz1/cmp_luasnip',
     },
+    event = 'VeryLazy',
     config = function() require('plugins.nvim-cmp') end
   },
   { 'hrsh7th/cmp-nvim-lua' },
@@ -104,6 +105,7 @@ require('lazy').setup({
     'L3MON4D3/LuaSnip',
     version = 'v2.*',
     build = 'make install_jsregexp',
+    event = 'BufEnter',
     config = function() require('luasnip.loaders.from_snipmate').lazy_load() end
   },
   { 'markonm/traces.vim' },
