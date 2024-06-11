@@ -109,7 +109,7 @@ vim.keymap.set(
 )
 
 -- Tags
-vim.keymap.set('n', '<Leader>gt', '<Cmd>TlistToggle<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>gt', '<Cmd>AerialToggle<CR>', { silent = true })
 
 -- Terminal
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')

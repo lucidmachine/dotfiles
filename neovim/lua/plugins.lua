@@ -119,14 +119,15 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     config = function() require('plugins.nvim-treesitter') end
   },
+  {
+    'stevearc/aerial.nvim',
+    keys = '<Leader>gt',
+    init = function() require('plugins.aerial-nvim') end,
+  },
   { 'thinca/vim-visualstar' },
   { 'tpope/vim-commentary' },
   { 'tpope/vim-fugitive' },
   { 'tpope/vim-surround' },
-  {
-    'vim-scripts/taglist.vim',
-    init = function() require('plugins.taglist-vim') end
-  },
   { 'wincent/ferret' },
   { 'wincent/loupe' },
   { 'wincent/scalpel' },
