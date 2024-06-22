@@ -11,7 +11,7 @@ local widthCycle = {
   [80] = 100,
 }
 
---- Cycle the textwidth and color column
+--- Cycle the textwidth
 -- 100 -> 120 -> 80 -> 100
 -- If the current textwidth isn't part of the cycle, then it will restart at 100
 M.cycleColumns = function()
@@ -19,7 +19,6 @@ M.cycleColumns = function()
   local next = advanceCycle(widthCycle, current, 100)
 
   vim.o.textwidth = next
-  vim.o.colorcolumn = tostring(next + 1)
 
   vim.print(next)
 end

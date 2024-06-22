@@ -1,5 +1,5 @@
 -- ColorColumn
-vim.o.colorcolumn = tostring(vim.o.textwidth + 1)
+vim.o.colorcolumn = '+1'
 
 -- Cursor
 vim.o.cursorline = true
