@@ -136,6 +136,7 @@ elif command -v brew &> /dev/null; then
   brew upgrade
 
   brew install \
+    amethyst \
     bash-language-server \
     borkdude/brew/babashka \
     borkdude/brew/clj-kondo \
