@@ -6,15 +6,15 @@ set -e
 function dir() {
   local target_dir="${1}"
 
-  if [ -d ${target_dir} ]; then
+  if [ -d "${target_dir}" ]; then
     echo "${target_dir} already exists. Skipping."
-  elif [ -e ${target_dir} ]; then
+  elif [ -e "${target_dir}" ]; then
     echo "${target_dir} already exists, but is not a directory. Skipping."
   else
     # mkdir short flags used for macOS compatibility
     # -p - Create intermediate parent directories
     # -v - Verbose input
-    mkdir -p -v ${target_dir}
+    mkdir -p -v "${target_dir}"
   fi
 }
 
@@ -22,15 +22,15 @@ function link() {
   local target_file="${1}"
   local link_name="${2}"
 
-  if [ -L ${link_name} ]; then
+  if [ -L "${link_name}" ]; then
     echo "${link_name} already exists. Skipping."
-  elif [ -e ${link_name} ]; then
+  elif [ -e "${link_name}" ]; then
     echo "${link_name} already exists, but is not a link. Skipping."
   else
     # -s - Symbolic link
     # -f - If the link already exists, overwrite it
     # -v - Verbose output
-    ln -sfv ${target_file} ${link_name}
+    ln -sfv "${target_file}" "${link_name}"
   fi
 }
 
