@@ -63,6 +63,7 @@ link "${BASEDIR}/git/git-sh-prompt"   "${HOME}/.git-prompt.sh"
 link "${BASEDIR}/intellij/ideavimrc"  "${HOME}/.ideavimrc"
 link "${BASEDIR}/i3"                  "${XDG_CONFIG_HOME}/i3"
 link "${BASEDIR}/i3status"            "${XDG_CONFIG_HOME}/i3status"
+link "${BASEDIR}/kitty"               "${XDG_CONFIG_HOME}/kitty"
 link "${BASEDIR}/neovim"              "${XDG_CONFIG_HOME}/nvim"
 link "${BASEDIR}/ranger"              "${XDG_CONFIG_HOME}/ranger"
 link "${BASEDIR}/skhd"                "${XDG_CONFIG_HOME}/skhd"
@@ -149,6 +150,7 @@ elif command -v brew &> /dev/null; then
     fzf \
     git \
     htop \
+    kitty \
     koekeishiya/formulae/skhd \
     jdtls \
     jq \

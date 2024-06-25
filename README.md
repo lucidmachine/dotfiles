@@ -2,6 +2,7 @@
 Configuration, powered by a shell script.
 
 ## Configures
+* alacritty
 * bash and zsh
   * RC
   * Profile
@@ -14,6 +15,7 @@ Configuration, powered by a shell script.
   * Services
   * Settings
   * Status Bar
+* Kitty
 * NeoVim
   * Plugins
   * Settings
@@ -39,13 +41,13 @@ Configuration, powered by a shell script.
 * Babashka
 * Clojure
 * curl
-* Exuberant CTags
 * fd
 * Firefox
 * fzf
 * git
 * htop
 * jq
+* Kitty
 * LSP Servers:
     * Angular Language Server
     * Bash Language Server
@@ -71,5 +73,5 @@ Configuration, powered by a shell script.
 
 ## "Tested" On
 * Manjaro 24.0
-* macOS 12.7
+* macOS 15
 * Amazon Linux 2
