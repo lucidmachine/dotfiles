@@ -1,7 +1,9 @@
 # dotfiles
+
 Configuration, powered by a shell script.
 
 ## Configures
+
 * alacritty
 * bash and zsh
   * RC
@@ -10,11 +12,6 @@ Configuration, powered by a shell script.
   * Color palette
 * Git
   * Prompt    
-* i3
-  * Bindings
-  * Services
-  * Settings
-  * Status Bar
 * Kitty
 * NeoVim
   * Plugins
@@ -36,6 +33,7 @@ Configuration, powered by a shell script.
   * Bindings
 
 ## Installs
+
 * alacritty
 * bash
 * Babashka
@@ -73,5 +71,5 @@ Configuration, powered by a shell script.
 
 ## "Tested" On
 * Manjaro 24.0
-* macOS 15
+* macOS 14
 * Amazon Linux 2
