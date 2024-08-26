@@ -1,6 +1,23 @@
-# #!/bin/bash
 snippet #!
-	#!/bin/bash
+	#! /usr/bin/env bash
+	#
+	# ${1:summary}
+	#
+	# Synopsis
+	# 	${2:synopsis}
+	#
+	# Arguments
+	# 	${3:arguments}
+	#
+	# Options
+	# 	${4:options}
+	#
+	# Examples
+	# 	${5:examples}
+
+	set -euo pipefail
+
+	${6}
 	
 snippet if
 	if [[ ${1:condition} ]]; then
