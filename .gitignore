@@ -3,6 +3,7 @@ neovim/plugin/packer_compiled.lua
 neovim/.netrwhist
 sway/generated_background.svg
 
+clojure/.cpcache/
 neovim/spell/
 neovim/plugged/
 
