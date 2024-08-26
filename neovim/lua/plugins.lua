@@ -59,7 +59,6 @@ require('lazy').setup({
     'shaunsingh/nord.nvim',
     config = function() require('plugins.nord-nvim') end
   },
-  { 'Yggdroot/indentLine' },
 
 
   -------------

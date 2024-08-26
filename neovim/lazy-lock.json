@@ -16,7 +16,6 @@
   "ferret": { "branch": "main", "commit": "0190acf27440d9f5acd67582bdb1a2b55f31c51a" },
   "fzf": { "branch": "master", "commit": "15257680948bda849747465ac4edf5e9d90f2a52" },
   "fzf.vim": { "branch": "master", "commit": "279e1ec068f526e985ee7e3f62a71f083bbe0196" },
-  "indentLine": { "branch": "master", "commit": "b96a75985736da969ac38b72a7716a8c57bdde98" },
   "lazy.nvim": { "branch": "main", "commit": "4ea9fe060042f345960ad0c01aa7bca91405e10a" },
   "lightline.vim": { "branch": "master", "commit": "58c97bc21c6f657d3babdd4eefce7593e30e75ce" },
   "loupe": { "branch": "main", "commit": "9189e7fa2d9dd54f4f0211c5edfdd6260252fe4b" },
