@@ -2,5 +2,8 @@
 	email = lucid.machine@gmail.com
 	name = Eric Slenk
 
+[init]
+	defaultBranch = main
+
 [pull]
 	rebase = true
