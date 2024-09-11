@@ -16,8 +16,8 @@
 
 set -euo pipefail
 
-bin/install-skeleton.sh
+install/install-skeleton.sh
 echo
-bin/install-packages.sh
+install/install-packages.sh
 echo
-bin/install-plugins-nvim.sh
+install/install-plugins-nvim.sh
