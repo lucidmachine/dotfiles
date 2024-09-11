@@ -42,7 +42,7 @@ function link() {
 }
 
 # Set vars
-BASEDIR="$(dirname $(git rev-parse --git-dir))"
+BASEDIR="$(git rev-parse --show-toplevel)"
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-${HOME}/.config}"
 
 # Directories
