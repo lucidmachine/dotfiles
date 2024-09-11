@@ -42,7 +42,7 @@ function link() {
 }
 
 # Set vars
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BASEDIR="$(dirname $(git rev-parse --git-dir))"
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-${HOME}/.config}"
 
 # Directories
