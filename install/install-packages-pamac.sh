@@ -43,6 +43,7 @@ sudo pamac install --no-confirm \
   tmux \
   tree \
   typescript-language-server \
+  ueberzugpp \
   wget \
   zoxide \
   zsh
