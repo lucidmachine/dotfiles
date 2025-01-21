@@ -1,10 +1,9 @@
 snippet blog-frontmatter
-  Title:    ${1:title}
-  Date:     ${2:date}
-  Category: ${3:category}
-  Tags:     ${4:tags}
-  Summary:  ${5:summary}
-  Status:   ${6:status}
+	{:title       "${1:title}"
+	 :date        "${2:date}"
+	 :tags        [${3:tags}]
+	 :description "${4:description}"
+	 :preview     "${5:preview}"}
 
 snippet notes
   # ${1:title}
