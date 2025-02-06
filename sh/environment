@@ -4,8 +4,10 @@ export N_PREFIX="${HOME}/.n"
 # PATH
 export PATH="${HOME}/bin:${N_PREFIX}/bin:$PATH"
 
-# XDG_CONFIG_HOME
+# XDG
 export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_PICTURES_DIR="${HOME}/Pictures"
+export XDG_SCREENSHOTS_DIR="${XDG_PICTURES_DIR}/Screenshots"
 
 # Set default editor
 if command -v nvim &> /dev/null;   then export VISUAL='nvim'
