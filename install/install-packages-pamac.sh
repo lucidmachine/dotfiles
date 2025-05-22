@@ -39,6 +39,7 @@ sudo pamac install --no-confirm \
   neovim \
   ranger \
   ripgrep \
+  sassc \
   shellcheck \
   tmux \
   tree \
