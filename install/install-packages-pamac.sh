@@ -25,6 +25,7 @@ sudo pamac install --no-confirm \
   clj-kondo-bin \
   curl \
   ctags \
+  dart-sass \
   fd \
   firefox \
   fzf \
@@ -39,7 +40,6 @@ sudo pamac install --no-confirm \
   neovim \
   ranger \
   ripgrep \
-  sassc \
   shellcheck \
   tmux \
   tree \
