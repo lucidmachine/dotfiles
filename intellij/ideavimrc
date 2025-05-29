@@ -73,6 +73,14 @@ noremap <leader>wl <C-W>l
 " noremap <leader>w+ <C-W>+
 " noremap <leader>w- <C-W>-
 
+
+"""""""""
+" Plugins
+"""""""""
+Plug 'tpope/vim-surround'
+set surround
+
+
 """"""""""
 " Settings
 """"""""""
