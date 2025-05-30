@@ -70,6 +70,6 @@ Configuration, powered by a shell script.
 * zsh
 
 ## "Tested" On
-* Manjaro 24.0
-* macOS 14
+* Manjaro 25.0
+* macOS 15
 * Amazon Linux 2
