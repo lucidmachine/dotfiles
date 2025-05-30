@@ -13,51 +13,58 @@ let mapleader = " "
 let maplocalleader = "\\"
 
 " Buffers
-noremap <silent> <leader>bb <Action>(RecentFiles)
+noremap <silent> <leader>bb :action RecentFiles<CR>
 
 " Comments
-noremap <silent> <leader>; <Action>(CommentByLineComment)
-xnoremap <silent> <leader>; <Action>(CommentByLineComment)
+noremap <silent> <leader>; :action CommentByLineComment<CR>
+xnoremap <silent> <leader>; :action CommentByLineComment<CR>
 
 " Copy
 " noremap <silent> <leader>cc :call mappings#copy_buffer_to_clipboard()<CR>
 " xnoremap <silent> <leader>cc :call mappings#copy_selection_to_clipboard()<CR>
-noremap <silent> <leader>cp <Action>(CopyContentRootPath)
-noremap <silent> <leader>cP <Action>(CopyAbsolutePath)
-noremap <silent> <leader>cr <Action>(CopyReference)
-
-" Diagnostics
-nmap <leader>dl <Action>(ActivateProblemsViewToolWindow)
-nmap <leader>dn <Action>(GotoNextError)
-nmap <leader>dp <Action>(GotoPreviousError)
+noremap <silent> <leader>cp :action CopyContentRootPath<CR>
+noremap <silent> <leader>cP :action CopyAbsolutePath<CR>
+noremap <silent> <leader>cr :action CopyReference<CR>
 
 " Documentation
-nnoremap <silent> K <Action>(QuickJavaDoc)
+nnoremap <silent> K :action QuickJavaDoc<CR>
 
 " Files
-noremap <silent> <leader>fe <Action>(ActivateProjectToolWindow)
-noremap <silent> <leader>ff <Action>(GotoFile)
+noremap <silent> <leader>fe :action ActivateProjectToolWindow<CR>
+noremap <silent> <leader>ff :action GotoFile<CR>
 
 " Goto
-nmap <silent> gd <Action>(GotoDeclaration)
-nmap <silent> gy <Action>(GotoTypeDeclaration)
-nmap <silent> gi <Action>(GotoImplementation)
-nmap <silent> gr <Action>(ShowUsages)
+nmap <silent> gd :action GotoDeclaration<CR>
+nmap <silent> gy :action GotoTypeDeclaration<CR>
+nmap <silent> gi :action GotoImplementation<CR>
+nmap <silent> gr :action ShowUsages<CR>
+
+" Lists
+noremap <silent> <leader>ll :action ActivateProblemsViewToolWindow<CR>
+" noremap <silent> <leader>ln :lnext<CR>
+" noremap <silent> <leader>lp :lprevious<CR>
+" noremap <silent> <leader>qq :call ToggleQuickfixList()<CR>
+" noremap <silent> <leader>qn :cnext<CR>
+" noremap <silent> <leader>qp :cprevious<CR>
 
 " Refactorings
-nmap <leader>ra <Action>(ShowIntentionActions)
-nmap <leader>ri <Action>(Inline)
-nmap <leader>rl <Action>(ReformatCode)
-nmap <leader>ro <Action>(OptimizeImports)
-nmap <leader>rr <Action>(RenameElement)
+nmap <leader>ra :action ShowIntentionActions<CR>
+nmap <leader>ri :action Inline<CR>
+nmap <leader>rl :action ReformatCode<CR>
+nmap <leader>ro :action OptimizeImports<CR>
+nmap <leader>rr :action RenameElement<CR>
+
+
+" Tags
+" noremap <silent> <leader>gt :TlistToggle<CR>
 
 " IDEAVim Configuration
 " noremap <silent> <leader>vv :tabnew $MYVIMRC<CR>
-noremap <silent> <leader>vr :source ~/.ideavimrc<CR>
+noremap <silent> <leader>vr :source ~/.ideavimrc
 
 " Windows
 noremap <leader>wo :only<CR>
-noremap <leader>wq <Action>(CloseContent)
+noremap <leader>wq :action CloseContent<CR>
 noremap <leader>wh <C-W>h
 noremap <leader>wj <C-W>j
 noremap <leader>wk <C-W>k
