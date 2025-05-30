@@ -15,8 +15,10 @@ function dir() {
 
   if [ -d "${target_dir}" ]; then
     echo "${target_dir} already exists. Skipping."
+
   elif [ -e "${target_dir}" ]; then
     echo "${target_dir} already exists, but is not a directory. Skipping."
+
   else
     # mkdir short flags used for macOS compatibility
     # -p - Create intermediate parent directories
@@ -25,9 +27,22 @@ function dir() {
   fi
 }
 
-function link() {
+function rm_and_link() {
   local target_file="${1}"
   local link_name="${2}"
+
+  if [ -d "${link_name}" ]; then
+    echo "Removing directory ${link_name}"
+    rm -r "${link_name}"
+
+  elif [ -f "${link_name}" ]; then
+    echo "Removing file ${link_name}"
+    rm "${link_name}"
+
+  else
+    echo "Creating file ${link_name}"
+
+  fi
  
   # -s - Symbolic link
   # -f - If the link already exists, overwrite it
@@ -55,23 +70,23 @@ echo
 echo "################################################################################"
 echo "# Creating Symlinks"
 echo "################################################################################"
-link "${BASEDIR}/alacritty"           "${XDG_CONFIG_HOME}/alacritty"
-link "${BASEDIR}/bash/palette"        "${HOME}/.palette"
-link "${BASEDIR}/bash/rc"             "${HOME}/.bashrc"
-link "${BASEDIR}/clojure"             "${XDG_CONFIG_HOME}/clojure"
-link "${BASEDIR}/git"                 "${XDG_CONFIG_HOME}/git"
-link "${BASEDIR}/git/git-sh-prompt"   "${HOME}/.git-prompt.sh"
-link "${BASEDIR}/intellij/ideavimrc"  "${HOME}/.ideavimrc"
-link "${BASEDIR}/kitty"               "${XDG_CONFIG_HOME}/kitty"
-link "${BASEDIR}/neovim"              "${XDG_CONFIG_HOME}/nvim"
-link "${BASEDIR}/ranger"              "${XDG_CONFIG_HOME}/ranger"
-link "${BASEDIR}/skhd"                "${XDG_CONFIG_HOME}/skhd"
-link "${BASEDIR}/sh/aliases"          "${HOME}/.aliases"
-link "${BASEDIR}/sh/environment"      "${HOME}/.environment"
-link "${BASEDIR}/sh/environment"      "${HOME}/.zshenv"
-link "${BASEDIR}/sway"                "${XDG_CONFIG_HOME}/sway"
-link "${BASEDIR}/tmux/tmux.conf"      "${HOME}/.tmux.conf"
-link "${BASEDIR}/vim/vimrc"           "${HOME}/.vimrc"
-link "${BASEDIR}/waybar"              "${XDG_CONFIG_HOME}/waybar"
-link "${BASEDIR}/x11/Xresources"      "${HOME}/.Xresources"
-link "${BASEDIR}/zsh/rc"              "${HOME}/.zshrc"
+rm_and_link "${BASEDIR}/alacritty"           "${XDG_CONFIG_HOME}/alacritty"
+rm_and_link "${BASEDIR}/bash/palette"        "${HOME}/.palette"
+rm_and_link "${BASEDIR}/bash/rc"             "${HOME}/.bashrc"
+rm_and_link "${BASEDIR}/clojure"             "${XDG_CONFIG_HOME}/clojure"
+rm_and_link "${BASEDIR}/git"                 "${XDG_CONFIG_HOME}/git"
+rm_and_link "${BASEDIR}/git/git-sh-prompt"   "${HOME}/.git-prompt.sh"
+rm_and_link "${BASEDIR}/intellij/ideavimrc"  "${HOME}/.ideavimrc"
+rm_and_link "${BASEDIR}/kitty"               "${XDG_CONFIG_HOME}/kitty"
+rm_and_link "${BASEDIR}/neovim"              "${XDG_CONFIG_HOME}/nvim"
+rm_and_link "${BASEDIR}/ranger"              "${XDG_CONFIG_HOME}/ranger"
+rm_and_link "${BASEDIR}/skhd"                "${XDG_CONFIG_HOME}/skhd"
+rm_and_link "${BASEDIR}/sh/aliases"          "${HOME}/.aliases"
+rm_and_link "${BASEDIR}/sh/environment"      "${HOME}/.environment"
+rm_and_link "${BASEDIR}/sh/environment"      "${HOME}/.zshenv"
+rm_and_link "${BASEDIR}/sway"                "${XDG_CONFIG_HOME}/sway"
+rm_and_link "${BASEDIR}/tmux/tmux.conf"      "${HOME}/.tmux.conf"
+rm_and_link "${BASEDIR}/vim/vimrc"           "${HOME}/.vimrc"
+rm_and_link "${BASEDIR}/waybar"              "${XDG_CONFIG_HOME}/waybar"
+rm_and_link "${BASEDIR}/x11/Xresources"      "${HOME}/.Xresources"
+rm_and_link "${BASEDIR}/zsh/rc"              "${HOME}/.zshrc"
