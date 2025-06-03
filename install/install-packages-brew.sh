@@ -29,13 +29,13 @@ brew install \
   clojure-lsp/brew/clojure-lsp-native \
   ctags \
   curl \
+  d2 \
   fd \
   firefox \
   fzf \
   git \
   htop \
   kitty \
-  koekeishiya/formulae/skhd \
   jdtls \
   jq \
   less \
@@ -49,8 +49,7 @@ brew install \
   tmux \
   tree \
   typescript-language-server \
+  vscodium \
   wget \
   zoxide \
   zsh
-
-brew services start skhd

@@ -62,7 +62,6 @@ Configuration, powered by a shell script.
 * ranger
 * ripgrep
 * shellcheck
-* skhd
 * tmux
 * tree
 * wget
