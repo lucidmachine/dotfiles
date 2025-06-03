@@ -25,6 +25,7 @@ sudo pamac install --no-confirm \
   clj-kondo-bin \
   curl \
   ctags \
+  d2 \
   dart-sass \
   fd \
   firefox \
