@@ -64,6 +64,9 @@ Configuration, powered by a shell script.
 * shellcheck
 * tmux
 * tree
+* VSCodium
+    * Settings
+    * Extensions
 * wget
 * zoxide
 * zsh

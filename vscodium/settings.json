@@ -1,0 +1,8 @@
+{
+    "vim.smartRelativeLine": true,
+    "workbench.colorTheme": "Nord",
+    "vim.leader": " ",
+    "vim.showMarksInGutter": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false
+}

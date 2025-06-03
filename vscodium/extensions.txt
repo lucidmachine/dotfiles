@@ -1,0 +1,10 @@
+angular.ng-template
+arcticicestudio.nord-visual-studio-code
+betterthantomorrow.calva
+cyrilletuzi.angular-schematics
+golang.go
+redhat.java
+redhat.vscode-yaml
+sonarsource.sonarlint-vscode
+terrastruct.d2
+vscodevim.vim
