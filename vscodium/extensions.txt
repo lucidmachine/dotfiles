@@ -1,7 +1,9 @@
 angular.ng-template
 arcticicestudio.nord-visual-studio-code
 betterthantomorrow.calva
-cyrilletuzi.angular-schematics
+dbaeumer.vscode-eslint
+esbenp.prettier-vscode
+gabrielbb.vscode-lombok
 golang.go
 redhat.java
 redhat.vscode-yaml
