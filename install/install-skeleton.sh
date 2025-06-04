@@ -87,7 +87,11 @@ rm_and_link "${BASEDIR}/sh/environment"         "${HOME}/.zshenv"
 rm_and_link "${BASEDIR}/sway"                   "${XDG_CONFIG_HOME}/sway"
 rm_and_link "${BASEDIR}/tmux/tmux.conf"         "${HOME}/.tmux.conf"
 rm_and_link "${BASEDIR}/vim/vimrc"              "${HOME}/.vimrc"
-rm_and_link "${BASEDIR}/vscodium/settings.json" "${XDG_CONFIG_HOME}/VSCodium/User/settings.json"
+if command -v pamac &> /dev/null; then
+  rm_and_link "${BASEDIR}/vscodium/settings.json" "${XDG_CONFIG_HOME}/VSCodium/User/settings.json"
+elif command -v brew &> /dev/null; then
+  rm_and_link "${BASEDIR}/vscodium/settings.json" "${HOME}/Library/Application Support/VSCodium/User/settings.json"
+fi
 rm_and_link "${BASEDIR}/waybar"                 "${XDG_CONFIG_HOME}/waybar"
 rm_and_link "${BASEDIR}/x11/Xresources"         "${HOME}/.Xresources"
 rm_and_link "${BASEDIR}/zsh/rc"                 "${HOME}/.zshrc"
