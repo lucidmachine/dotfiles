@@ -2,9 +2,47 @@
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
 
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
     "vim.leader": " ",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // Comments
+        { "before": ["<leader>", ";"],  "commands": ["editor.action.addCommentLine"]},
+
+        // Copy
+        { "before": ["<leader>", "c", "c"],     "commands": ["editor.action.selectAll", "editor.action.clipboardCopyAction"]},
+        { "before": ["<leader>", "c", "p"],     "commands": ["copyRelativeFilePath"]},
+        { "before": ["<leader>", "c", "P"],     "commands": ["copyFilePath"]},
+
+        // Files
+        { "before": ["<leader>", "f", "f"],     "commands": ["workbench.action.quickOpen"]},
+        { "before": ["<leader>", "f", "e"],     "commands": ["workbench.view.explorer"]},
+
+        // Refactoring
+        { "before": ["<leader>", "r", "r"],     "commands": ["editor.action.rename"]},
+        { "before": ["<leader>", "r", "a"],     "commands": ["problems.action.showQuickFixes"]},
+
+        // Search
+        { "before": ["<leader>", "s", "s"],     "commands": ["workbench.action.findInFiles"]},
+
+        // Windows
+        { "before": ["<leader>", "w", "q"],     "after": ["<C-W>", "q"] },
+        { "before": ["<leader>", "w", "w"],     "after": ["<C-W>", "w"] },
+        { "before": ["<leader>", "w", "h"],     "after": ["<C-W>", "h"] },
+        { "before": ["<leader>", "w", "j"],     "after": ["<C-W>", "j"] },
+        { "before": ["<leader>", "w", "k"],     "after": ["<C-W>", "k"] },
+        { "before": ["<leader>", "w", "l"],     "after": ["<C-W>", "l"] },
+    ],
     "vim.showMarksInGutter": true,
     "vim.smartRelativeLine": true,
+    "vim.surround": true,
+    "vim.visualModeKeyBindingsNonRecursive": [
+        // Comments
+        { "before": ["<leader>", ";"],  "commands": ["editor.action.addCommentLine"]},
+
+        // Copy
+        { "before": ["<leader>", "c", "c"],     "commands": ["editor.action.clipboardCopyAction"]},
+    ],
 
     "workbench.colorTheme": "Nord",
 }
