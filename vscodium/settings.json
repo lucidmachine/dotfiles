@@ -29,11 +29,10 @@
 
         // Windows
         { "before": ["<leader>", "w", "q"],     "after": ["<C-W>", "q"] },
-        { "before": ["<leader>", "w", "w"],     "after": ["<C-W>", "w"] },
         { "before": ["<leader>", "w", "h"],     "after": ["<C-W>", "h"] },
         { "before": ["<leader>", "w", "j"],     "after": ["<C-W>", "j"] },
         { "before": ["<leader>", "w", "k"],     "after": ["<C-W>", "k"] },
-        { "before": ["<leader>", "w", "l"],     "after": ["<C-W>", "l"] },
+        { "before": ["<leader>", "w", "l"],     "after": ["<C-W>", "l"] }
     ],
     "vim.showMarksInGutter": true,
     "vim.smartRelativeLine": true,
@@ -43,9 +42,9 @@
         { "before": ["<leader>", ";"],  "commands": ["editor.action.addCommentLine"]},
 
         // Copy
-        { "before": ["<leader>", "c", "c"],     "commands": ["editor.action.clipboardCopyAction"]},
+        { "before": ["<leader>", "c", "c"],     "commands": ["editor.action.clipboardCopyAction"]}
     ],
 
     "workbench.colorTheme": "Nord",
-    "workbench.startupEditor": "none",
+    "workbench.startupEditor": "none"
 }
