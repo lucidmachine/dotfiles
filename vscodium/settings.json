@@ -5,6 +5,7 @@
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
 
+    "vim.highlightedyank.enable": true,
     "vim.hlsearch": true,
     "vim.incsearch": true,
     "vim.leader": " ",
