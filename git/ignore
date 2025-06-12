@@ -9,7 +9,10 @@
 .kitchen/
 
 # Clojure
+.calva/
+.clerk/
 .clj-kondo/
+.cpcache/
 
 # Eclipse
 .settings/
