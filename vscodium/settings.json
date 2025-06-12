@@ -1,4 +1,6 @@
 {
+    "editor.rulers": [100],
+
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
 
@@ -45,4 +47,5 @@
     ],
 
     "workbench.colorTheme": "Nord",
+    "workbench.startupEditor": "none",
 }
