@@ -34,7 +34,9 @@
         { "before": ["<leader>", "w", "h"],     "after": ["<C-W>", "h"] },
         { "before": ["<leader>", "w", "j"],     "after": ["<C-W>", "j"] },
         { "before": ["<leader>", "w", "k"],     "after": ["<C-W>", "k"] },
-        { "before": ["<leader>", "w", "l"],     "after": ["<C-W>", "l"] }
+        { "before": ["<leader>", "w", "l"],     "after": ["<C-W>", "l"] },
+        { "before": ["<leader>", "w", "b"],     "commands": ["workbench.action.toggleSidebarVisibility"]},
+        { "before": ["<leader>", "w", "p"],     "commands": ["workbench.action.togglePanel"]}
     ],
     "vim.showMarksInGutter": true,
     "vim.smartRelativeLine": true,
