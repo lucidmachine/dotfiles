@@ -56,5 +56,8 @@ venv/
 .netrwhist
 tags
 
+# VSCodium
+.vscodium/
+
 *.gmo
 *.in
