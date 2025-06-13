@@ -46,7 +46,7 @@ sudo pamac install --no-confirm \
   tree \
   typescript-language-server \
   ueberzugpp \
-  vscodium \
+  vscodium-bin \
   wget \
   zoxide \
   zsh
