@@ -21,10 +21,9 @@
     "modules-center": ["custom/wf-recorder", "sway/mode"],
     "modules-right": [
         // informational
-        "custom/zeit",
         "cpu",
-        "temperature",
         "memory",
+        "temperature",
         "battery",
 
         // media
