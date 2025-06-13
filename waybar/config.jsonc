@@ -27,10 +27,6 @@
         "memory",
         "battery",
 
-        // connecting
-        "network",
-        "bluetooth",
-
         // media
         "custom/playerctl",
         "idle_inhibitor",
@@ -39,8 +35,6 @@
         "backlight",
 
         // system
-        "custom/adaptive-light",
-        "custom/sunset",
         "custom/pacman",
 
         "tray",
