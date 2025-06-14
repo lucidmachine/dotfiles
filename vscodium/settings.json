@@ -5,6 +5,14 @@
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
 
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-b>": false,
+        "<C-j>": false,
+        "<C-f>": false,
+        "<C-p>": false,
+        "<C-w>": false
+    },
     "vim.highlightedyank.enable": true,
     "vim.hlsearch": true,
     "vim.incsearch": true,
@@ -45,9 +53,14 @@
         {"before": ["<leader>", "w", "k"],      "after": ["<C-W>", "k"]},
         {"before": ["<leader>", "w", "l"],      "after": ["<C-W>", "l"]},
         {"before": ["<leader>", "w", "q"],      "after": ["<C-W>", "q"]},
+        {"before": ["<leader>", "w", "s"],      "commands": ["workbench.action.splitEditorDown"]},
+        {"before": ["<leader>", "w", "v"],      "commands": ["workbench.action.splitEditor"]},
         {"before": ["<leader>", "w", "b"],      "commands": ["workbench.action.toggleSidebarVisibility"]},
+        {"before": ["<leader>", "w", "B"],      "commands": ["workbench.action.toggleAuxiliaryBar"]},
         {"before": ["<leader>", "w", "m"],      "commands": ["editor.action.toggleMinimap"]},
-        {"before": ["<leader>", "w", "p"],      "commands": ["workbench.action.togglePanel"]}
+        {"before": ["<leader>", "w", "p"],      "commands": ["workbench.action.togglePanel"]},
+        {"before": ["<leader>", "w", "t"],      "commands": ["workbench.action.nextEditor"]},
+        {"before": ["<leader>", "w", "T"],      "commands": ["workbench.action.previousEditor"]}
     ],
     "vim.showMarksInGutter": true,
     "vim.smartRelativeLine": true,
@@ -60,9 +73,9 @@
         {"before": ["<leader>", "c", "c"],      "commands": ["editor.action.clipboardCopyAction"]},
 
         // Refactoring
-        {"before": ["<leader>", "r", "l"],      "commands": ["editor.action.formatSelection"]},
+        {"before": ["<leader>", "r", "l"],      "commands": ["editor.action.formatSelection"]}
     ],
 
     "workbench.colorTheme": "Nord",
-    "workbench.startupEditor": "none",
+    "workbench.startupEditor": "none"
 }
