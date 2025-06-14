@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.confluencewiki,*.confluece,*.jira set filetype=confluencewiki
+au BufRead,BufNewFile *.confluencewiki,*.confluence,*.jira set filetype=confluencewiki
