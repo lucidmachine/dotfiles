@@ -39,9 +39,9 @@ vim.keymap.set(
 
 -- Diagnostics
 vim.keymap.set('n', '<Leader>dl', vim.diagnostic.setloclist, { silent = true })
-vim.keymap.set('n', '<Leader>dn', vim.diagnostic.goto_next, { silent = true })
+vim.keymap.set('n', '<Leader>dn', function() vim.diagnostic.jump({count = 1, float = true}) end, { silent = true })
 vim.keymap.set('n', '<Leader>do', vim.diagnostic.open_float, { silent = true })
-vim.keymap.set('n', '<Leader>dp', vim.diagnostic.goto_prev, { silent = true })
+vim.keymap.set('n', '<Leader>dp', function() vim.diagnostic.jump({count = -1, float = true}) end, { silent = true })
 vim.keymap.set('n', '<Leader>dq', vim.diagnostic.setqflist, { silent = true })
 
 -- Files
