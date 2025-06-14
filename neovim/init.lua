@@ -1,6 +1,6 @@
 require('options')
 require('appearance')
 require('plugins')
-require('functions')
+require('actions')
 require('mappings')
 require('commands')

@@ -1,3 +1,5 @@
+local actions = require('actions')
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
@@ -12,36 +14,16 @@ vim.keymap.set('o', '<Leader>;', '<Plug>Commentary')
 vim.keymap.set('n', '<Leader>;;', '<Plug>CommentaryLine')
 
 -- Copy
-vim.keymap.set(
-  'n',
-  '<Leader>cc',
-  require('functions').copyBufferToClipboard,
-  { silent = true }
-)
-vim.keymap.set(
-  'x',
-  '<Leader>cc',
-  require('functions').copyVisualSelectionToClipboard,
-  { silent = true }
-)
-vim.keymap.set(
-  'n',
-  '<Leader>cp',
-  require('functions').copyCurrentFileRelativePathToClipboard,
-  { silent = true }
-)
-vim.keymap.set(
-  'n',
-  '<Leader>cP',
-  require('functions').copyCurrentFileAbsolutePathToClipboard,
-  { silent = true }
-)
+vim.keymap.set('n', '<Leader>cc', actions.copyBufferToClipboard, { silent = true })
+vim.keymap.set('x', '<Leader>cc', actions.copyVisualSelectionToClipboard, { silent = true })
+vim.keymap.set('n', '<Leader>cp', actions.copyCurrentFileRelativePathToClipboard, { silent = true })
+vim.keymap.set('n', '<Leader>cP', actions.copyCurrentFileAbsolutePathToClipboard, { silent = true })
 
 -- Diagnostics
 vim.keymap.set('n', '<Leader>dl', vim.diagnostic.setloclist, { silent = true })
-vim.keymap.set('n', '<Leader>dn', function() vim.diagnostic.jump({count = 1, float = true}) end, { silent = true })
+vim.keymap.set('n', '<Leader>dn', actions.nextDiagnostic, { silent = true })
 vim.keymap.set('n', '<Leader>do', vim.diagnostic.open_float, { silent = true })
-vim.keymap.set('n', '<Leader>dp', function() vim.diagnostic.jump({count = -1, float = true}) end, { silent = true })
+vim.keymap.set('n', '<Leader>dp', actions.prevDiagnostic, { silent = true })
 vim.keymap.set('n', '<Leader>dq', vim.diagnostic.setqflist, { silent = true })
 
 -- Files
@@ -67,11 +49,11 @@ vim.keymap.set('n', '<Leader>qn', ':cnext<CR>')
 vim.keymap.set('n', '<Leader>qp', ':cprevious<CR>')
 
 -- Refactorings
-vim.keymap.set('n', '<Leader>rr', require('functions').rename)
+vim.keymap.set('n', '<Leader>rr', actions.smartRename)
 vim.keymap.set('n', '<Leader>rR', '<Plug>(Scalpel)')
 vim.keymap.set('n', '<Leader>ra', vim.lsp.buf.code_action)
 vim.keymap.set('n', '<Leader>rl', vim.lsp.buf.format)
-vim.keymap.set('n', '<Leader>ro', function() require('jdtls').organize_imports() end)
+vim.keymap.set('n', '<Leader>ro', actions.smartOrganizeImports)
 
 -- Search
 vim.keymap.set('n', '<Leader>ss', '<Plug>(FerretAck)')
@@ -115,8 +97,8 @@ vim.keymap.set('n', '<Leader>gt', '<Cmd>AerialToggle<CR>', { silent = true })
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- Toggles and Cycles
-vim.keymap.set('n', '<Leader>tc', require('functions').cycleColumns, { silent = true })
-vim.keymap.set('n', '<Leader>ti', require('functions').cycleIndentationMode, { silent = true })
+vim.keymap.set('n', '<Leader>tc', actions.cycleColumns, { silent = true })
+vim.keymap.set('n', '<Leader>ti', actions.cycleIndentationMode, { silent = true })
 vim.keymap.set('n', '<Leader>tp', ':call AutoPairsToggle()<CR>', { silent = true })
 
 -- Vim Configuration
