@@ -36,6 +36,7 @@ sudo pamac install --no-confirm \
   jq \
   less \
   lua-language-server \
+  luarocks \
   make \
   marksman \
   neovim \

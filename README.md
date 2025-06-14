@@ -59,6 +59,7 @@ Configuration, powered by a shell script.
     - Bash Language Server
     - Clojure LSP
     - Eclipse JDT
+    - Lua Language Server
     - Marksman
     - TypeScript Language Server
     - Vim Language Server

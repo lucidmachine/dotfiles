@@ -40,6 +40,7 @@ brew install \
   jq \
   less \
   lua-language-server \
+  luarocks \
   make \
   marksman \
   neovim \
