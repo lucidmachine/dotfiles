@@ -24,17 +24,20 @@
         "cpu",
         "memory",
         "temperature",
-        "battery",
 
-        // media
-        "custom/playerctl",
+        // Toggles
         "idle_inhibitor",
         "custom/dnd",
-        "pulseaudio",
-        "backlight",
+        "custom/sunset",
 
         // system
         "custom/pacman",
+
+        // Percentages
+        "pulseaudio",
+        "backlight",
+        "battery",
+
 
         "tray",
         "clock"
@@ -172,19 +175,6 @@
         "tooltip-format": "{}"
     },
 
-    "custom/scratchpad": {
-        "interval": "once",
-        "return-type": "json",
-        "format": "{icon}",
-        "format-icons": {
-            "one": "󰖯",
-            "many": "󰖲"
-        },
-        "exec": "/bin/sh /usr/share/sway/scripts/scratchpad.sh",
-        "on-click": "swaymsg 'scratchpad show'",
-        "signal": 7
-    },
-
     "custom/sunset": {
         "interval": "once",
         "tooltip": true,
@@ -257,20 +247,6 @@
             "ThunderySnowShowers": "",
             "VeryCloudy": ""
         }
-    },
-
-    "custom/zeit": {
-        "return-type": "json",
-        "interval": "once",
-        "format": "{icon}",
-        "format-icons": {
-            "tracking": "󰖷",
-            "stopped": "󰋣"
-        },
-        "exec": "/bin/sh /usr/share/sway/scripts/zeit.sh status",
-        "on-click": "/bin/sh /usr/share/sway/scripts/zeit.sh click; pkill -RTMIN+10 waybar",
-        "exec-if": "[ -x \"$(command -v zeit)\" ]",
-        "signal": 10
     },
 
     "custom/dnd": {
