@@ -24,23 +24,6 @@ M.cycleColumns = function()
 end
 
 
-local inccommandCycle = {
-  ['split'] = 'nosplit',
-  ['nosplit'] = 'split',
-}
-
---- Cycle the inccommand mode
--- split -> nosplit -> split
-M.cycleInccommand = function()
-  local current = vim.o.inccommand
-  local next = advanceCycle(inccommandCycle, current, 'split')
-
-  vim.o.inccommand = next
-
-  vim.print(next)
-end
-
-
 IndentationMode = 's2'
 
 local indentationModeCycle = {
