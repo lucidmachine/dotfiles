@@ -10,8 +10,12 @@ Configuration, powered by a shell script.
     - Profile
     - Aliases
     - Color palette
+- Clojure
 - Git
-    - Prompt    
+    - Config
+    - Ignore
+    - Prompt
+- IntelliJ IDEA
 - Kitty
 - NeoVim
     - Plugins
@@ -31,6 +35,9 @@ Configuration, powered by a shell script.
 - tmux
     - Color support
     - Bindings
+- Vim
+- VSCodium
+- Waybar
 
 
 ## Installs
@@ -59,8 +66,8 @@ Configuration, powered by a shell script.
 - less
 - make
 - n and NodeJS
-- neovim
-- ranger
+- NeoVim
+- Ranger
 - ripgrep
 - shellcheck
 - tmux
@@ -77,4 +84,3 @@ Configuration, powered by a shell script.
 
 - Manjaro 25.0
 - macOS 15
-- Amazon Linux 2
