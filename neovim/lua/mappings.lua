@@ -67,8 +67,8 @@ vim.keymap.set('n', '<Leader>qn', ':cnext<CR>')
 vim.keymap.set('n', '<Leader>qp', ':cprevious<CR>')
 
 -- Refactorings
-vim.keymap.set('n', '<Leader>rr', '<Plug>(Scalpel)')
-vim.keymap.set('n', '<Leader>rR', vim.lsp.buf.rename)
+vim.keymap.set('n', '<Leader>rr', require('functions').rename)
+vim.keymap.set('n', '<Leader>rR', '<Plug>(Scalpel)')
 vim.keymap.set('n', '<Leader>ra', vim.lsp.buf.code_action)
 vim.keymap.set('n', '<Leader>rl', vim.lsp.buf.format)
 vim.keymap.set('n', '<Leader>ro', function() require('jdtls').organize_imports() end)

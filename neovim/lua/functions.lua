@@ -134,4 +134,18 @@ M.copyCurrentFileAbsolutePathToClipboard = function()
   vim.fn.setreg('+', getCurrentFileAbsolutePath())
 end
 
+--- Renames the symbol under the cursor
+M.rename = function()
+  local lspClientsSupportingRename = vim.lsp.get_clients({
+    buffnr = 0,
+    method = 'rename',
+  })
+
+  if #lspClientsSupportingRename > 0 then
+    vim.lsp.buf.rename(nil)
+  else
+    vim.cmd('<Plug>(Scalpel)')
+  end
+end
+
 return M
