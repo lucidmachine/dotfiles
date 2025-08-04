@@ -1,5 +1,0 @@
-# #########
-# Launchers
-# #########
-cmd + alt - return              : /Applications/kitty.app/Contents/MacOS/kitty "${HOME}"
-cmd + alt - w                   : /Applications/Firefox.app/Contents/MacOS/firefox
