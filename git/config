@@ -10,3 +10,7 @@
 
 [push]
 	autoSetupRemote = true
+
+[alias]
+	co = checkout
+  unstage = 'reset HEAD --'
