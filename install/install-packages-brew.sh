@@ -32,6 +32,7 @@ brew install \
   d2 \
   fd \
   firefox \
+  font-jetbrains-mono-nerd-font \
   fzf \
   git \
   htop \

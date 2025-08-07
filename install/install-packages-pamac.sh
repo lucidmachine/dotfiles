@@ -45,6 +45,8 @@ sudo pamac install --no-confirm \
   shellcheck \
   tmux \
   tree \
+  ttf-font-awesome \
+  ttf-jetbrains-mono \
   typescript-language-server \
   ueberzugpp \
   vscodium-bin \
