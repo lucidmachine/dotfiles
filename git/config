@@ -14,3 +14,6 @@
 [alias]
 	co = checkout
   unstage = 'reset HEAD --'
+
+[diff]
+tool = nvimdiff
