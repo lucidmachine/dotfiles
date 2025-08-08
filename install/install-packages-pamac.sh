@@ -18,6 +18,7 @@ echo "##########################################################################
 sudo pamac install --no-confirm \
   alacritty \
   babashka-bin \
+  bat \
   bash \
   bash-language-server \
   clojure \

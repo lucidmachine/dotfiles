@@ -25,6 +25,7 @@ brew install \
   borkdude/brew/babashka \
   borkdude/brew/clj-kondo \
   bash \
+  bat \
   clojure/tools/clojure \
   clojure-lsp/brew/clojure-lsp-native \
   ctags \

@@ -16,7 +16,6 @@ Configuration, powered by a shell script.
     - Ignore
     - Prompt
 - IntelliJ IDEA
-- Kitty
 - NeoVim
     - Plugins
     - Settings
@@ -44,6 +43,7 @@ Configuration, powered by a shell script.
 
 - alacritty
 - bash
+- bat
 - Babashka
 - Clojure
 - curl
