@@ -1,4 +1,4 @@
-install.conf.yaml
+alacritty/alacritty-ext.toml
 neovim/plugin/packer_compiled.lua
 neovim/.netrwhist
 sway/generated_background.svg
