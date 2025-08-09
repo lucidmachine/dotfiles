@@ -64,7 +64,6 @@ window#waybar {
 #custom-clipboard,
 #custom-zeit,
 #custom-dnd,
-#bluetooth,
 #battery,
 #clock,
 #cpu,
@@ -193,10 +192,6 @@ window#waybar {
 }
 
 #custom-pacman {
-    color: @warning_color;
-}
-
-#bluetooth.disabled {
     color: @warning_color;
 }
 
