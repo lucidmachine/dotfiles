@@ -134,8 +134,7 @@
         "format": "{icon}",
         "tooltip-format": "{temperatureC}°C",
         "format-icons": ["", "", ""],
-        "tooltip": true,
-        "on-click": "swaymsg exec \"\\$once \\$term_float watch sensors\""
+        "tooltip": true
     },
 
     "tray": {
