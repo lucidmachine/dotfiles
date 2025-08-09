@@ -30,9 +30,6 @@
         "custom/dnd",
         "custom/sunset",
 
-        // system
-        "custom/pacman",
-
         // Percentages
         "pulseaudio",
         "backlight",
@@ -140,15 +137,6 @@
     "tray": {
         "icon-size": 21,
         "spacing": 5
-    },
-
-    "custom/pacman": {
-        "format": "󰀼 {}",
-        "interval": 3600,
-        "exec-if": "[ $(pamac checkupdates -q | wc -l) -gt 0 ]",
-        "exec": "pamac checkupdates -q | wc -l",
-        "on-click": "pamac-manager --updates; pkill -RTMIN+4 waybar",
-        "signal": 4
     },
 
     "custom/sunset": {
