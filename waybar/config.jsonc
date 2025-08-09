@@ -182,37 +182,6 @@
         "signal": 5
     },
 
-    "custom/weather": {
-        "icon-size": 42,
-        "format": "{icon} {}",
-        "tooltip": true,
-        "interval": 3600,
-        // accepts -c/--city <city> -t/--temperature <C/F> -d/--distance <km/miles>
-        "exec": "/usr/share/sway/scripts/weather.py",
-        "return-type": "json",
-        "format-icons": {
-            "Unknown": "",
-            "Cloudy": "󰖐",
-            "Fog": "",
-            "HeavyRain": "",
-            "HeavyShowers": "",
-            "HeavySnow": "",
-            "HeavySnowShowers": "󰜗",
-            "LightRain": "",
-            "LightShowers": "",
-            "LightSleet": "",
-            "LightSleetShowers": "",
-            "LightSnow": "",
-            "LightSnowShowers": "󰙿",
-            "PartlyCloudy": "",
-            "Sunny": "",
-            "ThunderyHeavyRain": "󰙾",
-            "ThunderyShowers": "",
-            "ThunderySnowShowers": "",
-            "VeryCloudy": ""
-        }
-    },
-
     "custom/dnd": {
         "interval": "once",
         "return-type": "json",
