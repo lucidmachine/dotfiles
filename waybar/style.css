@@ -56,20 +56,15 @@ window#waybar {
 }
 
 /* Each module */
-#custom-pacman,
 #custom-menu,
 #custom-help,
-#custom-scratchpad,
-#custom-github,
 #custom-clipboard,
-#custom-zeit,
 #custom-dnd,
 #battery,
 #clock,
 #cpu,
 #memory,
 #mode,
-#network,
 #pulseaudio,
 #temperature,
 #idle_inhibitor,
@@ -78,7 +73,6 @@ window#waybar {
 #custom-adaptive-light,
 #custom-sunset,
 #custom-playerctl,
-#custom-weather,
 #tray {
     padding-left: 10px;
     padding-right: 10px;
@@ -88,16 +82,11 @@ window#waybar {
  * Module styles
  * -------------------------------------------------------------------------- */
 
-#custom-scratchpad,
 #custom-menu,
 #workspaces button.focused,
 #clock {
     color: @theme_bg_color;
     background-color: @theme_selected_bg_color;
-}
-
-#custom-zeit.tracking {
-    background-color: @warning_color;
 }
 
 #battery {
@@ -161,10 +150,6 @@ window#waybar {
     background: @background_color;
 }
 
-#network.disconnected {
-    color: @warning_color;
-}
-
 #pulseaudio.muted {
     color: @warning_color;
 }
@@ -189,10 +174,6 @@ window#waybar {
 #workspaces button.urgent {
     border-color: @error_color;
     color: @error_color;
-}
-
-#custom-pacman {
-    color: @warning_color;
 }
 
 #custom-wf-recorder {
