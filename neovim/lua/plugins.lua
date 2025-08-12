@@ -26,8 +26,8 @@ require('lazy').setup({
     ft = 'clojure',
     init = function() require('plugins.cljfold-vim') end,
   },
-  { 'mfussenegger/nvim-jdtls',        ft = 'java', },
   { 'lucidmachine/vim-velocity',      ft = 'vtl', },
+  { 'mfussenegger/nvim-jdtls',        ft = 'java', },
   { 'mikeboiko/vim-markdown-folding', ft = 'markdown' },
   {
     'Olical/conjure',
