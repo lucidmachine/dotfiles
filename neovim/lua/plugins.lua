@@ -93,13 +93,11 @@ require('lazy').setup({
     event = 'VeryLazy',
     init = function() require('plugins.which-key-nvim') end
   },
-  { 'jiangmiao/auto-pairs' },
-  { 'junegunn/fzf' },
   {
-    'junegunn/fzf.vim',
-    build = function() vim.fn['fzf#install']() end,
-    init = function() require('plugins.fzf-vim') end
+    'ibhagwan/fzf-lua',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
+  { 'jiangmiao/auto-pairs' },
   {
     'L3MON4D3/LuaSnip',
     version = 'v2.*',

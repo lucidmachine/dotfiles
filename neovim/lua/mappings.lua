@@ -4,7 +4,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
 -- Buffers
-vim.keymap.set('n', '<Leader>bb', '<Cmd>Buffers<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>bb', '<Cmd>FzfLua buffers<CR>', { silent = true })
 vim.keymap.set('n', '<Leader>ba', '<Cmd>ball<CR>', { silent = true })
 
 -- Comments
@@ -27,9 +27,8 @@ vim.keymap.set('n', '<Leader>dp', actions.prevDiagnostic, { silent = true })
 vim.keymap.set('n', '<Leader>dq', vim.diagnostic.setqflist, { silent = true })
 
 -- Files
-vim.keymap.set('n', '<Leader>ff', ':Files<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>ff', '<Cmd>FzfLua files<CR>', { silent = true })
 vim.keymap.set('n', '<Leader>fe', ':Explore<CR>', { silent = true })
-vim.keymap.set('n', '<Leader>fg', ':GFiles<CR>', { silent = true })
 
 -- Goto
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
@@ -42,9 +41,11 @@ vim.keymap.set('n', 'K', vim.lsp.buf.hover)
 
 -- Lists
 vim.keymap.set('n', '<Leader>ll', ':call ToggleLocationList()<CR>')
+vim.keymap.set('n', '<Leader>lf', '<Cmd>FzfLua loclist<CR>')
 vim.keymap.set('n', '<Leader>ln', ':lnext<CR>')
 vim.keymap.set('n', '<Leader>lp', ':lprevious<CR>')
 vim.keymap.set('n', '<Leader>qq', ':call ToggleQuickfixList()<CR>')
+vim.keymap.set('n', '<Leader>qf', '<Cmd>FzfLua quickfix<CR>')
 vim.keymap.set('n', '<Leader>qn', ':cnext<CR>')
 vim.keymap.set('n', '<Leader>qp', ':cprevious<CR>')
 
