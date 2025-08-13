@@ -17,27 +17,6 @@ require('obsidian').setup({
     },
   },
 
-  callbacks = {
-    enter_note = function(_, note)
-      vim.keymap.set(
-        'n',
-        '<Localleader>cx',
-        function()
-          return require('obsidian').util.toggle_checkbox()
-        end,
-        { buffer = note.bufnr }
-      )
-      vim.keymap.set(
-        'n',
-        'gf',
-        function ()
-          return require('obsidian').util.gf_passthrough()
-        end,
-        { noremap = false, expr = true, buffer = note.bufnr }
-      )
-    end,
-  },
-
   daily_notes = {
     default_tags = {},
     folder = 'dailies',
@@ -47,6 +26,10 @@ require('obsidian').setup({
 
   disable_frontmatter = true,
   legacy_commands = false,
+
+  picker = {
+    name = 'fzf-lua',
+  },
 
   templates = {
     folder = 'templates',
