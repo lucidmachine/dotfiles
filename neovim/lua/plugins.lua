@@ -24,14 +24,14 @@ require('lazy').setup({
   {
     'gberenfield/cljfold.vim',
     ft = 'clojure',
-    init = function() require('plugins.cljfold-vim') end,
+    config = function() require('plugins.cljfold-vim') end,
   },
   {
     'obsidian-nvim/obsidian.nvim',
     version = '*',
     lazy = true,
     ft = 'markdown',
-    init = function() require('plugins.obsidian-nvim') end,
+    config = function() require('plugins.obsidian-nvim') end,
     dependencies = {
       -- Required
       'nvim-lua/plenary.nvim',
