@@ -9,6 +9,11 @@ vim.api.nvim_create_autocmd(
       vim.keymap.set('i', '<Tab>', '<Plug>(bullets-demote)', { buffer = bufnr })
       vim.keymap.set('i', '<S-Tab>', '<Plug>(bullets-promote)', { buffer = bufnr })
       vim.keymap.set('n', '<LocalLeader>cx', '<Plug>(bullets-toggle-checkbox)', { buffer = bufnr })
+
+      require('which-key').add({
+        { '<LocalLeader>c', group = '(C)hecklists' },
+        { '<LocalLeader>cx', group = 'Toggle Checkbox' },
+      })
     end,
   }
 )
