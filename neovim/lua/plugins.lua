@@ -22,6 +22,11 @@ require('lazy').setup({
   { 'bakpakin/fennel.vim', ft = 'fennel', },
   { 'elubow/cql-vim',      ft = 'cql', },
   {
+    'gberenfield/cljfold.vim',
+    ft = 'clojure',
+    init = function() require('plugins.cljfold-vim') end,
+  },
+  {
     'obsidian-nvim/obsidian.nvim',
     version = '*',
     lazy = true,
@@ -37,13 +42,8 @@ require('lazy').setup({
       'nvim-treesitter/nvim-treesitter',
     }
   },
-  {
-    'gberenfield/cljfold.vim',
-    ft = 'clojure',
-    init = function() require('plugins.cljfold-vim') end,
-  },
-  { 'lucidmachine/vim-velocity',      ft = 'vtl', },
-  { 'mfussenegger/nvim-jdtls',        ft = 'java', },
+  { 'lucidmachine/vim-velocity', ft = 'vtl', },
+  { 'mfussenegger/nvim-jdtls',   ft = 'java', },
   {
     'Olical/conjure',
     ft = { 'clojure', 'fennel', 'lua', 'python' },
@@ -123,7 +123,8 @@ require('lazy').setup({
   { 'markonm/traces.vim' },
   {
     'milkypostman/vim-togglelist',
-    init = function() vim.g.toggle_list_no_mappings = 1 end },
+    init = function() vim.g.toggle_list_no_mappings = 1 end
+  },
   {
     'neovim/nvim-lspconfig',
     dependencies = { 'hrsh7th/cmp-nvim-lsp' },
