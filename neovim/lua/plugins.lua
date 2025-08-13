@@ -27,6 +27,11 @@ require('lazy').setup({
     config = function() require('plugins.cljfold-vim') end,
   },
   {
+    'kaymmm/bullets.nvim',
+    ft = { 'markdown', 'text', 'gitcommit' },
+    config = function() require('plugins.bullets-nvim') end,
+  },
+  {
     'obsidian-nvim/obsidian.nvim',
     version = '*',
     lazy = true,
