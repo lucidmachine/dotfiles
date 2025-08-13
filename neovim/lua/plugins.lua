@@ -32,6 +32,11 @@ require('lazy').setup({
     config = function() require('plugins.bullets-nvim') end,
   },
   {
+    'mistweaverco/kulala.nvim',
+    ft = { 'http', 'rest' },
+    config = function() require('plugins.kulala-nvim') end,
+  },
+  {
     'obsidian-nvim/obsidian.nvim',
     version = '*',
     lazy = true,
