@@ -117,7 +117,6 @@ require('lazy').setup({
     'ibhagwan/fzf-lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
-  { 'jiangmiao/auto-pairs' },
   {
     'L3MON4D3/LuaSnip',
     version = 'v2.*',
@@ -153,4 +152,9 @@ require('lazy').setup({
   { 'wincent/loupe' },
   { 'wincent/scalpel' },
   { 'wincent/terminus' },
+  {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    config = true,
+  }
 })
