@@ -53,7 +53,6 @@ Configuration, powered by a shell script.
 - git
 - htop
 - jq
-- Kitty
 - LSP Servers:
     - Angular Language Server
     - Bash Language Server
