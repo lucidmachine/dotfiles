@@ -8,17 +8,16 @@ require('obsidian').setup({
       name = 'no-vault',
       path = function() return assert(vim.fn.getcwd()) end,
       overrides = {
+        daily_notes = { folder = vim.NIL },
         nodes_subdir = vim.NIL,
         new_notes_location = 'current_dir',
-        templates = {
-          folder = vim.NIL,
-        },
+        templates = { folder = vim.NIL, },
       },
     },
   },
 
   daily_notes = {
-    default_tags = {},
+    default_tags = { 'daily' },
     folder = 'dailies',
     template = 'daily.md',
     workdays_only = false,
