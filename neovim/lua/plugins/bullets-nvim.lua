@@ -1,4 +1,6 @@
-require('Bullets').setup()
+require('Bullets').setup({
+  outline_levels = {'ROM','ABC', 'num', 'abc', 'rom', 'std*', 'std-'}
+})
 
 vim.api.nvim_create_autocmd(
   'Filetype',
