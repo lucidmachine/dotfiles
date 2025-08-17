@@ -6,7 +6,7 @@ require('obsidian').setup({
     },
     {
       name = 'no-vault',
-      path = function () return assert(vim.fn.getcwd()) end,
+      path = function() return assert(vim.fn.getcwd()) end,
       overrides = {
         nodes_subdir = vim.NIL,
         new_notes_location = 'current_dir',
@@ -26,17 +26,7 @@ require('obsidian').setup({
 
   disable_frontmatter = true,
   legacy_commands = false,
-
-  picker = {
-    name = 'fzf-lua',
-  },
-
-  templates = {
-    folder = 'templates',
-  },
-
-  ui = {
-    enable = false,
-  },
+  picker = { name = 'fzf-lua', },
+  templates = { folder = 'templates', },
+  ui = { enable = false, },
 })
-
