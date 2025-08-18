@@ -28,4 +28,29 @@ require('obsidian').setup({
   picker = { name = 'fzf-lua', },
   templates = { folder = 'templates', },
   ui = { enable = false, },
+
+  callbacks = {
+    post_setup = function(_)
+      require('which-key').add({
+        { '<LocalLeader>d',  group = '(D)ailies' },
+        { '<LocalLeader>dd', '<Cmd>Obsidian today<CR>',             desc = 'Today' },
+        { '<LocalLeader>dt', '<Cmd>Obsidian tomorrow<CR>',          desc = '(T)omorrow' },
+        { '<LocalLeader>dy', '<Cmd>Obsidian yesterday<CR>',         desc = '(Y)esterday' },
+        { '<LocalLeader>l',  group = '(L)inks',                     mode = 'n' },
+        { '<LocalLeader>ll', '<Cmd>Obsidian links<CR>',             desc = '(L)inks',                mode = 'n' },
+        { '<LocalLeader>lb', '<Cmd>Obsidian backlinks<CR>',         desc = '(B)acklinks',            mode = 'n' },
+        { '<LocalLeader>l',  group = '(L)ink',                      mode = 'x' },
+        { '<LocalLeader>ll', '<Cmd>Obsidian link<CR>',              desc = '(L)ink...',              mode = 'x' },
+        { '<LocalLeader>ln', '<Cmd>Obsidian link_new<CR>',          desc = 'Link (N)ew...',          mode = 'x' },
+        { '<LocalLeader>n',  group = '(N)ew' },
+        { '<LocalLeader>nn', '<Cmd>Obsidian new<CR>',               desc = '(N)ote...' },
+        { '<LocalLeader>nt', '<Cmd>Obsidian new_from_template<CR>', desc = 'Note from (T)emplate...' },
+        { '<LocalLeader>s',  group = '(S)earch' },
+        { '<LocalLeader>ss', '<Cmd>Obsidian search<CR>',            desc = '(S)earch...' },
+        { '<LocalLeader>st', '<Cmd>Obsidian tags<CR>',              desc = 'Search (T)ags...' },
+        { '<LocalLeader>t',  '<Cmd>Obsidian template<CR>',          desc = '(T)emplate...' },
+        { '<LocalLeader>w',  '<Cmd>Obsidian workspace<CR>',         desc = '(W)orkspace...' },
+      })
+    end
+  }
 })

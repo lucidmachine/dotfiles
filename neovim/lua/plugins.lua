@@ -47,6 +47,7 @@ require('lazy').setup({
       'nvim-lua/plenary.nvim',
 
       -- Optional
+      'folke/which-key.nvim',
       'hrsh7th/nvim-cmp',
       'ibhagwan/fzf-lua',
       'nvim-treesitter/nvim-treesitter',
