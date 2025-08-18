@@ -45,6 +45,7 @@ require('obsidian').setup({
         { '<LocalLeader>n',  group = '(N)ew' },
         { '<LocalLeader>nn', '<Cmd>Obsidian new<CR>',               desc = '(N)ote...' },
         { '<LocalLeader>nt', '<Cmd>Obsidian new_from_template<CR>', desc = 'Note from (T)emplate...' },
+        { '<LocalLeader>r',  '<Cmd>Obsidian rename<CR>',            desc = '(R)ename Note' },
         { '<LocalLeader>s',  group = '(S)earch' },
         { '<LocalLeader>ss', '<Cmd>Obsidian search<CR>',            desc = '(S)earch...' },
         { '<LocalLeader>st', '<Cmd>Obsidian tags<CR>',              desc = 'Search (T)ags...' },
