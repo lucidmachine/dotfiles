@@ -50,6 +50,7 @@ brew install \
   ripgrep \
   shellcheck \
   tmux \
+  trash-cli \
   tree \
   typescript-language-server \
   vscodium \

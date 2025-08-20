@@ -45,6 +45,7 @@ sudo pamac install --no-confirm \
   ripgrep \
   shellcheck \
   tmux \
+  trash-cli \
   tree \
   ttf-font-awesome \
   ttf-jetbrains-mono \
