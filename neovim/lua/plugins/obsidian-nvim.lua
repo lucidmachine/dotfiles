@@ -26,6 +26,7 @@ require('obsidian').setup({
   disable_frontmatter = true,
   legacy_commands = false,
   picker = { name = 'fzf-lua', },
+  preferred_link_style = 'markdown',
   templates = { folder = 'templates', },
   ui = { enable = false, },
 
