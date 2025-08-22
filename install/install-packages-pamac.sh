@@ -35,6 +35,7 @@ sudo pamac install --no-confirm \
   htop \
   jdtls \
   jq \
+  khal \
   less \
   lua-language-server \
   luarocks \
@@ -51,6 +52,7 @@ sudo pamac install --no-confirm \
   ttf-jetbrains-mono \
   typescript-language-server \
   ueberzugpp \
+  vdirsyncer \
   vscodium-bin \
   wget \
   zoxide \

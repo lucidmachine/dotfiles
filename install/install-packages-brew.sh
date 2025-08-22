@@ -37,6 +37,7 @@ brew install \
   fzf \
   git \
   htop \
+  khal \
   kitty \
   jdtls \
   jq \
@@ -53,6 +54,7 @@ brew install \
   trash-cli \
   tree \
   typescript-language-server \
+  vdirsyncer \
   vscodium \
   wget \
   zoxide \

@@ -16,6 +16,7 @@ Configuration, powered by a shell script.
     - Ignore
     - Prompt
 - IntelliJ IDEA
+- khal
 - NeoVim
     - Plugins
     - Settings
@@ -53,6 +54,7 @@ Configuration, powered by a shell script.
 - git
 - htop
 - jq
+- khal
 - LSP Servers:
     - Angular Language Server
     - Bash Language Server
@@ -72,6 +74,7 @@ Configuration, powered by a shell script.
 - shellcheck
 - tmux
 - tree
+- vdirsyncer
 - VSCodium
     - Settings
     - Extensions

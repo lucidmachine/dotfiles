@@ -1,0 +1,52 @@
+[calendars]
+
+[[personal]]
+path = ~/.calendars/Personal/watchboy.es@gmail.com/
+color = light blue
+
+[[bills]]
+path = ~/.calendars/Personal/m3941alrf3nn1odp20tiqrnn78@group.calendar.google.com/
+color = dark red
+
+[[birthdays]]
+path = ~/.calendars/Personal/73fve1ldt4ddpadm6fdgfhgp60@group.calendar.google.com/
+color = light green
+
+[[contacts]]
+path = ~/.calendars/Personal/b1pfk1fjacg7vpnqrsd0hilj9s@group.calendar.google.com/
+color = dark magenta
+
+[[entertainment]]
+path = ~/.calendars/Personal/c0ismk2q8ur7asjjg13jqhd8c0@group.calendar.google.com/
+color = yellow
+
+[[family]]
+path = ~/.calendars/Personal/family18289916094440982635@group.calendar.google.com/
+color = light cyan
+readonly = True
+
+[[the-gallery]]
+path = ~/.calendars/Personal/officeofthegallery@gmail.com/
+color =  brown
+readonly = True
+
+
+[default]
+default_calendar = personal
+default_event_alarm = 30m
+highlight_event_days = False
+
+[locale]
+dateformat = "%A, %B %d"
+timeformat = %I:%M%P
+datetimeformat = "%Y-%m-%d %I:%M%P"
+longdateformat = "%Y-%m-%d"
+longdatetimeformat = %c
+firstweekday = 6
+
+[view]
+agenda_day_format = "{bold}{date}{reset}"
+agenda_event_format = "{calendar-color}{cancelled}{start-time}-{end-time}  {title}{repeat-symbol}{alarm-symbol}{description-separator}{description}{reset}"
+blank_line_before_day = True
+event_format = "{calendar-color}{cancelled}{start} - {end}  {title}{repeat-symbol}{alarm-symbol}{description-separator}{description}{reset}"
+min_calendar_display = 0
