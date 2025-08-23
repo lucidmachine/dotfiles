@@ -2,7 +2,7 @@ require('obsidian').setup({
   workspaces = {
     {
       name = 'Notes',
-      path = '~/notes',
+      path = '~/Notes',
     },
     {
       name = 'no-vault',
