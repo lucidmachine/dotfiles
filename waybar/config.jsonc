@@ -56,7 +56,7 @@
         "interval": 60,
         "format": "{:%a %F %I:%M %p}",
         "tooltip": true,
-        "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
+        "tooltip-format": "<tt>{calendar}</tt>",
         "on-click": "swaymsg exec \\$calendar"
     },
 
@@ -209,7 +209,7 @@
 
     "custom/next-appointment": {
         "interval": 60,
-        "exec": "~/src/dotfiles/waybar/scripts/next-appointment.sh",
+        "exec": "~/src/dotfiles/waybar/scripts/next-appointment.sh 1h",
         "return-type": "json",
         "format": "  {text}",
         "hide-empty-text": true
