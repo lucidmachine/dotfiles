@@ -18,7 +18,7 @@
     "position": "top",
 
     "modules-left": ["sway/workspaces"],
-    "modules-center": ["custom/wf-recorder", "sway/mode"],
+    "modules-center": ["custom/wf-recorder", "sway/mode", "custom/next-appointment"],
     "modules-right": [
         // informational
         "cpu",
@@ -30,11 +30,7 @@
         "custom/dnd",
         "custom/sunset",
 
-        // Percentages
-        "pulseaudio",
-        "backlight",
         "battery",
-
 
         "tray",
         "clock"
@@ -209,5 +205,13 @@
         "on-click": "/usr/share/sway/scripts/wluma.sh toggle; pkill -RTMIN+12 waybar",
         "exec-if": "/usr/share/sway/scripts/wluma.sh check",
         "signal": 12
+    },
+
+    "custom/next-appointment": {
+        "interval": 60,
+        "exec": "~/src/dotfiles/waybar/scripts/next-appointment.sh",
+        "return-type": "json",
+        "format": "  {text}",
+        "hide-empty-text": true
     }
 }
