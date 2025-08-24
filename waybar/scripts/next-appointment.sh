@@ -19,6 +19,11 @@ next_appointment="$(
   | jq --slurp 'flatten | first'
 )"
 
+if [ "${next_appointment}" == "null" ]; then
+  echo "{ \"text\": null, \"tooltip\": null }"
+  exit 0
+fi
+
 next_appointment_short="$(
   echo "${next_appointment}" \
     | jq --raw-output '.["start-time"] + " " + .title'
