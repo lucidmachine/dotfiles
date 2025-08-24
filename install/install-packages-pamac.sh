@@ -42,6 +42,7 @@ sudo pamac install --no-confirm \
   make \
   marksman \
   neovim \
+  python-aiohttp-oauthlib \
   ranger \
   ripgrep \
   shellcheck \
