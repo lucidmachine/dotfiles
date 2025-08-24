@@ -14,7 +14,7 @@ color = light green
 
 [[contacts]]
 path = ~/.calendars/Personal/b1pfk1fjacg7vpnqrsd0hilj9s@group.calendar.google.com/
-color = dark magenta
+color = dark green
 
 [[entertainment]]
 path = ~/.calendars/Personal/c0ismk2q8ur7asjjg13jqhd8c0@group.calendar.google.com/
@@ -29,6 +29,10 @@ readonly = True
 path = ~/.calendars/Personal/officeofthegallery@gmail.com/
 color =  brown
 readonly = True
+
+[[work]]
+path = ~/.calendars/Personal/qr0kumglofrkucn2katrijrqn0@group.calendar.google.com/
+color = light magenta
 
 
 [default]
