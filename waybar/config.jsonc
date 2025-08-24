@@ -212,6 +212,7 @@
         "exec": "~/src/dotfiles/waybar/scripts/next-appointment.sh 1h",
         "return-type": "json",
         "format": "  {text}",
-        "hide-empty-text": true
+        "hide-empty-text": true,
+        "on-click": "swaymsg exec \\$calendar"
     }
 }
