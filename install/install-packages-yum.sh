@@ -19,8 +19,8 @@ sudo yum install --assumeyes \
   bash \
   ctags \
   curl \
+  btop \
   git \
-  htop \
   jq \
   less \
   make \

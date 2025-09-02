@@ -21,6 +21,7 @@ sudo pamac install --no-confirm \
   bat \
   bash \
   bash-language-server \
+  btop \
   clojure \
   clojure-lsp-bin \
   clj-kondo-bin \
@@ -32,7 +33,6 @@ sudo pamac install --no-confirm \
   firefox \
   fzf \
   git \
-  htop \
   jdtls \
   jq \
   khal \

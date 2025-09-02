@@ -46,13 +46,13 @@ Configuration, powered by a shell script.
 - bash
 - bat
 - Babashka
+- btop
 - Clojure
 - curl
 - fd
 - Firefox
 - fzf
 - git
-- htop
 - jq
 - khal
 - LSP Servers:
