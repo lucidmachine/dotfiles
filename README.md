@@ -85,5 +85,4 @@ Configuration, powered by a shell script.
 
 ## "Tested" On
 
-- Manjaro 25.0
-- macOS 15
+- Manjaro 25

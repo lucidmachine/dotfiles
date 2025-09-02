@@ -53,11 +53,7 @@ function rm_and_link() {
 # Set vars
 BASEDIR="$(git rev-parse --show-toplevel)"
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-${HOME}/.config}"
-if command -v pamac &> /dev/null; then
-  VSCODIUM_DIR="${XDG_CONFIG_HOME}/VSCodium/User"
-elif command -v brew &> /dev/null; then
-  VSCODIUM_DIR="${HOME}/Library/Application Support/VSCodium/User"
-fi
+VSCODIUM_DIR="${XDG_CONFIG_HOME}/VSCodium/User"
 
 # Directories
 echo "################################################################################"
@@ -68,6 +64,7 @@ dir "${HOME}/.n"
 dir "${HOME}/.n/bin"
 dir "${HOME}/bin"
 dir "${HOME}/src"
+dir "${VSCODIUM_DIR}"
 
 
 # Symlinks

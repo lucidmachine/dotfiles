@@ -6,13 +6,13 @@
 #   install-packages.sh
 #
 # Arguments
-#   PACKAGE_GROUP   Names of one or more groups of packages to install. Options include 'node', 'pamac',
-#                   'brew', and 'yum'. If none are specified, then a best guess will be made.
+#   PACKAGE_GROUP   Names of one or more groups of packages to install. Options include 'node',
+#                   'pamac', and 'yum'. If none are specified, then a best guess will be made.
 #
 # Examples
 #   install-packages.sh
 #   install-packages.sh pamac
-#   install-packages.sh node brew
+#   install-packages.sh node yum
 
 set -euo pipefail
 
@@ -34,9 +34,6 @@ fi
 
 if command -v pamac &> /dev/null; then
   "${SCRIPT_DIR}/install-packages-pamac.sh"
-
-elif command -v brew &> /dev/null; then
-  "${SCRIPT_DIR}/install-packages-brew.sh"
 
 elif command -v yum &> /dev/null && sudo -v &> /dev/null; then
   "${SCRIPT_DIR}/install-packages-yum.sh"
