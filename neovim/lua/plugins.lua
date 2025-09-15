@@ -54,7 +54,6 @@ require('lazy').setup({
     }
   },
   { 'lucidmachine/vim-velocity', ft = 'vtl', },
-  { 'mfussenegger/nvim-jdtls',   ft = 'java', },
   {
     'Olical/conjure',
     ft = { 'clojure', 'fennel', 'lua', 'python' },
@@ -68,6 +67,29 @@ require('lazy').setup({
   },
   { 'vimoutliner/vimoutliner',        ft = 'votl', },
   { 'vim-scripts/confluencewiki.vim', ft = 'confluencewiki', },
+
+  -----------------
+  -- Language Tools
+  -----------------
+  { 'mason-org/mason.nvim', opts = {} },
+  { 'mfussenegger/nvim-dap' },
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = { 'hrsh7th/cmp-nvim-lsp' },
+    config = function() require('plugins.nvim-lspconfig') end
+  },
+  {
+    'rcarriga/nvim-dap-ui',
+    dependencies = {
+      'mfussenegger/nvim-dap',
+      'nvim-neotest/nvim-nio',
+    }
+  },
+  {
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
+    dependencies = { 'mason-org/mason.nvim' },
+    config = function() require('plugins.mason-tool-installer-nvim') end
+  },
 
 
   -------------
@@ -134,11 +156,6 @@ require('lazy').setup({
   {
     'milkypostman/vim-togglelist',
     init = function() vim.g.toggle_list_no_mappings = 1 end
-  },
-  {
-    'neovim/nvim-lspconfig',
-    dependencies = { 'hrsh7th/cmp-nvim-lsp' },
-    config = function() require('plugins.nvim-lspconfig') end
   },
   { 'nvim-lua/plenary.nvim' },
   {
