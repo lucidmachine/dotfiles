@@ -30,6 +30,7 @@ sudo pamac install --no-confirm \
   firefox \
   fzf \
   git \
+  glab \
   jq \
   khal \
   less \

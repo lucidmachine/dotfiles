@@ -53,6 +53,7 @@ Configuration, powered by a shell script.
 - Firefox
 - fzf
 - git
+- glab
 - jq
 - khal
 - less
