@@ -46,12 +46,12 @@ M.prevDiagnostic = function()
 end
 
 --- Organizes LSP to organize imports when available
-M.smartOrganizeImports = function()
-  require('jdtls').organize_imports()
+M.organizeImports = function()
+  libLsp.executeCommand('source.organizeImports')
 end
 
 --- Rename the symbol under the cursor. Uses LSP rename method if available, else Scalpel.
-M.smartRename = function()
+M.rename = function()
   if libLsp.isMethodSupportedByLspInCurrentBuf('rename') then
     vim.lsp.buf.rename(nil)
   else
