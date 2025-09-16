@@ -47,6 +47,9 @@ venv/
 # Rust
 **/*.rs.bk
 
+# Syncthing
+.stfolder/
+
 # Vagrant
 .vagrant/
 
