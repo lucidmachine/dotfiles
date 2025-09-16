@@ -13,7 +13,8 @@ require('lspconfig').eslint.setup {
   capabilities = capabilities
 }
 require('lspconfig').jdtls.setup {
-  capabilities = capabilities
+  capabilities = capabilities,
+  root_markers = { { 'pom.xml', 'gradle.settings', 'pom.xml' }, '.git' }
 }
 require('lspconfig').lua_ls.setup {
   capabilities = capabilities,
