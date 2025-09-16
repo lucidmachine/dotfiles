@@ -20,11 +20,8 @@ sudo pamac install --no-confirm \
   babashka-bin \
   bat \
   bash \
-  bash-language-server \
   btop \
   clojure \
-  clojure-lsp-bin \
-  clj-kondo-bin \
   curl \
   ctags \
   d2 \
@@ -33,14 +30,11 @@ sudo pamac install --no-confirm \
   firefox \
   fzf \
   git \
-  jdtls \
   jq \
   khal \
   less \
-  lua-language-server \
   luarocks \
   make \
-  marksman \
   neovim \
   python-aiohttp-oauthlib \
   ranger \
@@ -51,7 +45,6 @@ sudo pamac install --no-confirm \
   tree \
   ttf-font-awesome \
   ttf-jetbrains-mono \
-  typescript-language-server \
   ueberzugpp \
   vdirsyncer \
   vscodium-bin \

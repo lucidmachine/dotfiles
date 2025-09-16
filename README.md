@@ -5,19 +5,19 @@ Configuration, powered by a shell script.
 ## Configures
 
 - alacritty
-- bash and zsh
+- bash and zsh:
     - RC
     - Profile
     - Aliases
     - Color palette
 - Clojure
-- Git
+- Git:
     - Config
     - Ignore
     - Prompt
 - IntelliJ IDEA
 - khal
-- NeoVim
+- NeoVim:
     - Plugins
     - Settings
     - Mappings
@@ -55,27 +55,21 @@ Configuration, powered by a shell script.
 - git
 - jq
 - khal
-- LSP Servers:
-    - Angular Language Server
-    - Bash Language Server
-    - Clojure LSP
-    - Eclipse JDT
-    - Lua Language Server
-    - Marksman
-    - TypeScript Language Server
-    - Vim Language Server
-    - VSCode Language Servers Extracted
 - less
 - make
 - n and NodeJS
-- NeoVim
+- NeoVim:
+    - LSP Servers
+    - DAP Servers
+    - Linters
+    - Formatters
 - Ranger
 - ripgrep
 - shellcheck
 - tmux
 - tree
 - vdirsyncer
-- VSCodium
+- VSCodium:
     - Settings
     - Extensions
 - wget
