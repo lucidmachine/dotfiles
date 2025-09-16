@@ -36,9 +36,6 @@ vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition)
 vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
 vim.keymap.set('n', 'gr', vim.lsp.buf.references)
 
--- Hover
-vim.keymap.set('n', 'K', vim.lsp.buf.hover)
-
 -- Lists
 vim.keymap.set('n', '<Leader>ll', ':call ToggleLocationList()<CR>')
 vim.keymap.set('n', '<Leader>lf', '<Cmd>FzfLua loclist<CR>')
