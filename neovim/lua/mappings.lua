@@ -28,7 +28,7 @@ vim.keymap.set('n', '<Leader>dq', vim.diagnostic.setqflist, { silent = true })
 
 -- Files
 vim.keymap.set('n', '<Leader>ff', '<Cmd>FzfLua files<CR>', { silent = true })
-vim.keymap.set('n', '<Leader>fe', ':Explore<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>fe', ':Neotree toggle<CR>', { silent = true })
 
 -- Goto
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
