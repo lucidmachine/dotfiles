@@ -1,4 +1,5 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local lombok = vim.fn.stdpath('data') .. '/mason/packages/jdtls/lombok.jar'
 
 require('lspconfig').angularls.setup {
   capabilities = capabilities
@@ -14,6 +15,7 @@ require('lspconfig').eslint.setup {
 }
 require('lspconfig').jdtls.setup {
   capabilities = capabilities,
+  cmd = { 'jdtls', '--jvm-arg=-javaagent:' .. lombok },
   root_markers = { { 'pom.xml', 'gradle.settings', 'pom.xml' }, '.git' }
 }
 require('lspconfig').lua_ls.setup {
