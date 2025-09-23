@@ -1,17 +1,18 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lombok = vim.fn.stdpath('data') .. '/mason/packages/jdtls/lombok.jar'
 
-require('lspconfig').angularls.setup {
+vim.lsp.config('angularls', {
   capabilities = capabilities
-}
-require('lspconfig').bashls.setup {
+})
+vim.lsp.config('bashls', {
   capabilities = capabilities
-}
-require('lspconfig').clojure_lsp.setup {
+})
+vim.lsp.config('clojure_lsp', {
   capabilities = capabilities
-}
-require('lspconfig').eslint.setup {
+})
+vim.lsp.config('eslint', {
   capabilities = capabilities
+<<<<<<< HEAD
 }
 require('lspconfig').jdtls.setup {
   capabilities = capabilities,
@@ -19,6 +20,13 @@ require('lspconfig').jdtls.setup {
   root_markers = { { 'pom.xml', 'gradle.settings', 'pom.xml' }, '.git' }
 }
 require('lspconfig').lua_ls.setup {
+=======
+})
+vim.lsp.config('jdtls', {
+  capabilities = capabilities
+})
+vim.lsp.config('lua_ls', {
+>>>>>>> dbdbdbc (nvim: Update LSP configuration calls)
   capabilities = capabilities,
   on_init = function(client)
     local path = client.workspace_folders[1].name
@@ -49,10 +57,10 @@ require('lspconfig').lua_ls.setup {
   settings = {
     Lua = {}
   }
-}
-require('lspconfig').marksman.setup {
+})
+vim.lsp.config('marksman', {
   capabilities = capabilities
-}
-require('lspconfig').vimls.setup {
+})
+vim.lsp.config('vimls', {
   capabilities = capabilities
-}
+})
