@@ -16,6 +16,7 @@ Configuration, powered by a shell script.
     - Ignore
     - Prompt
 - IntelliJ IDEA
+- kanshi
 - khal
 - NeoVim:
     - Plugins
