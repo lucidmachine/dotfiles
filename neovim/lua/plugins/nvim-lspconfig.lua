@@ -12,21 +12,13 @@ vim.lsp.config('clojure_lsp', {
 })
 vim.lsp.config('eslint', {
   capabilities = capabilities
-<<<<<<< HEAD
-}
-require('lspconfig').jdtls.setup {
+})
+vim.lsp.config('jdtls', {
   capabilities = capabilities,
   cmd = { 'jdtls', '--jvm-arg=-javaagent:' .. lombok },
   root_markers = { { 'pom.xml', 'gradle.settings', 'pom.xml' }, '.git' }
-}
-require('lspconfig').lua_ls.setup {
-=======
-})
-vim.lsp.config('jdtls', {
-  capabilities = capabilities
 })
 vim.lsp.config('lua_ls', {
->>>>>>> dbdbdbc (nvim: Update LSP configuration calls)
   capabilities = capabilities,
   on_init = function(client)
     local path = client.workspace_folders[1].name
