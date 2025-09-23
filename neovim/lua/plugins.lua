@@ -20,7 +20,6 @@ require('lazy').setup({
   -- Language Support
   -------------------
   { 'bakpakin/fennel.vim', ft = 'fennel', },
-  { 'elubow/cql-vim',      ft = 'cql', },
   {
     'gberenfield/cljfold.vim',
     ft = 'clojure',
