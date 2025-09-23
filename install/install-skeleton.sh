@@ -53,7 +53,6 @@ function rm_and_link() {
 # Set vars
 BASEDIR="$(git rev-parse --show-toplevel)"
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-${HOME}/.config}"
-VSCODIUM_DIR="${XDG_CONFIG_HOME}/VSCodium/User"
 
 # Directories
 echo "################################################################################"
@@ -64,7 +63,6 @@ dir "${HOME}/.n"
 dir "${HOME}/.n/bin"
 dir "${HOME}/bin"
 dir "${HOME}/src"
-dir "${VSCODIUM_DIR}"
 
 
 # Symlinks
@@ -89,8 +87,6 @@ rm_and_link "${BASEDIR}/sh/environment"         "${HOME}/.zshenv"
 rm_and_link "${BASEDIR}/sway"                   "${XDG_CONFIG_HOME}/sway"
 rm_and_link "${BASEDIR}/tmux/tmux.conf"         "${HOME}/.tmux.conf"
 rm_and_link "${BASEDIR}/vim/vimrc"              "${HOME}/.vimrc"
-rm_and_link "${BASEDIR}/vscodium/settings.json" "${VSCODIUM_DIR}/settings.json"
-rm_and_link "${BASEDIR}/vscodium/snippets"      "${VSCODIUM_DIR}/snippets"
 rm_and_link "${BASEDIR}/waybar"                 "${XDG_CONFIG_HOME}/waybar"
 rm_and_link "${BASEDIR}/x11/Xresources"         "${HOME}/.Xresources"
 rm_and_link "${BASEDIR}/zsh/rc"                 "${HOME}/.zshrc"

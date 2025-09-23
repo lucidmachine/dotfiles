@@ -36,7 +36,6 @@ Configuration, powered by a shell script.
     - Color support
     - Bindings
 - Vim
-- VSCodium
 - Waybar
 
 
@@ -70,9 +69,6 @@ Configuration, powered by a shell script.
 - tmux
 - tree
 - vdirsyncer
-- VSCodium:
-    - Settings
-    - Extensions
 - wget
 - zoxide
 - zsh
