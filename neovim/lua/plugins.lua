@@ -52,7 +52,6 @@ require('lazy').setup({
       'nvim-treesitter/nvim-treesitter',
     }
   },
-  { 'lucidmachine/vim-velocity', ft = 'vtl', },
   {
     'Olical/conjure',
     ft = { 'clojure', 'fennel', 'lua', 'python' },
