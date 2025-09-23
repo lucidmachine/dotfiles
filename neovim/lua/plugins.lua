@@ -63,7 +63,6 @@ require('lazy').setup({
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function() require('plugins.typescript-tools-nvim') end,
   },
-  { 'vimoutliner/vimoutliner',        ft = 'votl', },
   { 'vim-scripts/confluencewiki.vim', ft = 'confluencewiki', },
 
   -----------------
