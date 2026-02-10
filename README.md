@@ -1,6 +1,6 @@
 # dotfiles
 
-Configuration, powered by a shell script.
+Configuration, powered by shell scripts.
 
 ## Configures
 
@@ -72,3 +72,4 @@ Configuration, powered by a shell script.
 ## "Tested" On
 
 - Manjaro 25
+- Windows 11
