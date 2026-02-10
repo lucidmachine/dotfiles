@@ -1,21 +1,21 @@
 #! /usr/bin/env bash
 #
-# Installs packages via pamac.
+# Installs packages via yay.
 #
 # Synopsis
-#   install-packages-pamac.sh
+#   install-packages-yay.sh
 #
 # Examples
-#   install-packages-pamac.sh
+#   install-packages-yay.sh
 
 set -euo pipefail
 
 
 echo "################################################################################"
-echo "# Installing Packages via pamac"
+echo "# Installing Packages via yay"
 echo "################################################################################"
 
-sudo pamac install --no-confirm \
+yay -S --noconfirm \
   alacritty \
   babashka-bin \
   bat \
@@ -23,7 +23,6 @@ sudo pamac install --no-confirm \
   btop \
   clojure \
   curl \
-  ctags \
   d2 \
   dart-sass \
   fd \
@@ -46,9 +45,9 @@ sudo pamac install --no-confirm \
   tree \
   ttf-font-awesome \
   ttf-jetbrains-mono \
+  ttf-jetbrains-mono-nerd \
   ueberzugpp \
   vdirsyncer \
-  vscodium-bin \
   wget \
   zoxide \
   zsh
