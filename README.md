@@ -28,16 +28,10 @@ Configuration, powered by a shell script.
 - Ranger
     - Appearance
     - Bindings
-- Sway
-    - Bindings
-    - Services
-    - Settings
-    - Status Bar
 - tmux
     - Color support
     - Bindings
 - Vim
-- Waybar
 
 
 ## Installs
