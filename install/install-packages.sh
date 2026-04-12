@@ -7,11 +7,11 @@
 #
 # Arguments
 #   PACKAGE_GROUP   Names of one or more groups of packages to install. Options include 'node',
-#                   'pamac', and 'yum'. If none are specified, then a best guess will be made.
+#                   'yay', and 'yum'. If none are specified, then a best guess will be made.
 #
 # Examples
 #   install-packages.sh
-#   install-packages.sh pamac
+#   install-packages.sh yay
 #   install-packages.sh node yum
 
 set -euo pipefail
@@ -32,8 +32,8 @@ fi
 # Install detected package groups
 "${SCRIPT_DIR}/install-packages-node.sh"
 
-if command -v pamac &> /dev/null; then
-  "${SCRIPT_DIR}/install-packages-pamac.sh"
+if command -v yay &> /dev/null; then
+  "${SCRIPT_DIR}/install-packages-yay.sh"
 
 elif command -v yum &> /dev/null && sudo -v &> /dev/null; then
   "${SCRIPT_DIR}/install-packages-yum.sh"
