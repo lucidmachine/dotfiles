@@ -29,14 +29,12 @@ yay -S --noconfirm \
   firefox \
   fzf \
   git \
-  glab \
   jq \
   khal \
   less \
   luarocks \
   make \
   neovim \
-  python-aiohttp-oauthlib \
   ranger \
   ripgrep \
   shellcheck \

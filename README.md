@@ -47,7 +47,6 @@ Configuration, powered by shell scripts.
 - Firefox
 - fzf
 - git
-- glab
 - jq
 - khal
 - less
