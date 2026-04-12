@@ -34,16 +34,6 @@ fi
 # Ranger
 alias r='ranger'
 
-# Subversion
-alias svna='svn add'
-alias svnc='svn commit --message '
-alias svnd='svn diff'
-alias svnl='svn log --limit 5'
-alias svns='svn status'
-alias svnsf='svn status | grep --invert-match --regexp="^---" | rev | cut -d" " -f1 | rev'
-alias svnu='svn update'
-alias svnvd="svn diff --diff-cmd ${VISUAL_DIFF}"
-
 # Tmux
 alias t='tmux new'
 alias tb='tmux new rlwrap bb'
