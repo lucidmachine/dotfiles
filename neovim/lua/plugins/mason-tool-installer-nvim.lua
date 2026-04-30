@@ -59,9 +59,5 @@ require('mason-tool-installer').setup({
     'postgres-language-server',
     'sqruff',
     'sleek',
-
-    -- VimScript
-    'vim-language-server',
-    'vint',
   },
 })
