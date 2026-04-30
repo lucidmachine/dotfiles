@@ -36,7 +36,6 @@ Configuration, powered by shell scripts.
 
 ## Installs
 
-- alacritty
 - bash
 - bat
 - Babashka
@@ -44,7 +43,6 @@ Configuration, powered by shell scripts.
 - Clojure
 - curl
 - fd
-- Firefox
 - fzf
 - git
 - jq
