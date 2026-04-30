@@ -56,7 +56,7 @@ require('mason-tool-installer').setup({
     'markdownlint-cli2',
 
     -- SQL
-    'postgrestools',
+    'postgres-language-server',
     'sqruff',
     'sleek',
 
