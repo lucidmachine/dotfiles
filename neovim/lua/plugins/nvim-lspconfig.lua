@@ -53,6 +53,3 @@ vim.lsp.config('lua_ls', {
 vim.lsp.config('marksman', {
   capabilities = capabilities
 })
-vim.lsp.config('vimls', {
-  capabilities = capabilities
-})
