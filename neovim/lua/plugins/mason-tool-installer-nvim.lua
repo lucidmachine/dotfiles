@@ -55,6 +55,10 @@ require('mason-tool-installer').setup({
     'proselint',
     'markdownlint-cli2',
 
+    -- Python
+    'basedpyright',
+    'ruff',
+
     -- SQL
     'postgres-language-server',
     'sqruff',
