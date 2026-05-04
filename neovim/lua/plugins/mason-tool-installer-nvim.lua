@@ -62,6 +62,5 @@ require('mason-tool-installer').setup({
     -- SQL
     'postgres-language-server',
     'sqruff',
-    'sleek',
   },
 })
