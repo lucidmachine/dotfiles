@@ -69,6 +69,14 @@ require('lazy').setup({
   -- Language Tools
   -----------------
   { 'mason-org/mason.nvim', opts = {} },
+  {
+    'mason-org/mason-lspconfig.nvim',
+    opts = {},
+    dependencies = {
+      { 'mason-org/mason.nvim', opts = {} },
+      { 'neovim/nvim-lspconfig' },
+    },
+  },
   { 'mfussenegger/nvim-dap' },
   {
     'neovim/nvim-lspconfig',
