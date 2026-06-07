@@ -1,6 +1,6 @@
 # dotfiles
 
-Configuration, powered by a shell script.
+Configuration, powered by shell scripts.
 
 ## Configures
 
@@ -16,6 +16,7 @@ Configuration, powered by a shell script.
     - Ignore
     - Prompt
 - IntelliJ IDEA
+- kanshi
 - khal
 - NeoVim:
     - Plugins
@@ -27,22 +28,14 @@ Configuration, powered by a shell script.
 - Ranger
     - Appearance
     - Bindings
-- Sway
-    - Bindings
-    - Services
-    - Settings
-    - Status Bar
 - tmux
     - Color support
     - Bindings
 - Vim
-- VSCodium
-- Waybar
 
 
 ## Installs
 
-- alacritty
 - bash
 - bat
 - Babashka
@@ -50,10 +43,8 @@ Configuration, powered by a shell script.
 - Clojure
 - curl
 - fd
-- Firefox
 - fzf
 - git
-- glab
 - jq
 - khal
 - less
@@ -70,9 +61,6 @@ Configuration, powered by a shell script.
 - tmux
 - tree
 - vdirsyncer
-- VSCodium:
-    - Settings
-    - Extensions
 - wget
 - zoxide
 - zsh
@@ -81,3 +69,4 @@ Configuration, powered by a shell script.
 ## "Tested" On
 
 - Manjaro 25
+- Windows 11

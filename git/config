@@ -12,8 +12,16 @@
 	autoSetupRemote = true
 
 [alias]
-	co = checkout
-  unstage = 'reset HEAD --'
+  a = add
+  c = "!git commit --message=\"$1\" #"
+  ca = "!git commit --all --message=\"$1\" #"
+  d = diff
+  down = "!git stash; git pull; git stash apply"
+  l = log --max-count 5
+  unstage = reset HEAD --
+  s = status
+  up = "!git stash; git pull; git push; git stash apply"
+  vd = difftool
 
 [diff]
 tool = nvimdiff

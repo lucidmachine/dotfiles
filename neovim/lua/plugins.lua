@@ -20,7 +20,6 @@ require('lazy').setup({
   -- Language Support
   -------------------
   { 'bakpakin/fennel.vim', ft = 'fennel', },
-  { 'elubow/cql-vim',      ft = 'cql', },
   {
     'gberenfield/cljfold.vim',
     ft = 'clojure',
@@ -53,7 +52,6 @@ require('lazy').setup({
       'nvim-treesitter/nvim-treesitter',
     }
   },
-  { 'lucidmachine/vim-velocity', ft = 'vtl', },
   {
     'Olical/conjure',
     ft = { 'clojure', 'fennel', 'lua', 'python' },
@@ -65,13 +63,20 @@ require('lazy').setup({
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function() require('plugins.typescript-tools-nvim') end,
   },
-  { 'vimoutliner/vimoutliner',        ft = 'votl', },
   { 'vim-scripts/confluencewiki.vim', ft = 'confluencewiki', },
 
   -----------------
   -- Language Tools
   -----------------
   { 'mason-org/mason.nvim', opts = {} },
+  {
+    'mason-org/mason-lspconfig.nvim',
+    opts = {},
+    dependencies = {
+      { 'mason-org/mason.nvim', opts = {} },
+      { 'neovim/nvim-lspconfig' },
+    },
+  },
   { 'mfussenegger/nvim-dap' },
   {
     'neovim/nvim-lspconfig',

@@ -8,23 +8,23 @@
 # Examples
 #   install-packages-yay.sh
 
+set -euo pipefail
+
 
 echo "################################################################################"
 echo "# Installing Packages via yay"
 echo "################################################################################"
 
-yay -S --noconfirm  \
-  alacritty \
+yay -S --noconfirm \
   babashka-bin \
-  bat \
   bash \
+  bat \
   btop \
   clojure \
   curl \
   d2 \
   dart-sass \
   fd \
-  firefox \
   fzf \
   git \
   jq \
@@ -33,14 +33,18 @@ yay -S --noconfirm  \
   luarocks \
   make \
   neovim \
+  python-neovim \
+  python-pip \
   ranger \
   ripgrep \
+  rustup \
   shellcheck \
   tmux \
   trash-cli \
   tree \
   ttf-font-awesome \
   ttf-jetbrains-mono \
+  ttf-jetbrains-mono-nerd \
   ueberzugpp \
   vdirsyncer \
   wget \

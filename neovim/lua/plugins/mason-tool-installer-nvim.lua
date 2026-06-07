@@ -55,13 +55,12 @@ require('mason-tool-installer').setup({
     'proselint',
     'markdownlint-cli2',
 
-    -- SQL
-    'postgrestools',
-    'sqruff',
-    'sleek',
+    -- Python
+    'basedpyright',
+    'ruff',
 
-    -- VimScript
-    'vim-language-server',
-    'vint',
+    -- SQL
+    'postgres-language-server',
+    'sqruff',
   },
 })

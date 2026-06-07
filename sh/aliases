@@ -5,20 +5,6 @@ alias alert='notify-send --urgency=low --icon "$([ $? = 0 ] && echo terminal || 
 # Babashka
 alias b='rlwrap bb'
 
-# Git
-alias gita='git add'
-alias gitb='git branch'
-alias gitbn='git checkout -b '
-alias gitc='git commit --message '
-alias gitca='git commit --all --message '
-alias gitco='git checkout'
-alias gitd='git diff'
-alias gitl='git log --max-count 5'
-alias gitp='git push'
-alias gits='git status'
-alias gitsf='git status --short | rev | cut -d" " -f1 | rev'
-alias gitvd='git difftool'
-
 # fzf
 alias fzv='fzf --multi | xargs ${VISUAL}'
 
@@ -47,16 +33,6 @@ fi
 
 # Ranger
 alias r='ranger'
-
-# Subversion
-alias svna='svn add'
-alias svnc='svn commit --message '
-alias svnd='svn diff'
-alias svnl='svn log --limit 5'
-alias svns='svn status'
-alias svnsf='svn status | grep --invert-match --regexp="^---" | rev | cut -d" " -f1 | rev'
-alias svnu='svn update'
-alias svnvd="svn diff --diff-cmd ${VISUAL_DIFF}"
 
 # Tmux
 alias t='tmux new'
