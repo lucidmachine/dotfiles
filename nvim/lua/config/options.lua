@@ -6,7 +6,21 @@
 vim.o.colorcolumn = "+1"
 
 -- Document Formatting
+vim.o.autoindent = true
 vim.o.conceallevel = 0
+vim.o.smarttab = true
+
+-- Filetypes
+vim.cmd([[
+  filetype on
+  filetype plugin on
+  filetype indent on
+  syntax on
+]])
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = "confluencewiki,markdown,text",
+    command = "setlocal spell",
+})
 
 -- Folding
 vim.wo.foldmethod = "expr"
@@ -21,9 +35,6 @@ vim.api.nvim_create_autocmd({ "TermOpen" }, {
 
 -- Textwidth
 vim.o.textwidth = 100
-
--- UI
-vim.o.lazyredraw = true -- Macros don't redraw
 
 -- Visual Bell
 vim.o.visualbell = true
