@@ -10,7 +10,6 @@
 
 set -euo pipefail
 
-
 echo "################################################################################"
 echo "# Installing Packages via yay"
 echo "################################################################################"
@@ -29,7 +28,9 @@ yay -S --noconfirm \
   git \
   jq \
   khal \
+  lazygit \
   less \
+  lua51 \
   luarocks \
   make \
   neovim \
@@ -42,10 +43,12 @@ yay -S --noconfirm \
   tmux \
   trash-cli \
   tree \
+  tree-sitter-cli \
   ttf-font-awesome \
   ttf-jetbrains-mono \
   ttf-jetbrains-mono-nerd \
   ueberzugpp \
+  unzip \
   vdirsyncer \
   wget \
   zoxide \
