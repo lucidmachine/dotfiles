@@ -15,6 +15,7 @@ echo "# Installing Packages via yay"
 echo "################################################################################"
 
 yay -S --noconfirm \
+  ast-grep \
   babashka-bin \
   bash \
   bat \
@@ -32,14 +33,18 @@ yay -S --noconfirm \
   less \
   lua51 \
   luarocks \
+  markdownlint-cli2 \
   make \
   neovim \
+  prettierd \
   python-neovim \
   python-pip \
   ranger \
   ripgrep \
+  rust-analyzer \
   rustup \
   shellcheck \
+  sqlfluff \
   tmux \
   trash-cli \
   tree \
