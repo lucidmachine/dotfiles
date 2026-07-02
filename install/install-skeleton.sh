@@ -43,7 +43,7 @@ function rm_and_link() {
     echo "Creating file ${link_name}"
 
   fi
- 
+
   # -s - Symbolic link
   # -f - If the link already exists, overwrite it
   # -v - Verbose output
@@ -69,23 +69,66 @@ echo
 echo "################################################################################"
 echo "# Creating Symlinks"
 echo "################################################################################"
-rm_and_link "${BASEDIR}/alacritty"          "${XDG_CONFIG_HOME}/alacritty"
-rm_and_link "${BASEDIR}/bash/palette"       "${HOME}/.palette"
-rm_and_link "${BASEDIR}/bash/rc"            "${HOME}/.bashrc"
-rm_and_link "${BASEDIR}/clojure"            "${XDG_CONFIG_HOME}/clojure"
-rm_and_link "${BASEDIR}/git"                "${XDG_CONFIG_HOME}/git"
-rm_and_link "${BASEDIR}/git/git-sh-prompt"  "${HOME}/.git-prompt.sh"
-rm_and_link "${BASEDIR}/intellij/ideavimrc" "${HOME}/.ideavimrc"
-rm_and_link "${BASEDIR}/khal"               "${XDG_CONFIG_HOME}/khal"
-rm_and_link "${BASEDIR}/kitty"              "${XDG_CONFIG_HOME}/kitty"
-rm_and_link "${BASEDIR}/nvim"               "${XDG_CONFIG_HOME}/nvim"
-rm_and_link "${BASEDIR}/ranger"             "${XDG_CONFIG_HOME}/ranger"
-rm_and_link "${BASEDIR}/sh/aliases"         "${HOME}/.aliases"
-rm_and_link "${BASEDIR}/sh/environment"     "${HOME}/.environment"
-rm_and_link "${BASEDIR}/sh/environment"     "${HOME}/.zshenv"
-rm_and_link "${BASEDIR}/sway"               "${XDG_CONFIG_HOME}/sway"
-rm_and_link "${BASEDIR}/tmux/tmux.conf"     "${HOME}/.tmux.conf"
-rm_and_link "${BASEDIR}/vim/vimrc"          "${HOME}/.vimrc"
-rm_and_link "${BASEDIR}/waybar"             "${XDG_CONFIG_HOME}/waybar"
-rm_and_link "${BASEDIR}/x11/Xresources"     "${HOME}/.Xresources"
-rm_and_link "${BASEDIR}/zsh/rc"             "${HOME}/.zshrc"
+rm_and_link \
+  "${BASEDIR}/alacritty" \
+  "${XDG_CONFIG_HOME}/alacritty"
+rm_and_link \
+  "${BASEDIR}/bash/palette" \
+  "${HOME}/.palette"
+rm_and_link \
+  "${BASEDIR}/bash/rc" \
+  "${HOME}/.bashrc"
+rm_and_link \
+  "${BASEDIR}/clojure" \
+  "${XDG_CONFIG_HOME}/clojure"
+rm_and_link \
+  "${BASEDIR}/git" \
+  "${XDG_CONFIG_HOME}/git"
+rm_and_link \
+  "${BASEDIR}/git/git-sh-prompt" \
+  "${HOME}/.git-prompt.sh"
+rm_and_link \
+  "${BASEDIR}/intellij/ideavimrc" \
+  "${HOME}/.ideavimrc"
+rm_and_link \
+  "${BASEDIR}/khal" \
+  "${XDG_CONFIG_HOME}/khal"
+rm_and_link \
+  "${BASEDIR}/kitty" \
+  "${XDG_CONFIG_HOME}/kitty"
+rm_and_link \
+  "${BASEDIR}/markdownlint-cli2/markdownlint-cli2.jsonc" \
+  "${HOME}/.markdownlint-cli2.jsonc"
+rm_and_link \
+  "${BASEDIR}/nvim" \
+  "${XDG_CONFIG_HOME}/nvim"
+rm_and_link \
+  "${BASEDIR}/ranger" \
+  "${XDG_CONFIG_HOME}/ranger"
+rm_and_link \
+  "${BASEDIR}/sh/aliases" \
+  "${HOME}/.aliases"
+rm_and_link \
+  "${BASEDIR}/sh/environment" \
+  "${HOME}/.environment"
+rm_and_link \
+  "${BASEDIR}/sh/environment" \
+  "${HOME}/.zshenv"
+rm_and_link \
+  "${BASEDIR}/sway" \
+  "${XDG_CONFIG_HOME}/sway"
+rm_and_link \
+  "${BASEDIR}/tmux/tmux.conf" \
+  "${HOME}/.tmux.conf"
+rm_and_link \
+  "${BASEDIR}/vim/vimrc" \
+  "${HOME}/.vimrc"
+rm_and_link \
+  "${BASEDIR}/waybar" \
+  "${XDG_CONFIG_HOME}/waybar"
+rm_and_link \
+  "${BASEDIR}/x11/Xresources" \
+  "${HOME}/.Xresources"
+rm_and_link \
+  "${BASEDIR}/zsh/rc" \
+  "${HOME}/.zshrc"
